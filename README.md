@@ -60,3 +60,4 @@ Core Data Editor has the following third party dependencies:
 [Christian Kienle (me@christian-kienle.de)](mailto:me@christian-kienle.de) 
 
 # License
+3-clause BSD (please don't sue me)
