@@ -3118,14 +3118,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Core Data Editor/Core Data Editor.entitlements";
-				CODE_SIGN_IDENTITY = "Mac Developer: Christian Kienle (X5WX6749UX)";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer: Christian Kienle (X5WX6749UX)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Core Data Editor/Core Data Editor-Prefix.pch";
 				INFOPLIST_FILE = "Core Data Editor/Core Data Editor-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ED490A1D-CA59-47EF-93E4-9995B54A2764";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -3134,15 +3134,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Core Data Editor/Core Data Editor.entitlements";
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Christian Kienle (6YJV6LM6Q4)";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application: Christian Kienle (6YJV6LM6Q4)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Core Data Editor/Core Data Editor-Prefix.pch";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Core Data Editor/Core Data Editor-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "537D8EBE-C26F-4DFE-9BE6-614F39811D27";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
