@@ -1,8 +1,8 @@
 # Core Data Editor
+<img src="http://thermal-core.com/img/cde/icon_256x256.png" alt="Core Data Editor Logo" title="Core Data Editor Logo" align="right" />
 
 Core Data Editor lets you easily view, edit and analyze applications‘ data. Core Data Editor is compatible with Mac and iOS applications and supports XML, SQLite and binary stores, visualizes all relationships and is able to edit the data and generate Objective-C code for the data model.
 
-<img src="http://thermal-core.com/img/cde/icon_256x256.png" alt="Core Data Editor Logo" title="Core Data Editor Logo" align="right" />
 
 
 
