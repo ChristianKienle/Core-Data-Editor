@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>template-files-display-order</key>
+	<array>
+		<string>method-declarations.code-snippet-2.0</string>
+		<string>method-implementations.code-snippet-2.0</string>
+	</array>
+	<key>template-files</key>
+	<dict>
+		<key>method-declarations.code-snippet-2.0</key>
+		<dict>
+			<key>ui-name</key>
+			<string>Obj-C 2.0 Method Declarations</string>
+		</dict>
+		<key>method-implementations.code-snippet-2.0</key>
+		<dict>
+			<key>ui-name</key>
+			<string>Obj-C 2.0 Method Implementations</string>
+		</dict>
+	</dict>
+	<key>template-name</key>
+	<string>obj-c-template</string>
+	<key>template-ui-name</key>
+	<string>Obj-C Files</string>
+</dict>
+</plist>

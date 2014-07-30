@@ -1,0 +1,715 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		66F5F13314DB195B0068FD20 /* Framework */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 66F5F13614DB195B0068FD20 /* Build configuration list for PBXAggregateTarget "Framework" */;
+			buildPhases = (
+				66F5F13A14DB19B20068FD20 /* Build Framework */,
+			);
+			dependencies = (
+				66F5F13914DB19940068FD20 /* PBXTargetDependency */,
+				664A26AC14E330B700C297E6 /* PBXTargetDependency */,
+			);
+			name = Framework;
+			productName = Framework;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		664A269614E3265400C297E6 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664A268414E3222700C297E6 /* CoreFoundation.framework */; };
+		66E8B6D714D899500074EAA4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66E8B6D614D899500074EAA4 /* Foundation.framework */; };
+		AB12513F17B636BA0065986E /* CDE+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = AB12513D17B636BA0065986E /* CDE+Private.h */; };
+		AB14D86617B53E5A005EDF29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB14D86517B53E5A005EDF29 /* InfoPlist.strings */; };
+		AB14D86B17B53FBE005EDF29 /* CDEKit-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AB14D86717B53FBE005EDF29 /* CDEKit-Prefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		AB5C078E17B541DE0069F99D /* CDEEditor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB5C078D17B541DE0069F99D /* CDEEditor.storyboard */; };
+		AB5C079317B5420F0069F99D /* CDE.h in Headers */ = {isa = PBXBuildFile; fileRef = AB5C078F17B5420F0069F99D /* CDE.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AB5C079417B5420F0069F99D /* CDE.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5C079017B5420F0069F99D /* CDE.m */; };
+		AB5C079517B5420F0069F99D /* CDEEntitiesViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = AB5C079117B5420F0069F99D /* CDEEntitiesViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AB5C079617B5420F0069F99D /* CDEEntitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5C079217B5420F0069F99D /* CDEEntitiesViewController.m */; };
+		AB72D22117B660BC007561CF /* NSAttributeDescription+CDEAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = AB72D21917B660BC007561CF /* NSAttributeDescription+CDEAdditions.h */; };
+		AB72D22217B660BC007561CF /* NSAttributeDescription+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB72D21A17B660BC007561CF /* NSAttributeDescription+CDEAdditions.m */; };
+		AB72D22317B660BC007561CF /* NSEntityDescription+CDEAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = AB72D21B17B660BC007561CF /* NSEntityDescription+CDEAdditions.h */; };
+		AB72D22417B660BC007561CF /* NSEntityDescription+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB72D21C17B660BC007561CF /* NSEntityDescription+CDEAdditions.m */; };
+		AB72D22517B660BC007561CF /* NSPropertyDescription+CDEAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = AB72D21D17B660BC007561CF /* NSPropertyDescription+CDEAdditions.h */; };
+		AB72D22617B660BC007561CF /* NSPropertyDescription+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB72D21E17B660BC007561CF /* NSPropertyDescription+CDEAdditions.m */; };
+		AB72D22717B660BC007561CF /* NSRelationshipDescription+CDEAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = AB72D21F17B660BC007561CF /* NSRelationshipDescription+CDEAdditions.h */; };
+		AB72D22817B660BC007561CF /* NSRelationshipDescription+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB72D22017B660BC007561CF /* NSRelationshipDescription+CDEAdditions.m */; };
+		AB72D22D17B66A72007561CF /* CDEAttributeTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = AB72D22B17B66A72007561CF /* CDEAttributeTableViewCell.h */; };
+		AB72D22E17B66A72007561CF /* CDEAttributeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB72D22C17B66A72007561CF /* CDEAttributeTableViewCell.m */; };
+		AB72D23117B66BEF007561CF /* CDEStringTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = AB72D22F17B66BEF007561CF /* CDEStringTableViewCell.h */; };
+		AB72D23217B66BEF007561CF /* CDEStringTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB72D23017B66BEF007561CF /* CDEStringTableViewCell.m */; };
+		AB72D23517B66C08007561CF /* CDEBoolTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = AB72D23317B66C08007561CF /* CDEBoolTableViewCell.h */; };
+		AB72D23617B66C08007561CF /* CDEBoolTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB72D23417B66C08007561CF /* CDEBoolTableViewCell.m */; };
+		AB72D23917B66CD1007561CF /* CDEPropertyTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = AB72D23717B66CD1007561CF /* CDEPropertyTableViewCell.h */; };
+		AB72D23A17B66CD1007561CF /* CDEPropertyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB72D23817B66CD1007561CF /* CDEPropertyTableViewCell.m */; };
+		AB72D23F17B66ED3007561CF /* CDEAttributeTableViewCell_Subclass.h in Headers */ = {isa = PBXBuildFile; fileRef = AB72D23E17B66ED3007561CF /* CDEAttributeTableViewCell_Subclass.h */; };
+		AB72D24517B6785D007561CF /* CDEIntegerTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = AB72D24317B6785D007561CF /* CDEIntegerTableViewCell.h */; };
+		AB72D24617B6785D007561CF /* CDEIntegerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB72D24417B6785D007561CF /* CDEIntegerTableViewCell.m */; };
+		AB72D24A17B6839E007561CF /* CDEFloatingPointNumberTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = AB72D24817B6839E007561CF /* CDEFloatingPointNumberTableViewCell.h */; };
+		AB72D24B17B6839E007561CF /* CDEFloatingPointNumberTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB72D24917B6839E007561CF /* CDEFloatingPointNumberTableViewCell.m */; };
+		AB72D24E17B68C33007561CF /* CDEDateTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = AB72D24C17B68C32007561CF /* CDEDateTableViewCell.h */; };
+		AB72D24F17B68C33007561CF /* CDEDateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB72D24D17B68C32007561CF /* CDEDateTableViewCell.m */; };
+		ABA6B0A317B6556100654A38 /* NSManagedObjectID+CDEAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = ABA6B0A117B6556100654A38 /* NSManagedObjectID+CDEAdditions.h */; };
+		ABA6B0A417B6556100654A38 /* NSManagedObjectID+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA6B0A217B6556100654A38 /* NSManagedObjectID+CDEAdditions.m */; };
+		ABA6B0AE17B6573000654A38 /* CDEManagedObjectViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = ABA6B0AC17B6573000654A38 /* CDEManagedObjectViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ABA6B0AF17B6573000654A38 /* CDEManagedObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA6B0AD17B6573000654A38 /* CDEManagedObjectViewController.m */; };
+		ABE8823717B53D2300FB3D9F /* linker.png in Resources */ = {isa = PBXBuildFile; fileRef = ABE8823317B53D2300FB3D9F /* linker.png */; };
+		ABE8823817B53D2300FB3D9F /* SimpleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABE8823417B53D2300FB3D9F /* SimpleView.xib */; };
+		ABEF638117B646E800FAF6E9 /* CDEManagedObjectsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = ABEF637F17B646E800FAF6E9 /* CDEManagedObjectsViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ABEF638217B646E800FAF6E9 /* CDEManagedObjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEF638017B646E800FAF6E9 /* CDEManagedObjectsViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		664A26AB14E330B700C297E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66E8B6CA14D899500074EAA4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 664A269414E3265400C297E6;
+			remoteInfo = SerenityResources;
+		};
+		66F5F13814DB19940068FD20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66E8B6CA14D899500074EAA4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 66E8B6D214D899500074EAA4;
+			remoteInfo = Serenity;
+		};
+		AB12514217B63D1D0065986E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66E8B6CA14D899500074EAA4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 66E8B6D214D899500074EAA4;
+			remoteInfo = CDEKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		664A268414E3222700C297E6 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		664A269514E3265400C297E6 /* CDEKit.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CDEKit.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		66E8B6D314D899500074EAA4 /* libCDEKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCDEKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		66E8B6D614D899500074EAA4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AB12513D17B636BA0065986E /* CDE+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CDE+Private.h"; path = "CDEKit/CDE+Private.h"; sourceTree = "<group>"; };
+		AB14D86517B53E5A005EDF29 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		AB14D86717B53FBE005EDF29 /* CDEKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CDEKit-Prefix.pch"; path = "CDEKit/CDEKit-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		AB5C078D17B541DE0069F99D /* CDEEditor.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CDEEditor.storyboard; sourceTree = "<group>"; };
+		AB5C078F17B5420F0069F99D /* CDE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDE.h; path = CDEKit/CDE.h; sourceTree = "<group>"; };
+		AB5C079017B5420F0069F99D /* CDE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDE.m; path = CDEKit/CDE.m; sourceTree = "<group>"; };
+		AB5C079117B5420F0069F99D /* CDEEntitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDEEntitiesViewController.h; path = CDEKit/CDEEntitiesViewController.h; sourceTree = "<group>"; };
+		AB5C079217B5420F0069F99D /* CDEEntitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDEEntitiesViewController.m; path = CDEKit/CDEEntitiesViewController.m; sourceTree = "<group>"; };
+		AB72D21917B660BC007561CF /* NSAttributeDescription+CDEAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSAttributeDescription+CDEAdditions.h"; path = "CDEKit/NSAttributeDescription+CDEAdditions.h"; sourceTree = "<group>"; };
+		AB72D21A17B660BC007561CF /* NSAttributeDescription+CDEAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSAttributeDescription+CDEAdditions.m"; path = "CDEKit/NSAttributeDescription+CDEAdditions.m"; sourceTree = "<group>"; };
+		AB72D21B17B660BC007561CF /* NSEntityDescription+CDEAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSEntityDescription+CDEAdditions.h"; path = "CDEKit/NSEntityDescription+CDEAdditions.h"; sourceTree = "<group>"; };
+		AB72D21C17B660BC007561CF /* NSEntityDescription+CDEAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSEntityDescription+CDEAdditions.m"; path = "CDEKit/NSEntityDescription+CDEAdditions.m"; sourceTree = "<group>"; };
+		AB72D21D17B660BC007561CF /* NSPropertyDescription+CDEAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSPropertyDescription+CDEAdditions.h"; path = "CDEKit/NSPropertyDescription+CDEAdditions.h"; sourceTree = "<group>"; };
+		AB72D21E17B660BC007561CF /* NSPropertyDescription+CDEAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSPropertyDescription+CDEAdditions.m"; path = "CDEKit/NSPropertyDescription+CDEAdditions.m"; sourceTree = "<group>"; };
+		AB72D21F17B660BC007561CF /* NSRelationshipDescription+CDEAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSRelationshipDescription+CDEAdditions.h"; path = "CDEKit/NSRelationshipDescription+CDEAdditions.h"; sourceTree = "<group>"; };
+		AB72D22017B660BC007561CF /* NSRelationshipDescription+CDEAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSRelationshipDescription+CDEAdditions.m"; path = "CDEKit/NSRelationshipDescription+CDEAdditions.m"; sourceTree = "<group>"; };
+		AB72D22B17B66A72007561CF /* CDEAttributeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDEAttributeTableViewCell.h; path = CDEKit/CDEAttributeTableViewCell.h; sourceTree = "<group>"; };
+		AB72D22C17B66A72007561CF /* CDEAttributeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDEAttributeTableViewCell.m; path = CDEKit/CDEAttributeTableViewCell.m; sourceTree = "<group>"; };
+		AB72D22F17B66BEF007561CF /* CDEStringTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDEStringTableViewCell.h; path = CDEKit/CDEStringTableViewCell.h; sourceTree = "<group>"; };
+		AB72D23017B66BEF007561CF /* CDEStringTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDEStringTableViewCell.m; path = CDEKit/CDEStringTableViewCell.m; sourceTree = "<group>"; };
+		AB72D23317B66C08007561CF /* CDEBoolTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDEBoolTableViewCell.h; path = CDEKit/CDEBoolTableViewCell.h; sourceTree = "<group>"; };
+		AB72D23417B66C08007561CF /* CDEBoolTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDEBoolTableViewCell.m; path = CDEKit/CDEBoolTableViewCell.m; sourceTree = "<group>"; };
+		AB72D23717B66CD1007561CF /* CDEPropertyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDEPropertyTableViewCell.h; path = CDEKit/CDEPropertyTableViewCell.h; sourceTree = "<group>"; };
+		AB72D23817B66CD1007561CF /* CDEPropertyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDEPropertyTableViewCell.m; path = CDEKit/CDEPropertyTableViewCell.m; sourceTree = "<group>"; };
+		AB72D23E17B66ED3007561CF /* CDEAttributeTableViewCell_Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDEAttributeTableViewCell_Subclass.h; path = CDEKit/CDEAttributeTableViewCell_Subclass.h; sourceTree = "<group>"; };
+		AB72D24317B6785D007561CF /* CDEIntegerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDEIntegerTableViewCell.h; path = CDEKit/CDEIntegerTableViewCell.h; sourceTree = "<group>"; };
+		AB72D24417B6785D007561CF /* CDEIntegerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDEIntegerTableViewCell.m; path = CDEKit/CDEIntegerTableViewCell.m; sourceTree = "<group>"; };
+		AB72D24817B6839E007561CF /* CDEFloatingPointNumberTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDEFloatingPointNumberTableViewCell.h; path = CDEKit/CDEFloatingPointNumberTableViewCell.h; sourceTree = "<group>"; };
+		AB72D24917B6839E007561CF /* CDEFloatingPointNumberTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDEFloatingPointNumberTableViewCell.m; path = CDEKit/CDEFloatingPointNumberTableViewCell.m; sourceTree = "<group>"; };
+		AB72D24C17B68C32007561CF /* CDEDateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDEDateTableViewCell.h; path = CDEKit/CDEDateTableViewCell.h; sourceTree = "<group>"; };
+		AB72D24D17B68C32007561CF /* CDEDateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDEDateTableViewCell.m; path = CDEKit/CDEDateTableViewCell.m; sourceTree = "<group>"; };
+		ABA6B0A117B6556100654A38 /* NSManagedObjectID+CDEAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObjectID+CDEAdditions.h"; path = "CDEKit/NSManagedObjectID+CDEAdditions.h"; sourceTree = "<group>"; };
+		ABA6B0A217B6556100654A38 /* NSManagedObjectID+CDEAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObjectID+CDEAdditions.m"; path = "CDEKit/NSManagedObjectID+CDEAdditions.m"; sourceTree = "<group>"; };
+		ABA6B0AC17B6573000654A38 /* CDEManagedObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDEManagedObjectViewController.h; path = CDEKit/CDEManagedObjectViewController.h; sourceTree = "<group>"; };
+		ABA6B0AD17B6573000654A38 /* CDEManagedObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDEManagedObjectViewController.m; path = CDEKit/CDEManagedObjectViewController.m; sourceTree = "<group>"; };
+		ABE8823017B53D2300FB3D9F /* CDEKitResources-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CDEKitResources-Info.plist"; sourceTree = "<group>"; };
+		ABE8823317B53D2300FB3D9F /* linker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linker.png; sourceTree = "<group>"; };
+		ABE8823417B53D2300FB3D9F /* SimpleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleView.xib; sourceTree = "<group>"; };
+		ABEF637F17B646E800FAF6E9 /* CDEManagedObjectsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDEManagedObjectsViewController.h; path = CDEKit/CDEManagedObjectsViewController.h; sourceTree = "<group>"; };
+		ABEF638017B646E800FAF6E9 /* CDEManagedObjectsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDEManagedObjectsViewController.m; path = CDEKit/CDEManagedObjectsViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		664A269214E3265400C297E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				664A269614E3265400C297E6 /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66E8B6D014D899500074EAA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66E8B6D714D899500074EAA4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		66E8B6C814D899500074EAA4 = {
+			isa = PBXGroup;
+			children = (
+				ABA6B0A917B656FB00654A38 /* Public */,
+				ABA6B0A017B6554F00654A38 /* Additions */,
+				ABA6B0A817B656F000654A38 /* Controller */,
+				AB14D86717B53FBE005EDF29 /* CDEKit-Prefix.pch */,
+				ABE8822F17B53D2300FB3D9F /* Resources */,
+				66E8B6D514D899500074EAA4 /* Frameworks */,
+				66E8B6D414D899500074EAA4 /* Products */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+		};
+		66E8B6D414D899500074EAA4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				66E8B6D314D899500074EAA4 /* libCDEKit.a */,
+				664A269514E3265400C297E6 /* CDEKit.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		66E8B6D514D899500074EAA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				66E8B6D614D899500074EAA4 /* Foundation.framework */,
+				664A268414E3222700C297E6 /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB72D22A17B66A33007561CF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AB72D25017B68CBE007561CF /* Date */,
+				AB72D24717B682D5007561CF /* Floating Point Number */,
+				AB72D24217B67821007561CF /* Integer */,
+				AB72D23C17B66EAE007561CF /* Attribute */,
+				AB72D23B17B66EA6007561CF /* Property */,
+				AB72D24017B66EFD007561CF /* String */,
+				AB72D24117B66F01007561CF /* Bool */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		AB72D23B17B66EA6007561CF /* Property */ = {
+			isa = PBXGroup;
+			children = (
+				AB72D23717B66CD1007561CF /* CDEPropertyTableViewCell.h */,
+				AB72D23817B66CD1007561CF /* CDEPropertyTableViewCell.m */,
+			);
+			name = Property;
+			sourceTree = "<group>";
+		};
+		AB72D23C17B66EAE007561CF /* Attribute */ = {
+			isa = PBXGroup;
+			children = (
+				AB72D22B17B66A72007561CF /* CDEAttributeTableViewCell.h */,
+				AB72D22C17B66A72007561CF /* CDEAttributeTableViewCell.m */,
+				AB72D23D17B66EB3007561CF /* Subclass */,
+			);
+			name = Attribute;
+			sourceTree = "<group>";
+		};
+		AB72D23D17B66EB3007561CF /* Subclass */ = {
+			isa = PBXGroup;
+			children = (
+				AB72D23E17B66ED3007561CF /* CDEAttributeTableViewCell_Subclass.h */,
+			);
+			name = Subclass;
+			sourceTree = "<group>";
+		};
+		AB72D24017B66EFD007561CF /* String */ = {
+			isa = PBXGroup;
+			children = (
+				AB72D22F17B66BEF007561CF /* CDEStringTableViewCell.h */,
+				AB72D23017B66BEF007561CF /* CDEStringTableViewCell.m */,
+			);
+			name = String;
+			sourceTree = "<group>";
+		};
+		AB72D24117B66F01007561CF /* Bool */ = {
+			isa = PBXGroup;
+			children = (
+				AB72D23317B66C08007561CF /* CDEBoolTableViewCell.h */,
+				AB72D23417B66C08007561CF /* CDEBoolTableViewCell.m */,
+			);
+			name = Bool;
+			sourceTree = "<group>";
+		};
+		AB72D24217B67821007561CF /* Integer */ = {
+			isa = PBXGroup;
+			children = (
+				AB72D24317B6785D007561CF /* CDEIntegerTableViewCell.h */,
+				AB72D24417B6785D007561CF /* CDEIntegerTableViewCell.m */,
+			);
+			name = Integer;
+			sourceTree = "<group>";
+		};
+		AB72D24717B682D5007561CF /* Floating Point Number */ = {
+			isa = PBXGroup;
+			children = (
+				AB72D24817B6839E007561CF /* CDEFloatingPointNumberTableViewCell.h */,
+				AB72D24917B6839E007561CF /* CDEFloatingPointNumberTableViewCell.m */,
+			);
+			name = "Floating Point Number";
+			sourceTree = "<group>";
+		};
+		AB72D25017B68CBE007561CF /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				AB72D24C17B68C32007561CF /* CDEDateTableViewCell.h */,
+				AB72D24D17B68C32007561CF /* CDEDateTableViewCell.m */,
+			);
+			name = Date;
+			sourceTree = "<group>";
+		};
+		ABA6B0A017B6554F00654A38 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				AB72D21917B660BC007561CF /* NSAttributeDescription+CDEAdditions.h */,
+				AB72D21A17B660BC007561CF /* NSAttributeDescription+CDEAdditions.m */,
+				AB72D21B17B660BC007561CF /* NSEntityDescription+CDEAdditions.h */,
+				AB72D21C17B660BC007561CF /* NSEntityDescription+CDEAdditions.m */,
+				AB72D21D17B660BC007561CF /* NSPropertyDescription+CDEAdditions.h */,
+				AB72D21E17B660BC007561CF /* NSPropertyDescription+CDEAdditions.m */,
+				AB72D21F17B660BC007561CF /* NSRelationshipDescription+CDEAdditions.h */,
+				AB72D22017B660BC007561CF /* NSRelationshipDescription+CDEAdditions.m */,
+				ABA6B0A117B6556100654A38 /* NSManagedObjectID+CDEAdditions.h */,
+				ABA6B0A217B6556100654A38 /* NSManagedObjectID+CDEAdditions.m */,
+			);
+			name = Additions;
+			sourceTree = "<group>";
+		};
+		ABA6B0A617B656D500654A38 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				AB5C079117B5420F0069F99D /* CDEEntitiesViewController.h */,
+				AB5C079217B5420F0069F99D /* CDEEntitiesViewController.m */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		ABA6B0A717B656DB00654A38 /* Managed Objects */ = {
+			isa = PBXGroup;
+			children = (
+				ABEF637F17B646E800FAF6E9 /* CDEManagedObjectsViewController.h */,
+				ABEF638017B646E800FAF6E9 /* CDEManagedObjectsViewController.m */,
+			);
+			name = "Managed Objects";
+			sourceTree = "<group>";
+		};
+		ABA6B0A817B656F000654A38 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ABA6B0A617B656D500654A38 /* Entities */,
+				ABA6B0A717B656DB00654A38 /* Managed Objects */,
+				ABA6B0AB17B6571900654A38 /* Managed Object */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		ABA6B0A917B656FB00654A38 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				AB5C078F17B5420F0069F99D /* CDE.h */,
+				ABA6B0AA17B6570400654A38 /* Private */,
+			);
+			name = Public;
+			sourceTree = "<group>";
+		};
+		ABA6B0AA17B6570400654A38 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				AB5C079017B5420F0069F99D /* CDE.m */,
+				AB12513D17B636BA0065986E /* CDE+Private.h */,
+			);
+			name = Private;
+			sourceTree = "<group>";
+		};
+		ABA6B0AB17B6571900654A38 /* Managed Object */ = {
+			isa = PBXGroup;
+			children = (
+				AB72D22A17B66A33007561CF /* Cells */,
+				ABA6B0AC17B6573000654A38 /* CDEManagedObjectViewController.h */,
+				ABA6B0AD17B6573000654A38 /* CDEManagedObjectViewController.m */,
+			);
+			name = "Managed Object";
+			sourceTree = "<group>";
+		};
+		ABE8822F17B53D2300FB3D9F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AB5C078D17B541DE0069F99D /* CDEEditor.storyboard */,
+				ABE8823017B53D2300FB3D9F /* CDEKitResources-Info.plist */,
+				AB14D86517B53E5A005EDF29 /* InfoPlist.strings */,
+				ABE8823317B53D2300FB3D9F /* linker.png */,
+				ABE8823417B53D2300FB3D9F /* SimpleView.xib */,
+			);
+			path = Resources;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		66E8B6D114D899500074EAA4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB14D86B17B53FBE005EDF29 /* CDEKit-Prefix.pch in Headers */,
+				AB5C079317B5420F0069F99D /* CDE.h in Headers */,
+				ABEF638117B646E800FAF6E9 /* CDEManagedObjectsViewController.h in Headers */,
+				AB5C079517B5420F0069F99D /* CDEEntitiesViewController.h in Headers */,
+				ABA6B0AE17B6573000654A38 /* CDEManagedObjectViewController.h in Headers */,
+				AB12513F17B636BA0065986E /* CDE+Private.h in Headers */,
+				ABA6B0A317B6556100654A38 /* NSManagedObjectID+CDEAdditions.h in Headers */,
+				AB72D22117B660BC007561CF /* NSAttributeDescription+CDEAdditions.h in Headers */,
+				AB72D22317B660BC007561CF /* NSEntityDescription+CDEAdditions.h in Headers */,
+				AB72D22517B660BC007561CF /* NSPropertyDescription+CDEAdditions.h in Headers */,
+				AB72D22717B660BC007561CF /* NSRelationshipDescription+CDEAdditions.h in Headers */,
+				AB72D22D17B66A72007561CF /* CDEAttributeTableViewCell.h in Headers */,
+				AB72D23117B66BEF007561CF /* CDEStringTableViewCell.h in Headers */,
+				AB72D23517B66C08007561CF /* CDEBoolTableViewCell.h in Headers */,
+				AB72D23917B66CD1007561CF /* CDEPropertyTableViewCell.h in Headers */,
+				AB72D23F17B66ED3007561CF /* CDEAttributeTableViewCell_Subclass.h in Headers */,
+				AB72D24517B6785D007561CF /* CDEIntegerTableViewCell.h in Headers */,
+				AB72D24A17B6839E007561CF /* CDEFloatingPointNumberTableViewCell.h in Headers */,
+				AB72D24E17B68C33007561CF /* CDEDateTableViewCell.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		664A269414E3265400C297E6 /* CDEKitResources */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 664A269E14E3265400C297E6 /* Build configuration list for PBXNativeTarget "CDEKitResources" */;
+			buildPhases = (
+				664A269114E3265400C297E6 /* Sources */,
+				664A269214E3265400C297E6 /* Frameworks */,
+				664A269314E3265400C297E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB12514317B63D1D0065986E /* PBXTargetDependency */,
+			);
+			name = CDEKitResources;
+			productName = SerenityResources;
+			productReference = 664A269514E3265400C297E6 /* CDEKit.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		66E8B6D214D899500074EAA4 /* CDEKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66E8B6E014D899500074EAA4 /* Build configuration list for PBXNativeTarget "CDEKit" */;
+			buildPhases = (
+				66E8B6CF14D899500074EAA4 /* Sources */,
+				66E8B6D014D899500074EAA4 /* Frameworks */,
+				66E8B6D114D899500074EAA4 /* Headers */,
+				66E8B6E814D8A4D10074EAA4 /* Prepare Framework */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CDEKit;
+			productName = Serenity;
+			productReference = 66E8B6D314D899500074EAA4 /* libCDEKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		66E8B6CA14D899500074EAA4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CDE;
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Thermal Core";
+			};
+			buildConfigurationList = 66E8B6CD14D899500074EAA4 /* Build configuration list for PBXProject "CDEKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 66E8B6C814D899500074EAA4;
+			productRefGroup = 66E8B6D414D899500074EAA4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				66E8B6D214D899500074EAA4 /* CDEKit */,
+				664A269414E3265400C297E6 /* CDEKitResources */,
+				66F5F13314DB195B0068FD20 /* Framework */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		664A269314E3265400C297E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABE8823717B53D2300FB3D9F /* linker.png in Resources */,
+				ABE8823817B53D2300FB3D9F /* SimpleView.xib in Resources */,
+				AB14D86617B53E5A005EDF29 /* InfoPlist.strings in Resources */,
+				AB5C078E17B541DE0069F99D /* CDEEditor.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		66E8B6E814D8A4D10074EAA4 /* Prepare Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Prepare Framework";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/${FRAMEWORK_VERSION}/Headers\"\n\n# Link the \"Current\" version to \"${FRAMEWORK_VERSION}\"\nln -sfh ${FRAMEWORK_VERSION} \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/Current\"\nln -sfh Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Headers\"\nln -sfh \"Versions/Current/${PRODUCT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/${PRODUCT_NAME}\"\n\n# The -a ensures that the headers maintain the source modification date so that we don't constantly\n# cause propagating rebuilds of files that import these headers.\ncp -a \"${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/${FRAMEWORK_VERSION}/Headers\"\n";
+		};
+		66F5F13A14DB19B20068FD20 /* Build Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Framework";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset +u\n# Avoid recursively calling this script.\nif [[ $SF_MASTER_SCRIPT_RUNNING ]]\nthen\n    exit 0\nfi\nset -u\nexport SF_MASTER_SCRIPT_RUNNING=1\n\nSF_TARGET_NAME=${PROJECT_NAME}\nSF_EXECUTABLE_PATH=\"lib${SF_TARGET_NAME}.a\"\nSF_WRAPPER_NAME=\"${SF_TARGET_NAME}.framework\"\n\n# The following conditionals come from\n# https://github.com/kstenerud/iOS-Universal-Framework\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    SF_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n    SF_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SF_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    SF_OTHER_PLATFORM=iphonesimulator\nelse\n    SF_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$SF_SDK_PLATFORM$ ]]\nthen\n    SF_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${SF_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find platform name from build products directory: $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\n# Build the other platform.\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${SF_OTHER_PLATFORM}${SF_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\" SYMROOT=\"${SYMROOT}\" $ACTION\n\n# Smash the two static libraries into one fat binary and store it in the .framework\nlipo -create \"${BUILT_PRODUCTS_DIR}/${SF_EXECUTABLE_PATH}\" \"${SF_OTHER_BUILT_PRODUCTS_DIR}/${SF_EXECUTABLE_PATH}\" -output \"${BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/${FRAMEWORK_VERSION}/${SF_TARGET_NAME}\"\n\n# Copy the binary to the other architecture folder to have a complete framework in both.\ncp -a \"${BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/${FRAMEWORK_VERSION}/${SF_TARGET_NAME}\" \"${SF_OTHER_BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/${FRAMEWORK_VERSION}/${SF_TARGET_NAME}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		664A269114E3265400C297E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66E8B6CF14D899500074EAA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB5C079417B5420F0069F99D /* CDE.m in Sources */,
+				AB5C079617B5420F0069F99D /* CDEEntitiesViewController.m in Sources */,
+				ABEF638217B646E800FAF6E9 /* CDEManagedObjectsViewController.m in Sources */,
+				ABA6B0A417B6556100654A38 /* NSManagedObjectID+CDEAdditions.m in Sources */,
+				ABA6B0AF17B6573000654A38 /* CDEManagedObjectViewController.m in Sources */,
+				AB72D22217B660BC007561CF /* NSAttributeDescription+CDEAdditions.m in Sources */,
+				AB72D22417B660BC007561CF /* NSEntityDescription+CDEAdditions.m in Sources */,
+				AB72D22617B660BC007561CF /* NSPropertyDescription+CDEAdditions.m in Sources */,
+				AB72D22817B660BC007561CF /* NSRelationshipDescription+CDEAdditions.m in Sources */,
+				AB72D22E17B66A72007561CF /* CDEAttributeTableViewCell.m in Sources */,
+				AB72D23217B66BEF007561CF /* CDEStringTableViewCell.m in Sources */,
+				AB72D23617B66C08007561CF /* CDEBoolTableViewCell.m in Sources */,
+				AB72D23A17B66CD1007561CF /* CDEPropertyTableViewCell.m in Sources */,
+				AB72D24617B6785D007561CF /* CDEIntegerTableViewCell.m in Sources */,
+				AB72D24B17B6839E007561CF /* CDEFloatingPointNumberTableViewCell.m in Sources */,
+				AB72D24F17B68C33007561CF /* CDEDateTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		664A26AC14E330B700C297E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 664A269414E3265400C297E6 /* CDEKitResources */;
+			targetProxy = 664A26AB14E330B700C297E6 /* PBXContainerItemProxy */;
+		};
+		66F5F13914DB19940068FD20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 66E8B6D214D899500074EAA4 /* CDEKit */;
+			targetProxy = 66F5F13814DB19940068FD20 /* PBXContainerItemProxy */;
+		};
+		AB12514317B63D1D0065986E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 66E8B6D214D899500074EAA4 /* CDEKit */;
+			targetProxy = AB12514217B63D1D0065986E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		664A269F14E3265400C297E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "Resources/CDEKitResources-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = CDEKit;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		664A26A014E3265400C297E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "Resources/CDEKitResources-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = CDEKit;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		66E8B6DE14D899500074EAA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		66E8B6DF14D899500074EAA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		66E8B6E114D899500074EAA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				DSTROOT = /tmp/Serenity.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CDEKit/CDEKit-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = CDEKit;
+				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)Headers";
+				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
+			};
+			name = Debug;
+		};
+		66E8B6E214D899500074EAA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				DSTROOT = /tmp/Serenity.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CDEKit/CDEKit-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = CDEKit;
+				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)Headers";
+				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
+			};
+			name = Release;
+		};
+		66F5F13414DB195B0068FD20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		66F5F13514DB195B0068FD20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		664A269E14E3265400C297E6 /* Build configuration list for PBXNativeTarget "CDEKitResources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				664A269F14E3265400C297E6 /* Debug */,
+				664A26A014E3265400C297E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66E8B6CD14D899500074EAA4 /* Build configuration list for PBXProject "CDEKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66E8B6DE14D899500074EAA4 /* Debug */,
+				66E8B6DF14D899500074EAA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66E8B6E014D899500074EAA4 /* Build configuration list for PBXNativeTarget "CDEKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66E8B6E114D899500074EAA4 /* Debug */,
+				66E8B6E214D899500074EAA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66F5F13614DB195B0068FD20 /* Build configuration list for PBXAggregateTarget "Framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66F5F13414DB195B0068FD20 /* Debug */,
+				66F5F13514DB195B0068FD20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 66E8B6CA14D899500074EAA4 /* Project object */;
+}

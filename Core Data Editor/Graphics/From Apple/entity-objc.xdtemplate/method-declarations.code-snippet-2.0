@@ -1,0 +1,36 @@
+$<begin-loop:selectedAttributes>$
+$<begin-if-usePrimitiveDataTypes:usePrimitiveDataTypes>$
+@property $<loop-object.code_propertyTypePrimitiveParameter>$ $<loop-object.code_propertyTypePrimitive>$ $<loop-object.code_propertyName>$;
+$<end-if-usePrimitiveDataTypes>$
+$<begin-notif-usePrimitiveDataTypes:usePrimitiveDataTypes>$
+@property (nonatomic, retain) $<loop-object.code_propertyTypePointer>$ $<loop-object.code_propertyName>$;
+$<end-notif-usePrimitiveDataTypes>$
+$<end-loop>$
+$<begin-loop:selectedRelationships>$
+$<begin-notif-toOne:loop-object.toMany>$
+@property (nonatomic, retain) $<loop-object.code_relationshipDestinationClass>$ *$<loop-object.code_propertyName>$;
+$<end-notif-toOne>$
+$<begin-if-toMany:loop-object.toMany>$
+$<begin-if-useOrderedRelationships:useOrderedRelationships>$
+@property (nonatomic, retain) $<loop-object.code_relationshipSetType>$ *$<loop-object.code_propertyName>$;
+$<end-if-useOrderedRelationships>$
+$<begin-notif-useOrderedRelationships:useOrderedRelationships>$
+@property (nonatomic, retain) NSSet *$<loop-object.code_propertyName>$;
+$<end-notif-useOrderedRelationships>$
+$<end-if-toMany>$
+$<end-loop>$
+$<begin-if-hasToManyRelationships:hasToManyRelationships>$
+@end
+
+@interface $<entity.code_entityFileName>$ (CoreDataGeneratedAccessors)
+$<begin-loop:selectedRelationships>$
+$<begin-if-toMany:loop-object.toMany>$
+$<begin-notif-useOrderedRelationships:useOrderedRelationships>$
+$<loop-object.code_unorderedAccessors>$
+$<end-notif-useOrderedRelationships>$
+$<begin-if-useOrderedRelationships:useOrderedRelationships>$
+$<loop-object.code_orderedAccessors>$
+$<end-if-useOrderedRelationships>$
+$<end-if-toMany>$
+$<end-loop>$
+$<end-if-hasToManyRelationships>$

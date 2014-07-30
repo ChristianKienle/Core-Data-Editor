@@ -1,0 +1,14 @@
+"DropApplicationInfoTextWhenCreatingNewProject" = "Creating a new Project is easy. Simply drop your application onto the drop zone on the right. The application has to contain a compiled managed object model. You can drop iOS and Mac OS X applications on the right drop zone. As soon you have dropped your application on the drop zone you can click on the \"Next\" button in the lower right corner.";
+
+"DropApplicationInfoTextWhenEditingProject" = "To change the model used by this project simply drop a new application onto the drop zone on the right.";
+
+"DropStoreInfoTextWhenCreatingNewProject" = "Now drop a persistent store file on the drop zone. The type of the store will automatically be detected. The following store types are supported: SQLite, XML and Binary.";
+
+"DropStoreInfoTextWhenEditingProject" = "To change the store used by this project simply drop a new store file onto the drop zone on the right.";
+
+"ConfigurationWizzardTitleWhenCreatingNewProject" = "New Project";
+"ConfigurationWizzardTitleWhenEditingProject" = "Project Settings";
+
+
+"ShowTutorialsWindow" = "Show Tutorials";
+"HideTutorialsWindow" = "Hide Tutorials";

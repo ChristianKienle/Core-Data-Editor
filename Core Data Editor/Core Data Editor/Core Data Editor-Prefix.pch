@@ -1,0 +1,18 @@
+//
+// Prefix header for all source files of the 'Core Data Editor' target in the 'Core Data Editor' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+    #import "NSAttributeDescription+CDEAdditions.h"
+    #import "NSPropertyDescription+CDEAdditions.h"
+    #import "NSEntityDescription+CDEAdditions.h"
+    #import "NSRelationshipDescription+CDEAdditions.h"
+    #import "NSManagedObjectID+CDEAdditions.h"
+    #import "NSManagedObjectContext+CDEAdditions.h"
+    #import "NSManagedObject+CDEAdditions.h"
+    #import "NSManagedObjectModel-CDEAdditions.h"
+    #import "NSError-CDEAdditions.h"
+    #import "NSString+CDEAdditions.h"
+    #import "NSUserDefaults+CDEAdditions.h"
+#endif

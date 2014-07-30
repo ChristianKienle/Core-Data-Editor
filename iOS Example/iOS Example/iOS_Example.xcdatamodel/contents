@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Abstract" isAbstract="YES" syncable="YES">
+        <attribute name="abstractString" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ChildAOfAbstract" parentEntity="Abstract" syncable="YES">
+        <attribute name="childAString" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="autoRepairForA" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="UsedForAutoRepair" inverseName="childA" inverseEntity="UsedForAutoRepair" syncable="YES"/>
+    </entity>
+    <entity name="ChildBOfAbstract" parentEntity="Abstract" syncable="YES">
+        <attribute name="childBString" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="autoRepairForB" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="UsedForAutoRepair" inverseName="childB" inverseEntity="UsedForAutoRepair" syncable="YES"/>
+        <relationship name="persons" toMany="YES" minCount="3" maxCount="10" deletionRule="Cascade" ordered="YES" destinationEntity="Person" inverseName="childB" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <entity name="Committee" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="members" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Member" inverseName="committees" inverseEntity="Member" syncable="YES"/>
+    </entity>
+    <entity name="Event" syncable="YES">
+        <attribute name="timeStamp" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="House" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="orderedInhabitants" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Person" inverseName="house" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <entity name="Member" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="committees" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Committee" inverseName="members" inverseEntity="Committee" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName="Journal_OLD" elementID="Journal" syncable="YES">
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="childB" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ChildBOfAbstract" inverseName="persons" inverseEntity="ChildBOfAbstract" syncable="YES"/>
+        <relationship name="detail" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="PersonDetail" inverseName="person" inverseEntity="PersonDetail" syncable="YES"/>
+        <relationship name="house" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="House" inverseName="orderedInhabitants" inverseEntity="House" syncable="YES"/>
+        <relationship name="pets" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Pet" inverseName="owner" inverseEntity="Pet" syncable="YES"/>
+    </entity>
+    <entity name="PersonDetail" syncable="YES">
+        <attribute name="binaryDataAttribute" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="birthday" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="booleanAttribute" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="dateAttribute" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="decimalAttribute" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="doubleAttribute" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="floatAttribute" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="integer16Attribute" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="integer32Attribute" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="integer64Attribute" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="stringAttribute" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transformableAttribute" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="person" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="detail" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <entity name="Pet" syncable="YES">
+        <attribute name="binaryDataAttribute" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="birthday" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="booleanAttribute" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="dateAttribute" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="decimalAttribute" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="doubleAttribute" optional="YES" attributeType="Double" syncable="YES"/>
+        <attribute name="floatAttribute" optional="YES" attributeType="Float" syncable="YES"/>
+        <attribute name="integer16Attribute" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="integer32Attribute" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="integer64Attribute" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <attribute name="name" attributeType="String" minValueString="3" maxValueString="10" syncable="YES"/>
+        <attribute name="stringAttribute" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transformableAttribute" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="owner" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="pets" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <entity name="Strange" syncable="YES">
+        <attribute name="customTransformableAttribute" optional="YES" attributeType="Transformable" valueTransformerName="FuckYouInTheAss" syncable="YES"/>
+        <attribute name="transientAttribute" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
+        <relationship name="children" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Strange" inverseName="parent" inverseEntity="Strange" syncable="YES"/>
+        <relationship name="parent" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Strange" inverseName="children" inverseEntity="Strange" syncable="YES"/>
+    </entity>
+    <entity name="UsedForAutoRepair" syncable="YES">
+        <relationship name="childA" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="ChildAOfAbstract" inverseName="autoRepairForA" inverseEntity="ChildAOfAbstract" syncable="YES"/>
+        <relationship name="childB" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="ChildBOfAbstract" inverseName="autoRepairForB" inverseEntity="ChildBOfAbstract" syncable="YES"/>
+    </entity>
+    <entity name="ValidationTest" syncable="YES">
+        <attribute name="binaryDataAttribute" attributeType="Binary" syncable="YES"/>
+        <attribute name="birthday" attributeType="Date" syncable="YES"/>
+        <attribute name="booleanAttribute" attributeType="Boolean" syncable="YES"/>
+        <attribute name="dateAttribute" attributeType="Date" minDateTimeInterval="407847600" minValueString="12/4/2013" maxDateTimeInterval="439470000" maxValueString="12/5/2014" syncable="YES"/>
+        <attribute name="decimalAttribute" attributeType="Decimal" minValueString="0" maxValueString="100" syncable="YES"/>
+        <attribute name="doubleAttribute" attributeType="Double" minValueString="0" maxValueString="1000" syncable="YES"/>
+        <attribute name="email" attributeType="String" minValueString="3" maxValueString="1000" regularExpressionString="\A[^@]+@([^@\.]+\.)+[^@\.]+\z" syncable="YES"/>
+        <attribute name="floatAttribute" attributeType="Float" minValueString="0" maxValueString="10000" syncable="YES"/>
+        <attribute name="integer16Attribute" attributeType="Integer 16" minValueString="10" maxValueString="1000" syncable="YES"/>
+        <attribute name="integer32Attribute" attributeType="Integer 32" minValueString="10" maxValueString="10000" syncable="YES"/>
+        <attribute name="integer64Attribute" attributeType="Integer 64" minValueString="45" maxValueString="12345" syncable="YES"/>
+        <attribute name="stringAttribute" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transformableAttribute" attributeType="Transformable" syncable="YES"/>
+    </entity>
+    <fetchRequest name="FetchRequest" entity="Member"/>
+    <elements>
+        <element name="Abstract" positionX="27" positionY="-252" width="128" height="60"/>
+        <element name="ChildAOfAbstract" positionX="-146" positionY="-153" width="128" height="73"/>
+        <element name="ChildBOfAbstract" positionX="72" positionY="-18" width="128" height="88"/>
+        <element name="Committee" positionX="153" positionY="135" width="128" height="73"/>
+        <element name="Event" positionX="160" positionY="192" width="128" height="60"/>
+        <element name="House" positionX="205" positionY="438" width="128" height="75"/>
+        <element name="Member" positionX="162" positionY="144" width="128" height="73"/>
+        <element name="Person" positionX="304" positionY="153" width="128" height="135"/>
+        <element name="PersonDetail" positionX="-63" positionY="324" width="128" height="240"/>
+        <element name="Pet" positionX="531" positionY="141" width="128" height="255"/>
+        <element name="Strange" positionX="144" positionY="126" width="128" height="103"/>
+        <element name="UsedForAutoRepair" positionX="-245" positionY="153" width="128" height="75"/>
+        <element name="ValidationTest" positionX="331" positionY="-144" width="128" height="240"/>
+    </elements>
+</model>

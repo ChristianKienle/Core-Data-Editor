@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CDEConfiguration" representedClassName="CDEConfiguration" syncable="YES">
+        <attribute name="applicationBundleBookmarkData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="autosaveInformationByEntityName" optional="YES" attributeType="Transformable" syncable="YES">
+            <userInfo>
+                <entry key="attributeValueClassName" value="NSDictionary"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isMacApplication" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="modelBookmarkData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="storeBookmarkData" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CDEConfiguration" positionX="160" positionY="192" width="128" height="120"/>
+    </elements>
+</model>
