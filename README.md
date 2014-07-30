@@ -8,7 +8,11 @@ Core Data Editor will guide you through a short setup process when you initially
 ![](http://thermal-core.com/img/cde/screenshot_main_cut.png)
 
 # Donations
-If you want to support Core Data Editor you can donate via PayPal to me@christian-kienle.de. Thanks.
+If you want to support Core Data Editor you can donate via PayPal to me@christian-kienle.de. You can also flattr Core Data Editor:
+
+<a href="https://flattr.com/submit/auto?user_id=ChristianKienle&url=https%3A%2F%2Fgithub.com%2FChristianKienle%2FCore-Data-Editor" target="_blank"><img src="https://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>
+
+Thanks.
 
 # Why Open Source?
 I, the maintainer and original developer of Core Data Editor have become (seriously sick). The disease I have will not go away soon. My ability to work and take care about Core Data Editor is severely limited. I don't want Core Data Editor to just die so I have decided to make it open source. To make it clear: If you send me a (good) pull request I will accept it. I will also try to answer questions and to contribute myself. The thing is I just can't keep up with bug fixing, feature requests (...) on my own anymore. I am too sick. In addition: Open Source rocks.
