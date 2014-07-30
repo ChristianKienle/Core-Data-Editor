@@ -1,5 +1,10 @@
 # Core Data Editor
+
 Core Data Editor lets you easily view, edit and analyze applications‘ data. Core Data Editor is compatible with Mac and iOS applications and supports XML, SQLite and binary stores, visualizes all relationships and is able to edit the data and generate Objective-C code for the data model.
+
+<img src="http://thermal-core.com/img/cde/icon_256x256.png" alt="Core Data Editor Logo" title="Core Data Editor Logo" align="right" />
+
+
 
 # Why Open Source?
 I, the maintainer and original developer of Core Data Editor have become (seriously sick). The disease I have will not go away soon. My ability to work and take care about Core Data Editor is severely limited. I don't want Core Data Editor to just die so I have decided to make it open source. To make it clear: If you send me a (good) pull request I will accept it. I will also try to answer questions and to contribute myself. The thing is I just can't keep up with bug fixing, feature requests (...) on my own anymore. I am too sick.
