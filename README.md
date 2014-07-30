@@ -55,6 +55,9 @@ Core Data Editor has the following third party dependencies:
 
 * BFNavigationController
 * CHCSV Parser
+* Omni NSAlert Extensions
+* RSVerticallyCenteredTextFieldCell
+* Code from ATS
 
 # Contact
 [Christian Kienle (me@christian-kienle.de)](mailto:me@christian-kienle.de) 
