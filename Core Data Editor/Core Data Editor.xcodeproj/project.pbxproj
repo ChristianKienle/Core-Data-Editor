@@ -67,7 +67,6 @@
 		AB36447F17BA47D4004ADAAC /* CDESetupWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB36447D17BA47D4004ADAAC /* CDESetupWindowController.xib */; };
 		AB3B078E1775D39A000855B0 /* CDEStringValueTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B078D1775D39A000855B0 /* CDEStringValueTableCellView.m */; };
 		AB3B07911775DCF6000855B0 /* CDEStringValueTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB3B07901775DCF6000855B0 /* CDEStringValueTableCellView.xib */; };
-		AB3B07C31775F292000855B0 /* SQLiteRelatedItemPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B07C21775F292000855B0 /* SQLiteRelatedItemPresenter.m */; };
 		AB3B07C91775FCE2000855B0 /* CDEBoolValueTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B07C81775FCE2000855B0 /* CDEBoolValueTableCellView.m */; };
 		AB3B07CB1775FCF2000855B0 /* CDEBoolValueTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB3B07CA1775FCF2000855B0 /* CDEBoolValueTableCellView.xib */; };
 		AB3B07CE17760E23000855B0 /* NSTableCellView+JKNibLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B07CD17760E23000855B0 /* NSTableCellView+JKNibLoading.m */; };
@@ -82,7 +81,6 @@
 		AB8F834D177C82E6000B4467 /* CDEOrderIndexTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB8F834C177C82E6000B4467 /* CDEOrderIndexTableCellView.xib */; };
 		ABB08F8917BD2DB000BE97C0 /* Project-Browser-Menu-Item.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB08F8717BD2DB000BE97C0 /* Project-Browser-Menu-Item.png */; };
 		ABB08F8A17BD2DB000BE97C0 /* Project-Browser-Menu-Item@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB08F8817BD2DB000BE97C0 /* Project-Browser-Menu-Item@2x.png */; };
-		ABB08F8C17BD39FF00BE97C0 /* entitlements.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = ABB08F8B17BD39FE00BE97C0 /* entitlements.entitlements */; };
 		ABB225D317B922FA0024FE4F /* CDEPathPickerPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB225D217B922FA0024FE4F /* CDEPathPickerPopUpButton.m */; };
 		ABB225D717B92B230024FE4F /* CDEProjectBrowserWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB225D517B92B230024FE4F /* CDEProjectBrowserWindowController.m */; };
 		ABB225D817B92B230024FE4F /* CDEProjectBrowserWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABB225D617B92B230024FE4F /* CDEProjectBrowserWindowController.xib */; };
@@ -340,8 +338,6 @@
 		AB3B078C1775D39A000855B0 /* CDEStringValueTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEStringValueTableCellView.h; sourceTree = "<group>"; };
 		AB3B078D1775D39A000855B0 /* CDEStringValueTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEStringValueTableCellView.m; sourceTree = "<group>"; };
 		AB3B07901775DCF6000855B0 /* CDEStringValueTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDEStringValueTableCellView.xib; sourceTree = "<group>"; };
-		AB3B07C11775F292000855B0 /* SQLiteRelatedItemPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteRelatedItemPresenter.h; sourceTree = "<group>"; };
-		AB3B07C21775F292000855B0 /* SQLiteRelatedItemPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteRelatedItemPresenter.m; sourceTree = "<group>"; };
 		AB3B07C71775FCE2000855B0 /* CDEBoolValueTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEBoolValueTableCellView.h; sourceTree = "<group>"; };
 		AB3B07C81775FCE2000855B0 /* CDEBoolValueTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEBoolValueTableCellView.m; sourceTree = "<group>"; };
 		AB3B07CA1775FCF2000855B0 /* CDEBoolValueTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDEBoolValueTableCellView.xib; sourceTree = "<group>"; };
@@ -351,7 +347,6 @@
 		AB531221179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTableColumn+CDERequestDataCoordinator.m"; sourceTree = "<group>"; };
 		AB53127117999D2200529EF7 /* NSAlert-OAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAlert-OAExtensions.h"; sourceTree = "<group>"; };
 		AB53127217999D2200529EF7 /* NSAlert-OAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAlert-OAExtensions.m"; sourceTree = "<group>"; };
-		AB54134317CE6FC500256C58 /* Core Data Editor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Core Data Editor.entitlements"; sourceTree = "<group>"; };
 		AB5583A4176751AE005C002C /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = icon.iconset; sourceTree = "<group>"; };
 		AB86F7C81791922600FB0AEB /* CDEAttributeEditorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEAttributeEditorWindowController.h; sourceTree = "<group>"; };
 		AB86F7C91791922600FB0AEB /* CDEAttributeEditorWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEAttributeEditorWindowController.m; sourceTree = "<group>"; };
@@ -365,7 +360,6 @@
 		AB8F834C177C82E6000B4467 /* CDEOrderIndexTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDEOrderIndexTableCellView.xib; sourceTree = "<group>"; };
 		ABB08F8717BD2DB000BE97C0 /* Project-Browser-Menu-Item.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Project-Browser-Menu-Item.png"; sourceTree = "<group>"; };
 		ABB08F8817BD2DB000BE97C0 /* Project-Browser-Menu-Item@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Project-Browser-Menu-Item@2x.png"; sourceTree = "<group>"; };
-		ABB08F8B17BD39FE00BE97C0 /* entitlements.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = entitlements.entitlements; path = mogenerator/entitlements.entitlements; sourceTree = "<group>"; };
 		ABB225D117B922FA0024FE4F /* CDEPathPickerPopUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEPathPickerPopUpButton.h; sourceTree = "<group>"; };
 		ABB225D217B922FA0024FE4F /* CDEPathPickerPopUpButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEPathPickerPopUpButton.m; sourceTree = "<group>"; };
 		ABB225D417B92B230024FE4F /* CDEProjectBrowserWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEProjectBrowserWindowController.h; sourceTree = "<group>"; };
@@ -697,7 +691,6 @@
 				ABC189EE17809DFA00AF4F15 /* Managed Object View */,
 				ABD5BCA0178037730050025B /* Relationships View Controller */,
 				ABC189ED17809D0800AF4F15 /* SplitView Müll */,
-				AB3B07C41775FBF0000855B0 /* SQLite Related Item Presenter */,
 				AB0927971768F71900FC59FB /* Managed Objects View Controller */,
 				AB0927481768C6AE00FC59FB /* Entities View Controller */,
 				AB0927541768C81E00FC59FB /* CDEEditorViewController.h */,
@@ -1018,15 +1011,6 @@
 			name = "String View";
 			sourceTree = "<group>";
 		};
-		AB3B07C41775FBF0000855B0 /* SQLite Related Item Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				AB3B07C11775F292000855B0 /* SQLiteRelatedItemPresenter.h */,
-				AB3B07C21775F292000855B0 /* SQLiteRelatedItemPresenter.m */,
-			);
-			name = "SQLite Related Item Presenter";
-			sourceTree = "<group>";
-		};
 		AB3B07C51775FCBF000855B0 /* Cell Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1245,7 +1229,6 @@
 		ABBEA7DF1765CB730024A9D2 /* Core Data Editor */ = {
 			isa = PBXGroup;
 			children = (
-				AB54134317CE6FC500256C58 /* Core Data Editor.entitlements */,
 				ABBAF368179FFBC200179732 /* 3rd Party */,
 				ABBEA8B817660FD40024A9D2 /* Shared */,
 				ABBEA8851765E1D10024A9D2 /* Additions */,
@@ -1258,7 +1241,6 @@
 				ABBEA7F11765CB730024A9D2 /* MainMenu.xib */,
 				ABBEA7F41765CB730024A9D2 /* CDEDocument.xcdatamodeld */,
 				ABBEA7E01765CB730024A9D2 /* Supporting Files */,
-				ABB08F8B17BD39FE00BE97C0 /* entitlements.entitlements */,
 			);
 			path = "Core Data Editor";
 			sourceTree = "<group>";
@@ -2192,6 +2174,11 @@
 				TargetAttributes = {
 					ABBEA7D51765CB730024A9D2 = {
 						DevelopmentTeam = 6YJV6LM6Q4;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -2288,7 +2275,6 @@
 				ABDA423B181BFF2C0054A226 /* CDEMenuWindowItem.xib in Resources */,
 				ABB08F8917BD2DB000BE97C0 /* Project-Browser-Menu-Item.png in Resources */,
 				ABB08F8A17BD2DB000BE97C0 /* Project-Browser-Menu-Item@2x.png in Resources */,
-				ABB08F8C17BD39FF00BE97C0 /* entitlements.entitlements in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2356,7 +2342,6 @@
 				AB09276A1768F36100FC59FB /* CDEApplicationDelegate.m in Sources */,
 				AB09279B1768F73000FC59FB /* CDEManagedObjectsViewController.m in Sources */,
 				AB3B078E1775D39A000855B0 /* CDEStringValueTableCellView.m in Sources */,
-				AB3B07C31775F292000855B0 /* SQLiteRelatedItemPresenter.m in Sources */,
 				AB3B07C91775FCE2000855B0 /* CDEBoolValueTableCellView.m in Sources */,
 				AB3B07CE17760E23000855B0 /* NSTableCellView+JKNibLoading.m in Sources */,
 				ABEB75641776E70900141062 /* CDEObjectIDValueTableCellView.m in Sources */,
@@ -2601,7 +2586,6 @@
 		ABBEA7FA1765CB730024A9D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "Core Data Editor/Core Data Editor.entitlements";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -2617,7 +2601,6 @@
 		ABBEA7FB1765CB730024A9D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "Core Data Editor/Core Data Editor.entitlements";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;

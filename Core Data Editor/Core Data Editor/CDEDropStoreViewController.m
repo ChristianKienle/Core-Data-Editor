@@ -2,7 +2,6 @@
 #import "CDEDropZoneView.h"
 #import "CDEDropStoreViewControllerDelegate.h"
 #import "CDEPathActionLabelController.h"
-#import "SQLiteRelatedItemPresenter.h"
 
 // Additions: Begin
 #import "NSPersistentStore+CDEStoreAnalyzer.h"
@@ -18,9 +17,7 @@
         NSLog(@"Drop has no URL.");
         return NO;
     }
-    [SQLiteRelatedItemPresenter addPresentersForURL:URL];
     BOOL result = [self.managedObjectModel isCompatibleWithStoreAtURL:URL error_cde:error];
-    [SQLiteRelatedItemPresenter removeFilePresentersForURL:URL];
 
     return result;
 }

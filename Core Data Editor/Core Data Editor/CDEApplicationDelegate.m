@@ -9,7 +9,6 @@
 #import "CDEDocument.h"
 #import "CDEAboutWindowController.h"
 #import "NSWorkspace+CDEAdditions.h"
-#import "SQLiteRelatedItemPresenter.h"
 #import "CDEProjectBrowserWindowController.h"
 #import "CDESetupWindowController.h"
 
@@ -144,15 +143,12 @@
     }
     // Is this a store file?
     NSURL *storeURL = [NSURL fileURLWithPath:filename];
-    [SQLiteRelatedItemPresenter addPresentersForURL:storeURL];
 
     NSString *storeType = [NSPersistentStore typeOfPersistentStoreAtURL_cde:storeURL];
     if(storeType == nil) {
         NSLog(@"'%@' not a valid store", filename);
-        [SQLiteRelatedItemPresenter removeFilePresentersForURL:storeURL];
         return NO;
     }
-    [SQLiteRelatedItemPresenter removeFilePresentersForURL:storeURL];
     // If we have no build products URL we can return NO
     NSURL *buildProductsDirectory = [[NSUserDefaults standardUserDefaults] buildProductsDirectory_cde];
     if(buildProductsDirectory == nil) {

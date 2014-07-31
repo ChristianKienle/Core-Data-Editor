@@ -260,7 +260,7 @@
         // - model invalid
         NSMutableOrderedSet *errorMessages = [NSMutableOrderedSet orderedSet];
         NSError *resolveError = nil;
-        self.modelURL = [NSURL URLByResolvingBookmarkData:self.configuration.modelBookmarkData options:NSURLBookmarkResolutionWithSecurityScope relativeToURL:nil bookmarkDataIsStale:NULL error:&resolveError];
+        self.modelURL = [NSURL URLByResolvingBookmarkData:self.configuration.modelBookmarkData options:NSURLBookmarkResolutionWithoutUI relativeToURL:nil bookmarkDataIsStale:NULL error:&resolveError];
         if(self.modelURL == nil) {
             if([[resolveError domain] isEqualToString:NSCocoaErrorDomain] && resolveError.code == NSFileNoSuchFileError) {
                 [errorMessages addObject:@"• Model could not be found."];
@@ -276,7 +276,7 @@
         }
         
         resolveError = nil;
-        self.storeURL = [NSURL URLByResolvingBookmarkData:self.configuration.storeBookmarkData options:NSURLBookmarkResolutionWithSecurityScope relativeToURL:nil bookmarkDataIsStale:NULL error:&resolveError];
+        self.storeURL = [NSURL URLByResolvingBookmarkData:self.configuration.storeBookmarkData options:NSURLBookmarkResolutionWithoutUI relativeToURL:nil bookmarkDataIsStale:NULL error:&resolveError];
         if(self.storeURL == nil) {
             if([[resolveError domain] isEqualToString:NSCocoaErrorDomain] && resolveError.code == NSFileNoSuchFileError) {
                 [errorMessages addObject:@"• Store could not be found."];
