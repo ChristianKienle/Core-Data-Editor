@@ -59,6 +59,4 @@ extern const struct CDEUserDefaultsNotifications {
 @property (nonatomic, assign, getter = applicationNeedsSetup_cde,
                               setter = setApplicationNeedsSetup_cde:) BOOL applicationNeedsSetup;
 
-@property (nonatomic, assign, readonly, getter = numberOfDaysLeft_cde) NSInteger numberOfDaysLeft_cde;
-
 @end

@@ -191,17 +191,4 @@ const struct CDEUserDefaultsNotifications CDEUserDefaultsNotifications = {
     return [self boolForKey:CDEUserDefaultsKeys.applicationNeedsSetup];
 }
 
-- (NSInteger)numberOfDaysLeft_cde {
-    NSDate *firstLaunchDate = [self objectForKey:CDEUserDefaultsKeys.firstLaunchDate];
-    NSDate *now = [NSDate new];
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSUInteger unitFlags = NSDayCalendarUnit;
-    NSDateComponents *components = [calendar components:unitFlags fromDate:firstLaunchDate toDate:now options:0];
-    if(components.day > 14) {
-        return -1;
-    }
-    
-    return (14-components.day);
-}
-
 @end
