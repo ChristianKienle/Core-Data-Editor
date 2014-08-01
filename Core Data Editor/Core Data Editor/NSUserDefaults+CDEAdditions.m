@@ -120,14 +120,7 @@ const struct CDEUserDefaultsNotifications CDEUserDefaultsNotifications = {
         return nil;
     }
     NSError *error = nil;
-    BOOL isStale = NO;
-    NSURL *URL = [NSURL URLByResolvingBookmarkData:bookmarkData
-                                     options:NSURLBookmarkResolutionWithSecurityScope
-                               relativeToURL:nil
-                         bookmarkDataIsStale:&isStale
-                                       error:&error];
-    
-//    NSURL *URL = [NSURL URLByResolvingBookmarkData:bookmarkData error_cde:&error];
+    NSURL *URL = [NSURL URLByResolvingBookmarkData:bookmarkData error_cde:&error];
     if(URL == nil) {
         NSLog(@"failed to resolve bookmark data for build directory: %@", error);
         return nil;
@@ -160,12 +153,7 @@ const struct CDEUserDefaultsNotifications CDEUserDefaultsNotifications = {
         return nil;
     }
     NSError *error = nil;
-    BOOL isStale = NO;
-    NSURL *URL = [NSURL URLByResolvingBookmarkData:bookmarkData
-                                           options:NSURLBookmarkResolutionWithSecurityScope
-                                     relativeToURL:nil
-                               bookmarkDataIsStale:&isStale
-                                             error:&error];
+    NSURL *URL = [NSURL URLByResolvingBookmarkData:bookmarkData error_cde:&error];
     
     if(URL == nil) {
         NSLog(@"failed to resolve bookmark data for build directory: %@", error);

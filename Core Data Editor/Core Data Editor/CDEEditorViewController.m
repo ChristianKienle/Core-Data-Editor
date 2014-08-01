@@ -29,7 +29,6 @@
 
 // 3rd Party: Begin
 #import "BFNavigationController.h"
-#import "SQLiteRelatedItemPresenter.h"
 #import "CHCSVParser.h"
 // 3rd Party: End
 
@@ -153,8 +152,6 @@
                         ([_configuration isEqual:configuration] == NO) ||
                         (needsReload));
   // Cleanup
-  [SQLiteRelatedItemPresenter removeFilePresentersForURL:self.storeURL];
-  [SQLiteRelatedItemPresenter addPresentersForURL:storeURL];
   
   self.configuration = configuration;
   self.autosaveInformation = [[CDEAutosaveInformation alloc] initWithDictionaryRepresentation:self.configuration.autosaveInformationByEntityName];
@@ -204,7 +201,6 @@
 }
 #pragma mark - State
 - (void)cleanup {
-  [SQLiteRelatedItemPresenter removeFilePresentersForURL:self.storeURL];
 }
 
 #pragma mark - Query Control

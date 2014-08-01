@@ -7,7 +7,7 @@
     NSParameterAssert(data);
     
     return [NSURL URLByResolvingBookmarkData:data
-                                     options:NSURLBookmarkResolutionWithSecurityScope
+                                     options:NSURLBookmarkResolutionWithoutUI
                                relativeToURL:nil
                          bookmarkDataIsStale:NULL
                                        error:error];
@@ -16,7 +16,7 @@
 - (NSData *)bookmarkDataAndGetError_cde:(NSError **)error {
     NSError *localError = nil;
     NSURL *pathOnlyURL = [NSURL fileURLWithPath:[self path]];
-    NSData *result = [pathOnlyURL bookmarkDataWithOptions:NSURLBookmarkCreationWithSecurityScope
+    NSData *result = [pathOnlyURL bookmarkDataWithOptions:NSURLBookmarkCreationPreferFileIDResolution
                     includingResourceValuesForKeys:nil
                                      relativeToURL:nil
                                              error:&localError];
