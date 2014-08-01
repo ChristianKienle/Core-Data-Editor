@@ -77,7 +77,7 @@
 
 - (IBAction)openProjectBrowser:(id)sender {
     [self.window orderOut:self];
-    [[NSApp delegate] showProjectBrowser:sender];
+    [(CDEApplicationDelegate *)[NSApp delegate] showProjectBrowser:sender];
 }
 
 - (IBAction)createNewProject:(id)sender {

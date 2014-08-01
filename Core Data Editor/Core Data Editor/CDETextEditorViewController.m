@@ -10,12 +10,12 @@
 @implementation CDETextEditorViewController
 
 #pragma mark Creating
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    return [self init];
+- (instancetype)init {
+    return [self initWithNibName:NSStringFromClass([self class]) bundle:nil];
 }
 
-- (instancetype)init {
-    self = [super initWithNibName:@"CDETextEditorViewController" bundle:nil];
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if(self) {
     }
     return self;

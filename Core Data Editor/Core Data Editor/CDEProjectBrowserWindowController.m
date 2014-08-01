@@ -170,7 +170,7 @@
         [alert beginSheetModalForWindow:self.window completionHandler_oa:^(NSAlert *alert, NSInteger returnCode) {
             if(returnCode ==  NSAlertDefaultReturn) {
                 // show prefs.
-                [[NSApp delegate] showPreferences:self];
+                [(CDEApplicationDelegate *)[NSApp delegate] showPreferences:self];
             }
             [self closeWindowSoon];
         }];

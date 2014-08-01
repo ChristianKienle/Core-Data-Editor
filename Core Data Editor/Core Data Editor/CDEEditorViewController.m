@@ -80,12 +80,12 @@
 @implementation CDEEditorViewController
 
 #pragma mark - Creating
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-  return [self init];
+- (id)init {
+  return [self initWithNibName:NSStringFromClass([self class]) bundle:nil];
 }
 
-- (id)init {
-  self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+  self = [super initWithNibName:nibNameOrNil bundle:nil];
   if(self) {
     self.entitiesViewController = [CDEEntitiesViewController new];
     self.entitiesViewController.delegate = self;
