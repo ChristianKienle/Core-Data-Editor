@@ -5,7 +5,9 @@
 
 @interface CDE : NSObject
 
++ (instancetype)sharedCoreDataEditor;
+
 #pragma mark - Creating a Embedded Core Data Editor
-+ (void)enableEmbeddedCoreDataEditor;
+- (void)enableEmbeddedCoreDataEditorWithMainContext:(NSManagedObjectContext *)mainContext;
 
 @end
