@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AB06C0AF1854CB07002945CB /* CDEToOneRelationshipRequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06C0AE1854CB07002945CB /* CDEToOneRelationshipRequestDataCoordinator.m */; };
-		AB06C0B01854CB07002945CB /* CDEToOneRelationshipRequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06C0AE1854CB07002945CB /* CDEToOneRelationshipRequestDataCoordinator.m */; };
 		AB0927511768C6EC00FC59FB /* CDEEntitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB09274F1768C6EC00FC59FB /* CDEEntitiesViewController.m */; };
 		AB0927521768C6EC00FC59FB /* CDEEntitiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0927501768C6EC00FC59FB /* CDEEntitiesViewController.xib */; };
 		AB0927571768C81E00FC59FB /* CDEEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0927551768C81E00FC59FB /* CDEEditorViewController.m */; };
@@ -18,7 +17,6 @@
 		AB09276A1768F36100FC59FB /* CDEApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0927691768F36100FC59FB /* CDEApplicationDelegate.m */; };
 		AB09279B1768F73000FC59FB /* CDEManagedObjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0927991768F73000FC59FB /* CDEManagedObjectsViewController.m */; };
 		AB09279C1768F73000FC59FB /* CDEManagedObjectsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB09279A1768F73000FC59FB /* CDEManagedObjectsViewController.xib */; };
-		AB10D5DC18159B4A0033FC78 /* NSPersistentStoreCoordinator+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCFAF021815826D0011D6FB /* NSPersistentStoreCoordinator+CDEAdditions.m */; };
 		AB1466BC1786EB0400E3EEA3 /* CDEManagedObjectsPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1466BB1786EB0400E3EEA3 /* CDEManagedObjectsPicker.m */; };
 		AB1466C21787160900E3EEA3 /* CDELeftClickMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1466C11787160900E3EEA3 /* CDELeftClickMenuButton.m */; };
 		AB1466C8178727F600E3EEA3 /* CDEValidationErrorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1466C6178727F600E3EEA3 /* CDEValidationErrorsViewController.m */; };
@@ -76,207 +74,6 @@
 		AB531222179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB531221179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.m */; };
 		AB53127317999D2200529EF7 /* NSAlert-OAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB53127217999D2200529EF7 /* NSAlert-OAExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AB5583A5176751AE005C002C /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = AB5583A4176751AE005C002C /* icon.iconset */; };
-		AB6F9EEF17C10C4700585107 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA7E51765CB730024A9D2 /* main.m */; };
-		AB6F9EF017C10C4700585107 /* CDEDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA7EC1765CB730024A9D2 /* CDEDocument.m */; };
-		AB6F9EF117C10C4700585107 /* CDEDocument.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA7F41765CB730024A9D2 /* CDEDocument.xcdatamodeld */; };
-		AB6F9EF217C10C4700585107 /* CDEPathActionLabelController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA7FE1765D5AA0024A9D2 /* CDEPathActionLabelController.m */; };
-		AB6F9EF317C10C4700585107 /* CDENewConfigurationSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8001765D5AA0024A9D2 /* CDENewConfigurationSummaryViewController.m */; };
-		AB6F9EF417C10C4700585107 /* CDEConfigurationSummaryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8031765D5AA0024A9D2 /* CDEConfigurationSummaryRequest.m */; };
-		AB6F9EF517C10C4700585107 /* CDEDropStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8091765D5AA0024A9D2 /* CDEDropStoreViewController.m */; };
-		AB6F9EF617C10C4700585107 /* CDEModelChooserItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8111765D5AB0024A9D2 /* CDEModelChooserItem.m */; };
-		AB6F9EF717C10C4700585107 /* CDEModelChooserSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8131765D5AB0024A9D2 /* CDEModelChooserSheetController.m */; };
-		AB6F9EF817C10C4700585107 /* CDEDropApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA81E1765D5AC0024A9D2 /* CDEDropApplicationViewController.m */; };
-		AB6F9EF917C10C4700585107 /* CDEConfigurationWizzard.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8221765D5AC0024A9D2 /* CDEConfigurationWizzard.m */; };
-		AB6F9EFA17C10C4700585107 /* CDEDropZoneView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA83B1765D6240024A9D2 /* CDEDropZoneView.m */; };
-		AB6F9EFB17C10C4700585107 /* NSError-CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA83F1765D6D70024A9D2 /* NSError-CDEAdditions.m */; };
-		AB6F9EFC17C10C4700585107 /* NSManagedObjectModel-CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8451765D7240024A9D2 /* NSManagedObjectModel-CDEAdditions.m */; };
-		AB6F9EFD17C10C4700585107 /* NSDictionary+CDEInfoDictionaryAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA88C1765EA680024A9D2 /* NSDictionary+CDEInfoDictionaryAdditions.m */; };
-		AB6F9EFE17C10C4700585107 /* NSPersistentStore+CDEStoreAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8901765EFE40024A9D2 /* NSPersistentStore+CDEStoreAnalyzer.m */; };
-		AB6F9EFF17C10C4700585107 /* NSBundle+CDEApplicationAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8941765F3320024A9D2 /* NSBundle+CDEApplicationAnalyzer.m */; };
-		AB6F9F0017C10C4700585107 /* NSURL+CDEApplicationAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA89F1765FC230024A9D2 /* NSURL+CDEApplicationAnalyzer.m */; };
-		AB6F9F0117C10C4700585107 /* NSString+CDEPersistentStore.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8A3176602B60024A9D2 /* NSString+CDEPersistentStore.m */; };
-		AB6F9F0217C10C4700585107 /* _CDEConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8B217660AB30024A9D2 /* _CDEConfiguration.m */; };
-		AB6F9F0317C10C4700585107 /* CDEConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8B417660AB30024A9D2 /* CDEConfiguration.m */; };
-		AB6F9F0417C10C4700585107 /* NSPasteboard-CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8D31766212A0024A9D2 /* NSPasteboard-CDEAdditions.m */; };
-		AB6F9F0517C10C4700585107 /* NSBundle+CDEModelFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = AB22AC7917664480004890AC /* NSBundle+CDEModelFinder.m */; };
-		AB6F9F0617C10C4700585107 /* CDEEntitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB09274F1768C6EC00FC59FB /* CDEEntitiesViewController.m */; };
-		AB6F9F0717C10C4700585107 /* CDEEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0927551768C81E00FC59FB /* CDEEditorViewController.m */; };
-		AB6F9F0817C10C4700585107 /* NSURL+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0927621768E65200FC59FB /* NSURL+CDEAdditions.m */; };
-		AB6F9F0917C10C4700585107 /* NSView+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0927661768EE5E00FC59FB /* NSView+CDEAdditions.m */; };
-		AB6F9F0A17C10C4700585107 /* CDEApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0927691768F36100FC59FB /* CDEApplicationDelegate.m */; };
-		AB6F9F0B17C10C4700585107 /* CDEManagedObjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0927991768F73000FC59FB /* CDEManagedObjectsViewController.m */; };
-		AB6F9F0C17C10C4700585107 /* CDEStringValueTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B078D1775D39A000855B0 /* CDEStringValueTableCellView.m */; };
-		AB6F9F0D17C10C4700585107 /* SQLiteRelatedItemPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B07C21775F292000855B0 /* SQLiteRelatedItemPresenter.m */; };
-		AB6F9F0E17C10C4700585107 /* CDEBoolValueTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B07C81775FCE2000855B0 /* CDEBoolValueTableCellView.m */; };
-		AB6F9F0F17C10C4700585107 /* NSTableCellView+JKNibLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B07CD17760E23000855B0 /* NSTableCellView+JKNibLoading.m */; };
-		AB6F9F1017C10C4700585107 /* CDEObjectIDValueTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB75631776E70900141062 /* CDEObjectIDValueTableCellView.m */; };
-		AB6F9F1117C10C4700585107 /* CDEManagedObjectIDToStringValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB75681776E75800141062 /* CDEManagedObjectIDToStringValueTransformer.m */; };
-		AB6F9F1217C10C4700585107 /* CDEPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB756D1776F37100141062 /* CDEPreferencesWindowController.m */; };
-		AB6F9F1317C10C4700585107 /* NSUserDefaults+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB75721776F61300141062 /* NSUserDefaults+CDEAdditions.m */; };
-		AB6F9F1417C10C4700585107 /* CDEFloatingPointValueTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB75A2177705E100141062 /* CDEFloatingPointValueTableCellView.m */; };
-		AB6F9F1517C10C4700585107 /* NSAttributeDescription+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB75A817770B8900141062 /* NSAttributeDescription+CDEAdditions.m */; };
-		AB6F9F1617C10C4700585107 /* CDEBinaryValueTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB75AC17771AA400141062 /* CDEBinaryValueTableCellView.m */; };
-		AB6F9F1717C10C4700585107 /* CDEBinaryDataToSizeValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB75B017771C0E00141062 /* CDEBinaryDataToSizeValueTransformer.m */; };
-		AB6F9F1817C10C4700585107 /* CDEDateValueTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E698177731B50069D252 /* CDEDateValueTableCellView.m */; };
-		AB6F9F1917C10C4700585107 /* CDENSNullToNilTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E69F177732EB0069D252 /* CDENSNullToNilTransformer.m */; };
-		AB6F9F1A17C10C4700585107 /* CDEDataValueToImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E6A21777433B0069D252 /* CDEDataValueToImageTransformer.m */; };
-		AB6F9F1B17C10C4700585107 /* CDEBinaryValuePreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E6A5177745980069D252 /* CDEBinaryValuePreviewView.m */; };
-		AB6F9F1C17C10C4700585107 /* NSEntityDescription+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E6A9177757390069D252 /* NSEntityDescription+CDEAdditions.m */; };
-		AB6F9F1D17C10C4700585107 /* NSSortDescriptor+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E6B017775DAC0069D252 /* NSSortDescriptor+CDEAdditions.m */; };
-		AB6F9F1E17C10C4700585107 /* CDEBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E6B4177760130069D252 /* CDEBadgeView.m */; };
-		AB6F9F1F17C10C4700585107 /* CDEEntityTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E6B7177765CE0069D252 /* CDEEntityTableCellView.m */; };
-		AB6F9F2017C10C4700585107 /* CDEThreeColumnSplitViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E6BF177779A50069D252 /* CDEThreeColumnSplitViewDelegate.m */; };
-		AB6F9F2117C10C4700585107 /* CDEToManyRelationshipTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB15E6CF177B41D300FA113E /* CDEToManyRelationshipTableCellView.m */; };
-		AB6F9F2217C10C4700585107 /* NSPropertyDescription+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB15E6D6177B43D300FA113E /* NSPropertyDescription+CDEAdditions.m */; };
-		AB6F9F2317C10C4700585107 /* NSRelationshipDescription+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB15E6D9177B442400FA113E /* NSRelationshipDescription+CDEAdditions.m */; };
-		AB6F9F2417C10C4700585107 /* CDEManagedObjectsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB15E6DD177B454500FA113E /* CDEManagedObjectsRequest.m */; };
-		AB6F9F2517C10C4700585107 /* CDERequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB15E73A177B645B00FA113E /* CDERequestDataCoordinator.m */; };
-		AB6F9F2617C10C4700585107 /* CDEEntityRequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB15E740177B690B00FA113E /* CDEEntityRequestDataCoordinator.m */; };
-		AB6F9F2717C10C4700585107 /* NSTableView+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB15E743177B6DBF00FA113E /* NSTableView+CDEAdditions.m */; };
-		AB6F9F2817C10C4700585107 /* CDEOrderedRelationshipRequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB15E747177B702600FA113E /* CDEOrderedRelationshipRequestDataCoordinator.m */; };
-		AB6F9F2917C10C4700585107 /* CDEUnorderedRelationshipRequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8F8341177C524B000B4467 /* CDEUnorderedRelationshipRequestDataCoordinator.m */; };
-		AB6F9F2A17C10C4700585107 /* CDETwoColumnSplitViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8F8346177C7C4A000B4467 /* CDETwoColumnSplitViewDelegate.m */; };
-		AB6F9F2B17C10C4700585107 /* CDEOrderIndexTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8F834A177C82D4000B4467 /* CDEOrderIndexTableCellView.m */; };
-		AB6F9F2C17C10C4700585107 /* CDEToOneRelationshipTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD5BC70177F343F0050025B /* CDEToOneRelationshipTableCellView.m */; };
-		AB6F9F2D17C10C4700585107 /* CDERelationshipsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD5BCA21780378B0050025B /* CDERelationshipsViewController.m */; };
-		AB6F9F2E17C10C4700585107 /* CDERelationshipsContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD5BCD7178049B90050025B /* CDERelationshipsContainerView.m */; };
-		AB6F9F2F17C10C4700585107 /* CDERelationshipTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD5BCDB1780718D0050025B /* CDERelationshipTableCellView.m */; };
-		AB6F9F3017C10C4700585107 /* CDEBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD5BCDF1780738E0050025B /* CDEBarView.m */; };
-		AB6F9F3117C10C4700585107 /* RSVerticallyCenteredTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD5BCE617807CE30050025B /* RSVerticallyCenteredTextFieldCell.m */; };
-		AB6F9F3217C10C4700585107 /* CDERelationshipsViewControllerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD5BCEA1780859D0050025B /* CDERelationshipsViewControllerItem.m */; };
-		AB6F9F3317C10C4700585107 /* CDEFirstResponderWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC189F017809EDC00AF4F15 /* CDEFirstResponderWindow.m */; };
-		AB6F9F3417C10C4700585107 /* CDEAttributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC189F317809EDC00AF4F15 /* CDEAttributeViewController.m */; };
-		AB6F9F3517C10C4700585107 /* CDEBooleanAttributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC189F517809EDC00AF4F15 /* CDEBooleanAttributeViewController.m */; };
-		AB6F9F3617C10C4700585107 /* CDEStringAttributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC189F817809EDC00AF4F15 /* CDEStringAttributeViewController.m */; };
-		AB6F9F3717C10C4700585107 /* CDEDatePickerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC189FC17809EDC00AF4F15 /* CDEDatePickerWindow.m */; };
-		AB6F9F3817C10C4700585107 /* CDEDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC189FE17809EDC00AF4F15 /* CDEDatePickerViewController.m */; };
-		AB6F9F3917C10C4700585107 /* CDEDateAttributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC18A0217809EDC00AF4F15 /* CDEDateAttributeViewController.m */; };
-		AB6F9F3A17C10C4700585107 /* CDENumberAttributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC18A0517809EDC00AF4F15 /* CDENumberAttributeViewController.m */; };
-		AB6F9F3B17C10C4700585107 /* CDEBinaryAttributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC18A0817809EDC00AF4F15 /* CDEBinaryAttributeViewController.m */; };
-		AB6F9F3C17C10C4700585107 /* CMKBindingSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC18A0C17809EDC00AF4F15 /* CMKBindingSupport.m */; };
-		AB6F9F3D17C10C4700585107 /* CDEGenerateThumbnailOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC18A0F17809EDC00AF4F15 /* CDEGenerateThumbnailOperation.m */; };
-		AB6F9F3E17C10C4700585107 /* CDEGenerateThumbnailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC18A1117809EDC00AF4F15 /* CDEGenerateThumbnailsController.m */; };
-		AB6F9F3F17C10C4700585107 /* CDEManagedObjectView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC18A1217809EDC00AF4F15 /* CDEManagedObjectView.m */; };
-		AB6F9F4017C10C4700585107 /* CDEManagedObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC18A1417809EDC00AF4F15 /* CDEManagedObjectViewController.m */; };
-		AB6F9F4117C10C4700585107 /* CMKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC18A2E1780A8C800AF4F15 /* CMKViewController.m */; };
-		AB6F9F4217C10C4700585107 /* CDEManagedObjectsTableViewAttributeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC18A301780A95100AF4F15 /* CDEManagedObjectsTableViewAttributeHelper.m */; };
-		AB6F9F4317C10C4700585107 /* CDEShadowTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC18A351780AFC900AF4F15 /* CDEShadowTextFieldCell.m */; };
-		AB6F9F4417C10C4700585107 /* NSShadow-CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC18A381780AFE800AF4F15 /* NSShadow-CDEAdditions.m */; };
-		AB6F9F4517C10C4700585107 /* CDEManagedObjectsPickerDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEEA61E1785C2BB0096DE4C /* CDEManagedObjectsPickerDataCoordinator.m */; };
-		AB6F9F4617C10C4700585107 /* CDEManagedObjectsPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEEA6241785C6450096DE4C /* CDEManagedObjectsPickerViewController.m */; };
-		AB6F9F4717C10C4700585107 /* CDEManagedObjectsPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1466BB1786EB0400E3EEA3 /* CDEManagedObjectsPicker.m */; };
-		AB6F9F4817C10C4700585107 /* CDELeftClickMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1466C11787160900E3EEA3 /* CDELeftClickMenuButton.m */; };
-		AB6F9F4917C10C4700585107 /* CDEValidationErrorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1466C6178727F600E3EEA3 /* CDEValidationErrorsViewController.m */; };
-		AB6F9F4A17C10C4700585107 /* CDETableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1466CE1787492400E3EEA3 /* CDETableRowView.m */; };
-		AB6F9F4B17C10C4700585107 /* NSManagedObjectID+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1466D217874B4600E3EEA3 /* NSManagedObjectID+CDEAdditions.m */; };
-		AB6F9F4C17C10C4700585107 /* CDEAttributeView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB14670417899C1D00E3EEA3 /* CDEAttributeView.m */; };
-		AB6F9F4D17C10C4700585107 /* CDEAttributeEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1467091789B19B00E3EEA3 /* CDEAttributeEditor.m */; };
-		AB6F9F4E17C10C4700585107 /* CDEAttributeEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB14670C1789B1C600E3EEA3 /* CDEAttributeEditorViewController.m */; };
-		AB6F9F4F17C10C4700585107 /* NSString+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1467131789D69B00E3EEA3 /* NSString+CDEAdditions.m */; };
-		AB6F9F5017C10C4700585107 /* CDEIntegerValueTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1467181789D8EF00E3EEA3 /* CDEIntegerValueTableCellView.m */; };
-		AB6F9F5117C10C4700585107 /* CDEAttributeEditorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB86F7C91791922600FB0AEB /* CDEAttributeEditorWindowController.m */; };
-		AB6F9F5217C10C4700585107 /* CDENameToNameForDisplayValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBB31E117984AC100FE964E /* CDENameToNameForDisplayValueTransformer.m */; };
-		AB6F9F5317C10C4700585107 /* NSError+CDEValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBB32291798538100FE964E /* NSError+CDEValidation.m */; };
-		AB6F9F5417C10C4700585107 /* NSManagedObject+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBB322D179855D500FE964E /* NSManagedObject+CDEAdditions.m */; };
-		AB6F9F5517C10C4700585107 /* NSManagedObjectContext+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBB32311798564100FE964E /* NSManagedObjectContext+CDEAdditions.m */; };
-		AB6F9F5617C10C4700585107 /* NSTableColumn+CDERequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB531221179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.m */; };
-		AB6F9F5717C10C4700585107 /* NSAlert-OAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB53127217999D2200529EF7 /* NSAlert-OAExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		AB6F9F5817C10C4700585107 /* CDETwoColumnSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFBB3B0179C36E2003B5346 /* CDETwoColumnSplitViewController.m */; };
-		AB6F9F5917C10C4700585107 /* CDEPreferencesAutomaticProjectCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB30FF64179C696D00E49E0B /* CDEPreferencesAutomaticProjectCreationViewController.m */; };
-		AB6F9F5A17C10C4700585107 /* CDEPreferencesFormattingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB30FF69179C6AB400E49E0B /* CDEPreferencesFormattingViewController.m */; };
-		AB6F9F5B17C10C4700585107 /* CDEPreferencesMiscViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB30FF6E179C6B1700E49E0B /* CDEPreferencesMiscViewController.m */; };
-		AB6F9F5C17C10C4700585107 /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBAF36C179FFBD200179732 /* CHCSVParser.m */; };
-		AB6F9F5D17C10C4700585107 /* FoundationValue +CDEManagedObjectValueToStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBAF37017A0057300179732 /* FoundationValue +CDEManagedObjectValueToStringAdditions.m */; };
-		AB6F9F5E17C10C4700585107 /* CDETextEditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2D342F17A04CA600A1B0CA /* CDETextEditorController.m */; };
-		AB6F9F5F17C10C4700585107 /* CDETextEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2D343317A04CCD00A1B0CA /* CDETextEditorViewController.m */; };
-		AB6F9F6017C10C4700585107 /* NSWorkspace+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDF8AE217A41D8500727346 /* NSWorkspace+CDEAdditions.m */; };
-		AB6F9F6117C10C4700585107 /* CDECSVDelimiter.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDF8AE617A41FA600727346 /* CDECSVDelimiter.m */; };
-		AB6F9F6217C10C4700585107 /* CDECSVAccessoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDF8AE817A41FA600727346 /* CDECSVAccessoryViewController.m */; };
-		AB6F9F6317C10C4700585107 /* CDECSVImportWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDF8AEC17A41FA600727346 /* CDECSVImportWindowController.m */; };
-		AB6F9F6417C10C4700585107 /* CDECSVImportWindowControllerResult.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDF8AEE17A41FA600727346 /* CDECSVImportWindowControllerResult.m */; };
-		AB6F9F6517C10C4700585107 /* CDECSVImportWindowControllerResultItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDF8AF017A41FA600727346 /* CDECSVImportWindowControllerResultItem.m */; };
-		AB6F9F6617C10C4700585107 /* NSArray+CDECSV.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDF8AF917A424C900727346 /* NSArray+CDECSV.m */; };
-		AB6F9F6717C10C4700585107 /* CDEAutosaveInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = AB23E43E17A6C231001C19A7 /* CDEAutosaveInformation.m */; };
-		AB6F9F6817C10C4700585107 /* CDEEntityAutosaveInformationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AB23E44317A6CBA8001C19A7 /* CDEEntityAutosaveInformationItem.m */; };
-		AB6F9F6917C10C4700585107 /* CDEEntityAutosaveInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = AB23E44617A6CBB3001C19A7 /* CDEEntityAutosaveInformation.m */; };
-		AB6F9F6A17C10C4700585107 /* CDECodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC83B1317B1170900078580 /* CDECodeGenerator.m */; };
-		AB6F9F6B17C10C4700585107 /* CDEManagedObjectSubclassesGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC83B1517B1170900078580 /* CDEManagedObjectSubclassesGenerator.m */; };
-		AB6F9F6C17C10C4700585107 /* CDECodeGeneratorAccessoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC83B1717B1170900078580 /* CDECodeGeneratorAccessoryViewController.m */; };
-		AB6F9F6D17C10C4700585107 /* CDEAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC83B4C17B1215200078580 /* CDEAboutWindowController.m */; };
-		AB6F9F6E17C10C4700585107 /* CDEPathPickerPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB225D217B922FA0024FE4F /* CDEPathPickerPopUpButton.m */; };
-		AB6F9F6F17C10C4700585107 /* CDEProjectBrowserWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB225D517B92B230024FE4F /* CDEProjectBrowserWindowController.m */; };
-		AB6F9F7017C10C4700585107 /* CDEProjectBrowserItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB225DB17B939E60024FE4F /* CDEProjectBrowserItem.m */; };
-		AB6F9F7117C10C4700585107 /* CDEProjectBrowserItemTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB225DE17B940CE0024FE4F /* CDEProjectBrowserItemTableCellView.m */; };
-		AB6F9F7217C10C4700585107 /* CDESetupWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB36447C17BA47D4004ADAAC /* CDESetupWindowController.m */; };
-		AB6F9F7417C10C4700585107 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBEA7D91765CB730024A9D2 /* Cocoa.framework */; };
-		AB6F9F7617C10C4700585107 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABBEA7E21765CB730024A9D2 /* InfoPlist.strings */; };
-		AB6F9F7717C10C4700585107 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = ABBEA7E81765CB730024A9D2 /* Credits.rtf */; };
-		AB6F9F7817C10C4700585107 /* CDEDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABBEA7EE1765CB730024A9D2 /* CDEDocument.xib */; };
-		AB6F9F7917C10C4700585107 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABBEA7F11765CB730024A9D2 /* MainMenu.xib */; };
-		AB6F9F7A17C10C4700585107 /* CDENewConfigurationSummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABBEA8011765D5AA0024A9D2 /* CDENewConfigurationSummaryViewController.xib */; };
-		AB6F9F7B17C10C4700585107 /* CDEDropStoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABBEA80A1765D5AA0024A9D2 /* CDEDropStoreViewController.xib */; };
-		AB6F9F7C17C10C4700585107 /* CDEModelChooserSheetController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABBEA8141765D5AB0024A9D2 /* CDEModelChooserSheetController.xib */; };
-		AB6F9F7D17C10C4700585107 /* CDEDropApplicationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABBEA81F1765D5AC0024A9D2 /* CDEDropApplicationViewController.xib */; };
-		AB6F9F7E17C10C4700585107 /* CDEConfigurationWizzard.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABBEA8231765D5AC0024A9D2 /* CDEConfigurationWizzard.xib */; };
-		AB6F9F7F17C10C4700585107 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABBEA8B91766153A0024A9D2 /* Localizable.strings */; };
-		AB6F9F8017C10C4700585107 /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = AB5583A4176751AE005C002C /* icon.iconset */; };
-		AB6F9F8117C10C4700585107 /* CDEEntitiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0927501768C6EC00FC59FB /* CDEEntitiesViewController.xib */; };
-		AB6F9F8217C10C4700585107 /* CDEEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0927561768C81E00FC59FB /* CDEEditorViewController.xib */; };
-		AB6F9F8317C10C4700585107 /* CDEManagedObjectsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB09279A1768F73000FC59FB /* CDEManagedObjectsViewController.xib */; };
-		AB6F9F8417C10C4700585107 /* CDEStringValueTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB3B07901775DCF6000855B0 /* CDEStringValueTableCellView.xib */; };
-		AB6F9F8517C10C4700585107 /* CDEBoolValueTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB3B07CA1775FCF2000855B0 /* CDEBoolValueTableCellView.xib */; };
-		AB6F9F8617C10C4700585107 /* CDEObjectIDValueTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABEB75651776E71600141062 /* CDEObjectIDValueTableCellView.xib */; };
-		AB6F9F8717C10C4700585107 /* CDEPreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABEB756E1776F37100141062 /* CDEPreferencesWindowController.xib */; };
-		AB6F9F8817C10C4700585107 /* CDEFloatingPointValueTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABEB75A4177705EE00141062 /* CDEFloatingPointValueTableCellView.xib */; };
-		AB6F9F8917C10C4700585107 /* CDEBinaryValueTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABEB75AE17771ABE00141062 /* CDEBinaryValueTableCellView.xib */; };
-		AB6F9F8A17C10C4700585107 /* CDEDateValueTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABC1E69A177731C20069D252 /* CDEDateValueTableCellView.xib */; };
-		AB6F9F8B17C10C4700585107 /* entity-icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = ABC1E6BC177777940069D252 /* entity-icon-small.png */; };
-		AB6F9F8C17C10C4700585107 /* CDEToManyRelationshipTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB15E6D1177B41EA00FA113E /* CDEToManyRelationshipTableCellView.xib */; };
-		AB6F9F8D17C10C4700585107 /* CDEOrderIndexTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB8F834C177C82E6000B4467 /* CDEOrderIndexTableCellView.xib */; };
-		AB6F9F8E17C10C4700585107 /* CDEToOneRelationshipTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABD5BC72177F344A0050025B /* CDEToOneRelationshipTableCellView.xib */; };
-		AB6F9F8F17C10C4700585107 /* CDERelationshipsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABD5BCA31780378B0050025B /* CDERelationshipsViewController.xib */; };
-		AB6F9F9017C10C4700585107 /* Relationship-ToMany.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ABD5BCE117807B4F0050025B /* Relationship-ToMany.pdf */; };
-		AB6F9F9117C10C4700585107 /* Relationship-ToOne.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ABD5BCE217807B4F0050025B /* Relationship-ToOne.pdf */; };
-		AB6F9F9217C10C4700585107 /* CDEBooleanAttributeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABC189F617809EDC00AF4F15 /* CDEBooleanAttributeView.xib */; };
-		AB6F9F9317C10C4700585107 /* CDEStringAttributeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABC189F917809EDC00AF4F15 /* CDEStringAttributeView.xib */; };
-		AB6F9F9417C10C4700585107 /* CDEDatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABC189FF17809EDC00AF4F15 /* CDEDatePickerViewController.xib */; };
-		AB6F9F9517C10C4700585107 /* CDEDateAttributeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABC18A0317809EDC00AF4F15 /* CDEDateAttributeView.xib */; };
-		AB6F9F9617C10C4700585107 /* CDENumberAttributeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABC18A0617809EDC00AF4F15 /* CDENumberAttributeView.xib */; };
-		AB6F9F9717C10C4700585107 /* CDEBinaryAttributeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABC18A0917809EDC00AF4F15 /* CDEBinaryAttributeView.xib */; };
-		AB6F9F9817C10C4700585107 /* CDEManagedObjectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABC18A1517809EDC00AF4F15 /* CDEManagedObjectView.xib */; };
-		AB6F9F9917C10C4700585107 /* Divider.png in Resources */ = {isa = PBXBuildFile; fileRef = ABEEA6191785C1220096DE4C /* Divider.png */; };
-		AB6F9F9A17C10C4700585107 /* CDEManagedObjectsPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABEEA6251785C6450096DE4C /* CDEManagedObjectsPickerViewController.xib */; };
-		AB6F9F9B17C10C4700585107 /* CDEIsSelectedTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABEEA6281785D77F0096DE4C /* CDEIsSelectedTableCellView.xib */; };
-		AB6F9F9C17C10C4700585107 /* CDEValidationErrorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB1466C7178727F600E3EEA3 /* CDEValidationErrorsViewController.xib */; };
-		AB6F9F9D17C10C4700585107 /* CDEAttributeEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB14670D1789B1C600E3EEA3 /* CDEAttributeEditorViewController.xib */; };
-		AB6F9F9E17C10C4700585107 /* CDEIntegerValueTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB14671A1789D8FA00E3EEA3 /* CDEIntegerValueTableCellView.xib */; };
-		AB6F9F9F17C10C4700585107 /* CDEAttributeEditorWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB86F7CA1791922600FB0AEB /* CDEAttributeEditorWindowController.xib */; };
-		AB6F9FA017C10C4700585107 /* CDEPreferencesAutomaticProjectCreationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB30FF65179C696D00E49E0B /* CDEPreferencesAutomaticProjectCreationViewController.xib */; };
-		AB6F9FA117C10C4700585107 /* CDEPreferencesFormattingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB30FF6A179C6AB400E49E0B /* CDEPreferencesFormattingViewController.xib */; };
-		AB6F9FA217C10C4700585107 /* CDEPreferencesMiscViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB30FF6F179C6B1700E49E0B /* CDEPreferencesMiscViewController.xib */; };
-		AB6F9FA317C10C4700585107 /* CDETextEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB2D343417A04CCD00A1B0CA /* CDETextEditorViewController.xib */; };
-		AB6F9FA417C10C4700585107 /* CDECSVAccessoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABDF8AE917A41FA600727346 /* CDECSVAccessoryViewController.xib */; };
-		AB6F9FA517C10C4700585107 /* CDECSVImportWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABDF8AEA17A41FA600727346 /* CDECSVImportWindow.xib */; };
-		AB6F9FA617C10C4700585107 /* EditTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDF4F0117A4622F0030755B /* EditTemplate.png */; };
-		AB6F9FA717C10C4700585107 /* EditTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDF4F0217A4622F0030755B /* EditTemplate@2x.png */; };
-		AB6F9FA817C10C4700585107 /* code-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB23E42C17A6AE08001C19A7 /* code-icon.png */; };
-		AB6F9FA917C10C4700585107 /* code-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB23E42D17A6AE08001C19A7 /* code-icon@2x.png */; };
-		AB6F9FAA17C10C4700585107 /* csv-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB23E42E17A6AE08001C19A7 /* csv-icon.png */; };
-		AB6F9FAB17C10C4700585107 /* csv-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB23E42F17A6AE08001C19A7 /* csv-icon@2x.png */; };
-		AB6F9FAC17C10C4700585107 /* formatting-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB23E43417A6B0FB001C19A7 /* formatting-icon.png */; };
-		AB6F9FAD17C10C4700585107 /* formatting-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB23E43517A6B0FB001C19A7 /* formatting-icon@2x.png */; };
-		AB6F9FAE17C10C4700585107 /* integration-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB23E43817A6B9CA001C19A7 /* integration-icon.png */; };
-		AB6F9FAF17C10C4700585107 /* integration-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB23E43917A6B9CA001C19A7 /* integration-icon@2x.png */; };
-		AB6F9FB017C10C4700585107 /* mogenerator in Resources */ = {isa = PBXBuildFile; fileRef = ABC83B0E17B1166300078580 /* mogenerator */; };
-		AB6F9FB117C10C4700585107 /* mogeneratorReadme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = ABC83B1017B116A000078580 /* mogeneratorReadme.rtf */; };
-		AB6F9FB217C10C4700585107 /* CDECodeGeneratorAccessoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABC83B1817B1170900078580 /* CDECodeGeneratorAccessoryViewController.xib */; };
-		AB6F9FB317C10C4700585107 /* CDEAboutWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABC83B4D17B1215200078580 /* CDEAboutWindowController.xib */; };
-		AB6F9FB417C10C4700585107 /* Document_Icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = ABC83BDD17B24D9600078580 /* Document_Icon.iconset */; };
-		AB6F9FB517C10C4700585107 /* CDEProjectBrowserWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABB225D617B92B230024FE4F /* CDEProjectBrowserWindowController.xib */; };
-		AB6F9FB617C10C4700585107 /* CDESetupWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB36447D17BA47D4004ADAAC /* CDESetupWindowController.xib */; };
-		AB6F9FB717C10C4700585107 /* Project-Browser-Menu-Item.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB08F8717BD2DB000BE97C0 /* Project-Browser-Menu-Item.png */; };
-		AB6F9FB817C10C4700585107 /* Project-Browser-Menu-Item@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB08F8817BD2DB000BE97C0 /* Project-Browser-Menu-Item@2x.png */; };
-		AB6F9FB917C10C4700585107 /* entitlements.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = ABB08F8B17BD39FE00BE97C0 /* entitlements.entitlements */; };
 		AB86F7CB1791922600FB0AEB /* CDEAttributeEditorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB86F7C91791922600FB0AEB /* CDEAttributeEditorWindowController.m */; };
 		AB86F7CC1791922600FB0AEB /* CDEAttributeEditorWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB86F7CA1791922600FB0AEB /* CDEAttributeEditorWindowController.xib */; };
 		AB8F8342177C524B000B4467 /* CDEUnorderedRelationshipRequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8F8341177C524B000B4467 /* CDEUnorderedRelationshipRequestDataCoordinator.m */; };
@@ -391,31 +188,18 @@
 		ABD5BCE717807CE30050025B /* RSVerticallyCenteredTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD5BCE617807CE30050025B /* RSVerticallyCenteredTextFieldCell.m */; };
 		ABD5BCEB1780859D0050025B /* CDERelationshipsViewControllerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD5BCEA1780859D0050025B /* CDERelationshipsViewControllerItem.m */; };
 		ABDA422D181BFF2C0054A226 /* CDEMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA421E181BFF2C0054A226 /* CDEMenuViewController.m */; };
-		ABDA422E181BFF2C0054A226 /* CDEMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA421E181BFF2C0054A226 /* CDEMenuViewController.m */; };
 		ABDA422F181BFF2C0054A226 /* CDEMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABDA421F181BFF2C0054A226 /* CDEMenuViewController.xib */; };
-		ABDA4230181BFF2C0054A226 /* CDEMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABDA421F181BFF2C0054A226 /* CDEMenuViewController.xib */; };
 		ABDA4231181BFF2C0054A226 /* CDEMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA4221181BFF2C0054A226 /* CDEMenuView.m */; };
-		ABDA4232181BFF2C0054A226 /* CDEMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA4221181BFF2C0054A226 /* CDEMenuView.m */; };
 		ABDA4233181BFF2C0054A226 /* CDEMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA4223181BFF2C0054A226 /* CDEMenuItem.m */; };
-		ABDA4234181BFF2C0054A226 /* CDEMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA4223181BFF2C0054A226 /* CDEMenuItem.m */; };
 		ABDA4235181BFF2C0054A226 /* CDEMenuWindowItemBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA4225181BFF2C0054A226 /* CDEMenuWindowItemBadgeView.m */; };
-		ABDA4236181BFF2C0054A226 /* CDEMenuWindowItemBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA4225181BFF2C0054A226 /* CDEMenuWindowItemBadgeView.m */; };
 		ABDA4237181BFF2C0054A226 /* CDEMenuWindowItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA4227181BFF2C0054A226 /* CDEMenuWindowItemView.m */; };
-		ABDA4238181BFF2C0054A226 /* CDEMenuWindowItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA4227181BFF2C0054A226 /* CDEMenuWindowItemView.m */; };
 		ABDA4239181BFF2C0054A226 /* CDEMenuWindowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA4229181BFF2C0054A226 /* CDEMenuWindowItem.m */; };
-		ABDA423A181BFF2C0054A226 /* CDEMenuWindowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA4229181BFF2C0054A226 /* CDEMenuWindowItem.m */; };
 		ABDA423B181BFF2C0054A226 /* CDEMenuWindowItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABDA422A181BFF2C0054A226 /* CDEMenuWindowItem.xib */; };
-		ABDA423C181BFF2C0054A226 /* CDEMenuWindowItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABDA422A181BFF2C0054A226 /* CDEMenuWindowItem.xib */; };
 		ABDA423D181BFF2C0054A226 /* CDEMenuWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA422C181BFF2C0054A226 /* CDEMenuWindowController.m */; };
-		ABDA423E181BFF2C0054A226 /* CDEMenuWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA422C181BFF2C0054A226 /* CDEMenuWindowController.m */; };
 		ABDA4282181C068F0054A226 /* CDEManagedObjectsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA4280181C068F0054A226 /* CDEManagedObjectsTableViewController.m */; };
-		ABDA4283181C068F0054A226 /* CDEManagedObjectsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA4280181C068F0054A226 /* CDEManagedObjectsTableViewController.m */; };
 		ABDA4284181C068F0054A226 /* CDEManagedObjectsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABDA4281181C068F0054A226 /* CDEManagedObjectsTableViewController.xib */; };
-		ABDA4285181C068F0054A226 /* CDEManagedObjectsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABDA4281181C068F0054A226 /* CDEManagedObjectsTableViewController.xib */; };
 		ABDA428D181C0D870054A226 /* BFNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA4289181C0D870054A226 /* BFNavigationController.m */; };
-		ABDA428E181C0D870054A226 /* BFNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA4289181C0D870054A226 /* BFNavigationController.m */; };
 		ABDA428F181C0D870054A226 /* NSView+BFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA428C181C0D870054A226 /* NSView+BFUtilities.m */; };
-		ABDA4290181C0D870054A226 /* NSView+BFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA428C181C0D870054A226 /* NSView+BFUtilities.m */; };
 		ABDF4F0317A4622F0030755B /* EditTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDF4F0117A4622F0030755B /* EditTemplate.png */; };
 		ABDF4F0417A4622F0030755B /* EditTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDF4F0217A4622F0030755B /* EditTemplate@2x.png */; };
 		ABDF8AE317A41D8500727346 /* NSWorkspace+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDF8AE217A41D8500727346 /* NSWorkspace+CDEAdditions.m */; };
@@ -569,8 +353,6 @@
 		AB53127217999D2200529EF7 /* NSAlert-OAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAlert-OAExtensions.m"; sourceTree = "<group>"; };
 		AB54134317CE6FC500256C58 /* Core Data Editor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Core Data Editor.entitlements"; sourceTree = "<group>"; };
 		AB5583A4176751AE005C002C /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = icon.iconset; sourceTree = "<group>"; };
-		AB6F9FBD17C10C4700585107 /* Core Data Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Core Data Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB6F9FBE17C10C4800585107 /* Core Data Editor-Trial-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Core Data Editor-Trial-Info.plist"; path = "/Users/cmk/Projects/cde/Core Data Editor/Core Data Editor-Trial-Info.plist"; sourceTree = "<absolute>"; };
 		AB86F7C81791922600FB0AEB /* CDEAttributeEditorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEAttributeEditorWindowController.h; sourceTree = "<group>"; };
 		AB86F7C91791922600FB0AEB /* CDEAttributeEditorWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEAttributeEditorWindowController.m; sourceTree = "<group>"; };
 		AB86F7CA1791922600FB0AEB /* CDEAttributeEditorWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDEAttributeEditorWindowController.xib; sourceTree = "<group>"; };
@@ -850,14 +632,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AB6F9F7317C10C4700585107 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AB6F9F7417C10C4700585107 /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		ABBEA7D31765CB730024A9D2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1437,7 +1211,6 @@
 				ABBEA8C5176620E10024A9D2 /* Core Data Editor Tests */,
 				ABBEA7D81765CB730024A9D2 /* Frameworks */,
 				ABBEA7D71765CB730024A9D2 /* Products */,
-				AB6F9FBE17C10C4800585107 /* Core Data Editor-Trial-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1446,7 +1219,6 @@
 			children = (
 				ABBEA7D61765CB730024A9D2 /* Core Data Editor.app */,
 				ABBEA8C1176620E10024A9D2 /* Core Data Editor Tests.xctest */,
-				AB6F9FBD17C10C4700585107 /* Core Data Editor.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2371,23 +2143,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AB6F9EED17C10C4700585107 /* Core Data Editor Trial */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AB6F9FBA17C10C4700585107 /* Build configuration list for PBXNativeTarget "Core Data Editor Trial" */;
-			buildPhases = (
-				AB6F9EEE17C10C4700585107 /* Sources */,
-				AB6F9F7317C10C4700585107 /* Frameworks */,
-				AB6F9F7517C10C4700585107 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Core Data Editor Trial";
-			productName = "Core Data Editor";
-			productReference = AB6F9FBD17C10C4700585107 /* Core Data Editor.app */;
-			productType = "com.apple.product-type.application";
-		};
 		ABBEA7D51765CB730024A9D2 /* Core Data Editor */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ABBEA7F91765CB730024A9D2 /* Build configuration list for PBXNativeTarget "Core Data Editor" */;
@@ -2435,14 +2190,6 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Christian Kienle";
 				TargetAttributes = {
-					AB6F9EED17C10C4700585107 = {
-						DevelopmentTeam = 6YJV6LM6Q4;
-						SystemCapabilities = {
-							com.apple.Sandbox = {
-								enabled = 1;
-							};
-						};
-					};
 					ABBEA7D51765CB730024A9D2 = {
 						DevelopmentTeam = 6YJV6LM6Q4;
 					};
@@ -2462,90 +2209,11 @@
 			targets = (
 				ABBEA7D51765CB730024A9D2 /* Core Data Editor */,
 				ABBEA8C0176620E10024A9D2 /* Core Data Editor Tests */,
-				AB6F9EED17C10C4700585107 /* Core Data Editor Trial */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AB6F9F7517C10C4700585107 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AB6F9F7617C10C4700585107 /* InfoPlist.strings in Resources */,
-				AB6F9F7717C10C4700585107 /* Credits.rtf in Resources */,
-				AB6F9F7817C10C4700585107 /* CDEDocument.xib in Resources */,
-				AB6F9F7917C10C4700585107 /* MainMenu.xib in Resources */,
-				AB6F9F7A17C10C4700585107 /* CDENewConfigurationSummaryViewController.xib in Resources */,
-				AB6F9F7B17C10C4700585107 /* CDEDropStoreViewController.xib in Resources */,
-				AB6F9F7C17C10C4700585107 /* CDEModelChooserSheetController.xib in Resources */,
-				AB6F9F7D17C10C4700585107 /* CDEDropApplicationViewController.xib in Resources */,
-				AB6F9F7E17C10C4700585107 /* CDEConfigurationWizzard.xib in Resources */,
-				AB6F9F7F17C10C4700585107 /* Localizable.strings in Resources */,
-				AB6F9F8017C10C4700585107 /* icon.iconset in Resources */,
-				AB6F9F8117C10C4700585107 /* CDEEntitiesViewController.xib in Resources */,
-				AB6F9F8217C10C4700585107 /* CDEEditorViewController.xib in Resources */,
-				AB6F9F8317C10C4700585107 /* CDEManagedObjectsViewController.xib in Resources */,
-				AB6F9F8417C10C4700585107 /* CDEStringValueTableCellView.xib in Resources */,
-				AB6F9F8517C10C4700585107 /* CDEBoolValueTableCellView.xib in Resources */,
-				AB6F9F8617C10C4700585107 /* CDEObjectIDValueTableCellView.xib in Resources */,
-				AB6F9F8717C10C4700585107 /* CDEPreferencesWindowController.xib in Resources */,
-				AB6F9F8817C10C4700585107 /* CDEFloatingPointValueTableCellView.xib in Resources */,
-				AB6F9F8917C10C4700585107 /* CDEBinaryValueTableCellView.xib in Resources */,
-				AB6F9F8A17C10C4700585107 /* CDEDateValueTableCellView.xib in Resources */,
-				AB6F9F8B17C10C4700585107 /* entity-icon-small.png in Resources */,
-				AB6F9F8C17C10C4700585107 /* CDEToManyRelationshipTableCellView.xib in Resources */,
-				AB6F9F8D17C10C4700585107 /* CDEOrderIndexTableCellView.xib in Resources */,
-				AB6F9F8E17C10C4700585107 /* CDEToOneRelationshipTableCellView.xib in Resources */,
-				AB6F9F8F17C10C4700585107 /* CDERelationshipsViewController.xib in Resources */,
-				AB6F9F9017C10C4700585107 /* Relationship-ToMany.pdf in Resources */,
-				AB6F9F9117C10C4700585107 /* Relationship-ToOne.pdf in Resources */,
-				AB6F9F9217C10C4700585107 /* CDEBooleanAttributeView.xib in Resources */,
-				AB6F9F9317C10C4700585107 /* CDEStringAttributeView.xib in Resources */,
-				AB6F9F9417C10C4700585107 /* CDEDatePickerViewController.xib in Resources */,
-				AB6F9F9517C10C4700585107 /* CDEDateAttributeView.xib in Resources */,
-				AB6F9F9617C10C4700585107 /* CDENumberAttributeView.xib in Resources */,
-				AB6F9F9717C10C4700585107 /* CDEBinaryAttributeView.xib in Resources */,
-				AB6F9F9817C10C4700585107 /* CDEManagedObjectView.xib in Resources */,
-				AB6F9F9917C10C4700585107 /* Divider.png in Resources */,
-				AB6F9F9A17C10C4700585107 /* CDEManagedObjectsPickerViewController.xib in Resources */,
-				AB6F9F9B17C10C4700585107 /* CDEIsSelectedTableCellView.xib in Resources */,
-				AB6F9F9C17C10C4700585107 /* CDEValidationErrorsViewController.xib in Resources */,
-				AB6F9F9D17C10C4700585107 /* CDEAttributeEditorViewController.xib in Resources */,
-				ABDA4285181C068F0054A226 /* CDEManagedObjectsTableViewController.xib in Resources */,
-				AB6F9F9E17C10C4700585107 /* CDEIntegerValueTableCellView.xib in Resources */,
-				AB6F9F9F17C10C4700585107 /* CDEAttributeEditorWindowController.xib in Resources */,
-				AB6F9FA017C10C4700585107 /* CDEPreferencesAutomaticProjectCreationViewController.xib in Resources */,
-				AB6F9FA117C10C4700585107 /* CDEPreferencesFormattingViewController.xib in Resources */,
-				AB6F9FA217C10C4700585107 /* CDEPreferencesMiscViewController.xib in Resources */,
-				AB6F9FA317C10C4700585107 /* CDETextEditorViewController.xib in Resources */,
-				AB6F9FA417C10C4700585107 /* CDECSVAccessoryViewController.xib in Resources */,
-				AB6F9FA517C10C4700585107 /* CDECSVImportWindow.xib in Resources */,
-				AB6F9FA617C10C4700585107 /* EditTemplate.png in Resources */,
-				AB6F9FA717C10C4700585107 /* EditTemplate@2x.png in Resources */,
-				AB6F9FA817C10C4700585107 /* code-icon.png in Resources */,
-				AB6F9FA917C10C4700585107 /* code-icon@2x.png in Resources */,
-				AB6F9FAA17C10C4700585107 /* csv-icon.png in Resources */,
-				AB6F9FAB17C10C4700585107 /* csv-icon@2x.png in Resources */,
-				AB6F9FAC17C10C4700585107 /* formatting-icon.png in Resources */,
-				AB6F9FAD17C10C4700585107 /* formatting-icon@2x.png in Resources */,
-				AB6F9FAE17C10C4700585107 /* integration-icon.png in Resources */,
-				AB6F9FAF17C10C4700585107 /* integration-icon@2x.png in Resources */,
-				AB6F9FB017C10C4700585107 /* mogenerator in Resources */,
-				ABDA4230181BFF2C0054A226 /* CDEMenuViewController.xib in Resources */,
-				AB6F9FB117C10C4700585107 /* mogeneratorReadme.rtf in Resources */,
-				AB6F9FB217C10C4700585107 /* CDECodeGeneratorAccessoryViewController.xib in Resources */,
-				AB6F9FB317C10C4700585107 /* CDEAboutWindowController.xib in Resources */,
-				AB6F9FB417C10C4700585107 /* Document_Icon.iconset in Resources */,
-				AB6F9FB517C10C4700585107 /* CDEProjectBrowserWindowController.xib in Resources */,
-				AB6F9FB617C10C4700585107 /* CDESetupWindowController.xib in Resources */,
-				ABDA423C181BFF2C0054A226 /* CDEMenuWindowItem.xib in Resources */,
-				AB6F9FB717C10C4700585107 /* Project-Browser-Menu-Item.png in Resources */,
-				AB6F9FB817C10C4700585107 /* Project-Browser-Menu-Item@2x.png in Resources */,
-				AB6F9FB917C10C4700585107 /* entitlements.entitlements in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		ABBEA7D41765CB730024A9D2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2651,157 +2319,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		AB6F9EEE17C10C4700585107 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AB6F9EEF17C10C4700585107 /* main.m in Sources */,
-				ABDA4236181BFF2C0054A226 /* CDEMenuWindowItemBadgeView.m in Sources */,
-				AB6F9EF017C10C4700585107 /* CDEDocument.m in Sources */,
-				AB6F9EF117C10C4700585107 /* CDEDocument.xcdatamodeld in Sources */,
-				ABDA4283181C068F0054A226 /* CDEManagedObjectsTableViewController.m in Sources */,
-				AB6F9EF217C10C4700585107 /* CDEPathActionLabelController.m in Sources */,
-				AB6F9EF317C10C4700585107 /* CDENewConfigurationSummaryViewController.m in Sources */,
-				AB6F9EF417C10C4700585107 /* CDEConfigurationSummaryRequest.m in Sources */,
-				AB6F9EF517C10C4700585107 /* CDEDropStoreViewController.m in Sources */,
-				AB6F9EF617C10C4700585107 /* CDEModelChooserItem.m in Sources */,
-				AB6F9EF717C10C4700585107 /* CDEModelChooserSheetController.m in Sources */,
-				AB6F9EF817C10C4700585107 /* CDEDropApplicationViewController.m in Sources */,
-				AB6F9EF917C10C4700585107 /* CDEConfigurationWizzard.m in Sources */,
-				AB6F9EFA17C10C4700585107 /* CDEDropZoneView.m in Sources */,
-				AB6F9EFB17C10C4700585107 /* NSError-CDEAdditions.m in Sources */,
-				AB6F9EFC17C10C4700585107 /* NSManagedObjectModel-CDEAdditions.m in Sources */,
-				AB6F9EFD17C10C4700585107 /* NSDictionary+CDEInfoDictionaryAdditions.m in Sources */,
-				AB10D5DC18159B4A0033FC78 /* NSPersistentStoreCoordinator+CDEAdditions.m in Sources */,
-				AB6F9EFE17C10C4700585107 /* NSPersistentStore+CDEStoreAnalyzer.m in Sources */,
-				AB6F9EFF17C10C4700585107 /* NSBundle+CDEApplicationAnalyzer.m in Sources */,
-				AB6F9F0017C10C4700585107 /* NSURL+CDEApplicationAnalyzer.m in Sources */,
-				AB6F9F0117C10C4700585107 /* NSString+CDEPersistentStore.m in Sources */,
-				AB6F9F0217C10C4700585107 /* _CDEConfiguration.m in Sources */,
-				AB6F9F0317C10C4700585107 /* CDEConfiguration.m in Sources */,
-				AB6F9F0417C10C4700585107 /* NSPasteboard-CDEAdditions.m in Sources */,
-				AB6F9F0517C10C4700585107 /* NSBundle+CDEModelFinder.m in Sources */,
-				AB6F9F0617C10C4700585107 /* CDEEntitiesViewController.m in Sources */,
-				AB6F9F0717C10C4700585107 /* CDEEditorViewController.m in Sources */,
-				AB6F9F0817C10C4700585107 /* NSURL+CDEAdditions.m in Sources */,
-				AB6F9F0917C10C4700585107 /* NSView+CDEAdditions.m in Sources */,
-				AB6F9F0A17C10C4700585107 /* CDEApplicationDelegate.m in Sources */,
-				AB6F9F0B17C10C4700585107 /* CDEManagedObjectsViewController.m in Sources */,
-				AB6F9F0C17C10C4700585107 /* CDEStringValueTableCellView.m in Sources */,
-				AB6F9F0D17C10C4700585107 /* SQLiteRelatedItemPresenter.m in Sources */,
-				AB6F9F0E17C10C4700585107 /* CDEBoolValueTableCellView.m in Sources */,
-				AB6F9F0F17C10C4700585107 /* NSTableCellView+JKNibLoading.m in Sources */,
-				AB6F9F1017C10C4700585107 /* CDEObjectIDValueTableCellView.m in Sources */,
-				AB6F9F1117C10C4700585107 /* CDEManagedObjectIDToStringValueTransformer.m in Sources */,
-				AB6F9F1217C10C4700585107 /* CDEPreferencesWindowController.m in Sources */,
-				AB6F9F1317C10C4700585107 /* NSUserDefaults+CDEAdditions.m in Sources */,
-				AB6F9F1417C10C4700585107 /* CDEFloatingPointValueTableCellView.m in Sources */,
-				AB6F9F1517C10C4700585107 /* NSAttributeDescription+CDEAdditions.m in Sources */,
-				AB6F9F1617C10C4700585107 /* CDEBinaryValueTableCellView.m in Sources */,
-				AB6F9F1717C10C4700585107 /* CDEBinaryDataToSizeValueTransformer.m in Sources */,
-				AB6F9F1817C10C4700585107 /* CDEDateValueTableCellView.m in Sources */,
-				AB6F9F1917C10C4700585107 /* CDENSNullToNilTransformer.m in Sources */,
-				AB6F9F1A17C10C4700585107 /* CDEDataValueToImageTransformer.m in Sources */,
-				AB6F9F1B17C10C4700585107 /* CDEBinaryValuePreviewView.m in Sources */,
-				AB6F9F1C17C10C4700585107 /* NSEntityDescription+CDEAdditions.m in Sources */,
-				AB6F9F1D17C10C4700585107 /* NSSortDescriptor+CDEAdditions.m in Sources */,
-				AB6F9F1E17C10C4700585107 /* CDEBadgeView.m in Sources */,
-				AB6F9F1F17C10C4700585107 /* CDEEntityTableCellView.m in Sources */,
-				AB6F9F2017C10C4700585107 /* CDEThreeColumnSplitViewDelegate.m in Sources */,
-				AB6F9F2117C10C4700585107 /* CDEToManyRelationshipTableCellView.m in Sources */,
-				AB6F9F2217C10C4700585107 /* NSPropertyDescription+CDEAdditions.m in Sources */,
-				AB6F9F2317C10C4700585107 /* NSRelationshipDescription+CDEAdditions.m in Sources */,
-				AB6F9F2417C10C4700585107 /* CDEManagedObjectsRequest.m in Sources */,
-				AB6F9F2517C10C4700585107 /* CDERequestDataCoordinator.m in Sources */,
-				AB6F9F2617C10C4700585107 /* CDEEntityRequestDataCoordinator.m in Sources */,
-				AB6F9F2717C10C4700585107 /* NSTableView+CDEAdditions.m in Sources */,
-				AB6F9F2817C10C4700585107 /* CDEOrderedRelationshipRequestDataCoordinator.m in Sources */,
-				AB6F9F2917C10C4700585107 /* CDEUnorderedRelationshipRequestDataCoordinator.m in Sources */,
-				ABDA423E181BFF2C0054A226 /* CDEMenuWindowController.m in Sources */,
-				AB6F9F2A17C10C4700585107 /* CDETwoColumnSplitViewDelegate.m in Sources */,
-				AB6F9F2B17C10C4700585107 /* CDEOrderIndexTableCellView.m in Sources */,
-				AB6F9F2C17C10C4700585107 /* CDEToOneRelationshipTableCellView.m in Sources */,
-				AB6F9F2D17C10C4700585107 /* CDERelationshipsViewController.m in Sources */,
-				AB6F9F2E17C10C4700585107 /* CDERelationshipsContainerView.m in Sources */,
-				AB6F9F2F17C10C4700585107 /* CDERelationshipTableCellView.m in Sources */,
-				ABDA423A181BFF2C0054A226 /* CDEMenuWindowItem.m in Sources */,
-				AB6F9F3017C10C4700585107 /* CDEBarView.m in Sources */,
-				AB6F9F3117C10C4700585107 /* RSVerticallyCenteredTextFieldCell.m in Sources */,
-				AB6F9F3217C10C4700585107 /* CDERelationshipsViewControllerItem.m in Sources */,
-				AB6F9F3317C10C4700585107 /* CDEFirstResponderWindow.m in Sources */,
-				ABDA4238181BFF2C0054A226 /* CDEMenuWindowItemView.m in Sources */,
-				AB6F9F3417C10C4700585107 /* CDEAttributeViewController.m in Sources */,
-				AB6F9F3517C10C4700585107 /* CDEBooleanAttributeViewController.m in Sources */,
-				AB6F9F3617C10C4700585107 /* CDEStringAttributeViewController.m in Sources */,
-				AB6F9F3717C10C4700585107 /* CDEDatePickerWindow.m in Sources */,
-				AB6F9F3817C10C4700585107 /* CDEDatePickerViewController.m in Sources */,
-				AB6F9F3917C10C4700585107 /* CDEDateAttributeViewController.m in Sources */,
-				AB6F9F3A17C10C4700585107 /* CDENumberAttributeViewController.m in Sources */,
-				AB6F9F3B17C10C4700585107 /* CDEBinaryAttributeViewController.m in Sources */,
-				AB6F9F3C17C10C4700585107 /* CMKBindingSupport.m in Sources */,
-				AB6F9F3D17C10C4700585107 /* CDEGenerateThumbnailOperation.m in Sources */,
-				AB6F9F3E17C10C4700585107 /* CDEGenerateThumbnailsController.m in Sources */,
-				AB6F9F3F17C10C4700585107 /* CDEManagedObjectView.m in Sources */,
-				AB6F9F4017C10C4700585107 /* CDEManagedObjectViewController.m in Sources */,
-				AB6F9F4117C10C4700585107 /* CMKViewController.m in Sources */,
-				AB6F9F4217C10C4700585107 /* CDEManagedObjectsTableViewAttributeHelper.m in Sources */,
-				AB6F9F4317C10C4700585107 /* CDEShadowTextFieldCell.m in Sources */,
-				AB6F9F4417C10C4700585107 /* NSShadow-CDEAdditions.m in Sources */,
-				AB6F9F4517C10C4700585107 /* CDEManagedObjectsPickerDataCoordinator.m in Sources */,
-				AB6F9F4617C10C4700585107 /* CDEManagedObjectsPickerViewController.m in Sources */,
-				AB6F9F4717C10C4700585107 /* CDEManagedObjectsPicker.m in Sources */,
-				AB6F9F4817C10C4700585107 /* CDELeftClickMenuButton.m in Sources */,
-				AB6F9F4917C10C4700585107 /* CDEValidationErrorsViewController.m in Sources */,
-				AB06C0B01854CB07002945CB /* CDEToOneRelationshipRequestDataCoordinator.m in Sources */,
-				AB6F9F4A17C10C4700585107 /* CDETableRowView.m in Sources */,
-				AB6F9F4B17C10C4700585107 /* NSManagedObjectID+CDEAdditions.m in Sources */,
-				AB6F9F4C17C10C4700585107 /* CDEAttributeView.m in Sources */,
-				AB6F9F4D17C10C4700585107 /* CDEAttributeEditor.m in Sources */,
-				AB6F9F4E17C10C4700585107 /* CDEAttributeEditorViewController.m in Sources */,
-				AB6F9F4F17C10C4700585107 /* NSString+CDEAdditions.m in Sources */,
-				AB6F9F5017C10C4700585107 /* CDEIntegerValueTableCellView.m in Sources */,
-				AB6F9F5117C10C4700585107 /* CDEAttributeEditorWindowController.m in Sources */,
-				AB6F9F5217C10C4700585107 /* CDENameToNameForDisplayValueTransformer.m in Sources */,
-				AB6F9F5317C10C4700585107 /* NSError+CDEValidation.m in Sources */,
-				AB6F9F5417C10C4700585107 /* NSManagedObject+CDEAdditions.m in Sources */,
-				AB6F9F5517C10C4700585107 /* NSManagedObjectContext+CDEAdditions.m in Sources */,
-				AB6F9F5617C10C4700585107 /* NSTableColumn+CDERequestDataCoordinator.m in Sources */,
-				AB6F9F5717C10C4700585107 /* NSAlert-OAExtensions.m in Sources */,
-				AB6F9F5817C10C4700585107 /* CDETwoColumnSplitViewController.m in Sources */,
-				AB6F9F5917C10C4700585107 /* CDEPreferencesAutomaticProjectCreationViewController.m in Sources */,
-				AB6F9F5A17C10C4700585107 /* CDEPreferencesFormattingViewController.m in Sources */,
-				AB6F9F5B17C10C4700585107 /* CDEPreferencesMiscViewController.m in Sources */,
-				ABDA428E181C0D870054A226 /* BFNavigationController.m in Sources */,
-				ABDA422E181BFF2C0054A226 /* CDEMenuViewController.m in Sources */,
-				AB6F9F5C17C10C4700585107 /* CHCSVParser.m in Sources */,
-				ABDA4234181BFF2C0054A226 /* CDEMenuItem.m in Sources */,
-				AB6F9F5D17C10C4700585107 /* FoundationValue +CDEManagedObjectValueToStringAdditions.m in Sources */,
-				AB6F9F5E17C10C4700585107 /* CDETextEditorController.m in Sources */,
-				ABDA4290181C0D870054A226 /* NSView+BFUtilities.m in Sources */,
-				AB6F9F5F17C10C4700585107 /* CDETextEditorViewController.m in Sources */,
-				AB6F9F6017C10C4700585107 /* NSWorkspace+CDEAdditions.m in Sources */,
-				AB6F9F6117C10C4700585107 /* CDECSVDelimiter.m in Sources */,
-				AB6F9F6217C10C4700585107 /* CDECSVAccessoryViewController.m in Sources */,
-				AB6F9F6317C10C4700585107 /* CDECSVImportWindowController.m in Sources */,
-				AB6F9F6417C10C4700585107 /* CDECSVImportWindowControllerResult.m in Sources */,
-				AB6F9F6517C10C4700585107 /* CDECSVImportWindowControllerResultItem.m in Sources */,
-				AB6F9F6617C10C4700585107 /* NSArray+CDECSV.m in Sources */,
-				AB6F9F6717C10C4700585107 /* CDEAutosaveInformation.m in Sources */,
-				AB6F9F6817C10C4700585107 /* CDEEntityAutosaveInformationItem.m in Sources */,
-				AB6F9F6917C10C4700585107 /* CDEEntityAutosaveInformation.m in Sources */,
-				AB6F9F6A17C10C4700585107 /* CDECodeGenerator.m in Sources */,
-				AB6F9F6B17C10C4700585107 /* CDEManagedObjectSubclassesGenerator.m in Sources */,
-				AB6F9F6C17C10C4700585107 /* CDECodeGeneratorAccessoryViewController.m in Sources */,
-				AB6F9F6D17C10C4700585107 /* CDEAboutWindowController.m in Sources */,
-				ABDA4232181BFF2C0054A226 /* CDEMenuView.m in Sources */,
-				AB6F9F6E17C10C4700585107 /* CDEPathPickerPopUpButton.m in Sources */,
-				AB6F9F6F17C10C4700585107 /* CDEProjectBrowserWindowController.m in Sources */,
-				AB6F9F7017C10C4700585107 /* CDEProjectBrowserItem.m in Sources */,
-				AB6F9F7117C10C4700585107 /* CDEProjectBrowserItemTableCellView.m in Sources */,
-				AB6F9F7217C10C4700585107 /* CDESetupWindowController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		ABBEA7D21765CB730024A9D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3026,39 +2543,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		AB6F9FBB17C10C4700585107 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "Core Data Editor/Core Data Editor.entitlements";
-				CODE_SIGN_IDENTITY = "Developer ID Application";
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Core Data Editor/Core Data Editor-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = "CDE_TRIAL=1";
-				INFOPLIST_FILE = "Core Data Editor-Trial-Info.plist";
-				PRODUCT_NAME = "Core Data Editor";
-				PROVISIONING_PROFILE = "";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		AB6F9FBC17C10C4700585107 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "Core Data Editor/Core Data Editor.entitlements";
-				CODE_SIGN_IDENTITY = "Developer ID Application";
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Core Data Editor/Core Data Editor-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = "CDE_TRIAL=1";
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INFOPLIST_FILE = "Core Data Editor-Trial-Info.plist";
-				PRODUCT_NAME = "Core Data Editor";
-				PROVISIONING_PROFILE = "";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
 		ABBEA7F71765CB730024A9D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3192,15 +2676,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AB6F9FBA17C10C4700585107 /* Build configuration list for PBXNativeTarget "Core Data Editor Trial" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AB6F9FBB17C10C4700585107 /* Debug */,
-				AB6F9FBC17C10C4700585107 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		ABBEA7D11765CB730024A9D2 /* Build configuration list for PBXProject "Core Data Editor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

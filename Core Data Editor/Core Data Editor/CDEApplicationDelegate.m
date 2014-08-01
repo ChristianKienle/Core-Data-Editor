@@ -29,30 +29,6 @@
 
 @implementation CDEApplicationDelegate
 
-- (void)continueIfAppCanRun {
-#ifdef CDE_TRIAL
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSInteger numberOfDaysLeft = defaults.numberOfDaysLeft_cde;
-    if(numberOfDaysLeft > -1) {
-        NSString *dayWord = @"days";
-        if(numberOfDaysLeft == 1) {
-            dayWord = @"day";
-        }
-        NSAlert *alert = [NSAlert alertWithMessageText:@"Core Data Editor Trial" defaultButton:@"OK" alternateButton:@"Buy Core Data Editor" otherButton:nil informativeTextWithFormat:@"You can use Core Data Editor for %li more %@.", numberOfDaysLeft, dayWord];
-        if([alert runModal] == NSAlertAlternateReturn) {
-            [[NSWorkspace sharedWorkspace] openWebsite_cde];
-        }
-    } else {
-        NSAlert *alert = [NSAlert alertWithMessageText:@"Core Data Editor Trial" defaultButton:@"Buy Core Data Editor" alternateButton:@"Quit" otherButton:nil informativeTextWithFormat:@"Your trial is over."];
-        if([alert runModal] == NSAlertDefaultReturn) {
-            [[NSWorkspace sharedWorkspace] openWebsite_cde];
-        } else {
-            [NSApp terminate:self];
-        }
-    }
-#endif
-}
-
 + (void)initialize {
     if(self == [CDEApplicationDelegate class]) {
         [NSUserDefaults registerCoreDataEditorDefaults_cde];
@@ -137,8 +113,6 @@
     }];
 }
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
-    
-    [self continueIfAppCanRun];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if(defaults.applicationNeedsSetup_cde) {
