@@ -5,7 +5,7 @@
 #import "BFViewController.h"
 
 @interface CDEManagedObjectsTableViewController () <BFViewController>
-
+- (instancetype)init NS_DESIGNATED_INITIALIZER;
 @end
 
 @implementation CDEManagedObjectsTableViewController
@@ -15,7 +15,7 @@
    return [self init];
 }
 
-- (instancetype)init {
+- (instancetype)init  {
    self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
    if(self) {
       self.request = nil;
