@@ -58,12 +58,12 @@
 @implementation CDEValidationErrorsViewController
 
 #pragma mark - Creating
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    return [self init];
+- (id)init {
+    return [self initWithNibName:NSStringFromClass([self class]) bundle:nil];
 }
 
-- (id)init {
-    self = [super initWithNibName:@"CDEValidationErrorsViewController" bundle:nil];
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if(self) {
         self.tableContents = @[];
         self.attributeEditor = [CDEAttributeEditor new];

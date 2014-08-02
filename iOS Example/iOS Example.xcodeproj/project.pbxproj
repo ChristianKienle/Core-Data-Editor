@@ -363,6 +363,7 @@
 		AB15929917B52996008DA7E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS Example/iOS Example-Prefix.pch";
 				INFOPLIST_FILE = "iOS Example/iOS Example-Info.plist";
@@ -375,6 +376,7 @@
 		AB15929A17B52996008DA7E2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS Example/iOS Example-Prefix.pch";
 				INFOPLIST_FILE = "iOS Example/iOS Example-Info.plist";

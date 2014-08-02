@@ -5,22 +5,22 @@
 #import "BFViewController.h"
 
 @interface CDEManagedObjectsTableViewController () <BFViewController>
-- (instancetype)init NS_DESIGNATED_INITIALIZER;
+
 @end
 
 @implementation CDEManagedObjectsTableViewController
 
 #pragma mark - Creating
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-   return [self init];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if(self) {
+        self.request = nil;
+    }
+    return self;
 }
 
-- (instancetype)init  {
-   self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
-   if(self) {
-      self.request = nil;
-   }
-   return self;
+- (instancetype)init {
+    return [self initWithNibName:NSStringFromClass([self class]) bundle:nil];
 }
 
 #pragma mark - NSViewController

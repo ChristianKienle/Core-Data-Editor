@@ -14,12 +14,12 @@
 @implementation CDECSVAccessoryViewController
 
 #pragma mark - NSViewController
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    return [self init];
+- (instancetype)init {
+    return [self initWithNibName:NSStringFromClass([self class]) bundle:nil];
 }
 
-- (instancetype)init {
-    self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if(self) {
         
     }

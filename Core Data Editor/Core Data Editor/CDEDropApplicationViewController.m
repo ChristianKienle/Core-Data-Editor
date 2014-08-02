@@ -130,8 +130,8 @@ typedef NS_ENUM(NSUInteger, CDEManagedObjectModelSourceType) {
 }
 
 #pragma mark Creating
-- (id)init {
-    self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if(self) {
         self.delegate = nil;
         self.modelURL = nil;
@@ -141,8 +141,8 @@ typedef NS_ENUM(NSUInteger, CDEManagedObjectModelSourceType) {
     return self;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    return [self init];
+- (id)init {
+    return [self initWithNibName:NSStringFromClass([self class]) bundle:nil];
 }
 
 #pragma mark NSViewController

@@ -13,12 +13,12 @@
 @implementation CDEEntitiesViewController
 
 #pragma mark - Creating
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    return [self init];
+- (id)init {
+    return [self initWithNibName:NSStringFromClass([self class]) bundle:nil];
 }
 
-- (id)init {
-    self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if(self) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleManagedObjectContextDidChange:) name:NSManagedObjectContextObjectsDidChangeNotification object:nil];
     }
