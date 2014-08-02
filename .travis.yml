@@ -1,3 +1,5 @@
 language: objective-c
-xcode_workspace: CDE-Workspace.xcworkspace
-xcode_scheme: CDETests
+before_install:
+    - brew update
+    - brew install xctool
+script: xctool -workspace CDE-Workspace.xcworkspace -scheme CDETests test
