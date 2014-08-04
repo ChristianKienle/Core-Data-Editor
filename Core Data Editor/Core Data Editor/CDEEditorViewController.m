@@ -14,9 +14,6 @@
 #import "CDEAutosaveInformation.h"
 
 // Additions: Begin
-#import "NSPersistentStore+CDEStoreAnalyzer.h"
-#import "NSManagedObjectModel-CDEAdditions.h"
-#import "NSEntityDescription+CDEAdditions.h"
 #import "NSPersistentStoreCoordinator+CDEAdditions.h"
 // Additions: End
 
@@ -97,7 +94,7 @@
     self.managedObjectViewController = [CDEManagedObjectViewController new];
     self.managedObjectViewController.delegate = self;
     self.validationErrorsViewController = [CDEValidationErrorsViewController new];
-    
+
     __typeof__(self) __weak weakSelf = self;
     self.userDefaultsObserver = [[NSNotificationCenter defaultCenter] addObserverForName:NSUserDefaultsDidChangeNotification object:[NSUserDefaults standardUserDefaults] queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
       [weakSelf.entitiesViewController updateUIOfVisibleEntities];
@@ -112,7 +109,6 @@
 
 #pragma mark - Dealloc
 - (void)dealloc {
-  NSLog(@"dealloc: %@ - %p", NSStringFromClass([self class]), self);
   [[NSNotificationCenter defaultCenter] removeObserver:self.userDefaultsObserver];
 }
 
@@ -120,27 +116,27 @@
 #pragma mark - NSViewController
 - (void)loadView {
   [super loadView];
-  
+
   self.entitiesViewController.view.frame = self.entitiesContainer.bounds;
   [self.entitiesContainer addSubview:self.entitiesViewController.view];
-  
+
   self.managedObjectsViewController.view.frame = self.managedObjectsContainer.bounds;
   self.managedObjectsViewController.canNavigateThroughObjectGraph = YES;
   self.managedObjectsNavigationController = [[BFNavigationController alloc] initWithFrame:self.managedObjectsContainer.bounds rootViewController:self.managedObjectsViewController];
-  
+
   [self.managedObjectsContainer addSubview:self.managedObjectsNavigationController.view];
-  
+
   self.detailManagedObjectsViewController.view.frame = self.detailContainer.bounds;
   [self.detailContainer addSubview:self.detailManagedObjectsViewController.view];
-  
+
   self.relationshipsViewController.view.frame = self.relationshipsContainer.bounds;
   [self.relationshipsContainer addSubview:self.relationshipsViewController.view];
-  
+
   self.validationErrorsViewController.view.frame = self.validationErrorsContainer.bounds;
   [self.validationErrorsContainer addSubview:self.validationErrorsViewController.view];
-  
+
   self.rightSplitViewController = [[CDETwoColumnSplitViewController alloc] initWithSplitView:self.rightSplitView indexOfResizeableView:0 indexOfFixedSizeView:1];
-  
+
   self.leftSplitViewController = [[CDETwoColumnSplitViewController alloc] initWithSplitView:self.leftSplitView indexOfResizeableView:0 indexOfFixedSizeView:1];
 }
 
@@ -151,31 +147,29 @@
                         ([_configuration isEqual:configuration] == NO) ||
                         (needsReload));
   // Cleanup
-  
+
   self.configuration = configuration;
   self.autosaveInformation = [[CDEAutosaveInformation alloc] initWithDictionaryRepresentation:self.configuration.autosaveInformationByEntityName];
-  
+
   self.managedObjectsViewController.autosaveInformation = self.autosaveInformation;
   self.storeURL = storeURL;
   if(performReload) {
     self.managedObjectModel = [[[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL] transformedManagedObjectModel_cde];
     self.persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
-    
+
     NSError *error = nil;
-    //        NSString *type = [NSPersistentStore typeOfPersistentStoreAtURL_cde:storeURL];
-    
+
     NSPersistentStore *store = [self.persistentStoreCoordinator addPersistentStoreWithType:nil // guess
                                                                              configuration:nil
                                                                                        URL:storeURL
                                                                                    options:nil
                                                                                  error_cde:&error];
-    
+
     if(store == nil) {
-      NSLog(@"Error: %@", error);
       [NSApp presentError:error];
       return NO;
     }
-    
+
     self.managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     self.managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator;
     self.validationErrorsViewController.managedObjectContext = self.managedObjectContext;
@@ -184,7 +178,7 @@
     self.managedObjectViewController.request = nil;
     self.relationshipsViewController.managedObject = nil;
     [self.entitiesViewController setManagedObjectContext:self.managedObjectContext];
-    
+
   }
   return YES;
 }
@@ -269,7 +263,7 @@
   if(self.CSVImportWindowController != nil) {
     self.CSVImportWindowController = nil;
   }
-  
+
   self.CSVImportWindowController = [[CDECSVImportWindowController alloc] initWithWindowNibName:@"CDECSVImportWindow"];
   NSArray *entities = self.managedObjectModel.entities;
   NSEntityDescription *selectedEntity = self.entitiesViewController.selectedEntityDescription;
@@ -289,7 +283,7 @@
 
 #pragma mark - CDEEntitiesViewControllerDelegate
 - (void)entitiesViewController:(CDEEntitiesViewController *)entitiesViewController didSelectEntitiyDescription:(NSEntityDescription *)entityDescription {
-  
+
   // Before assiging check for equality
   CDEAutosaveInformation *persistentInformation = [[CDEAutosaveInformation alloc] initWithDictionaryRepresentation:self.configuration.autosaveInformationByEntityName];
   //
@@ -303,7 +297,7 @@
     [self.nestedDetailTabView selectTabViewItemAtIndex:1];
     return;
   }
-  
+
   CDEManagedObjectsRequest *request = [[CDEManagedObjectsRequest alloc] initWithEntityDescription:entityDescription managedObjectContext:self.managedObjectContext];
   self.managedObjectsViewController.request = request;
   self.detailManagedObjectsViewController.request = nil;
@@ -312,7 +306,7 @@
   [self.managedObjectsTabView selectTabViewItemAtIndex:0];
   [self.detailTabView selectTabViewItemAtIndex:1];
   [self.nestedDetailTabView selectTabViewItemAtIndex:1];
-  
+
   CDEAutosaveInformation *currentAutosaveInformation = self.autosaveInformation;
   BOOL autosaveIsEqual = [currentAutosaveInformation isEqualToAutosaveInformation:persistentInformation];
   if(autosaveIsEqual) {
@@ -320,7 +314,7 @@
   if(autosaveIsEqual == NO) {
     self.configuration.autosaveInformationByEntityName = self.autosaveInformation.representationForSerialization;
   }
-  
+
 }
 
 #pragma mark - CDEManagedObjectsViewControllerDelegate
@@ -335,7 +329,7 @@
       [self.nestedDetailTabView selectTabViewItemAtIndex:1];
       return;
     }
-    
+
     NSArray *sortedRelations = [managedObject.entity sortedRelationships_cde];
     if(sortedRelations.count == 0) {
       self.relationshipsViewController.managedObject = nil;
@@ -393,7 +387,7 @@
   self.managedObjectsViewController = newManagedObjectsViewController;
   [newManagedObjectsViewController view];
   [newManagedObjectsViewController setRequest:request];
-  
+
   [self.managedObjectsNavigationController pushViewController:self.managedObjectsViewController animated:YES completionHandler:^{
   }];
 }
@@ -401,7 +395,7 @@
 #pragma mark - CDERelationshipsViewControllerDelegate
 - (void)displayRequestInDetailManagedObjectsView:(CDEManagedObjectsRequest *)request {
   self.detailManagedObjectsViewController.request = request;
-  
+
   BOOL isShowingDetailManagedObjectsView = self.detailManagedObjectsViewController.view.superview != nil;
   if(request == nil && isShowingDetailManagedObjectsView) {
     [self.detailManagedObjectsViewController.view removeFromSuperview];
@@ -418,7 +412,7 @@
 
 - (void)displayRequestInManagedObjectView:(CDEManagedObjectsRequest *)request {
   self.managedObjectViewController.request = request;
-  
+
   BOOL isShowingManagedObjectView = self.managedObjectViewController.view.superview != nil;
   if(isShowingManagedObjectView) {
     //        [self.managedObjectViewController.view removeFromSuperview];

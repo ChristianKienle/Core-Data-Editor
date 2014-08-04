@@ -8,11 +8,7 @@
 #import "CDEEntityAutosaveInformationItem.h"
 
 // Cells: Begin
-#import "CDEStringValueTableCellView.h"
-#import "CDEBoolValueTableCellView.h"
-#import "CDEObjectIDValueTableCellView.h"
 #import "CDEFloatingPointValueTableCellView.h"
-#import "CDEBinaryValueTableCellView.h"
 #import "CDEToManyRelationshipTableCellView.h"
 #import "CDEToOneRelationshipTableCellView.h"
 // Cells: End
@@ -63,19 +59,19 @@
         self.tableView = tableView;
         self.searchField = searchField;
         self.managedObjectsViewController = managedObjectsViewController;
-        
+
         // Add Columns
         // Add objectID Column
         NSMutableArray *columns = [NSMutableArray new];
-        
+
         NSTableColumn *column = [[NSTableColumn alloc] initWithIdentifier:@"objectID"];
         [[column headerCell] setTitle:[@"objectID" humanReadableStringAccordingToUserDefaults_cde]];
         [column sizeToFit];
         [column setMinWidth:100.0];
         [column setSortDescriptorPrototype:[NSSortDescriptor newSortDescriptorForObjectIDColumn_cde]];
-        
+
         [columns addObject:column];
-        
+
         // To-One Relationships
         if([[self class] createdRelationshipColumns]) {
         for(NSRelationshipDescription *relationshipDescription in [self.request.entityDescription sortedToOneRelationships_cde]) {
@@ -97,7 +93,7 @@
                 [columns addObject:column];
             }
         }
-        
+
         // Add Attribute Columns
         for(NSAttributeDescription *attributeDescription in [self.request.entityDescription supportedAttributes_cde]) {
             NSTableColumn *column = [[NSTableColumn alloc] initWithIdentifier:attributeDescription.name];
@@ -107,7 +103,7 @@
             [column setSortDescriptorPrototype:attributeDescription.sortDescriptorPrototype_cde];
             [columns addObject:column];
         }
-        
+
         self.tableColumns = columns;
         self.filterByKeyPath = @"";
 
@@ -124,7 +120,7 @@
                 [cellMenu insertItem:newItem atIndex:attributeIndex - 1];
                 attributeIndex++;
             }
-        }  
+        }
         [[searchField cell] setSearchMenuTemplate:cellMenu];
         if([cellMenu numberOfItems] > 0) {
             [self setSearchCategoryFrom:[cellMenu itemAtIndex:0]];
@@ -152,7 +148,7 @@
 
 - (id)objectValueByTransformingObjectValue:(id)objectValue forTableColumn:(NSTableColumn *)tableColumn atIndex:(NSInteger)index {
     NSPropertyDescription *property = [self propertyDescriptionForTableColumn:tableColumn];
-    
+
     if(objectValue == nil) {
         // returning nil here would cause the objectValue to become an instance of NSManagedObject which we do not want.
         // Instead we determine the attribute type and compute a default value
@@ -179,13 +175,13 @@
             }
         }
     }
-    
+
     if(property.isRelationshipDescription_cde && property != nil) {
         NSRelationshipDescription *relation = (NSRelationshipDescription *)property;
         NSManagedObject *object = [self managedObjectAtIndex:index];
         objectValue = [[CDEManagedObjectsRequest alloc] initWithManagedObject:object relationshipDescription:relation];
     }
-    
+
     return objectValue;
 }
 
@@ -245,26 +241,26 @@
     NSPropertyDescription *property = [self propertyDescriptionForTableColumn:tableColumn];
     NSString *identifier = tableColumn.identifier;
     NSTableCellView *cell = [self.tableView makeViewWithIdentifier:identifier owner:self.managedObjectsViewController];
-    
+
     if(property.isAttributeDescription_cde || [identifier isEqualToString:@"objectID"]) {
         NSAttributeType type = [self attributeTypeForTableColumn:tableColumn];
-        
+
         if(cell == nil) {
             Class cellClass = [NSAttributeDescription tableCellViewClassForAttributeType_cde:type];
             NSString *nibName = NSStringFromClass(cellClass);
             cell = [cellClass newTableCellViewWithNibNamed:nibName owner:self.managedObjectsViewController];
             cell.identifier = identifier;
         }
-        
+
         BOOL isFloatingPointAttribute = (type == NSDoubleAttributeType || type == NSFloatAttributeType || type == NSDecimalAttributeType);
-        
+
         if(isFloatingPointAttribute) {
             [(CDEFloatingPointValueTableCellView *)cell updateFormatter];
         }
         if(type == NSDateAttributeType) {
             [(CDEFloatingPointValueTableCellView *)cell updateFormatter];
         }
-        
+
         [cell setNeedsLayout:YES];
         return cell;
     }
@@ -289,13 +285,13 @@
 #pragma mark - Helper
 - (NSAttributeType)attributeTypeForTableColumn:(NSTableColumn *)tableColumn {
     NSParameterAssert(tableColumn);
-    
+
     // Special Case: objectID-Column
     NSString *attributeName = tableColumn.identifier;
     if([attributeName isEqualToString:@"objectID"]) {
         return NSObjectIDAttributeType;
     }
-    
+
     // Regular Case
     NSAttributeDescription *attribute = [self attributeDescriptionForTableColumn:tableColumn];
     return attribute.attributeType;
@@ -321,7 +317,7 @@
     NSAssert(row != -1 && column != -1, @"Row or column invalid.");
 
     NSLog(@"bool: %@ (r: %li - c: %li)", [sender objectValue], row, column);
-    
+
     NSCellStateValue state = [sender state];
     id value = nil;
     switch (state) {
@@ -339,7 +335,7 @@
     }
     NSManagedObject *object = [self managedObjectAtIndex:row];
     NSTableColumn *tableColumn = [self.tableView tableColumns][column];
-    
+
     [object setValue:value forKey:tableColumn.identifier];
 }
 
@@ -347,7 +343,7 @@
     if([notification.object isEqual:self.searchField]) {
         return;
     }
-    
+
     NSTextField *textField = [notification object];
 
     NSInteger row = [self.tableView rowForView_cde:textField];
@@ -358,7 +354,7 @@
 
     NSManagedObject *object = [self managedObjectAtIndex:row];
     NSTableColumn *tableColumn = [self.tableView tableColumns][column];
-    
+
     [object setValue:[[notification object] objectValue] forKey:tableColumn.identifier];
 }
 
@@ -370,7 +366,7 @@
     NSLog(@"new binard value: %lu (length) (r: %li - c: %li)", [binaryValue length], row, column);
     NSManagedObject *object = [self managedObjectAtIndex:row];
     NSTableColumn *tableColumn = [self.tableView tableColumns][column];
-    
+
     [object setValue:binaryValue forKey:tableColumn.identifier];
 }
 
@@ -402,17 +398,17 @@
     NSPropertyDescription *property = [self propertyDescriptionForTableColumn:tableColumn];
 
     NSDate *dateValue = [object valueForKey:property.name];
-    
+
     if(self.datePicker == nil) {
         self.datePicker = [CDEDatePickerWindow new];
     }
     self.datePicker.delegate = self;
-    
+
     NSDictionary *representedObject = @{ @"managedObject" : object,
                                          @"attributeName" : property.name };
-    
+
     self.datePicker.representedObject = representedObject;
-    
+
     [self.datePicker showRelativeToRect:[sender bounds] ofView:sender preferredEdge:NSMinYEdge andDisplayDate:dateValue];
 }
 
@@ -420,25 +416,25 @@
     NSInteger row = [self.tableView rowForView_cde:sender];
     NSInteger column = [self.tableView columnForView_cde:sender];
     NSAssert(row != -1 && column != -1, @"Row or column invalid.");
-    
+
     NSManagedObject *object = [self managedObjectAtIndex:row];
-    
+
     NSLog(@"show date picker for r: %li - c: %li", row, column);
-    
+
     NSTableColumn *tableColumn = [self.tableView tableColumns][column];
     NSPropertyDescription *property = [self propertyDescriptionForTableColumn:tableColumn];
-    
+
     NSString *stringValue = [object valueForKey:property.name];
-    
+
     if(self.textEditorController == nil) {
         self.textEditorController = [CDETextEditorController new];
     }
-    
+
 //    NSDictionary *representedObject = @{ @"managedObject" : object,
 //                                         @"attributeName" : property.name };
-    
+
 //    self.datePicker.representedObject = representedObject;
-    
+
     [self.textEditorController showRelativeToRect:[sender bounds] ofView:sender preferredEdge:NSMinYEdge stringValue:stringValue completionHandler:^(NSString *editedStringValue) {
         [object setValue:editedStringValue forKey:property.name];
         NSUInteger rowIndex = [self indexOfManagedObject:object];
@@ -459,18 +455,18 @@
     NSDictionary *representedObject = datePickerWindow.representedObject;
     NSManagedObject *object = representedObject[@"managedObject"];
     NSString *attributeName = representedObject[@"attributeName"];
-    
+
     NSAssert(object, @"representedObject has no managedObject.");
     NSAssert(attributeName, @"representedObject has no attribute name.");
-    
+
     // Set the value on it
     [object setValue:confirmedDate forKey:attributeName];
-    
+
     // Reload the table
     NSUInteger rowIndex = [self indexOfManagedObject:object];
     NSIndexSet *columIndexes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, self.tableColumns.count)];
     [self.tableView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:rowIndex] columnIndexes:columIndexes];
-    
+
     self.datePicker = nil;
 }
 
@@ -495,7 +491,7 @@
         [[column headerCell] setTitle:property.nameForDisplay_cde];
     }
     [self.tableView.headerView setNeedsDisplay:YES];
-    
+
     // objectID column
     NSInteger indexOfObjectIDColumn = [self.tableView columnWithIdentifier:@"objectID"];
     if(indexOfObjectIDColumn != -1) {
@@ -522,7 +518,7 @@
 
 #pragma mark - For Subclassers / Searching
 - (void)didChangeFilterPredicate {
-    
+
 }
 
 #pragma mark - Helpers
@@ -554,7 +550,7 @@
         [self didChangeFilterPredicate];
         return;
     }
-    
+
     id searchFieldValue = [[self class] transformedValueFromString:[self.searchField stringValue]
                                              attributeType:[[self filterByAttributeDescription] attributeType]];
     NSPredicateOperatorType operatorType = [NSAttributeDescription predicateOperatorTypeForAttributeType_cde:[[self filterByAttributeDescription] attributeType]];

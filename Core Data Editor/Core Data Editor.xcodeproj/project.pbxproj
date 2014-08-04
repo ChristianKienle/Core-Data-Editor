@@ -159,10 +159,8 @@
 		ABC1E6A6177745980069D252 /* CDEBinaryValuePreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E6A5177745980069D252 /* CDEBinaryValuePreviewView.m */; };
 		ABC1E6AA177757390069D252 /* NSEntityDescription+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E6A9177757390069D252 /* NSEntityDescription+CDEAdditions.m */; };
 		ABC1E6B117775DAC0069D252 /* NSSortDescriptor+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E6B017775DAC0069D252 /* NSSortDescriptor+CDEAdditions.m */; };
-		ABC1E6B5177760130069D252 /* CDEBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E6B4177760130069D252 /* CDEBadgeView.m */; };
 		ABC1E6B8177765CE0069D252 /* CDEEntityTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E6B7177765CE0069D252 /* CDEEntityTableCellView.m */; };
 		ABC1E6BD177777940069D252 /* entity-icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = ABC1E6BC177777940069D252 /* entity-icon-small.png */; };
-		ABC1E6C0177779A90069D252 /* CDEThreeColumnSplitViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E6BF177779A50069D252 /* CDEThreeColumnSplitViewDelegate.m */; };
 		ABC83B0F17B1166300078580 /* mogenerator in Resources */ = {isa = PBXBuildFile; fileRef = ABC83B0E17B1166300078580 /* mogenerator */; };
 		ABC83B1117B116A000078580 /* mogeneratorReadme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = ABC83B1017B116A000078580 /* mogeneratorReadme.rtf */; };
 		ABC83B1917B1170900078580 /* CDECodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC83B1317B1170900078580 /* CDECodeGenerator.m */; };
@@ -507,13 +505,9 @@
 		ABC1E6A9177757390069D252 /* NSEntityDescription+CDEAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEntityDescription+CDEAdditions.m"; sourceTree = "<group>"; };
 		ABC1E6AF17775DAB0069D252 /* NSSortDescriptor+CDEAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSortDescriptor+CDEAdditions.h"; sourceTree = "<group>"; };
 		ABC1E6B017775DAC0069D252 /* NSSortDescriptor+CDEAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSortDescriptor+CDEAdditions.m"; sourceTree = "<group>"; };
-		ABC1E6B3177760130069D252 /* CDEBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEBadgeView.h; sourceTree = "<group>"; };
-		ABC1E6B4177760130069D252 /* CDEBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEBadgeView.m; sourceTree = "<group>"; };
 		ABC1E6B6177765CE0069D252 /* CDEEntityTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEEntityTableCellView.h; sourceTree = "<group>"; };
 		ABC1E6B7177765CE0069D252 /* CDEEntityTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEEntityTableCellView.m; sourceTree = "<group>"; };
 		ABC1E6BC177777940069D252 /* entity-icon-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "entity-icon-small.png"; sourceTree = "<group>"; };
-		ABC1E6BE177779A40069D252 /* CDEThreeColumnSplitViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEThreeColumnSplitViewDelegate.h; sourceTree = "<group>"; };
-		ABC1E6BF177779A50069D252 /* CDEThreeColumnSplitViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEThreeColumnSplitViewDelegate.m; sourceTree = "<group>"; };
 		ABC83B0E17B1166300078580 /* mogenerator */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mogenerator; sourceTree = "<group>"; };
 		ABC83B1017B116A000078580 /* mogeneratorReadme.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = mogeneratorReadme.rtf; sourceTree = "<group>"; };
 		ABC83B1217B1170900078580 /* CDECodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDECodeGenerator.h; sourceTree = "<group>"; };
@@ -673,7 +667,6 @@
 			children = (
 				ABC1E6B6177765CE0069D252 /* CDEEntityTableCellView.h */,
 				ABC1E6B7177765CE0069D252 /* CDEEntityTableCellView.m */,
-				ABC1E6B2177760060069D252 /* Badge View */,
 				AB09274E1768C6EC00FC59FB /* CDEEntitiesViewController.h */,
 				AB09274F1768C6EC00FC59FB /* CDEEntitiesViewController.m */,
 				AB09279D1768F95D00FC59FB /* CDEEntitiesViewControllerDelegate.h */,
@@ -1500,8 +1493,6 @@
 			children = (
 				AB8F8345177C7C49000B4467 /* CDETwoColumnSplitViewDelegate.h */,
 				AB8F8346177C7C4A000B4467 /* CDETwoColumnSplitViewDelegate.m */,
-				ABC1E6BE177779A40069D252 /* CDEThreeColumnSplitViewDelegate.h */,
-				ABC1E6BF177779A50069D252 /* CDEThreeColumnSplitViewDelegate.m */,
 				ABFBB3AF179C36E2003B5346 /* CDETwoColumnSplitViewController.h */,
 				ABFBB3B0179C36E2003B5346 /* CDETwoColumnSplitViewController.m */,
 			);
@@ -1565,15 +1556,6 @@
 				ABC1E6A9177757390069D252 /* NSEntityDescription+CDEAdditions.m */,
 			);
 			name = NSEntityDescription;
-			sourceTree = "<group>";
-		};
-		ABC1E6B2177760060069D252 /* Badge View */ = {
-			isa = PBXGroup;
-			children = (
-				ABC1E6B3177760130069D252 /* CDEBadgeView.h */,
-				ABC1E6B4177760130069D252 /* CDEBadgeView.m */,
-			);
-			name = "Badge View";
 			sourceTree = "<group>";
 		};
 		ABC1E6BB1777776B0069D252 /* Assets */ = {
@@ -2345,9 +2327,7 @@
 				ABC1E6A6177745980069D252 /* CDEBinaryValuePreviewView.m in Sources */,
 				ABC1E6AA177757390069D252 /* NSEntityDescription+CDEAdditions.m in Sources */,
 				ABC1E6B117775DAC0069D252 /* NSSortDescriptor+CDEAdditions.m in Sources */,
-				ABC1E6B5177760130069D252 /* CDEBadgeView.m in Sources */,
 				ABC1E6B8177765CE0069D252 /* CDEEntityTableCellView.m in Sources */,
-				ABC1E6C0177779A90069D252 /* CDEThreeColumnSplitViewDelegate.m in Sources */,
 				AB15E6D0177B41D300FA113E /* CDEToManyRelationshipTableCellView.m in Sources */,
 				AB15E6D7177B43D300FA113E /* NSPropertyDescription+CDEAdditions.m in Sources */,
 				AB15E6DA177B442400FA113E /* NSRelationshipDescription+CDEAdditions.m in Sources */,
