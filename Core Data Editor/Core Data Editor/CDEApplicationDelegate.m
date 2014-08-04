@@ -1,10 +1,8 @@
 #import "CDEApplicationDelegate.h"
 #import "CDEPreferencesWindowController.h"
-#import "NSUserDefaults+CDEAdditions.h"
 #import "CDENSNullToNilTransformer.h"
 #import "CDENameToNameForDisplayValueTransformer.h"
 #import "NSPersistentStore+CDEStoreAnalyzer.h"
-#import "NSURL+CDEAdditions.h"
 #import "CDEConfiguration.h"
 #import "CDEDocument.h"
 #import "CDEAboutWindowController.h"
@@ -64,14 +62,14 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     BOOL iPhoneSimulatorSuccess = YES;
-    
+
     if(defaults.simulatorDirectory_cde != nil) {
         self.iPhoneSimulatorDirectory = defaults.simulatorDirectory_cde;
         iPhoneSimulatorSuccess = [self.iPhoneSimulatorDirectory startAccessingSecurityScopedResource];
     }
-    
+
     BOOL buildProductsDirectorySuccess = YES;
-    
+
     if(defaults.buildProductsDirectory_cde != nil) {
         self.derivedDataDirectory = defaults.buildProductsDirectory_cde;
         buildProductsDirectorySuccess = [self.derivedDataDirectory startAccessingSecurityScopedResource];
@@ -84,18 +82,18 @@
             }
         }
     }
-    
+
     return (iPhoneSimulatorSuccess && buildProductsDirectorySuccess);
 }
 
 #pragma mark NSApplicationDelegate
 - (void)applicationWillFinishLaunching:(NSNotification *)notification {
-  
+
     // Start accessing security scoped resources here because this delegate method is called
     // before applicationDidFinishLaunching: and before application:openFile:
     // Since we need access to the resources in both cases...
     [self startAccessingCoreDataEditorSecurityScopedResources];
-    
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
   [defaults setObject:@"HELLO" forKey:@"AAAAAAAAAAAAAA"];
     [[NSNotificationCenter defaultCenter] addObserverForName:CDEUserDefaultsNotifications.didChangeSimulatorDirectory object:defaults queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
@@ -104,7 +102,7 @@
         [self.iPhoneSimulatorDirectory startAccessingSecurityScopedResource];
         [self.projectBrowserWindowController updateProjectDirectoryURL:self.iPhoneSimulatorDirectory];
     }];
-    
+
     [[NSNotificationCenter defaultCenter] addObserverForName:CDEUserDefaultsNotifications.didChangeBuildProductsDirectory object:defaults queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
         [self.derivedDataDirectory stopAccessingSecurityScopedResource];
         self.derivedDataDirectory = defaults.buildProductsDirectory_cde;
@@ -112,15 +110,15 @@
     }];
 }
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
-    
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if(defaults.applicationNeedsSetup_cde) {
         self.setupWindowController = [CDESetupWindowController new];
         [self.setupWindowController showWindow:self];
     }
-    
+
     self.aboutWindowController = [[CDEAboutWindowController alloc] initWithWindowNibName:@"CDEAboutWindowController"];
-    
+
     // Create prefs if needed
     if(self.preferencesWindowController == nil) {
         self.preferencesWindowController = [CDEPreferencesWindowController new];
@@ -156,16 +154,16 @@
         [self.preferencesWindowController showAutomaticProjectCreationPreferencesAndDisplayInfoSheetWithCompletionHandler:nil];
         return YES;
     }
-    
+
     // Try to find a matching model
     NSFileManager *fileManager = [NSFileManager new];
     NSDirectoryEnumerator *enumerator = [fileManager enumeratorAtURL:buildProductsDirectory includingPropertiesForKeys:nil options:NSDirectoryEnumerationSkipsHiddenFiles errorHandler:^BOOL(NSURL *url, NSError *error) {
         NSLog(@"error while enumerating contents of build products directory: %@", error);
         return YES;
     }];
-    
+
     NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
-    
+
     for(NSURL *potentialModelURL in enumerator) {
         NSError *error = nil;
         NSString *UTI = [workspace typeOfFile:potentialModelURL.path error:&error];
@@ -182,7 +180,7 @@
         NSURL *modelURL = potentialModelURL;
         NSManagedObjectModel *model = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
         NSManagedObjectModel *transformedModel = model.transformedManagedObjectModel_cde;
-        
+
         // Test compatibility
         error = nil;
         BOOL isCompatible = [transformedModel isCompatibleWithStoreAtURL:storeURL error_cde:&error];

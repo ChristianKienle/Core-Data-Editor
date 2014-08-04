@@ -14,7 +14,6 @@
 + (instancetype)URLForWebsite_cde;
 + (instancetype)URLForCreateProjectTutorial_cde;
 + (instancetype)URLForSupportWebsite_cde;
-+ (instancetype)URLForVersionCheck_cde;
 
 @end
 

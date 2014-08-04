@@ -5,7 +5,7 @@
 #pragma mark - Bookmarks (Convenience)
 + (NSURL *)URLByResolvingBookmarkData:(NSData *)data error_cde:(NSError **)error {
     NSParameterAssert(data);
-    
+
     return [NSURL URLByResolvingBookmarkData:data
                                      options:NSURLBookmarkResolutionWithoutUI
                                relativeToURL:nil
@@ -57,10 +57,6 @@
 
 + (instancetype)URLForSupportWebsite_cde {
     return [self URLWithString:[NSBundle mainBundle].infoDictionary[@"CDECustomerSupportURL"]];
-}
-
-+ (instancetype)URLForVersionCheck_cde {
-    return [self URLWithString:[NSBundle mainBundle].infoDictionary[@"CDECurrentVersionPath"]];
 }
 
 @end

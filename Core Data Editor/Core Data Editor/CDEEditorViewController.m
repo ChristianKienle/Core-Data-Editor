@@ -16,7 +16,6 @@
 // Additions: Begin
 #import "NSPersistentStore+CDEStoreAnalyzer.h"
 #import "NSManagedObjectModel-CDEAdditions.h"
-#import "NSView+CDEAdditions.h"
 #import "NSEntityDescription+CDEAdditions.h"
 #import "NSPersistentStoreCoordinator+CDEAdditions.h"
 // Additions: End
