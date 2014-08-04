@@ -12,8 +12,7 @@
 
 @implementation CDEManagedObjectsViewController
 
-- (instancetype)initWithStyle:(UITableViewStyle)style
-{
+- (instancetype)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
     if (self) {
       self.fetchedResults = @[];
@@ -21,8 +20,7 @@
     return self;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   [self updateUI];
 }
