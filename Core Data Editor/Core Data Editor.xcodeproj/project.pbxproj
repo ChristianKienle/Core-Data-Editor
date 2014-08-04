@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E25BCB5198D645100BBA0C0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E25BCB4198D645100BBA0C0 /* XCTest.framework */; };
 		AB06C0AF1854CB07002945CB /* CDEToOneRelationshipRequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06C0AE1854CB07002945CB /* CDEToOneRelationshipRequestDataCoordinator.m */; };
 		AB0927511768C6EC00FC59FB /* CDEEntitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB09274F1768C6EC00FC59FB /* CDEEntitiesViewController.m */; };
 		AB0927521768C6EC00FC59FB /* CDEEntitiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0927501768C6EC00FC59FB /* CDEEntitiesViewController.xib */; };
@@ -39,7 +40,6 @@
 		AB15E741177B690B00FA113E /* CDEEntityRequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB15E740177B690B00FA113E /* CDEEntityRequestDataCoordinator.m */; };
 		AB15E744177B6DBF00FA113E /* NSTableView+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB15E743177B6DBF00FA113E /* NSTableView+CDEAdditions.m */; };
 		AB15E748177B702600FA113E /* CDEOrderedRelationshipRequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB15E747177B702600FA113E /* CDEOrderedRelationshipRequestDataCoordinator.m */; };
-		AB22AC4517663876004890AC /* NSManagedObjectModel-CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8451765D7240024A9D2 /* NSManagedObjectModel-CDEAdditions.m */; };
 		AB22AC4817663A3B004890AC /* simple.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB22AC4617663A3B004890AC /* simple.xcdatamodeld */; settings = {COMPILER_FLAGS = "-w"; }; };
 		AB22AC4B17663C5C004890AC /* simple_no_inverse.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB22AC4917663C5C004890AC /* simple_no_inverse.xcdatamodeld */; settings = {COMPILER_FLAGS = "-w"; }; };
 		AB22AC7A17664480004890AC /* NSBundle+CDEModelFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = AB22AC7917664480004890AC /* NSBundle+CDEModelFinder.m */; };
@@ -240,6 +240,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E25BCB4198D645100BBA0C0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		AB06C0AD1854CB07002945CB /* CDEToOneRelationshipRequestDataCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEToOneRelationshipRequestDataCoordinator.h; sourceTree = "<group>"; };
 		AB06C0AE1854CB07002945CB /* CDEToOneRelationshipRequestDataCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEToOneRelationshipRequestDataCoordinator.m; sourceTree = "<group>"; };
 		AB09274E1768C6EC00FC59FB /* CDEEntitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEEntitiesViewController.h; sourceTree = "<group>"; };
@@ -446,7 +447,6 @@
 		ABBEA8C1176620E10024A9D2 /* Core Data Editor Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core Data Editor Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABBEA8C7176620E20024A9D2 /* Core Data Editor Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Core Data Editor Tests-Info.plist"; sourceTree = "<group>"; };
 		ABBEA8C9176620E20024A9D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		ABBEA8CB176620E20024A9D2 /* Core_Data_Editor_Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core_Data_Editor_Tests.h; sourceTree = "<group>"; };
 		ABBEA8CC176620E20024A9D2 /* Core_Data_Editor_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Core_Data_Editor_Tests.m; sourceTree = "<group>"; };
 		ABBEA8CE176620E20024A9D2 /* Core Data Editor Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Core Data Editor Tests-Prefix.pch"; sourceTree = "<group>"; };
 		ABBEA8D21766212A0024A9D2 /* NSPasteboard-CDEAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPasteboard-CDEAdditions.h"; sourceTree = "<group>"; };
@@ -638,6 +638,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E25BCB5198D645100BBA0C0 /* XCTest.framework in Frameworks */,
 				ABBEA8C4176620E10024A9D2 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1210,6 +1211,7 @@
 		ABBEA7D81765CB730024A9D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2E25BCB4198D645100BBA0C0 /* XCTest.framework */,
 				ABBEA7D91765CB730024A9D2 /* Cocoa.framework */,
 				ABBEA7DB1765CB730024A9D2 /* Other Frameworks */,
 			);
@@ -1488,7 +1490,6 @@
 		ABBEA8C5176620E10024A9D2 /* Core Data Editor Tests */ = {
 			isa = PBXGroup;
 			children = (
-				ABBEA8CB176620E20024A9D2 /* Core_Data_Editor_Tests.h */,
 				ABBEA8CC176620E20024A9D2 /* Core_Data_Editor_Tests.m */,
 				ABBEA8C6176620E20024A9D2 /* Supporting Files */,
 			);
@@ -2459,7 +2460,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB22AC4517663876004890AC /* NSManagedObjectModel-CDEAdditions.m in Sources */,
 				ABBEA8CD176620E20024A9D2 /* Core_Data_Editor_Tests.m in Sources */,
 				AB22AC4817663A3B004890AC /* simple.xcdatamodeld in Sources */,
 				AB22AC4B17663C5C004890AC /* simple_no_inverse.xcdatamodeld in Sources */,
@@ -2624,6 +2624,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Core Data Editor Tests/Core Data Editor Tests-Prefix.pch";
@@ -2645,6 +2646,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Core Data Editor Tests/Core Data Editor Tests-Prefix.pch";
