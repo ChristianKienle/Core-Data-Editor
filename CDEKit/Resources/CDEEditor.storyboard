@@ -319,7 +319,13 @@
                             <outlet property="delegate" destination="OOM-g1-5e3" id="Kv6-kC-M5E"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Ogr-hg-iRM"/>
+                    <navigationItem key="navigationItem" id="Ogr-hg-iRM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="dbw-rz-URP">
+                            <connections>
+                                <action selector="didTapDelete:" destination="OOM-g1-5e3" id="GSE-mg-gwG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hKz-M5-TbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

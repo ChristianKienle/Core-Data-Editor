@@ -21,6 +21,12 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+  [super viewWillAppear:animated];
+  [self updateUI];
+}
+
 #pragma mark - Storyboarding
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if([segue.identifier isEqualToString:@"showManagedObject"]) {
