@@ -28,40 +28,27 @@
 }
 
 #pragma mark - NSString to value for NSManagedObject
-- (id)valueForAttributeType_cde:(NSAttributeType)type {
-    NSDateFormatter *dateFormatter = nil;
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if(type == NSDateAttributeType) {
-        dateFormatter = defaults.dateFormatter_cde;
-    }
-    NSNumberFormatter *numberFormatter = nil;
-    if(CDEIsFloatingPointAttributeType(type) || CDEIsIntegerAttributeType(type)) {
-        numberFormatter = defaults.floatingPointNumberFormatter_cde;
-    }
-    
-    return [self valueForAttributeType:type dateFormatter:dateFormatter numberFormatter_cde:numberFormatter];
-}
 
 - (id)valueForAttributeType:(NSAttributeType)type dateFormatter:(NSDateFormatter *)dateFormatter numberFormatter_cde:(NSNumberFormatter *)numberFormatter {
     if([NSAttributeDescription isSupportedCSVAttributeType_cde:type] == NO) {
         NSLog(@"Error (in %@): type %li is not supported.", NSStringFromSelector(_cmd), type);
         return nil;
     }
-    
+
     // Easy case
     if(type == NSStringAttributeType) {
         return self;
     }
-    
+
     NSString *trimmed = [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    
+
     if(type == NSBooleanAttributeType) {
         // 1, true, TRUE, yes, YES => @YES
         // otherwise @NO
         NSSet *trueStrings = [NSSet setWithArray:@[@"1", @"true", @"yes", @"YES"]];
         return @([trueStrings containsObject:trimmed]);
     }
-    
+
     // Dates
     if(type == NSDateAttributeType) {
         if(dateFormatter == nil) {
@@ -70,7 +57,7 @@
         }
         return [dateFormatter dateFromString:trimmed];
     }
-    
+
     // Floats
     if(CDEIsFloatingPointAttributeType(type) || CDEIsIntegerAttributeType(type)) {
         if(numberFormatter == nil) {
@@ -79,7 +66,7 @@
         }
         return [numberFormatter numberFromString:trimmed];
     }
-    
+
     return nil;
 }
 

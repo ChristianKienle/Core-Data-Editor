@@ -1,4 +1,3 @@
-#import "NSManagedObjectContext+CDEAdditions.h"
 #import "NSError+CDEValidation.h"
 
 @implementation NSManagedObjectContext (CDEAdditions)
@@ -10,7 +9,7 @@
     NSMutableOrderedSet *potentialInvalidObjects = [NSMutableOrderedSet orderedSet];
     NSArray *errors = managedObject.validationErrors_cde;
     NSLog(@"%lu validation errors", errors.count);
-    
+
     for(NSError *error in errors) {
         NSString *propertyName = error.userInfo[NSValidationKeyErrorKey];
         if(propertyName == nil) {
@@ -42,8 +41,6 @@
 
             }
         }
-//        NSLog(@"error: %@", error.userInfo);
-//        NSLog(@"error");
     }
     for(NSManagedObject *potentialInvalidObject in potentialInvalidObjects) {
         [self makeManagedObjectValid:potentialInvalidObject];

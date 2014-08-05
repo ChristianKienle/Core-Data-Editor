@@ -14,7 +14,6 @@
 		AB0927571768C81E00FC59FB /* CDEEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0927551768C81E00FC59FB /* CDEEditorViewController.m */; };
 		AB0927581768C81E00FC59FB /* CDEEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0927561768C81E00FC59FB /* CDEEditorViewController.xib */; };
 		AB0927631768E65200FC59FB /* NSURL+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0927621768E65200FC59FB /* NSURL+CDEAdditions.m */; };
-		AB0927671768EE5E00FC59FB /* NSView+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0927661768EE5E00FC59FB /* NSView+CDEAdditions.m */; };
 		AB09276A1768F36100FC59FB /* CDEApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0927691768F36100FC59FB /* CDEApplicationDelegate.m */; };
 		AB09279B1768F73000FC59FB /* CDEManagedObjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0927991768F73000FC59FB /* CDEManagedObjectsViewController.m */; };
 		AB09279C1768F73000FC59FB /* CDEManagedObjectsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB09279A1768F73000FC59FB /* CDEManagedObjectsViewController.xib */; };
@@ -160,10 +159,8 @@
 		ABC1E6A6177745980069D252 /* CDEBinaryValuePreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E6A5177745980069D252 /* CDEBinaryValuePreviewView.m */; };
 		ABC1E6AA177757390069D252 /* NSEntityDescription+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E6A9177757390069D252 /* NSEntityDescription+CDEAdditions.m */; };
 		ABC1E6B117775DAC0069D252 /* NSSortDescriptor+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E6B017775DAC0069D252 /* NSSortDescriptor+CDEAdditions.m */; };
-		ABC1E6B5177760130069D252 /* CDEBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E6B4177760130069D252 /* CDEBadgeView.m */; };
 		ABC1E6B8177765CE0069D252 /* CDEEntityTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E6B7177765CE0069D252 /* CDEEntityTableCellView.m */; };
 		ABC1E6BD177777940069D252 /* entity-icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = ABC1E6BC177777940069D252 /* entity-icon-small.png */; };
-		ABC1E6C0177779A90069D252 /* CDEThreeColumnSplitViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E6BF177779A50069D252 /* CDEThreeColumnSplitViewDelegate.m */; };
 		ABC83B0F17B1166300078580 /* mogenerator in Resources */ = {isa = PBXBuildFile; fileRef = ABC83B0E17B1166300078580 /* mogenerator */; };
 		ABC83B1117B116A000078580 /* mogeneratorReadme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = ABC83B1017B116A000078580 /* mogeneratorReadme.rtf */; };
 		ABC83B1917B1170900078580 /* CDECodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC83B1317B1170900078580 /* CDECodeGenerator.m */; };
@@ -251,8 +248,6 @@
 		AB0927561768C81E00FC59FB /* CDEEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDEEditorViewController.xib; sourceTree = "<group>"; };
 		AB0927611768E65200FC59FB /* NSURL+CDEAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+CDEAdditions.h"; sourceTree = "<group>"; };
 		AB0927621768E65200FC59FB /* NSURL+CDEAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+CDEAdditions.m"; sourceTree = "<group>"; };
-		AB0927651768EE5E00FC59FB /* NSView+CDEAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+CDEAdditions.h"; sourceTree = "<group>"; };
-		AB0927661768EE5E00FC59FB /* NSView+CDEAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+CDEAdditions.m"; sourceTree = "<group>"; };
 		AB0927681768F36000FC59FB /* CDEApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEApplicationDelegate.h; sourceTree = "<group>"; };
 		AB0927691768F36100FC59FB /* CDEApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEApplicationDelegate.m; sourceTree = "<group>"; };
 		AB0927981768F73000FC59FB /* CDEManagedObjectsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEManagedObjectsViewController.h; sourceTree = "<group>"; };
@@ -510,13 +505,9 @@
 		ABC1E6A9177757390069D252 /* NSEntityDescription+CDEAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEntityDescription+CDEAdditions.m"; sourceTree = "<group>"; };
 		ABC1E6AF17775DAB0069D252 /* NSSortDescriptor+CDEAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSortDescriptor+CDEAdditions.h"; sourceTree = "<group>"; };
 		ABC1E6B017775DAC0069D252 /* NSSortDescriptor+CDEAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSortDescriptor+CDEAdditions.m"; sourceTree = "<group>"; };
-		ABC1E6B3177760130069D252 /* CDEBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEBadgeView.h; sourceTree = "<group>"; };
-		ABC1E6B4177760130069D252 /* CDEBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEBadgeView.m; sourceTree = "<group>"; };
 		ABC1E6B6177765CE0069D252 /* CDEEntityTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEEntityTableCellView.h; sourceTree = "<group>"; };
 		ABC1E6B7177765CE0069D252 /* CDEEntityTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEEntityTableCellView.m; sourceTree = "<group>"; };
 		ABC1E6BC177777940069D252 /* entity-icon-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "entity-icon-small.png"; sourceTree = "<group>"; };
-		ABC1E6BE177779A40069D252 /* CDEThreeColumnSplitViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEThreeColumnSplitViewDelegate.h; sourceTree = "<group>"; };
-		ABC1E6BF177779A50069D252 /* CDEThreeColumnSplitViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEThreeColumnSplitViewDelegate.m; sourceTree = "<group>"; };
 		ABC83B0E17B1166300078580 /* mogenerator */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mogenerator; sourceTree = "<group>"; };
 		ABC83B1017B116A000078580 /* mogeneratorReadme.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = mogeneratorReadme.rtf; sourceTree = "<group>"; };
 		ABC83B1217B1170900078580 /* CDECodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDECodeGenerator.h; sourceTree = "<group>"; };
@@ -676,7 +667,6 @@
 			children = (
 				ABC1E6B6177765CE0069D252 /* CDEEntityTableCellView.h */,
 				ABC1E6B7177765CE0069D252 /* CDEEntityTableCellView.m */,
-				ABC1E6B2177760060069D252 /* Badge View */,
 				AB09274E1768C6EC00FC59FB /* CDEEntitiesViewController.h */,
 				AB09274F1768C6EC00FC59FB /* CDEEntitiesViewController.m */,
 				AB09279D1768F95D00FC59FB /* CDEEntitiesViewControllerDelegate.h */,
@@ -691,7 +681,7 @@
 				AB1466C4178727D200E3EEA3 /* Validation Errors View Controller */,
 				ABC189EE17809DFA00AF4F15 /* Managed Object View */,
 				ABD5BCA0178037730050025B /* Relationships View Controller */,
-				ABC189ED17809D0800AF4F15 /* SplitView Müll */,
+				ABC189ED17809D0800AF4F15 /* SplitView Müll */,
 				AB0927971768F71900FC59FB /* Managed Objects View Controller */,
 				AB0927481768C6AE00FC59FB /* Entities View Controller */,
 				AB0927541768C81E00FC59FB /* CDEEditorViewController.h */,
@@ -708,15 +698,6 @@
 				AB0927621768E65200FC59FB /* NSURL+CDEAdditions.m */,
 			);
 			name = NSURL;
-			sourceTree = "<group>";
-		};
-		AB0927641768EE5100FC59FB /* NSView */ = {
-			isa = PBXGroup;
-			children = (
-				AB0927651768EE5E00FC59FB /* NSView+CDEAdditions.h */,
-				AB0927661768EE5E00FC59FB /* NSView+CDEAdditions.m */,
-			);
-			name = NSView;
 			sourceTree = "<group>";
 		};
 		AB0927971768F71900FC59FB /* Managed Objects View Controller */ = {
@@ -1282,7 +1263,6 @@
 				ABDF8AE017A41D7700727346 /* NSWorkspace */,
 				AB30FF72179C6F9700E49E0B /* NSUserDefaults */,
 				ABBB32261798533400FE964E /* Core Data */,
-				AB0927641768EE5100FC59FB /* NSView */,
 				AB0927601768E64000FC59FB /* NSURL */,
 				ABBEA8881765E2000024A9D2 /* NSError */,
 				ABBEA8871765E1E90024A9D2 /* NSPasteboard */,
@@ -1508,13 +1488,11 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		ABC189ED17809D0800AF4F15 /* SplitView Müll */ = {
+		ABC189ED17809D0800AF4F15 /* SplitView Müll */ = {
 			isa = PBXGroup;
 			children = (
 				AB8F8345177C7C49000B4467 /* CDETwoColumnSplitViewDelegate.h */,
 				AB8F8346177C7C4A000B4467 /* CDETwoColumnSplitViewDelegate.m */,
-				ABC1E6BE177779A40069D252 /* CDEThreeColumnSplitViewDelegate.h */,
-				ABC1E6BF177779A50069D252 /* CDEThreeColumnSplitViewDelegate.m */,
 				ABFBB3AF179C36E2003B5346 /* CDETwoColumnSplitViewController.h */,
 				ABFBB3B0179C36E2003B5346 /* CDETwoColumnSplitViewController.m */,
 			);
@@ -1578,15 +1556,6 @@
 				ABC1E6A9177757390069D252 /* NSEntityDescription+CDEAdditions.m */,
 			);
 			name = NSEntityDescription;
-			sourceTree = "<group>";
-		};
-		ABC1E6B2177760060069D252 /* Badge View */ = {
-			isa = PBXGroup;
-			children = (
-				ABC1E6B3177760130069D252 /* CDEBadgeView.h */,
-				ABC1E6B4177760130069D252 /* CDEBadgeView.m */,
-			);
-			name = "Badge View";
 			sourceTree = "<group>";
 		};
 		ABC1E6BB1777776B0069D252 /* Assets */ = {
@@ -2339,7 +2308,6 @@
 				AB0927511768C6EC00FC59FB /* CDEEntitiesViewController.m in Sources */,
 				AB0927571768C81E00FC59FB /* CDEEditorViewController.m in Sources */,
 				AB0927631768E65200FC59FB /* NSURL+CDEAdditions.m in Sources */,
-				AB0927671768EE5E00FC59FB /* NSView+CDEAdditions.m in Sources */,
 				AB09276A1768F36100FC59FB /* CDEApplicationDelegate.m in Sources */,
 				AB09279B1768F73000FC59FB /* CDEManagedObjectsViewController.m in Sources */,
 				AB3B078E1775D39A000855B0 /* CDEStringValueTableCellView.m in Sources */,
@@ -2359,9 +2327,7 @@
 				ABC1E6A6177745980069D252 /* CDEBinaryValuePreviewView.m in Sources */,
 				ABC1E6AA177757390069D252 /* NSEntityDescription+CDEAdditions.m in Sources */,
 				ABC1E6B117775DAC0069D252 /* NSSortDescriptor+CDEAdditions.m in Sources */,
-				ABC1E6B5177760130069D252 /* CDEBadgeView.m in Sources */,
 				ABC1E6B8177765CE0069D252 /* CDEEntityTableCellView.m in Sources */,
-				ABC1E6C0177779A90069D252 /* CDEThreeColumnSplitViewDelegate.m in Sources */,
 				AB15E6D0177B41D300FA113E /* CDEToManyRelationshipTableCellView.m in Sources */,
 				AB15E6D7177B43D300FA113E /* NSPropertyDescription+CDEAdditions.m in Sources */,
 				AB15E6DA177B442400FA113E /* NSRelationshipDescription+CDEAdditions.m in Sources */,
