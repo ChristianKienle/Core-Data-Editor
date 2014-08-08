@@ -116,13 +116,26 @@
         self.setupWindowController = [CDESetupWindowController new];
         [self.setupWindowController showWindow:self];
     }
+    else if (defaults.opensProjectBrowserOnLaunch_cde) {
+        [self showProjectBrowser:nil];
 
+    }
+    
     self.aboutWindowController = [[CDEAboutWindowController alloc] initWithWindowNibName:@"CDEAboutWindowController"];
-
     // Create prefs if needed
     if(self.preferencesWindowController == nil) {
         self.preferencesWindowController = [CDEPreferencesWindowController new];
     }
+}
+
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if(!flag && defaults.opensProjectBrowserOnLaunch_cde) {
+        [self showProjectBrowser:nil];
+        return NO;
+    }
+    return YES;
 }
 
 - (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender {
