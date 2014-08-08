@@ -12,6 +12,7 @@ const struct CDEUserDefaultsKeys CDEUserDefaultsKeys = {
     .simulatorDirectoryBookmarkData = @"CDEUserDefaultsSimulatorDirectoryBookmarkData",
     .applicationNeedsSetup = @"CDEUserDefaultsApplicationNeedsSetup",
     .firstLaunchDate = @"CDEUserDefaultsFirstLaunchDate",
+    .openProjectBrowserOnLaunch = @"CDEUserDefaultsOpenProjectBrowserOnLaunch",
 };
 
 const struct CDEUserDefaultsNotifications CDEUserDefaultsNotifications = {
@@ -30,7 +31,9 @@ const struct CDEUserDefaultsNotifications CDEUserDefaultsNotifications = {
                                 CDEUserDefaultsKeys.showsNiceEntityAndPropertyNames : @YES,
                                 CDEUserDefaultsKeys.automaticallyResolvesValidationErrors : @NO,
                                 CDEUserDefaultsKeys.applicationNeedsSetup : @YES,
-                                CDEUserDefaultsKeys.firstLaunchDate : [NSDate new] };
+                                CDEUserDefaultsKeys.firstLaunchDate : [NSDate new],
+                                CDEUserDefaultsKeys.openProjectBrowserOnLaunch : @YES,
+                                };
     
     [[self standardUserDefaults] registerDefaults:defaults];
 }
@@ -43,6 +46,15 @@ const struct CDEUserDefaultsNotifications CDEUserDefaultsNotifications = {
 - (void)setShowsNameOfEntityInObjectIDColumn_cde:(BOOL)showsNameOfEntityInObjectIDColumn {
     [self setBool:showsNameOfEntityInObjectIDColumn forKey:CDEUserDefaultsKeys.showsNameOfEntityInObjectIDColumn];
 }
+- (BOOL)opensProjectBrowserOnLaunch_cde
+{
+    return [self boolForKey:CDEUserDefaultsKeys.openProjectBrowserOnLaunch];
+}
+- (void)setOpenProjectBrowserOnLaunch_cde:(BOOL)opensProjectBrowserOnLaunch
+{
+    [self setBool:opensProjectBrowserOnLaunch forKey:CDEUserDefaultsKeys.openProjectBrowserOnLaunch];
+}
+
 
 - (NSInteger)numberOfDecimals_cde {
     return [self integerForKey:CDEUserDefaultsKeys.numberOfDecimals];
