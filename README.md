@@ -69,11 +69,13 @@ Core Data Editor has the following third party dependencies:
 * Omni NSAlert Extensions
 * RSVerticallyCenteredTextFieldCell
 * Code from ATS
+* mogenerator
 
 # Contributors
 * [Christian Kienle](https://github.com/ChristianKienle) (original developer, maintainer)
 * [Denis Lebedev](https://github.com/garnett) 
 * [danydev](https://github.com/danydev)
+* [Roberto Dries](https://github.com/robertodries92)
 
 # Contact
 [Christian Kienle (me@christian-kienle.de)](mailto:me@christian-kienle.de) 
