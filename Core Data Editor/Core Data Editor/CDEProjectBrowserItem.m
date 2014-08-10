@@ -37,8 +37,28 @@
 }
 
 - (void)createNamesAndIcon {
-    self.storeName = [self.storePath lastPathComponent];
-    self.modelName = [self.modelPath lastPathComponent];
+    NSDate *fileModDate;
+    NSError *error;
+    NSURL *url=[NSURL fileURLWithPath:self.storePath];
+    [url getResourceValue:&fileModDate forKey:NSURLContentModificationDateKey error:&error];
+    
+    //Also look for: .sqlite-wal (write-ahead log).  Use most recent, although the wal should be most recent if found.
+    NSURL *walUrl=[NSURL fileURLWithPath:[NSString stringWithFormat:@"%@-wal",self.storePath]];
+    NSDate *walDate;
+    [walUrl getResourceValue:&walDate forKey:NSURLContentModificationDateKey error:&error];
+    
+    if ([fileModDate compare:walDate]==NSOrderedAscending) {
+        fileModDate=walDate;
+    }
+    
+    self.storeName=[NSString stringWithFormat:@"%@  (%@)",[self.storePath lastPathComponent], [self relativeDateStringForDate:fileModDate]];
+    
+    NSDate *modelModDate;
+    NSURL *modelUrl=[NSURL fileURLWithPath:self.modelPath];
+    [modelUrl getResourceValue:&modelModDate forKey:NSURLContentModificationDateKey error:&error];
+
+    self.modelName=[NSString stringWithFormat:@"%@  (%@)",[self.modelPath lastPathComponent], [self relativeDateStringForDate:modelModDate]];
+    
     self.projectName = [self.modelName stringByDeletingPathExtension];
     NSArray *components = [self.modelPath pathComponents];
     [components enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(NSString *component, NSUInteger idx, BOOL *stop) {
@@ -74,6 +94,57 @@
     
     NSImage *image = [[NSImage alloc] initWithContentsOfURL:iconURL];
     return image;
+}
+
+- (NSString *)relativeDateStringForDate:(NSDate *)date {
+    const int SECOND = 1;
+    const int MINUTE = 60 * SECOND;
+    const int HOUR = 60 * MINUTE;
+    const int DAY = 24 * HOUR;
+    const int MONTH = 30 * DAY;
+    
+    NSDate *now = [NSDate date];
+    NSTimeInterval delta = [date timeIntervalSinceDate:now] * -1.0;
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSUInteger units = (NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit);
+    NSDateComponents *components = [calendar components:units fromDate:date toDate:now options:0];
+    
+    NSString *relativeString;
+    
+    if (delta < 0) {
+        relativeString = @"In the future!";
+        
+    } else if (delta < 1 * MINUTE) {
+        relativeString = (components.second == 1) ? @"One second ago" : [NSString stringWithFormat:@"%ld seconds ago",(long)components.second];
+        
+    } else if (delta < 2 * MINUTE) {
+        relativeString =  @"a minute ago";
+        
+    } else if (delta < 45 * MINUTE) {
+        relativeString = [NSString stringWithFormat:@"%ld minutes ago",(long)components.minute];
+        
+    } else if (delta < 90 * MINUTE) {
+        relativeString = @"an hour ago";
+        
+    } else if (delta < 24 * HOUR) {
+        relativeString = [NSString stringWithFormat:@"%ld hours ago",(long)components.hour];
+        
+    } else if (delta < 48 * HOUR) {
+        relativeString = @"yesterday";
+        
+    } else if (delta < 30 * DAY) {
+        relativeString = [NSString stringWithFormat:@"%ld days ago",(long)components.day];
+        
+    } else if (delta < 12 * MONTH) {
+        relativeString = (components.month <= 1) ? @"One month ago" : [NSString stringWithFormat:@"%ld months ago",(long)components.month];
+        
+    } else {
+        relativeString = (components.year <= 1) ? @"One year ago" : [NSString stringWithFormat:@"%ld years ago",(long)components.year];
+        
+    }
+    
+    return relativeString;
 }
 
 @end
