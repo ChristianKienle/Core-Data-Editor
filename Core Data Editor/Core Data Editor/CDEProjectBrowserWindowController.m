@@ -93,62 +93,7 @@ typedef void(^ProjectBrowserReloadCompletionHandler)(NSArray *projectBrowserItem
         
         [enumerator getMetadataByStorePath:&metadataByStorePath modelByModelPath:&modelByModelPath];
         
-        NSMutableArray *items = [NSMutableArray new];
-        NSMutableArray *itemsWithDates=[NSMutableArray new]; // Each element is dictionary with {modificationDate:, storePath:, modelPath}
-        
-        // Find compatible combinations
-        [modelByModelPath enumerateKeysAndObjectsUsingBlock:^(NSString *modelPath, NSManagedObjectModel *model, BOOL *stop) {
-            [metadataByStorePath enumerateKeysAndObjectsUsingBlock:^(NSString *storePath, NSDictionary *metadata, BOOL *stop) {
-                BOOL isCompatible = [model isConfiguration:nil compatibleWithStoreMetadata:metadata];
-                if(isCompatible) {
-                    NSString *storePathAppName = [[NSURL fileURLWithPath:storePath] appFolderName_cde];
-                    NSString *modelPathAppName = [[NSURL fileURLWithPath:modelPath] appFolderName_cde];
-                    BOOL sameApplication = [storePathAppName isEqualToString:modelPathAppName];
-                    if (sameApplication) {
-                        CDEProjectBrowserItem *item = [[CDEProjectBrowserItem alloc] initWithStorePath:storePath modelPath:modelPath];
-                        [items addObject:item];
-                    }
-                    NSDate *storeModDate;
-                    NSURL *storeURL=[NSURL fileURLWithPath:storePath];
-                    NSError *error;
-                    [storeURL getResourceValue:&storeModDate forKey:NSURLContentModificationDateKey error:&error];
-                    
-                    //Also look for: .sqlite-wal (write-ahead log).  Use most recent, although the wal should be most recent if found.
-                    NSString *walPath=[NSString stringWithFormat:@"%@-wal",storeURL.absoluteString];
-                    NSURL *walUrl=[NSURL URLWithString:walPath];
-                    NSDate *walModDate;
-                    [walUrl getResourceValue:&walModDate forKey:NSURLContentModificationDateKey error:&error];
-                    
-                    if ([storeModDate compare:walModDate]==NSOrderedAscending) {
-                        storeModDate=walModDate;
-                    }
-                    
-                    NSDate *modelModDate;
-                    NSURL *modelURL=[NSURL fileURLWithPath:modelPath];
-                    [modelURL getResourceValue:&modelModDate forKey:NSURLContentModificationDateKey error:&error];
-                    
-                    //NSSortDescriptor doesn't do NSDate, so use a string. Both dates concatenated for nesting.
-                    NSString *fileModDateString=[NSString stringWithFormat:@"%@ - %@",storeModDate,modelModDate];
-                    
-                    NSDictionary *itemWithDate=@{kCDEFileModificationDateKey: fileModDateString,
-                                                 kCDEStorePathKey: storePath,
-                                                 kCDEModelPathKey: modelPath};
-                    
-                    [itemsWithDates addObject:itemWithDate];
-                }
-            }];
-        }];
-        
-        //Now sort and display
-        NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:kCDEFileModificationDateKey ascending:NO];
-        NSArray *itemsSorted=[itemsWithDates sortedArrayUsingDescriptors:[NSArray arrayWithObjects:descriptor,nil]];
-        
-        for (NSDictionary *itemWithDate in itemsSorted) {
-            NSString *storePath=itemWithDate[kCDEStorePathKey];
-            NSString *modelPath=itemWithDate[kCDEModelPathKey];
-            CDEProjectBrowserItem *item = [[CDEProjectBrowserItem alloc] initWithStorePath:storePath modelPath:modelPath];
-            [items addObject:item];
-        }
+        NSArray *items = [self compatibleProjectBrowserItemsWithMetadataByStorePath:metadataByStorePath modelByModelPath:modelByModelPath];
         
         double delayInSeconds = 1.0;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
@@ -156,6 +101,66 @@ typedef void(^ProjectBrowserReloadCompletionHandler)(NSArray *projectBrowserItem
             completionHandler(items);
         });
     });
+}
+
+- (NSArray *)compatibleProjectBrowserItemsWithMetadataByStorePath:(NSDictionary *)metadataByStorePath modelByModelPath:(NSDictionary*)modelByModelPath {
+    NSMutableArray *items = [NSMutableArray new];
+    NSMutableArray *itemsWithDates= [NSMutableArray new]; // Each element is dictionary with {modificationDate:, storePath:, modelPath}
+    
+    // Find compatible combinations
+    [modelByModelPath enumerateKeysAndObjectsUsingBlock:^(NSString *modelPath, NSManagedObjectModel *model, BOOL *stop) {
+        [metadataByStorePath enumerateKeysAndObjectsUsingBlock:^(NSString *storePath, NSDictionary *metadata, BOOL *stop) {
+            BOOL isCompatible = [model isConfiguration:nil compatibleWithStoreMetadata:metadata];
+            if(isCompatible) {
+                NSString *storePathAppName = [[NSURL fileURLWithPath:storePath] appFolderName_cde];
+                NSString *modelPathAppName = [[NSURL fileURLWithPath:modelPath] appFolderName_cde];
+                BOOL sameApplication = [storePathAppName isEqualToString:modelPathAppName];
+                if (sameApplication == NO) {
+                    return;
+                }
+
+                NSDate *storeModDate;
+                NSURL *storeURL=[NSURL fileURLWithPath:storePath];
+                NSError *error;
+                [storeURL getResourceValue:&storeModDate forKey:NSURLContentModificationDateKey error:&error];
+                
+                //Also look for: .sqlite-wal (write-ahead log).  Use most recent, although the wal should be most recent if found.
+                NSString *walPath=[NSString stringWithFormat:@"%@-wal",storeURL.absoluteString];
+                NSURL *walUrl=[NSURL URLWithString:walPath];
+                NSDate *walModDate;
+                [walUrl getResourceValue:&walModDate forKey:NSURLContentModificationDateKey error:&error];
+                
+                if ([storeModDate compare:walModDate]==NSOrderedAscending) {
+                    storeModDate=walModDate;
+                }
+                
+                NSDate *modelModDate;
+                NSURL *modelURL=[NSURL fileURLWithPath:modelPath];
+                [modelURL getResourceValue:&modelModDate forKey:NSURLContentModificationDateKey error:&error];
+                
+                //NSSortDescriptor doesn't do NSDate, so use a string. Both dates concatenated for nesting.
+                NSString *fileModDateString=[NSString stringWithFormat:@"%@ - %@",storeModDate,modelModDate];
+                
+                NSDictionary *itemWithDate=@{kCDEFileModificationDateKey: fileModDateString,
+                                             kCDEStorePathKey: storePath,
+                                             kCDEModelPathKey: modelPath};
+                
+                [itemsWithDates addObject:itemWithDate];
+            }
+        }];
+    }];
+    //Now sort and display
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:kCDEFileModificationDateKey ascending:NO];
+    NSArray *itemsSorted=[itemsWithDates sortedArrayUsingDescriptors:[NSArray arrayWithObjects:descriptor,nil]];
+    
+    for (NSDictionary *itemWithDate in itemsSorted) {
+        NSString *storePath=itemWithDate[kCDEStorePathKey];
+        NSString *modelPath=itemWithDate[kCDEModelPathKey];
+        CDEProjectBrowserItem *item = [[CDEProjectBrowserItem alloc] initWithStorePath:storePath modelPath:modelPath];
+        [items addObject:item];
+    }
+
+    return items;
 }
 
 - (NSDirectoryEnumerator *)newSimulatorDirectoryEnumerator {
