@@ -158,7 +158,6 @@
                         CDEProjectBrowserItem *item = [[CDEProjectBrowserItem alloc] initWithStorePath:storePath modelPath:modelPath];
                         [items addObject:item];
                     }
-
                     NSDate *storeModDate;
                     NSURL *storeURL=[NSURL fileURLWithPath:storePath];
                     NSError *error;
