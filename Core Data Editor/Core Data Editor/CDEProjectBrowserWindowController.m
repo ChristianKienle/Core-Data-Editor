@@ -145,8 +145,13 @@
             [metadataByStorePath enumerateKeysAndObjectsUsingBlock:^(NSString *storePath, NSDictionary *metadata, BOOL *stop) {
                 BOOL isCompatible = [model isConfiguration:nil compatibleWithStoreMetadata:metadata];
                 if(isCompatible) {
-                    CDEProjectBrowserItem *item = [[CDEProjectBrowserItem alloc] initWithStorePath:storePath modelPath:modelPath];
-                    [items addObject:item];
+                    NSString *storePathAppName = [[NSURL fileURLWithPath:storePath] appFolderName_cde];
+                    NSString *modelPathAppName = [[NSURL fileURLWithPath:modelPath] appFolderName_cde];
+                    BOOL sameApplication = [storePathAppName isEqualToString:modelPathAppName];
+                    if (sameApplication) {
+                        CDEProjectBrowserItem *item = [[CDEProjectBrowserItem alloc] initWithStorePath:storePath modelPath:modelPath];
+                        [items addObject:item];
+                    }
                 }
             }];
         }];
