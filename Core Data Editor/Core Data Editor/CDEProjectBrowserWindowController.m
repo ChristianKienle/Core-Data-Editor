@@ -10,10 +10,12 @@
 #define kCDEStorePathKey @"storePath"
 #define kCDEModelPathKey @"modelPath"
 
+typedef void(^ProjectBrowserReloadCompletionHandler)(NSArray *projectBrowserItems /* CDEProjectBrowserItem */);
+
 @interface CDEProjectBrowserWindowController ()
 
 #pragma mark - Properties
-@property (nonatomic, copy) NSURL *projectDirectoryURL;
+@property (copy) NSURL *projectDirectoryURL;
 
 @property (strong) IBOutlet NSProgressIndicator *reloadProgressIndicator;
 @property (strong) IBOutlet NSButton *reloadButton;
@@ -72,19 +74,17 @@
     [document showWindows];
 }
 
-- (IBAction)reloadProjectBrowser:(id)sender {
-    NSURL *simulatorURL = self.projectDirectoryURL;
-    if(simulatorURL == nil) {
-        NSLog(@"simulator url is nil");
-        [self displayDelayedNoSimulatorDirectoryAlert];
-        return;
-    }
-    
+- (void)prepareUIForReload {
     [self.items setContent:[@[] mutableCopy]];
-    
     [self.reloadButton setEnabled:NO];
     [self.reloadProgressIndicator startAnimation:self];
+}
+
+- (void)performReloadWithCompletionHandler:(ProjectBrowserReloadCompletionHandler)completionHandler {
+    NSParameterAssert(completionHandler);
+    NSAssert(self.projectDirectoryURL != nil, @"");
     
+    NSURL *simulatorURL = self.projectDirectoryURL;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSFileManager *fileManager = [NSFileManager new];
         NSDirectoryEnumerator *enumerator = [fileManager enumeratorAtURL:simulatorURL includingPropertiesForKeys:nil options:NSDirectoryEnumerationSkipsHiddenFiles errorHandler:^BOOL(NSURL *url, NSError *error) {
@@ -142,10 +142,10 @@
             }
             metadataByStorePath[URL.path] = metadata;
         }
-                
+        
         NSMutableArray *items = [NSMutableArray new];
         NSMutableArray *itemsWithDates=[NSMutableArray new]; // Each element is dictionary with {modificationDate:, storePath:, modelPath}
-
+        
         // Find compatible combinations
         [modelByModelPath enumerateKeysAndObjectsUsingBlock:^(NSString *modelPath, NSManagedObjectModel *model, BOOL *stop) {
             [metadataByStorePath enumerateKeysAndObjectsUsingBlock:^(NSString *storePath, NSDictionary *metadata, BOOL *stop) {
@@ -172,11 +172,11 @@
                     if ([storeModDate compare:walModDate]==NSOrderedAscending) {
                         storeModDate=walModDate;
                     }
-
+                    
                     NSDate *modelModDate;
                     NSURL *modelURL=[NSURL fileURLWithPath:modelPath];
                     [modelURL getResourceValue:&modelModDate forKey:NSURLContentModificationDateKey error:&error];
-
+                    
                     //NSSortDescriptor doesn't do NSDate, so use a string. Both dates concatenated for nesting.
                     NSString *fileModDateString=[NSString stringWithFormat:@"%@ - %@",storeModDate,modelModDate];
                     
@@ -203,11 +203,26 @@
         double delayInSeconds = 1.0;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            [self.items setContent:items];
-            [self.reloadButton setEnabled:YES];
-            [self.reloadProgressIndicator stopAnimation:self];
+            completionHandler(items);
         });
     });
+}
+
+- (IBAction)reloadProjectBrowser:(id)sender {
+    NSURL *simulatorURL = self.projectDirectoryURL;
+    if(simulatorURL == nil) {
+        NSLog(@"simulator url is nil");
+        [self displayDelayedNoSimulatorDirectoryAlert];
+        return;
+    }
+    
+    [self prepareUIForReload];
+    
+    [self performReloadWithCompletionHandler:^(NSArray *projectBrowserItems) {
+        [self.items setContent:projectBrowserItems];
+        [self.reloadButton setEnabled:YES];
+        [self.reloadProgressIndicator stopAnimation:self];
+    }];
 }
 
 #pragma mark - Helper
