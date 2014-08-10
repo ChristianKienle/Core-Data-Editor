@@ -5,6 +5,7 @@
 #import "CDEConfiguration.h"
 #import "CDEApplicationDelegate.h"
 #import "NSURL+CDEAdditions.h"
+#import "NSDirectoryEnumerator+ProjectBrowser.h"
 
 #define kCDEFileModificationDateKey @"modificationDate"
 #define kCDEStorePathKey @"storePath"
@@ -84,64 +85,13 @@ typedef void(^ProjectBrowserReloadCompletionHandler)(NSArray *projectBrowserItem
     NSParameterAssert(completionHandler);
     NSAssert(self.projectDirectoryURL != nil, @"");
     
-    NSURL *simulatorURL = self.projectDirectoryURL;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSFileManager *fileManager = [NSFileManager new];
-        NSDirectoryEnumerator *enumerator = [fileManager enumeratorAtURL:simulatorURL includingPropertiesForKeys:nil options:NSDirectoryEnumerationSkipsHiddenFiles errorHandler:^BOOL(NSURL *url, NSError *error) {
-            NSLog(@"error while enumerating contents of simulator directory: %@", error);
-            return YES;
-        }];
+        NSDirectoryEnumerator *enumerator = [self newSimulatorDirectoryEnumerator];
         
-        NSMutableDictionary *metadataByStorePath = [NSMutableDictionary new];
-        NSMutableDictionary *modelByModelPath = [NSMutableDictionary new];
+        NSDictionary *metadataByStorePath;
+        NSDictionary *modelByModelPath;
         
-        NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
-        for(NSURL *URL in enumerator) {
-            NSError *error = nil;
-            NSString *UTI = [workspace typeOfFile:URL.path error:&error];
-            if(UTI == nil) {
-                NSLog(@"Failed to determine UTI: %@", error);
-                continue;
-            }
-            BOOL isModel = [workspace type:UTI conformsToType:@"com.apple.xcode.mom"];
-            if(isModel) {
-                @try {
-                    NSManagedObjectModel *model = [[NSManagedObjectModel alloc] initWithContentsOfURL:URL];
-                    if(model == nil) {
-                        continue;
-                    }
-                    NSManagedObjectModel *transformedModel = model.transformedManagedObjectModel_cde;
-                    if(transformedModel == nil) {
-                        continue;
-                    }
-                    modelByModelPath[URL.path] = transformedModel;
-                }
-                @catch (NSException *exception) {
-                    
-                }
-                @finally {
-                    
-                }
-                
-                continue;
-            }
-            
-            BOOL isData = [workspace type:UTI conformsToType:@"public.data"];
-            if(isData == NO) {
-                continue;
-            }
-            
-            if([URL isSQLiteURL_cde] == NO) {
-                continue;
-            }
-            
-            error = nil;
-            NSDictionary *metadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:nil URL:URL error:&error];
-            if(metadata == nil) {
-                continue;
-            }
-            metadataByStorePath[URL.path] = metadata;
-        }
+        [enumerator getMetadataByStorePath:&metadataByStorePath modelByModelPath:&modelByModelPath];
         
         NSMutableArray *items = [NSMutableArray new];
         NSMutableArray *itemsWithDates=[NSMutableArray new]; // Each element is dictionary with {modificationDate:, storePath:, modelPath}
@@ -206,6 +156,15 @@ typedef void(^ProjectBrowserReloadCompletionHandler)(NSArray *projectBrowserItem
             completionHandler(items);
         });
     });
+}
+
+- (NSDirectoryEnumerator *)newSimulatorDirectoryEnumerator {
+    NSFileManager *fileManager = [NSFileManager defaultManager]; // there is no reason not to use the defaultManager
+    NSDirectoryEnumerator *enumerator = [fileManager enumeratorAtURL:self.projectDirectoryURL includingPropertiesForKeys:nil options:NSDirectoryEnumerationSkipsHiddenFiles errorHandler:^BOOL(NSURL *url, NSError *error) {
+        NSLog(@"error while enumerating contents of simulator directory: %@", error);
+        return YES;
+    }];
+    return enumerator;
 }
 
 - (IBAction)reloadProjectBrowser:(id)sender {

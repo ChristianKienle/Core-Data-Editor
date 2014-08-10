@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E25BCB5198D645100BBA0C0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E25BCB4198D645100BBA0C0 /* XCTest.framework */; };
+		AB0181171997C805000FE094 /* NSDirectoryEnumerator+ProjectBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0181161997C805000FE094 /* NSDirectoryEnumerator+ProjectBrowser.m */; };
 		AB06C0AF1854CB07002945CB /* CDEToOneRelationshipRequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06C0AE1854CB07002945CB /* CDEToOneRelationshipRequestDataCoordinator.m */; };
 		AB0927511768C6EC00FC59FB /* CDEEntitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB09274F1768C6EC00FC59FB /* CDEEntitiesViewController.m */; };
 		AB0927521768C6EC00FC59FB /* CDEEntitiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0927501768C6EC00FC59FB /* CDEEntitiesViewController.xib */; };
@@ -238,6 +239,8 @@
 
 /* Begin PBXFileReference section */
 		2E25BCB4198D645100BBA0C0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		AB0181151997C805000FE094 /* NSDirectoryEnumerator+ProjectBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDirectoryEnumerator+ProjectBrowser.h"; sourceTree = "<group>"; };
+		AB0181161997C805000FE094 /* NSDirectoryEnumerator+ProjectBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDirectoryEnumerator+ProjectBrowser.m"; sourceTree = "<group>"; };
 		AB06C0AD1854CB07002945CB /* CDEToOneRelationshipRequestDataCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEToOneRelationshipRequestDataCoordinator.h; sourceTree = "<group>"; };
 		AB06C0AE1854CB07002945CB /* CDEToOneRelationshipRequestDataCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEToOneRelationshipRequestDataCoordinator.m; sourceTree = "<group>"; };
 		AB09274E1768C6EC00FC59FB /* CDEEntitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEEntitiesViewController.h; sourceTree = "<group>"; };
@@ -681,7 +684,7 @@
 				AB1466C4178727D200E3EEA3 /* Validation Errors View Controller */,
 				ABC189EE17809DFA00AF4F15 /* Managed Object View */,
 				ABD5BCA0178037730050025B /* Relationships View Controller */,
-				ABC189ED17809D0800AF4F15 /* SplitView Müll */,
+				ABC189ED17809D0800AF4F15 /* SplitView Müll */,
 				AB0927971768F71900FC59FB /* Managed Objects View Controller */,
 				AB0927481768C6AE00FC59FB /* Entities View Controller */,
 				AB0927541768C81E00FC59FB /* CDEEditorViewController.h */,
@@ -1070,6 +1073,8 @@
 		ABB225CF17B91C510024FE4F /* Project Browser */ = {
 			isa = PBXGroup;
 			children = (
+				AB0181151997C805000FE094 /* NSDirectoryEnumerator+ProjectBrowser.h */,
+				AB0181161997C805000FE094 /* NSDirectoryEnumerator+ProjectBrowser.m */,
 				ABB225D917B939D10024FE4F /* Item */,
 				ABB225D417B92B230024FE4F /* CDEProjectBrowserWindowController.h */,
 				ABB225D517B92B230024FE4F /* CDEProjectBrowserWindowController.m */,
@@ -1488,7 +1493,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		ABC189ED17809D0800AF4F15 /* SplitView Müll */ = {
+		ABC189ED17809D0800AF4F15 /* SplitView Müll */ = {
 			isa = PBXGroup;
 			children = (
 				AB8F8345177C7C49000B4467 /* CDETwoColumnSplitViewDelegate.h */,
@@ -2388,6 +2393,7 @@
 				AB531222179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.m in Sources */,
 				AB53127317999D2200529EF7 /* NSAlert-OAExtensions.m in Sources */,
 				ABFBB3B1179C36E2003B5346 /* CDETwoColumnSplitViewController.m in Sources */,
+				AB0181171997C805000FE094 /* NSDirectoryEnumerator+ProjectBrowser.m in Sources */,
 				AB30FF66179C696D00E49E0B /* CDEPreferencesAutomaticProjectCreationViewController.m in Sources */,
 				AB30FF6B179C6AB400E49E0B /* CDEPreferencesFormattingViewController.m in Sources */,
 				AB30FF70179C6B1700E49E0B /* CDEPreferencesMiscViewController.m in Sources */,
