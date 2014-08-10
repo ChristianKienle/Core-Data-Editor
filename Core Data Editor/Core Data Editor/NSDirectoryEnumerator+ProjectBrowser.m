@@ -9,15 +9,10 @@
     NSMutableDictionary *metadataByStorePath = [NSMutableDictionary new];
     NSMutableDictionary *modelByModelPath = [NSMutableDictionary new];
 
-    NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
     for(NSURL *URL in self) {
-        NSError *error = nil;
-        NSString *UTI = [workspace typeOfFile:URL.path error:&error];
-        if(UTI == nil) {
-            NSLog(@"Failed to determine UTI: %@", error);
-            continue;
-        }
-        BOOL isModel = [workspace type:UTI conformsToType:@"com.apple.xcode.mom"];
+        
+
+        BOOL isModel = [URL isCompiledManagedObjectModelFile_cde];
         if(isModel) {
             @try {
                 NSManagedObjectModel *model = [[NSManagedObjectModel alloc] initWithContentsOfURL:URL];
@@ -40,7 +35,7 @@
             continue;
         }
         
-        BOOL isData = [workspace type:UTI conformsToType:@"public.data"];
+        BOOL isData = [URL isPublicDataFile_cde];
         if(isData == NO) {
             continue;
         }
@@ -49,7 +44,7 @@
             continue;
         }
         
-        error = nil;
+        NSError *error;
         NSDictionary *metadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:nil URL:URL error:&error];
         if(metadata == nil) {
             continue;

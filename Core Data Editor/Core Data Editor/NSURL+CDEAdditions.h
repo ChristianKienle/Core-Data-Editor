@@ -18,6 +18,7 @@
  */
 - (NSString *)appFolderName_cde;
 - (BOOL)isCompiledManagedObjectModelFile_cde;
+- (BOOL)isPublicDataFile_cde;
 
 #pragma mark - App Specific URLs
 + (instancetype)URLForWebsite_cde;

@@ -66,6 +66,18 @@
     return [workspace type:type conformsToType:@"com.apple.xcode.mom"];
 }
 
+- (BOOL)isPublicDataFile_cde {
+    NSError *error = nil;
+    NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
+    NSString *type = [self typeOfFileURLAndGetError_cde:&error];
+    if(type == nil) {
+        NSLog(@"Error in %@: %@", NSStringFromSelector(_cmd), error);
+        return NO;
+    }
+    return [workspace type:type conformsToType:@"public.data"];
+
+}
+
 #pragma mark - App Specific URLs
 + (instancetype)URLForWebsite_cde {
     return [self URLWithString:[NSBundle mainBundle].infoDictionary[@"CDEWebsiteURL"]];
