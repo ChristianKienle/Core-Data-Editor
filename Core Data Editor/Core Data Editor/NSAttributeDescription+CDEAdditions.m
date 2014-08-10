@@ -1,5 +1,3 @@
-#import "NSAttributeDescription+CDEAdditions.h"
-
 #import "CDEFloatingPointValueTableCellView.h"
 #import "CDEStringValueTableCellView.h"
 #import "CDEBoolValueTableCellView.h"
@@ -60,7 +58,7 @@ BOOL CDEIsIntegerAttributeType(NSAttributeType type) {
         default:
             break;
     }
-    
+
     return result;
 }
 
@@ -96,7 +94,7 @@ BOOL CDEIsIntegerAttributeType(NSAttributeType type) {
 
 - (NSSortDescriptor *)sortDescriptorPrototype_cde {
     NSAttributeType type = self.attributeType;
-    
+
     if(type == NSBinaryDataAttributeType || type == NSTransformableAttributeType) {
         return [NSSortDescriptor sortDescriptorWithKey:self.name ascending:NO comparator:^NSComparisonResult(id obj1, id obj2) {
             if([obj1 length] > [obj2 length]) {
@@ -106,16 +104,16 @@ BOOL CDEIsIntegerAttributeType(NSAttributeType type) {
                 return NSOrderedAscending;
             }
             return NSOrderedSame;
-            
+
         }];
     }
-    
+
     SEL selector = @selector(compare:);
 
     if(type == NSStringAttributeType) {
         selector = @selector(localizedStandardCompare:);
     }
-    
+
     return [NSSortDescriptor sortDescriptorWithKey:self.name ascending:NO selector:selector];
 }
 

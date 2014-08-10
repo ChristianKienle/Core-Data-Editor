@@ -11,6 +11,7 @@ extern const struct CDEUserDefaultsKeys {
     __unsafe_unretained NSString *simulatorDirectoryBookmarkData;
     __unsafe_unretained NSString *applicationNeedsSetup;
     __unsafe_unretained NSString *firstLaunchDate;
+    __unsafe_unretained NSString *openProjectBrowserOnLaunch;
     
 } CDEUserDefaultsKeys;
 
@@ -27,6 +28,9 @@ extern const struct CDEUserDefaultsNotifications {
 #pragma mark - Properties
 @property (nonatomic, assign, getter = showsNameOfEntityInObjectIDColumn_cde,
                               setter = setShowsNameOfEntityInObjectIDColumn_cde:) BOOL showsNameOfEntityInObjectIDColumn;
+
+@property (nonatomic, assign, getter = opensProjectBrowserOnLaunch_cde,
+           setter = setOpenProjectBrowserOnLaunch_cde:) BOOL opensProjectBrowserOnLaunch;
 
 @property (nonatomic, assign, getter = numberOfDecimals_cde,
                               setter = setNumberOfDecimals_cde:) NSInteger numberOfDecimals;

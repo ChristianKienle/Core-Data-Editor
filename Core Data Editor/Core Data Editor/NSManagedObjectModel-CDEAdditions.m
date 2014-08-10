@@ -49,7 +49,7 @@
         NSLog(@"WARNING: Called '%@' with a nil URL.", NSStringFromSelector(_cmd));
         return NO;
     }
-        
+
     @try {
         NSManagedObjectModel *model = [[NSManagedObjectModel alloc] initWithContentsOfURL:URL];
         if(model != nil) {
@@ -78,78 +78,15 @@
         }
         return NO;
     }
-    
-    return NO;
-}
 
-#pragma mark - Compiling
-+ (BOOL)managedObjectModelCompilationPossible_cde {
     return NO;
-}
-
-+ (NSManagedObjectModel *)newManagedObjectModelByCompilingFileAtURL:(NSURL *)fileURL error_cde:(NSError **)error {
-    NSParameterAssert(fileURL);
-    NSParameterAssert(fileURL.isFileURL);
-    
-    NSURL *modelURL = fileURL;
-    if([fileURL.pathExtension isEqualToString:@"xcdatamodeld"]) {
-        NSURL *versionPropertyListURL = [fileURL URLByAppendingPathComponent:@".xccurrentversion" isDirectory:NO];
-        NSFileManager *fileManager = [NSFileManager new];
-        if([fileManager fileExistsAtPath:versionPropertyListURL.path] == NO) {
-            if(error != NULL) {
-                *error = [NSError newErrorWithCode:-1 localizedDescription:@"File is versioned model but it does not contain a file called .xccurrentversion." localizedRecoverySuggestion_cde:@"Current version could not be determined."];
-            }
-            return nil;
-        }
-        
-        NSDictionary *versionDictionary = [NSDictionary dictionaryWithContentsOfURL:versionPropertyListURL];
-        if(versionDictionary == nil) {
-            if(error != NULL) {
-                *error = [NSError newErrorWithCode:-1 localizedDescription:@"The version file (.xccurrentversion) does not seem to be a valid property list." localizedRecoverySuggestion_cde:@"Current version could not be determined."];
-            }
-            return nil;
-        }
-        
-        NSString *currentModelName = versionDictionary[@"_XCCurrentVersionName"];
-        if(currentModelName == nil) {
-            if(error != NULL) {
-                *error = [NSError newErrorWithCode:-1 localizedDescription:@"The version file (.xccurrentversion) does not contain a key called _XCCurrentVersionName." localizedRecoverySuggestion_cde:@"Current version could not be determined."];
-            }
-            return nil;
-        }
-        
-        modelURL = [fileURL URLByAppendingPathComponent:currentModelName isDirectory:NO];
-    }
-    
-    NSAssert([modelURL.pathExtension isEqualToString:@"xcdatamodel"], @"Path extension should be xcdatamodel");
-    
-    NSString *xcrunName = @"/usr/bin/xcrun momc";
-    NSMutableString *momcOptions = [NSMutableString string];
-    NSArray *defaultMomcOptions = @[@"MOMC_NO_WARNINGS", @"MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS", @"MOMC_SUPPRESS_INVERSE_TRANSIENT_ERROR"];
-                                         
-    for(NSString *option in defaultMomcOptions) {
-        [momcOptions appendFormat:@" -%@ ", option];
-    }
-    NSString *momcIncantation = nil;
-    NSString *tempGeneratedMomFileName = [[[NSProcessInfo processInfo] globallyUniqueString] stringByAppendingPathExtension:@"mom"];
-    NSString *tempGeneratedMomFilePath = [NSTemporaryDirectory() stringByAppendingPathComponent:tempGeneratedMomFileName];
-    momcIncantation = [NSString stringWithFormat:@"%@ %@ \"%@\" \"%@\"",
-                       xcrunName,
-                       momcOptions,
-                       modelURL.path,
-                       tempGeneratedMomFilePath];
-    system([momcIncantation UTF8String]);
-    
-    //NSURL *compiledModelURL = [NSURL fileURLWithPath:tempGeneratedMomFilePath];
-    
-    return nil;
 }
 
 #pragma mark - Transforming
 - (NSManagedObjectModel *)transformedManagedObjectModel_cde {
     NSData *originalModelData = [NSKeyedArchiver archivedDataWithRootObject:self];
     NSManagedObjectModel *transformedModel = [NSKeyedUnarchiver unarchiveObjectWithData:originalModelData];
-    
+
     // Remove custom Value Transformers
     for(NSEntityDescription *entityDescription in transformedModel) {
         NSArray *attributes = [[entityDescription attributesByName] allValues];
@@ -164,7 +101,7 @@
             attributeDescription.valueTransformerName = [CDEBinaryDataValueTransformer valueTransformerName];
         }
     }
-    
+
     NSMutableDictionary *localizationDictionary = [NSMutableDictionary dictionary];
     for(NSEntityDescription *entityDescription in transformedModel) {
         NSDictionary *propertiesByName = entityDescription.propertiesByName;
@@ -194,7 +131,7 @@
         NSLog(@"Failed to determine metadata: %@", metadataError);
         return NO;
     }
-    
+
     BOOL isCompatible = [self isConfiguration:nil compatibleWithStoreMetadata:metadata];
     if(isCompatible == NO) {
         if(error != NULL) {

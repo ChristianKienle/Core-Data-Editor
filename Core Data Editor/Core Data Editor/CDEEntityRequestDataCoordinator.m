@@ -1,23 +1,10 @@
 #import "CDEEntityRequestDataCoordinator.h"
 #import "CDEManagedObjectsRequest.h"
-#import "NSAttributeDescription+CDEAdditions.h"
-#import "NSPropertyDescription+CDEAdditions.h"
-#import "NSEntityDescription+CDEAdditions.h"
-#import "NSTableCellView+JKNibLoading.h"
 #import "CDEAutosaveInformation.h"
 #import "CDEEntityAutosaveInformation.h"
 #import "CDEEntityAutosaveInformationItem.h"
 #import "CDEManagedObjectsViewController.h"
 #import "CDERequestDataCoordinator_Subclass.h"
-
-// Cells: Begin
-#import "CDEStringValueTableCellView.h"
-#import "CDEBoolValueTableCellView.h"
-#import "CDEObjectIDValueTableCellView.h"
-#import "CDEFloatingPointValueTableCellView.h"
-#import "CDEBinaryValueTableCellView.h"
-#import "CDEToManyRelationshipTableCellView.h"
-// Cells: End
 
 @interface CDEEntityRequestDataCoordinator ()
 
@@ -84,7 +71,7 @@
             }
         }
     }
-    
+
     // Array Controller
     self.arrayController = [[NSArrayController alloc] initWithContent:nil];
     self.arrayController.entityName = self.request.entityDescription.name;

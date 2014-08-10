@@ -19,7 +19,7 @@ If you want to support Core Data Editor you can donate via PayPal to me@christia
 Thanks.
 
 # Why Open Source?
-I, the maintainer and original developer of Core Data Editor have become (seriously sick). The disease I have will not go away soon. My ability to work and take care about Core Data Editor is severely limited. I don't want Core Data Editor to just die so I have decided to make it open source. To make it clear: If you send me a (good) pull request I will accept it. I will also try to answer questions and to contribute myself. The thing is I just can't keep up with bug fixing, feature requests (...) on my own anymore. I am too sick. In addition: Open Source rocks.
+I, the maintainer and original developer of Core Data Editor have become (seriously) sick. The disease I have will not go away soon. My ability to work and take care about Core Data Editor is severely limited. I don't want Core Data Editor to just die so I have decided to make it open source. To make it clear: If you send me a (good) pull request I will accept it. I will also try to answer questions and to contribute myself. The thing is I just can't keep up with bug fixing, feature requests (...) on my own anymore. I am too sick. In addition: Open Source rocks.
 
 # Building Core Data Editor
 Download the sources, open the workspace in Xcode and hit build and run. Done.
@@ -69,11 +69,13 @@ Core Data Editor has the following third party dependencies:
 * Omni NSAlert Extensions
 * RSVerticallyCenteredTextFieldCell
 * Code from ATS
+* mogenerator
 
 # Contributors
 * [Christian Kienle](https://github.com/ChristianKienle) (original developer, maintainer)
 * [Denis Lebedev](https://github.com/garnett) 
 * [danydev](https://github.com/danydev)
+* [Roberto Dries](https://github.com/robertodries92)
 
 # Contact
 [Christian Kienle (me@christian-kienle.de)](mailto:me@christian-kienle.de) 

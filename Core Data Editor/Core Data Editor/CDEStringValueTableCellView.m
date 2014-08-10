@@ -1,5 +1,4 @@
 #import "CDEStringValueTableCellView.h"
-#import "NSView+CDEAdditions.h"
 
 @interface CDEStringValueTableCellView ()
 

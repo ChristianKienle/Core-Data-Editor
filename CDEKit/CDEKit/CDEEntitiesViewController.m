@@ -28,7 +28,6 @@
     CDEManagedObjectsViewController *managedObjectsViewController = segue.destinationViewController;
     managedObjectsViewController.managedObjectContext = [CDE sharedCoreDataEditor].managedObjectContext;
     managedObjectsViewController.entityDescription = [self entityDescriptionAtIndexPath:[self.tableView indexPathForSelectedRow]];
-    [managedObjectsViewController updateUI];
   }
   [super prepareForSegue:segue sender:sender];
 }

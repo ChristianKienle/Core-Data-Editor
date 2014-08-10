@@ -5,7 +5,6 @@
 
 // Additions: Begin
 #import "NSURL+CDEAdditions.h"
-#import "NSView+CDEAdditions.h"
 #import "NSAlert-OAExtensions.h"
 #import "NSWorkspace+CDEAdditions.h"
 // Additions: End

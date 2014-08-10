@@ -1,5 +1,6 @@
 #import "CDEManagedObjectViewController.h"
 #import "CDEPropertyTableViewCell.h"
+#import "CDE+Private.h"
 
 @interface CDEManagedObjectViewController ()
 @property (nonatomic, copy) NSArray *propertyDescriptions;
@@ -53,6 +54,11 @@
     }
   }
   return nil;
+}
+
+- (IBAction)didTapDelete:(id)sender {
+  [[CDE sharedCoreDataEditor].managedObjectContext deleteObject:self.managedObject];
+  [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Table view data source

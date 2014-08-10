@@ -5,7 +5,7 @@
 #pragma mark - Bookmarks (Convenience)
 + (NSURL *)URLByResolvingBookmarkData:(NSData *)data error_cde:(NSError **)error {
     NSParameterAssert(data);
-    
+
     return [NSURL URLByResolvingBookmarkData:data
                                      options:NSURLBookmarkResolutionWithoutUI
                                relativeToURL:nil
@@ -35,6 +35,26 @@
     return [workspace typeOfFile:self.path error:error];
 }
 
+- (NSString *)appFolderName_cde {
+    // Retrieve the "Applications" folder name (usually "Applications")
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationDirectory, NSLocalDomainMask, YES);
+    if (paths.count == 0) {
+        return nil;
+    }
+    NSString *applicationsFolderName = [[paths objectAtIndex:0] lastPathComponent];
+    // Loop through the pathComponents, searching for the "Applications" folder, the next component will contain the app folder
+    // Applications/412F2A6B-0F54-4F98-AE1B-DFE99E057DB1
+    for (NSInteger index = 0; index < self.pathComponents.count; index++) {
+        NSString *component = [self.pathComponents objectAtIndex:index];
+        NSInteger nextIndex = index + 1;
+        if ([component isEqualToString:applicationsFolderName]
+            && nextIndex < self.pathComponents.count) {
+            return [self.pathComponents objectAtIndex:nextIndex];
+        }
+    }
+    return nil;
+}
+
 - (BOOL)isCompiledManagedObjectModelFile_cde {
     NSError *error = nil;
     NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
@@ -57,10 +77,6 @@
 
 + (instancetype)URLForSupportWebsite_cde {
     return [self URLWithString:[NSBundle mainBundle].infoDictionary[@"CDECustomerSupportURL"]];
-}
-
-+ (instancetype)URLForVersionCheck_cde {
-    return [self URLWithString:[NSBundle mainBundle].infoDictionary[@"CDECurrentVersionPath"]];
 }
 
 @end
