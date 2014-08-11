@@ -79,6 +79,8 @@
 		AB8F8347177C7C4B000B4467 /* CDETwoColumnSplitViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8F8346177C7C4A000B4467 /* CDETwoColumnSplitViewDelegate.m */; };
 		AB8F834B177C82D4000B4467 /* CDEOrderIndexTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8F834A177C82D4000B4467 /* CDEOrderIndexTableCellView.m */; };
 		AB8F834D177C82E6000B4467 /* CDEOrderIndexTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB8F834C177C82E6000B4467 /* CDEOrderIndexTableCellView.xib */; };
+		AB99B2EF1998DD0400101647 /* SQLiteDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = AB99B2EE1998DD0400101647 /* SQLiteDatabase.m */; };
+		AB99B2F21998E1EE00101647 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB99B2F11998E1EE00101647 /* libsqlite3.dylib */; };
 		ABB08F8917BD2DB000BE97C0 /* Project-Browser-Menu-Item.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB08F8717BD2DB000BE97C0 /* Project-Browser-Menu-Item.png */; };
 		ABB08F8A17BD2DB000BE97C0 /* Project-Browser-Menu-Item@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB08F8817BD2DB000BE97C0 /* Project-Browser-Menu-Item@2x.png */; };
 		ABB225D317B922FA0024FE4F /* CDEPathPickerPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB225D217B922FA0024FE4F /* CDEPathPickerPopUpButton.m */; };
@@ -357,6 +359,9 @@
 		AB8F8349177C82D4000B4467 /* CDEOrderIndexTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEOrderIndexTableCellView.h; sourceTree = "<group>"; };
 		AB8F834A177C82D4000B4467 /* CDEOrderIndexTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEOrderIndexTableCellView.m; sourceTree = "<group>"; };
 		AB8F834C177C82E6000B4467 /* CDEOrderIndexTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDEOrderIndexTableCellView.xib; sourceTree = "<group>"; };
+		AB99B2EE1998DD0400101647 /* SQLiteDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteDatabase.m; sourceTree = "<group>"; };
+		AB99B2F01998DD1500101647 /* SQLiteDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQLiteDatabase.h; sourceTree = "<group>"; };
+		AB99B2F11998E1EE00101647 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		ABB08F8717BD2DB000BE97C0 /* Project-Browser-Menu-Item.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Project-Browser-Menu-Item.png"; sourceTree = "<group>"; };
 		ABB08F8817BD2DB000BE97C0 /* Project-Browser-Menu-Item@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Project-Browser-Menu-Item@2x.png"; sourceTree = "<group>"; };
 		ABB225D117B922FA0024FE4F /* CDEPathPickerPopUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEPathPickerPopUpButton.h; sourceTree = "<group>"; };
@@ -624,6 +629,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB99B2F21998E1EE00101647 /* libsqlite3.dylib in Frameworks */,
 				ABBEA7DA1765CB730024A9D2 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -697,6 +703,7 @@
 		AB0927601768E64000FC59FB /* NSURL */ = {
 			isa = PBXGroup;
 			children = (
+				AB99B2ED1998DCDC00101647 /* TinySQLite */,
 				AB0927611768E65200FC59FB /* NSURL+CDEAdditions.h */,
 				AB0927621768E65200FC59FB /* NSURL+CDEAdditions.m */,
 			);
@@ -1070,6 +1077,15 @@
 			name = "Order Index Cell View";
 			sourceTree = "<group>";
 		};
+		AB99B2ED1998DCDC00101647 /* TinySQLite */ = {
+			isa = PBXGroup;
+			children = (
+				AB99B2F01998DD1500101647 /* SQLiteDatabase.h */,
+				AB99B2EE1998DD0400101647 /* SQLiteDatabase.m */,
+			);
+			name = TinySQLite;
+			sourceTree = "<group>";
+		};
 		ABB225CF17B91C510024FE4F /* Project Browser */ = {
 			isa = PBXGroup;
 			children = (
@@ -1197,6 +1213,7 @@
 		ABBEA7D81765CB730024A9D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AB99B2F11998E1EE00101647 /* libsqlite3.dylib */,
 				2E25BCB4198D645100BBA0C0 /* XCTest.framework */,
 				ABBEA7D91765CB730024A9D2 /* Cocoa.framework */,
 				ABBEA7DB1765CB730024A9D2 /* Other Frameworks */,
@@ -2320,6 +2337,7 @@
 				AB3B07CE17760E23000855B0 /* NSTableCellView+JKNibLoading.m in Sources */,
 				ABEB75641776E70900141062 /* CDEObjectIDValueTableCellView.m in Sources */,
 				ABEB75691776E75800141062 /* CDEManagedObjectIDToStringValueTransformer.m in Sources */,
+				AB99B2EF1998DD0400101647 /* SQLiteDatabase.m in Sources */,
 				ABEB756F1776F37100141062 /* CDEPreferencesWindowController.m in Sources */,
 				ABEB75731776F61300141062 /* NSUserDefaults+CDEAdditions.m in Sources */,
 				ABEB75A3177705E100141062 /* CDEFloatingPointValueTableCellView.m in Sources */,

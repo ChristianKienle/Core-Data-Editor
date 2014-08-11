@@ -41,6 +41,9 @@
     if([self isSQLiteURL_cde] == NO) {
         return nil;
     }
+    if([self isSQLiteStoreURL_cde] == NO) {
+        return nil;
+    }
     NSDictionary *metadata;
     @try {
         NSError *error;

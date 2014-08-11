@@ -8,15 +8,6 @@
 
 #pragma mark - UTI
 - (NSString *)typeOfFileURLAndGetError_cde:(NSError **)error;
-/**
- * Return the Application name if the NSURL contains it. nil if not found
- * Example:
- *  Input:  /iPhone Simulator/7.1/Applications/412F2A6B-0F54-4F98-AE1B-DFE99E057DB1/Example.app/v1.momd/v5.mom
- *  Output: 412F2A6B-0F54-4F98-AE1B-DFE99E057DB1
- *
- * @return NSString*
- */
-- (NSString *)appFolderName_cde;
 - (BOOL)isCompiledManagedObjectModelFile_cde;
 - (BOOL)isPublicDataFile_cde;
 
@@ -29,4 +20,5 @@
 
 @interface NSURL (CDESQLiteAdditions)
 - (BOOL)isSQLiteURL_cde;
+- (BOOL)isSQLiteStoreURL_cde;
 @end

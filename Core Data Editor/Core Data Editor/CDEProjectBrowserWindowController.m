@@ -112,13 +112,6 @@ typedef void(^ProjectBrowserReloadCompletionHandler)(NSArray *projectBrowserItem
         [metadataByStorePath enumerateKeysAndObjectsUsingBlock:^(NSString *storePath, NSDictionary *metadata, BOOL *stop) {
             BOOL isCompatible = [model isConfiguration:nil compatibleWithStoreMetadata:metadata];
             if(isCompatible) {
-                NSString *storePathAppName = [[NSURL fileURLWithPath:storePath] appFolderName_cde];
-                NSString *modelPathAppName = [[NSURL fileURLWithPath:modelPath] appFolderName_cde];
-                BOOL sameApplication = [storePathAppName isEqualToString:modelPathAppName];
-                if (sameApplication == NO) {
-                    return;
-                }
-
                 NSDate *storeModDate;
                 NSURL *storeURL=[NSURL fileURLWithPath:storePath];
                 NSError *error;
