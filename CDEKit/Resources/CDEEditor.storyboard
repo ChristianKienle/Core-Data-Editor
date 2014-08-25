@@ -129,7 +129,11 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lfs-7R-cej">
+<<<<<<< HEAD
                                             <rect key="frame" x="168" y="8" width="51" height="31"/>
+=======
+                                            <rect key="frame" x="169" y="8" width="79" height="27"/>
+>>>>>>> Messing around with the project
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="49" id="3Qd-oH-k5A"/>
                                             </constraints>
@@ -138,7 +142,11 @@
                                             </connections>
                                         </switch>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Attribute" textAlignment="right" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rro-4J-dXb">
+<<<<<<< HEAD
                                             <rect key="frame" x="20" y="13" width="140" height="21"/>
+=======
+                                            <rect key="frame" x="20" y="11" width="141" height="21"/>
+>>>>>>> Messing around with the project
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

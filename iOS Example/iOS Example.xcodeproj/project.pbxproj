@@ -195,6 +195,11 @@
 				CLASSPREFIX = CDE;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Thermal Core";
+				TargetAttributes = {
+					AB15926C17B52996008DA7E2 = {
+						DevelopmentTeam = SWP5WTP5JJ;
+					};
+				};
 			};
 			buildConfigurationList = AB15926817B52996008DA7E2 /* Build configuration list for PBXProject "iOS Example" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -369,6 +374,7 @@
 				INFOPLIST_FILE = "iOS Example/iOS Example-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -377,11 +383,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+<<<<<<< HEAD
+=======
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+>>>>>>> Messing around with the project
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS Example/iOS Example-Prefix.pch";
 				INFOPLIST_FILE = "iOS Example/iOS Example-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
