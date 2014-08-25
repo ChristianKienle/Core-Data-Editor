@@ -5,7 +5,7 @@
 #import "BFViewController.h"
 
 @interface CDEManagedObjectsTableViewController () <BFViewController>
-- (instancetype)init NS_DESIGNATED_INITIALIZER;
+- (instancetype)init; // NS_DESIGNATED_INITIALIZER;
 @end
 
 @implementation CDEManagedObjectsTableViewController

@@ -2619,7 +2619,6 @@
 		ABBEA8D0176620E20024A9D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -2633,14 +2632,12 @@
 				MOMC_SUPPRESS_INVERSE_TRANSIENT_ERROR = YES;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "";
 			};
 			name = Debug;
 		};
 		ABBEA8D1176620E20024A9D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -2654,7 +2651,6 @@
 				MOMC_SUPPRESS_INVERSE_TRANSIENT_ERROR = YES;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "";
 			};
 			name = Release;
 		};

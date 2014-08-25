@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="AsP-lL-led">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="AsP-lL-led">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <development version="4600" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -36,6 +38,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsm-hs-Ifr">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -129,6 +132,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lfs-7R-cej">
+                                            <rect key="frame" x="169" y="8" width="79" height="27"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="77" id="3Qd-oH-k5A"/>
                                             </constraints>
@@ -137,6 +141,7 @@
                                             </connections>
                                         </switch>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Attribute" textAlignment="right" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rro-4J-dXb">
+                                            <rect key="frame" x="20" y="11" width="141" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -164,11 +169,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Attribute" textAlignment="right" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1u-6n-lyC">
+                                            <rect key="frame" x="20" y="11" width="141" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="nil" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wSV-uP-p7t">
+                                            <rect key="frame" x="169" y="8" width="131" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="WPt-3E-MG5"/>
                                                 <constraint firstAttribute="width" constant="131" id="hxs-0d-d29"/>
@@ -202,11 +209,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Integer Attribute" textAlignment="right" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXO-sl-gXB">
+                                            <rect key="frame" x="20" y="11" width="141" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="nil" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="T73-vN-qb4">
+                                            <rect key="frame" x="169" y="8" width="131" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="B2m-Yc-mx7"/>
                                                 <constraint firstAttribute="width" constant="131" id="RhM-37-ZHq"/>
@@ -240,11 +249,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Float Attribute" textAlignment="right" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbp-hM-Xhq">
+                                            <rect key="frame" x="20" y="11" width="141" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="nil" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VRr-0o-CPE">
+                                            <rect key="frame" x="169" y="8" width="131" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="131" id="HQE-Xk-Ftr"/>
                                                 <constraint firstAttribute="height" constant="30" id="sW1-uT-6jb"/>
@@ -278,11 +289,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date Attribute" textAlignment="right" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIW-1W-8UQ">
+                                            <rect key="frame" x="20" y="11" width="141" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="nil" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="T0J-4c-0KQ">
+                                            <rect key="frame" x="169" y="8" width="131" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="7Ag-PO-edK"/>
                                                 <constraint firstAttribute="width" constant="131" id="cl7-Rk-HeH"/>
@@ -321,60 +334,6 @@
             <point key="canvasLocation" x="1441" y="17"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CDEAttributeTableViewCell" superclassName="CDEPropertyTableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDEAttributeTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="attributeNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="attributeValueView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="CDEBoolTableViewCell" superclassName="CDEAttributeTableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDEBoolTableViewCell.h"/>
-        </class>
-        <class className="CDEDateTableViewCell" superclassName="CDEAttributeTableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDEDateTableViewCell.h"/>
-            <relationships>
-                <relationship kind="action" name="showDatePicker:"/>
-            </relationships>
-        </class>
-        <class className="CDEEntitiesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDEEntitiesViewController.h"/>
-        </class>
-        <class className="CDEFloatingPointNumberTableViewCell" superclassName="CDEAttributeTableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDEFloatingPointNumberTableViewCell.h"/>
-        </class>
-        <class className="CDEIntegerTableViewCell" superclassName="CDEAttributeTableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDEIntegerTableViewCell.h"/>
-        </class>
-        <class className="CDEManagedObjectViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDEManagedObjectViewController.h"/>
-        </class>
-        <class className="CDEManagedObjectsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDEManagedObjectsViewController.h"/>
-        </class>
-        <class className="CDEPropertyTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDEPropertyTableViewCell.h"/>
-        </class>
-        <class className="CDEStringTableViewCell" superclassName="CDEAttributeTableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CDEStringTableViewCell.h"/>
-        </class>
-        <class className="CMKViewController" superclassName="NSViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CMKViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="NSResponder" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSResponder.h"/>
-        </class>
-        <class className="NSViewController" superclassName="NSResponder">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="view" candidateClass="NSView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
