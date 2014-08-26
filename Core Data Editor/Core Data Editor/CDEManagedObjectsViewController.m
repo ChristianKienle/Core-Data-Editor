@@ -85,11 +85,11 @@
 
 #pragma mark - Creating
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-  return [self init];
+  return [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 }
 
 - (id)init {
-  self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
+  self = [self initWithNibName:NSStringFromClass([self class]) bundle:nil];
   if(self) {
     _bottomBarVisible = YES;
     self.canNavigateThroughObjectGraph = NO;

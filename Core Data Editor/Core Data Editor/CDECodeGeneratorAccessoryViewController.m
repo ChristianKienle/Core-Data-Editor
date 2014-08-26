@@ -9,7 +9,7 @@
 
 #pragma mark Creating an Instance
 - (instancetype)init {
-   self = [super initWithNibName:@"CDECodeGeneratorAccessoryViewController" bundle:nil];
+   self = [self initWithNibName:@"CDECodeGeneratorAccessoryViewController" bundle:nil];
    if(self) {
        self.generateARCCompatibleCode = @YES;
        self.generateFetchResultsControllerCode = @YES;
@@ -18,7 +18,7 @@
 }
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-   return [self init];
+   return [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 }
 
 @end

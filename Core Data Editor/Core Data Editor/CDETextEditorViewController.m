@@ -11,11 +11,11 @@
 
 #pragma mark Creating
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    return [self init];
+    return [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 }
 
 - (instancetype)init {
-    self = [super initWithNibName:@"CDETextEditorViewController" bundle:nil];
+    self = [self initWithNibName:@"CDETextEditorViewController" bundle:nil];
     if(self) {
     }
     return self;

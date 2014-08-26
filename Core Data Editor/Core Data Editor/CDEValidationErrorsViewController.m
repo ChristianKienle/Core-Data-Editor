@@ -59,11 +59,11 @@
 
 #pragma mark - Creating
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    return [self init];
+    return [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 }
 
 - (id)init {
-    self = [super initWithNibName:@"CDEValidationErrorsViewController" bundle:nil];
+    self = [self initWithNibName:@"CDEValidationErrorsViewController" bundle:nil];
     if(self) {
         self.tableContents = @[];
         self.attributeEditor = [CDEAttributeEditor new];

@@ -5,11 +5,11 @@
 
 #pragma mark Creating
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-   return [self init];
+   return [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 }
 
 - (id)init {
-   self = [super initWithNibName:@"CDEDatePickerViewController" bundle:nil];
+   self = [self initWithNibName:@"CDEDatePickerViewController" bundle:nil];
    if(self) {
       self.delegate = nil;
    }

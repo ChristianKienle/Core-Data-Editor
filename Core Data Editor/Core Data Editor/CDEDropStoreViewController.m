@@ -55,7 +55,7 @@
 
 #pragma mark Creating
 - (id)init {
-   self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
+   self = [self initWithNibName:NSStringFromClass([self class]) bundle:nil];
    if(self) {
       self.validStoreURL = nil;
       self.delegate = nil;
@@ -66,7 +66,7 @@
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-   return [self init];
+   return [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 }
 
 #pragma mark Actions

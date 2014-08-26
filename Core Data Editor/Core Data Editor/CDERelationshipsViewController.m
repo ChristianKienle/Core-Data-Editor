@@ -17,7 +17,7 @@
 
 #pragma mark - Creating
 - (id)init {
-    self = [super initWithNibName:@"CDERelationshipsViewController" bundle:nil];
+    self = [self initWithNibName:@"CDERelationshipsViewController" bundle:nil];
     if(self) {
         self.items = @[];
     }
@@ -26,7 +26,7 @@
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    return [self init];
+    return [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 }
 
 - (void)loadView {

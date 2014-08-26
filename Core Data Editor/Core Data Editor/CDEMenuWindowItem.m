@@ -6,7 +6,7 @@
 
 #pragma mark Creating
 - (id)init {
-   self = [super initWithNibName:@"CDEMenuWindowItem" bundle:nil];
+   self = [self initWithNibName:@"CDEMenuWindowItem" bundle:nil];
    if(self) {
       self.item = nil;
    }
@@ -14,7 +14,7 @@
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-   return [self init];
+   return [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 }
 
 
