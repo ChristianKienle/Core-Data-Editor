@@ -369,6 +369,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+<<<<<<< HEAD
+=======
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+>>>>>>> 65ba89d7421433954f4d462d9419443797f8901d
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS Example/iOS Example-Prefix.pch";
 				INFOPLIST_FILE = "iOS Example/iOS Example-Info.plist";
@@ -384,9 +388,13 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 >>>>>>> Messing around with the project
+=======
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+>>>>>>> 65ba89d7421433954f4d462d9419443797f8901d
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS Example/iOS Example-Prefix.pch";
 				INFOPLIST_FILE = "iOS Example/iOS Example-Info.plist";
