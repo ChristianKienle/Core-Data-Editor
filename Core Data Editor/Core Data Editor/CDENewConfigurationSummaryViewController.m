@@ -63,27 +63,15 @@
 }
 
 #pragma mark Creating
-<<<<<<< HEAD
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-=======
-- (id)init {
-    self = [self initWithNibName:NSStringFromClass([self class]) bundle:nil];
->>>>>>> 65ba89d7421433954f4d462d9419443797f8901d
     if(self) {
     }
     return self;
 }
 
-<<<<<<< HEAD
 - (id)init {
     return [self initWithNibName:NSStringFromClass([self class])  bundle:nil];
-=======
-// This is the designated initializer for NSViewController. By having this return a call to [super initWithNibName:bundle:]
-// instead of [self init], it supresses compiler warnings
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    return [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
->>>>>>> 65ba89d7421433954f4d462d9419443797f8901d
 }
 
 #pragma mark NSViewController
