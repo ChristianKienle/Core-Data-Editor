@@ -62,6 +62,10 @@
     item.title = [URL lastPathComponent];
     [item setEnabled:YES];
     NSImage *directoryImage = [NSImage imageNamed:NSImageNameFolder];
+<<<<<<< HEAD
+=======
+    // directoryImage.scalesWhenResized = YES;
+>>>>>>> 65ba89d7421433954f4d462d9419443797f8901d
     directoryImage.size = NSMakeSize(16, 16);
     [item setImage:directoryImage];
     [self selectItemWithTag:0];

@@ -436,7 +436,11 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CDE;
+<<<<<<< HEAD
 				LastUpgradeCheck = 0600;
+=======
+				LastUpgradeCheck = 0510;
+>>>>>>> 65ba89d7421433954f4d462d9419443797f8901d
 				ORGANIZATIONNAME = "Thermal Core";
 			};
 			buildConfigurationList = 66E8B6CD14D899500074EAA4 /* Build configuration list for PBXProject "CDEKit" */;

@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< HEAD
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="AsP-lL-led">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="AsP-lL-led">
+    <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <development version="4600" identifier="xcode"/>
+>>>>>>> 65ba89d7421433954f4d462d9419443797f8901d
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
@@ -36,8 +43,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+<<<<<<< HEAD
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tsm-hs-Ifr">
                                             <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+=======
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsm-hs-Ifr">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+>>>>>>> 65ba89d7421433954f4d462d9419443797f8901d
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -129,7 +141,15 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lfs-7R-cej">
+<<<<<<< HEAD
+<<<<<<< HEAD
                                             <rect key="frame" x="168" y="8" width="51" height="31"/>
+=======
+                                            <rect key="frame" x="169" y="8" width="79" height="27"/>
+>>>>>>> Messing around with the project
+=======
+                                            <rect key="frame" x="169" y="8" width="79" height="27"/>
+>>>>>>> 65ba89d7421433954f4d462d9419443797f8901d
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="49" id="3Qd-oH-k5A"/>
                                             </constraints>
@@ -138,7 +158,15 @@
                                             </connections>
                                         </switch>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Attribute" textAlignment="right" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rro-4J-dXb">
+<<<<<<< HEAD
+<<<<<<< HEAD
                                             <rect key="frame" x="20" y="13" width="140" height="21"/>
+=======
+                                            <rect key="frame" x="20" y="11" width="141" height="21"/>
+>>>>>>> Messing around with the project
+=======
+                                            <rect key="frame" x="20" y="11" width="141" height="21"/>
+>>>>>>> 65ba89d7421433954f4d462d9419443797f8901d
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
