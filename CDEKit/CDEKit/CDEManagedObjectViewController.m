@@ -68,9 +68,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  //CDEBoolAttributeCell
-  //CDEStringAttributeCell
-//    static NSString *CellIdentifier = @"Cell";
   NSPropertyDescription *property = [self propertyDescriptionAtIndexPath:indexPath];
   NSString *identifier = [self cellIdentifierForPropertyDescription:property];
     CDEPropertyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
