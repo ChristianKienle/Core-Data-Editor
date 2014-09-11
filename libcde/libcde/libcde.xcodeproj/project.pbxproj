@@ -11,7 +11,6 @@
 		AB15923D17B5296D008DA7E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB15923C17B5296D008DA7E2 /* Foundation.framework */; };
 		AB15924217B5296D008DA7E2 /* CDE.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AB15924117B5296D008DA7E2 /* CDE.h */; };
 		AB15924417B5296D008DA7E2 /* CDE.m in Sources */ = {isa = PBXBuildFile; fileRef = AB15924317B5296D008DA7E2 /* CDE.m */; };
-		AB15924C17B5296D008DA7E2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB15924B17B5296D008DA7E2 /* SenTestingKit.framework */; };
 		AB15924E17B5296D008DA7E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB15924D17B5296D008DA7E2 /* UIKit.framework */; };
 		AB15924F17B5296D008DA7E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB15923C17B5296D008DA7E2 /* Foundation.framework */; };
 		AB15925217B5296D008DA7E2 /* liblibcde.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB15923917B5296D008DA7E2 /* liblibcde.a */; };
@@ -52,7 +51,6 @@
 		AB15924117B5296D008DA7E2 /* CDE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDE.h; sourceTree = "<group>"; };
 		AB15924317B5296D008DA7E2 /* CDE.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDE.m; sourceTree = "<group>"; };
 		AB15924A17B5296D008DA7E2 /* libcdeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = libcdeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB15924B17B5296D008DA7E2 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		AB15924D17B5296D008DA7E2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		AB15925517B5296D008DA7E2 /* libcdeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "libcdeTests-Info.plist"; sourceTree = "<group>"; };
 		AB15925717B5296D008DA7E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -73,7 +71,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB15924C17B5296D008DA7E2 /* SenTestingKit.framework in Frameworks */,
 				AB15924E17B5296D008DA7E2 /* UIKit.framework in Frameworks */,
 				AB15924F17B5296D008DA7E2 /* Foundation.framework in Frameworks */,
 				AB15925217B5296D008DA7E2 /* liblibcde.a in Frameworks */,
@@ -123,7 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				AB15923C17B5296D008DA7E2 /* Foundation.framework */,
-				AB15924B17B5296D008DA7E2 /* SenTestingKit.framework */,
 				AB15924D17B5296D008DA7E2 /* UIKit.framework */,
 			);
 			name = Frameworks;
@@ -207,7 +203,7 @@
 			name = libcdeTests;
 			productName = libcdeTests;
 			productReference = AB15924A17B5296D008DA7E2 /* libcdeTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -215,6 +211,7 @@
 		AB15923117B5296D008DA7E2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0600;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Thermal Core";
 			};
@@ -327,7 +324,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -350,7 +347,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -386,12 +383,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "libcde/libcde-Prefix.pch";
 				INFOPLIST_FILE = "libcdeTests/libcdeTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -401,12 +398,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "libcde/libcde-Prefix.pch";
 				INFOPLIST_FILE = "libcdeTests/libcdeTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
