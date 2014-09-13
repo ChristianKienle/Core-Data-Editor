@@ -38,6 +38,7 @@
     NSOpenPanel *panel = [NSOpenPanel openPanel];
     [panel setCanChooseDirectories:YES];
     [panel setCanChooseFiles:NO];
+    [panel setShowsHiddenFiles:YES];
     [panel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
         if(result == NSFileHandlingPanelOKButton) {
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
