@@ -1,5 +1,5 @@
 language: objective-c
 before_install:
     - brew update
-    - brew install xctool
+    - if brew outdated | grep -qx xctool; then brew upgrade xctool; fi
 script: xctool -workspace CDE-Workspace.xcworkspace -scheme CDETests test
