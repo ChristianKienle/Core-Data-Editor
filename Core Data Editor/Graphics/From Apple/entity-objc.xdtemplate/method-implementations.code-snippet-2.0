@@ -1,6 +1,0 @@
-$<begin-loop:selectedAttributes>$
-@dynamic $<loop-object.code_propertyName>$;
-$<end-loop>$
-$<begin-loop:selectedRelationships>$
-@dynamic $<loop-object.code_propertyName>$;
-$<end-loop>$
