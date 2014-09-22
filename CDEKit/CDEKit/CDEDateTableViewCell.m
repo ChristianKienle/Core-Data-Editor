@@ -7,52 +7,6 @@
 
 @implementation CDEDateTableViewCell
 
-//- (void)setSelected:(BOOL)selected {
-//  [super setSelected:selected];
-//  if(selected) {
-//    UIActionSheet *menu = [[UIActionSheet alloc] initWithTitle:@"Date Picker"
-//                                                      delegate:self
-//                                             cancelButtonTitle:@"Cancel"
-//                                        destructiveButtonTitle:nil
-//                                             otherButtonTitles:nil];
-//    
-//    // Add the picker
-//    UIDatePicker *pickerView = [[UIDatePicker alloc] init];
-//    pickerView.datePickerMode = UIDatePickerModeDate;
-//    [menu addSubview:pickerView];
-//    [menu showInView:self.window.rootViewController.view];
-//    [menu setBounds:CGRectMake(0,0,320, 500)];
-//    
-//    CGRect pickerRect = pickerView.bounds;
-//    pickerRect.origin.y = -100;
-//    pickerView.bounds = pickerRect;
-//  }
-//
-//  
-//}
-//- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-//  [super setSelected:selected animated:animated];
-//  if(selected) {
-//    UIActionSheet *menu = [[UIActionSheet alloc] initWithTitle:@"Date Picker"
-//                                                      delegate:self
-//                                             cancelButtonTitle:@"Cancel"
-//                                        destructiveButtonTitle:nil
-//                                             otherButtonTitles:nil];
-//    
-//    // Add the picker
-//    UIDatePicker *pickerView = [[UIDatePicker alloc] init];
-//    pickerView.datePickerMode = UIDatePickerModeDate;
-//    [menu addSubview:pickerView];
-//    [menu showInView:self.window.rootViewController.view];
-//    [menu setBounds:CGRectMake(0,0,320, 500)];
-//    
-//    CGRect pickerRect = pickerView.bounds;
-//    pickerRect.origin.y = -100;
-//    pickerView.bounds = pickerRect;
-//  }
-//  
-//}
-
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
   [self showDatePicker:self];
   return NO;

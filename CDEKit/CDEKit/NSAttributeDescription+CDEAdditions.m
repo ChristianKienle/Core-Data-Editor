@@ -1,13 +1,5 @@
 #import "NSAttributeDescription+CDEAdditions.h"
 
-//#import "CDEFloatingPointValueTableCellView.h"
-//#import "CDEStringValueTableCellView.h"
-//#import "CDEBoolValueTableCellView.h"
-//#import "CDEObjectIDValueTableCellView.h"
-//#import "CDEBinaryValueTableCellView.h"
-//#import "CDEDateValueTableCellView.h"
-//#import "CDEIntegerValueTableCellView.h"
-
 #pragma mark - Working with Attribute Types
 BOOL CDEIsStringAttributeType(NSAttributeType type) {
     return (type == NSStringAttributeType);
@@ -26,59 +18,10 @@ BOOL CDEIsIntegerAttributeType(NSAttributeType type) {
 }
 
 @implementation NSAttributeDescription (CDEAdditions)
-#pragma mark - Getting Cell Classes
-
-//+ (Class)tableCellViewClassForAttributeType_cde:(NSAttributeType)type {
-//    Class result = Nil;
-//    switch (type) {
-//        case NSInteger16AttributeType:
-//        case NSInteger32AttributeType:
-//        case NSInteger64AttributeType:
-//            result = [CDEIntegerValueTableCellView class];
-//            break;
-//        case NSDecimalAttributeType:
-//        case NSDoubleAttributeType:
-//        case NSFloatAttributeType:
-//            result = [CDEFloatingPointValueTableCellView class];
-//            break;
-//        case NSStringAttributeType:
-//            result = [CDEStringValueTableCellView class];
-//            break;
-//        case NSBooleanAttributeType:
-//            result = [CDEBoolValueTableCellView class];
-//            break;
-//        case NSDateAttributeType:
-//            result = [CDEDateValueTableCellView class];
-//            break;
-//        case NSBinaryDataAttributeType:
-//        case NSTransformableAttributeType:
-//            result = [CDEBinaryValueTableCellView class];
-//            break;
-//        case NSObjectIDAttributeType:
-//            result = [CDEObjectIDValueTableCellView class];
-//            break;
-//        default:
-//            break;
-//    }
-//    
-//    return result;
-//}
-//
-//// Returns the class for the attribute type
-//- (Class)tableCellViewClass_cde {
-//    if(self.isTransient) {
-//        return NO;
-//    }
-//    return [[self class] tableCellViewClassForAttributeType_cde:self.attributeType];
-//}
 
 #pragma mark - Concenience
 - (BOOL)isSupportedAttribute_cde {
   return YES;
-//    if(self.isTransient) {
-//        return NO;
-//    }
-//    return ([self tableCellViewClass_cde] != Nil);
 }
 
 - (BOOL)isAttributeWithFloatingPointCharacteristics_cde {
