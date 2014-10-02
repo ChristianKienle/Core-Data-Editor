@@ -22,13 +22,13 @@
     
     // Only get the year, month and day from the date
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    unsigned yearMonthDayUnits = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit;
+    unsigned yearMonthDayUnits = NSCalendarUnitYear | NSCalendarUnitMonth |  NSCalendarUnitDay;
     
     NSDateComponents *dateComponents = [calendar components:yearMonthDayUnits fromDate:date];
     
     NSDate *dateTime = self.dateTimePicker.dateValue;
     
-    unsigned hourMinuteUnits = NSHourCalendarUnit | NSMinuteCalendarUnit;
+    unsigned hourMinuteUnits = NSCalendarUnitHour | NSCalendarUnitMinute;
     
     NSDateComponents *dateTimeComponents = [calendar components:hourMinuteUnits fromDate:dateTime];
     
