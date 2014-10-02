@@ -34,15 +34,15 @@
   [alert addButtonWithTitle:@"Configure Derived Data Directory"];
   [alert addButtonWithTitle:@"Cancel"];
   
-    [alert beginSheetModalForWindow:self.view.window completionHandler_oa:^(NSAlert *alert, NSInteger returnCode) {
-        if(returnCode != NSAlertFirstButtonReturn) {
-            double delayInSeconds = 0.5;
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                [self.view.window performClose:self];
-            });
-        }
-    }];
+  [alert beginSheetModalForWindow:self.view.window completionHandler:^(NSModalResponse returnCode) {
+    if(returnCode != NSAlertFirstButtonReturn) {
+      double delayInSeconds = 0.5;
+      dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+      dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self.view.window performClose:self];
+      });
+    }
+  }];
 }
 
 #pragma mark - Directories

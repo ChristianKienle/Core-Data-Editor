@@ -329,21 +329,25 @@
             NSString *errorMessagesForDisplay = [errorMessages.array componentsJoinedByString:@"\n"];
             message = [message stringByAppendingString:errorMessagesForDisplay];
             message = [message stringByAppendingString:@"\n\nYou can configure the project now to resolve those problems. If you do so the project will be usable again."];
-            OABeginAlertSheet(@"Unable to open Project", @"Configure", @"Cancel", nil, [self _documentWindow], ^(NSAlert *alert, NSInteger returnCode) {
-                if(returnCode == NSAlertFirstButtonReturn) { // "Configure" was clicked
-                    [self.configurationWizzard setEditing:YES];
-                    double delayInSeconds = 0.5;
-                    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-                    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                        [self showConfiguration:self];
-                    });
-                } else { // "Cancel" was clicked
-                    [self close];
-                }
-            }, message);
-        } else {
-            // Puh! Everything is groovy.
-//            [self.editorViewController setConfiguration:self.configuration modelURL:self.modelURL storeURL:self.storeURL needsReload:YES error:NULL];
+          
+           NSAlert *alert = [NSAlert new];
+           alert.messageText = message;
+           alert.informativeText = @"Unable to open Project";
+          [alert addButtonWithTitle:@"Configure"];
+          [alert addButtonWithTitle:@"Cancel"];
+          [alert beginSheetModalForWindow:[self _documentWindow] completionHandler:^(NSModalResponse returnCode) {
+            if(returnCode == NSAlertFirstButtonReturn) { // "Configure" was clicked
+              [self.configurationWizzard setEditing:YES];
+              double delayInSeconds = 0.5;
+              dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+              dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [self showConfiguration:self];
+              });
+            } else { // "Cancel" was clicked
+              [self close];
+            }
+
+          }];
         }
     }
 }
