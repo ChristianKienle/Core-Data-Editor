@@ -75,9 +75,13 @@
         buildProductsDirectorySuccess = [self.derivedDataDirectory startAccessingSecurityScopedResource];
         if(buildProductsDirectorySuccess == NO) {
             // we have bookmark data but we cannot start accessing it!
-            NSAlert *alert = [NSAlert alertWithMessageText:@"Failed to access Derived Data Directory" defaultButton:@"Set Directory…" alternateButton:@"Cancel" otherButton:nil informativeTextWithFormat:@"You have set a Xcode derived data directory in the preferences but Core Data Editor failed to access the contents of the directory. If you want to continue to use this feature you should set a new directory now."];
+          NSAlert *alert = [NSAlert new];
+          alert.messageText = @"Failed to access Derived Data Directory";
+          [alert addButtonWithTitle:@"Set Directory…"];
+          [alert addButtonWithTitle:@"Cancel"];
+          alert.informativeText = @"You have set a Xcode derived data directory in the preferences but Core Data Editor failed to access the contents of the directory. If you want to continue to use this feature you should set a new directory now.";
             NSUInteger returnCode = [alert runModal];
-            if(returnCode == NSAlertDefaultReturn) {
+            if(returnCode == NSAlertFirstButtonReturn) {
                 [self.preferencesWindowController showAutomaticProjectCreationPreferencesWithCompletionHandler:nil];
             }
         }

@@ -387,8 +387,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "127"
             endingLineNumber = "127"
-            landmarkName = "-isSQLiteStoreURL_cde"
-            landmarkType = "5">
+            landmarkName = "@implementation NSURL(CDESQLiteAdditions)"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -403,8 +403,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "137"
             endingLineNumber = "137"
-            landmarkName = "-isSQLiteStoreURL_cde"
-            landmarkType = "5">
+            landmarkName = "@implementation NSURL(CDESQLiteAdditions)"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
