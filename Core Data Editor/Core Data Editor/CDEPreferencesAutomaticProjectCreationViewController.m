@@ -28,9 +28,14 @@
 }
 
 - (void)displayInfoSheet {
-    NSAlert *alert = [NSAlert alertWithMessageText:@"Automatic Project Creation" defaultButton:@"Configure Derived Data Directory" alternateButton:@"Cancel" otherButton:nil informativeTextWithFormat:@"In order to open a store file Core Data Editor needs to know the model which belongs to the store file. Core Data Editor can try to find the model for you automatically. Simply specify a directory which contains most of your build products in the preferences. This is usually the Xcode derived data directory (Default: ~/Library/Developer/Xcode/DerivedData).\n\nIf you have selected your Xcode derived data directory try to drop a store file from your app on the dock icon of Core Data Editor."];
+  NSAlert *alert = [NSAlert new];
+  alert.messageText = @"Automatic Project Creation";
+  alert.informativeText = @"In order to open a store file Core Data Editor needs to know the model which belongs to the store file. Core Data Editor can try to find the model for you automatically. Simply specify a directory which contains most of your build products in the preferences. This is usually the Xcode derived data directory (Default: ~/Library/Developer/Xcode/DerivedData).\n\nIf you have selected your Xcode derived data directory try to drop a store file from your app on the dock icon of Core Data Editor.";
+  [alert addButtonWithTitle:@"Configure Derived Data Directory"];
+  [alert addButtonWithTitle:@"Cancel"];
+  
     [alert beginSheetModalForWindow:self.view.window completionHandler_oa:^(NSAlert *alert, NSInteger returnCode) {
-        if(returnCode != NSAlertDefaultReturn) {
+        if(returnCode != NSAlertFirstButtonReturn) {
             double delayInSeconds = 0.5;
             dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
             dispatch_after(popTime, dispatch_get_main_queue(), ^(void){

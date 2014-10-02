@@ -17,7 +17,7 @@
 - (NSData *)bookmarkDataAndGetError_cde:(NSError **)error {
     NSError *localError = nil;
     NSURL *pathOnlyURL = [NSURL fileURLWithPath:[self path]];
-    NSData *result = [pathOnlyURL bookmarkDataWithOptions:NSURLBookmarkCreationPreferFileIDResolution
+    NSData *result = [pathOnlyURL bookmarkDataWithOptions:NSURLBookmarkCreationSuitableForBookmarkFile
                            includingResourceValuesForKeys:nil
                                             relativeToURL:nil
                                                     error:&localError];
