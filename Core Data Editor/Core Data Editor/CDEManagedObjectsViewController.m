@@ -108,8 +108,8 @@
   [self unregisterAllNibs];
   [self updateAddAndRemoveButtons];
   
-  [[self.searchField cell] setControlSize:NSMiniControlSize];
-  [self.searchField setFont:[NSFont systemFontOfSize:[NSFont systemFontSizeForControlSize:NSMiniControlSize]]];
+//  [[self.searchField cell] setControlSize:NSMiniControlSize];
+//  [self.searchField setFont:[NSFont systemFontOfSize:[NSFont systemFontSizeForControlSize:NSMiniControlSize]]];
   NSRect searchFrame = [self.searchField frame];
   NSSize cellSize = [[self.searchField cell] cellSizeForBounds:searchFrame];
   searchFrame.size.height = cellSize.height;
