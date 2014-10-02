@@ -115,7 +115,7 @@
 														<object class="NSTextFieldCell" key="NSCell" id="413718725">
 															<int key="NSCellFlags">67108928</int>
 															<int key="NSCellFlags2">272631808</int>
-															<string key="NSContents">Table View Cell</string>
+															<string key="NSContents">Title</string>
 															<object class="NSFont" key="NSSupport" id="500345132">
 																<bool key="IBIsSystemFont">YES</bool>
 																<double key="NSSize">13</double>
@@ -136,7 +136,7 @@
 														<int key="NSvFlags">297</int>
 														<string key="NSFrame">{{137, 4}, {104, 17}}</string>
 														<reference key="NSSuperview" ref="697571975"/>
-														<reference key="NSNextKeyView" ref="626428382"/>
+														<reference key="NSNextKeyView"/>
 														<string key="NSReuseIdentifierKey">_NS:1667</string>
 														<bool key="NSEnabled">YES</bool>
 														<object class="NSButtonCell" key="NSCell" id="23116364">
@@ -159,7 +159,7 @@
 														</object>
 														<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 													</object>
-													<object class="NSImageView" id="572190264">
+													<object class="NSImageView" id="26624939">
 														<reference key="NSNextResponder" ref="697571975"/>
 														<int key="NSvFlags">300</int>
 														<set class="NSMutableSet" key="NSDragTypes">
@@ -175,7 +175,7 @@
 														<reference key="NSNextKeyView" ref="421953478"/>
 														<string key="NSReuseIdentifierKey">_NS:9</string>
 														<bool key="NSEnabled">YES</bool>
-														<object class="NSImageCell" key="NSCell" id="104996417">
+														<object class="NSImageCell" key="NSCell" id="158484346">
 															<int key="NSCellFlags">134217728</int>
 															<int key="NSCellFlags2">33554432</int>
 															<object class="NSCustomResource" key="NSContents">
@@ -194,7 +194,7 @@
 												</array>
 												<string key="NSFrame">{{1, 20}, {244, 26}}</string>
 												<reference key="NSSuperview" ref="509536746"/>
-												<reference key="NSNextKeyView" ref="572190264"/>
+												<reference key="NSNextKeyView" ref="26624939"/>
 											</object>
 										</array>
 										<string key="NSFrameSize">{247, 473}</string>
@@ -335,7 +335,7 @@
 						</array>
 						<string key="NSFrameSize">{247, 473}</string>
 						<reference key="NSSuperview" ref="1005"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSNextKeyView" ref="424811429"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<int key="NSsFlags">133680</int>
 						<reference key="NSVScroller" ref="805107207"/>
@@ -406,7 +406,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">imageView</string>
 						<reference key="source" ref="697571975"/>
-						<reference key="destination" ref="572190264"/>
+						<reference key="destination" ref="26624939"/>
 					</object>
 					<int key="connectionID">113</int>
 				</object>
@@ -510,7 +510,7 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="421953478"/>
 							<reference ref="715640589"/>
-							<reference ref="572190264"/>
+							<reference ref="26624939"/>
 						</array>
 						<reference key="parent" ref="876387595"/>
 					</object>
@@ -555,16 +555,16 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">111</int>
-						<reference key="object" ref="572190264"/>
+						<reference key="object" ref="26624939"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="104996417"/>
+							<reference ref="158484346"/>
 						</array>
 						<reference key="parent" ref="697571975"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">112</int>
-						<reference key="object" ref="104996417"/>
-						<reference key="parent" ref="572190264"/>
+						<reference key="object" ref="158484346"/>
+						<reference key="parent" ref="26624939"/>
 					</object>
 				</array>
 			</object>
