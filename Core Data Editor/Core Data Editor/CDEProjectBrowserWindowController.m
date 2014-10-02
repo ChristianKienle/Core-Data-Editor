@@ -1,6 +1,5 @@
 #import "CDEProjectBrowserWindowController.h"
 #import "CDEProjectBrowserItem.h"
-#import "NSAlert-OAExtensions.h"
 #import "CDEDocument.h"
 #import "CDEConfiguration.h"
 #import "CDEApplicationDelegate.h"

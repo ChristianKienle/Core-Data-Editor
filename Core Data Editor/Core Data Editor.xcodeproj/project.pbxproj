@@ -71,7 +71,6 @@
 		AB3B07CB1775FCF2000855B0 /* CDEBoolValueTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB3B07CA1775FCF2000855B0 /* CDEBoolValueTableCellView.xib */; };
 		AB3B07CE17760E23000855B0 /* NSTableCellView+JKNibLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B07CD17760E23000855B0 /* NSTableCellView+JKNibLoading.m */; };
 		AB531222179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB531221179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.m */; };
-		AB53127317999D2200529EF7 /* NSAlert-OAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB53127217999D2200529EF7 /* NSAlert-OAExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AB5583A5176751AE005C002C /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = AB5583A4176751AE005C002C /* icon.iconset */; };
 		AB7F20CE19DD7B4D00EBBF52 /* VibrantView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7F20CD19DD7B4D00EBBF52 /* VibrantView.m */; };
 		AB86F7CB1791922600FB0AEB /* CDEAttributeEditorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB86F7C91791922600FB0AEB /* CDEAttributeEditorWindowController.m */; };
@@ -347,8 +346,6 @@
 		AB3B07CD17760E23000855B0 /* NSTableCellView+JKNibLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTableCellView+JKNibLoading.m"; sourceTree = "<group>"; };
 		AB531220179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTableColumn+CDERequestDataCoordinator.h"; sourceTree = "<group>"; };
 		AB531221179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTableColumn+CDERequestDataCoordinator.m"; sourceTree = "<group>"; };
-		AB53127117999D2200529EF7 /* NSAlert-OAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAlert-OAExtensions.h"; sourceTree = "<group>"; };
-		AB53127217999D2200529EF7 /* NSAlert-OAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAlert-OAExtensions.m"; sourceTree = "<group>"; };
 		AB5583A4176751AE005C002C /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = icon.iconset; sourceTree = "<group>"; };
 		AB7F20CC19DD7B4D00EBBF52 /* VibrantView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VibrantView.h; sourceTree = "<group>"; };
 		AB7F20CD19DD7B4D00EBBF52 /* VibrantView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VibrantView.m; sourceTree = "<group>"; };
@@ -1484,8 +1481,6 @@
 			isa = PBXGroup;
 			children = (
 				ABEEA5C0178194BD0096DE4C /* Date Picker */,
-				AB53127117999D2200529EF7 /* NSAlert-OAExtensions.h */,
-				AB53127217999D2200529EF7 /* NSAlert-OAExtensions.m */,
 				ABEEA6201785C2F20096DE4C /* RSVerticallyCenteredTextFieldCell */,
 				ABC1E69D177732D80069D252 /* Transformer */,
 				ABEEA6211785C2F80096DE4C /* Drop Zone View */,
@@ -2415,7 +2410,6 @@
 				ABBB322E179855D500FE964E /* NSManagedObject+CDEAdditions.m in Sources */,
 				ABBB32321798564100FE964E /* NSManagedObjectContext+CDEAdditions.m in Sources */,
 				AB531222179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.m in Sources */,
-				AB53127317999D2200529EF7 /* NSAlert-OAExtensions.m in Sources */,
 				ABFBB3B1179C36E2003B5346 /* CDETwoColumnSplitViewController.m in Sources */,
 				AB0181171997C805000FE094 /* NSDirectoryEnumerator+ProjectBrowser.m in Sources */,
 				AB30FF66179C696D00E49E0B /* CDEPreferencesAutomaticProjectCreationViewController.m in Sources */,

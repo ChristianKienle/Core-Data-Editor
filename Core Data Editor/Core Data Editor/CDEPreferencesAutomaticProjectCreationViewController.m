@@ -1,6 +1,5 @@
 #import "CDEPreferencesAutomaticProjectCreationViewController.h"
 #import "NSURL+CDEAdditions.h"
-#import "NSAlert-OAExtensions.h"
 #import "CDEPathPickerPopUpButton.h"
 
 @interface CDEPreferencesAutomaticProjectCreationViewController ()
