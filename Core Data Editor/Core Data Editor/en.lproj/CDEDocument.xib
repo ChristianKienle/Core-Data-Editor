@@ -51,7 +51,7 @@
 					<bool key="NSToolbarAllowsUserCustomization">NO</bool>
 					<bool key="NSToolbarAutosavesConfiguration">NO</bool>
 					<int key="NSToolbarDisplayMode">1</int>
-					<int key="NSToolbarSizeMode">1</int>
+					<int key="NSToolbarSizeMode">2</int>
 					<dictionary class="NSMutableDictionary" key="NSToolbarIBIdentifiedItems">
 						<object class="NSToolbarItem" key="44533143-C9D0-4AA1-B7F0-54EEB1F8BB44" id="1052724960">
 							<object class="NSMutableString" key="NSToolbarItemIdentifier">
@@ -379,6 +379,7 @@
 				<string key="100054.designableToolbarItemIdentifier">CDECode</string>
 				<boolean value="YES" key="5.IBNSWindowAutoPositionCentersHorizontal"/>
 				<boolean value="YES" key="5.IBNSWindowAutoPositionCentersVertical"/>
+				<string key="5.IBPersistedLastKnownCanvasPosition">{277, 336}</string>
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="5.IBWindowTemplateEditedContentRect">{{133, 170}, {507, 413}}</string>
 				<boolean value="YES" key="5.NSWindowTemplate.visibleAtLaunch"/>
@@ -388,7 +389,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">100056</int>
+			<int key="maxID">100059</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -580,8 +581,8 @@
 			<string key="NSAdvanced">{32, 32}</string>
 			<string key="NSMenuCheckmark">{12, 12}</string>
 			<string key="NSMenuMixedState">{10, 2}</string>
-			<string key="code-icon">{32, 32}</string>
-			<string key="csv-icon">{32, 32}</string>
+			<string key="code-icon">{39, 39}</string>
+			<string key="csv-icon">{39, 39}</string>
 		</dictionary>
 	</data>
 </archive>
