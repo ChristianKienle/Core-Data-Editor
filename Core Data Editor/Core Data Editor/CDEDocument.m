@@ -234,7 +234,8 @@
 
 - (void)windowControllerDidLoadNib:(NSWindowController *)windowController {
     [super windowControllerDidLoadNib:windowController];
-
+  
+  [self _documentWindow].titleVisibility = NSWindowTitleHidden;
     self.editorViewController.view.frame = self.containerView.bounds;
     [self.containerView addSubview:self.editorViewController.view];
     
