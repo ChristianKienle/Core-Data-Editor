@@ -2165,6 +2165,7 @@
 				ORGANIZATIONNAME = "Christian Kienle";
 				TargetAttributes = {
 					ABBEA7D51765CB730024A9D2 = {
+						DevelopmentTeam = 6YJV6LM6Q4;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 0;
