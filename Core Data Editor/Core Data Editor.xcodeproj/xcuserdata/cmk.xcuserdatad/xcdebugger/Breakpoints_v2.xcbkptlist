@@ -14,9 +14,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "188"
-            endingLineNumber = "188"
-            landmarkName = "-isCompatibleWithStoreAtURL:error_cde:"
-            landmarkType = "5">
+            endingLineNumber = "188">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,11 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Core Data Editor/CDEDocument.m"
-            timestampString = "434023923.234801"
+            timestampString = "434034725.526523"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
             landmarkName = "-windowControllerDidLoadNib:"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Core Data Editor/CDEEditorViewController.m"
-            timestampString = "423829298.783427"
+            timestampString = "434034725.526523"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "390"
-            endingLineNumber = "390"
+            startingLineNumber = "388"
+            endingLineNumber = "388"
             landmarkName = "-managedObjectsViewController:didSelectRelationship:ofManagedObject:"
             landmarkType = "5">
          </BreakpointContent>

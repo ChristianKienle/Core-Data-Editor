@@ -37,7 +37,6 @@
 #pragma mark - Actions
 - (IBAction)showPreferences:(id)sender {
     [self.preferencesWindowController showWithCompletionHandler:^{
-        NSLog(@"Prefs");
     }];
 }
 
@@ -151,7 +150,6 @@
     if(self.preferencesWindowController == nil) {
         self.preferencesWindowController = [CDEPreferencesWindowController new];
     }
-    NSLog(@"file: %@", filename);
     if([filename.pathExtension isEqualToString:@"coredataeditor5"]) {
         [[NSDocumentController sharedDocumentController] openDocumentWithContentsOfURL:[NSURL fileURLWithPath:filename] display:YES error:NULL];
         return YES;

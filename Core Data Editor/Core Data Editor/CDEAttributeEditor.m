@@ -51,7 +51,6 @@
 }
 
 - (void)close {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
     [NSApp endSheet:self.windowController.window];
 }
 

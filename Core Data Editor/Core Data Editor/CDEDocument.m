@@ -102,7 +102,6 @@
 
 - (void)dealloc {
     self.editorViewController = nil;
-    NSLog(@"dealloc: %@ - %p", NSStringFromClass([self class]), self);
 }
 
 - (BOOL)validateUserInterfaceItem:(id <NSValidatedUserInterfaceItem>)item {
@@ -305,12 +304,6 @@
             NSLog(@"Backtrace: %@", [exception callStackSymbols]);
         }
         if(model != nil) {
-//            NSError *error = nil;
-//            BOOL isCompatible = [model.transformedManagedObjectModel_cde isCompatibleWithStoreAtURL:self.storeURL error_cde:&error];
-//            if(!isCompatible) {
-//                [errorMessages addObject:@"• Store is not compatible with model."];
-//                NSLog(@"Model not compatible with store: %@", error);
-//            }
           NSError *error = nil;
           BOOL configurationSet = [self.editorViewController setConfiguration:self.configuration modelURL:self.modelURL storeURL:self.storeURL needsReload:YES error:&error];
           if(configurationSet == NO) {
@@ -353,10 +346,7 @@
 }
 
 - (void)close {
-    NSLog(@"close document: %@", [self displayName]);
     [self.editorViewController cleanup];
-    NSArray *filePresenters = [NSFileCoordinator filePresenters];
-    NSLog(@"presenters: %@", filePresenters);
     [super close];
 }
 
@@ -395,7 +385,6 @@
     self.codeGenerator = [[CDECodeGenerator alloc] initWithManagedObjectModelURL:self.modelURL];
     __typeof__(self) __weak weakSelf = self;
     [self.codeGenerator presentCodeGeneratorUIModalForWindow:[self _documentWindow] completionHandler:^{
-        NSLog(@"code generated");
         [weakSelf setCodeGenerator:nil];
     }];
 }

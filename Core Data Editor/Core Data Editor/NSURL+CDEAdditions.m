@@ -83,7 +83,6 @@
     NSError *error = nil;
     NSData *contents = [NSData dataWithContentsOfURL:self options:NSDataReadingMappedAlways error:&error];
     if(contents == nil) {
-        //NSLog(@"error reading file %@: %@.", self, error);
         return NO;
     }
     if(contents.length < 16) {

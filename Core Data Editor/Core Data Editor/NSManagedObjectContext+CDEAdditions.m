@@ -4,11 +4,9 @@
 
 #pragma mark - Make a Managed Object Valid
 - (void)makeManagedObjectValid:(NSManagedObject *)managedObject {
-    NSLog(@"Making Object Valid: %@", managedObject.objectID.URIRepresentation.lastPathComponent);
     // Get the validation errors
     NSMutableOrderedSet *potentialInvalidObjects = [NSMutableOrderedSet orderedSet];
     NSArray *errors = managedObject.validationErrors_cde;
-    NSLog(@"%lu validation errors", errors.count);
 
     for(NSError *error in errors) {
         NSString *propertyName = error.userInfo[NSValidationKeyErrorKey];
@@ -27,7 +25,6 @@
                 NSManagedObject *relatedObject = [NSEntityDescription insertNewObjectForEntityForName:relation.destinationEntity.name inManagedObjectContext:self];
                 [managedObject setValue:relatedObject forKey:relation.name];
                 [potentialInvalidObjects addObject:relatedObject];
-                NSLog(@"     repaired error for %@.", propertyName);
             } else {
                 NSUInteger minCount = relation.minCount;
                 id mutableRelatedObjects = [[managedObject valueForKey:relation.name] mutableCopy];
@@ -37,7 +34,6 @@
                     [managedObject setValue:mutableRelatedObjects forKey:relation.name];
                     [potentialInvalidObjects addObject:relatedObject];
                 }
-                NSLog(@"     repaired error for %@.", propertyName);
 
             }
         }

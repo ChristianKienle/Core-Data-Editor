@@ -268,8 +268,6 @@
   NSArray *entities = self.managedObjectModel.entities;
   NSEntityDescription *selectedEntity = self.entitiesViewController.selectedEntityDescription;
   [self.CSVImportWindowController beginSheetModalForWindow:self.view.window entityDescriptions:entities selectedEntityDescription:selectedEntity completionHandler:^(CDECSVImportWindowControllerResult *result) {
-    NSLog(@"res: %@", result);
-    NSLog(@"entity: %@", result.destinationEntityDescription.name);
     for(CDECSVImportWindowControllerResultItem *item in result.items) {
       NSManagedObject *managedObject = [NSEntityDescription insertNewObjectForEntityForName:result.destinationEntityDescription.name inManagedObjectContext:self.managedObjectContext];
       [managedObject setValuesForKeysWithDictionary:item.keyedValuesForUsedAttributes];

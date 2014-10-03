@@ -30,25 +30,4 @@
 }
 
 
--(void)viewWillAppear: (BOOL)animated
-{
-  NSLog(@"%@ - viewWillAppear: %i", self.title, animated);
-}
-
--(void)viewDidAppear: (BOOL)animated
-{
-  NSLog(@"%@ - viewDidAppear: %i", self.title, animated);
-}
-
--(void)viewWillDisappear: (BOOL)animated
-{
-  NSLog(@"%@ - viewWillDisappear: %i", self.title, animated);
-}
-
--(void)viewDidDisappear: (BOOL)animated
-{
-  NSLog(@"%@ - viewDidDisappear: %i", self.title, animated);
-}
-
-
 @end

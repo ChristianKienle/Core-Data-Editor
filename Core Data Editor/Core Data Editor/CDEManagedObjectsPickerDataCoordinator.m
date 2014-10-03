@@ -157,15 +157,9 @@
     NSAssert(row != -1 && column != -1, @"Row or column invalid.");
 
     NSInteger state = [sender state];
-    NSLog(@"is selected: %li (r: %li - c: %li)", state, row, column);
     NSManagedObject *object = [self managedObjectAtIndex:row];
-//    NSTableColumn *tableColumn = [[self.tableView tableColumns] objectAtIndex:column];
     if(state == NSOnState) {
         if(self.allowsMultipleSelection == NO) {
-//            NSManagedObject *anyObject = _selectedManagedObjects.anyObject;
-//            if(anyObject != nil) {
-//                NSInteger indexOfAnyObject = [self inde]
-//            }
             [_selectedManagedObjects removeAllObjects];
         }
         [_selectedManagedObjects addObject:object];
