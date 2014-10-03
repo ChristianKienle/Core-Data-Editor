@@ -52,7 +52,7 @@
         NSString *outputMachinePath = [self.outputDirectory.path stringByAppendingPathComponent:@"Machine"];
         NSString *outputHumanPath = [self.outputDirectory.path stringByAppendingPathComponent:@"Human"];
         
-        NSMutableArray *arguments = [@[@"-m", self.modelPath.path, @"-M", outputMachinePath, @"H", outputHumanPath] mutableCopy];
+        NSMutableArray *arguments = [@[@"-m", self.modelPath.path, @"-M", outputMachinePath, @"-H", outputHumanPath] mutableCopy];
         
         if(self.generateARCCompatibleCode) {
             [arguments addObject:@"--template-var"];
