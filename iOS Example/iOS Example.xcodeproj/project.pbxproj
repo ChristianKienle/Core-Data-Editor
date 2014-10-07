@@ -588,6 +588,7 @@
 				E3C6705019D0E27C000CB1C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
