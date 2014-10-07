@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
-		<int key="IBDocument.SystemTarget">1080</int>
-		<string key="IBDocument.SystemVersion">12E55</string>
-		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.39</string>
-		<string key="IBDocument.HIToolboxVersion">626.00</string>
+		<int key="IBDocument.SystemTarget">101000</int>
+		<string key="IBDocument.SystemVersion">14A379a</string>
+		<string key="IBDocument.InterfaceBuilderVersion">6249</string>
+		<string key="IBDocument.AppKitVersion">1343.13</string>
+		<string key="IBDocument.HIToolboxVersion">755.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">3084</string>
+			<string key="NS.object.0">6249</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>NSBox</string>
@@ -59,11 +59,11 @@
 					<array class="NSMutableArray" key="NSSubviews">
 						<object class="NSTabView" id="964859605">
 							<reference key="NSNextResponder" ref="1006"/>
-							<int key="NSvFlags">36</int>
+							<int key="NSvFlags">292</int>
 							<string key="NSFrame">{{16, 16}, {636, 331}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="980117219"/>
+							<reference key="NSNextKeyView" ref="555629799"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<array class="NSMutableArray" key="NSTabViewItems">
 								<object class="NSTabViewItem" id="414018475">
@@ -85,9 +85,9 @@
 													<int key="NSCellFlags2">138414144</int>
 													<string key="NSContents">Please complete this setup process. It will make your life easier!</string>
 													<object class="NSFont" key="NSSupport">
-														<string key="NSName">LucidaGrande</string>
+														<bool key="IBIsSystemFont">YES</bool>
 														<double key="NSSize">14</double>
-														<int key="NSfFlags">16</int>
+														<int key="NSfFlags">1044</int>
 													</object>
 													<string key="NSCellIdentifier">_NS:1535</string>
 													<reference key="NSControlView" ref="260419175"/>
@@ -104,13 +104,14 @@
 														<int key="NSColorSpace">6</int>
 														<string key="NSCatalogName">System</string>
 														<string key="NSColorName">controlTextColor</string>
-														<object class="NSColor" key="NSColor">
+														<object class="NSColor" key="NSColor" id="256165891">
 															<int key="NSColorSpace">3</int>
 															<bytes key="NSWhite">MAA</bytes>
 														</object>
 													</object>
 												</object>
 												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+												<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 											</object>
 											<object class="NSButton" id="62854609">
 												<reference key="NSNextResponder" ref="76319248"/>
@@ -124,7 +125,7 @@
 													<int key="NSCellFlags2">134217728</int>
 													<string key="NSContents">Setup Core Data Editor now…</string>
 													<object class="NSFont" key="NSSupport" id="53703502">
-														<string key="NSName">LucidaGrande</string>
+														<bool key="IBIsSystemFont">YES</bool>
 														<double key="NSSize">13</double>
 														<int key="NSfFlags">1044</int>
 													</object>
@@ -181,10 +182,10 @@
 													<int key="NSCellFlags">68157504</int>
 													<int key="NSCellFlags2">138413056</int>
 													<string key="NSContents">Core Data Editor</string>
-													<object class="NSFont" key="NSSupport" id="317961289">
-														<string key="NSName">LucidaGrande</string>
+													<object class="NSFont" key="NSSupport">
+														<bool key="IBIsSystemFont">YES</bool>
 														<double key="NSSize">23</double>
-														<int key="NSfFlags">16</int>
+														<int key="NSfFlags">1044</int>
 													</object>
 													<string key="NSCellIdentifier">_NS:1535</string>
 													<reference key="NSControlView" ref="29083246"/>
@@ -192,6 +193,7 @@
 													<reference key="NSTextColor" ref="985378486"/>
 												</object>
 												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+												<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 											</object>
 										</array>
 										<string key="NSFrame">{{10, 7}, {616, 311}}</string>
@@ -205,8 +207,8 @@
 								<object class="NSTabViewItem" id="319520893">
 									<string key="NSIdentifier">simulator</string>
 									<object class="NSView" key="NSView" id="555629799">
-										<nil key="NSNextResponder"/>
-										<int key="NSvFlags">256</int>
+										<reference key="NSNextResponder" ref="964859605"/>
+										<int key="NSvFlags">274</int>
 										<array class="NSMutableArray" key="NSSubviews">
 											<object class="NSImageView" id="463966436">
 												<reference key="NSNextResponder" ref="555629799"/>
@@ -221,6 +223,7 @@
 												</set>
 												<string key="NSFrame">{{14, 246}, {50, 50}}</string>
 												<reference key="NSSuperview" ref="555629799"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="826612001"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSImageCell" key="NSCell" id="640153086">
@@ -240,6 +243,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{69, 262}, {274, 19}}</string>
 												<reference key="NSSuperview" ref="555629799"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="421172151"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -247,10 +251,10 @@
 													<int key="NSCellFlags">68157504</int>
 													<int key="NSCellFlags2">272630784</int>
 													<string key="NSContents">Setup iPhone Simulator Integration</string>
-													<object class="NSFont" key="NSSupport" id="663915572">
-														<string key="NSName">LucidaGrande-Bold</string>
+													<object class="NSFont" key="NSSupport">
+														<bool key="IBIsSystemFont">YES</bool>
 														<double key="NSSize">15</double>
-														<int key="NSfFlags">16</int>
+														<int key="NSfFlags">2072</int>
 													</object>
 													<string key="NSCellIdentifier">_NS:1535</string>
 													<reference key="NSControlView" ref="826612001"/>
@@ -258,12 +262,14 @@
 													<reference key="NSTextColor" ref="985378486"/>
 												</object>
 												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+												<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 											</object>
 											<object class="NSTextField" id="624401687">
 												<reference key="NSNextResponder" ref="555629799"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{69, 211}, {177, 17}}</string>
 												<reference key="NSSuperview" ref="555629799"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="920655051"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -278,12 +284,14 @@
 													<reference key="NSTextColor" ref="985378486"/>
 												</object>
 												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+												<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 											</object>
 											<object class="NSTextField" id="790811147">
 												<reference key="NSNextResponder" ref="555629799"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{69, 45}, {145, 33}}</string>
+												<string key="NSFrame">{{69, 41}, {145, 37}}</string>
 												<reference key="NSSuperview" ref="555629799"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="666127037"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -292,7 +300,7 @@
 													<int key="NSCellFlags2">138674176</int>
 													<string key="NSContents">Setting the iPhone Simulator Directory will enable the "Project Browser".</string>
 													<object class="NSFont" key="NSSupport">
-														<string key="NSName">LucidaGrande</string>
+														<bool key="IBIsSystemFont">YES</bool>
 														<double key="NSSize">9</double>
 														<int key="NSfFlags">3614</int>
 													</object>
@@ -302,12 +310,14 @@
 													<reference key="NSTextColor" ref="985378486"/>
 												</object>
 												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+												<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 											</object>
 											<object class="NSPopUpButton" id="920655051">
 												<reference key="NSNextResponder" ref="555629799"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{251, 206}, {351, 25}}</string>
 												<reference key="NSSuperview" ref="555629799"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="727908952"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
@@ -343,6 +353,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{248, 85}, {357, 112}}</string>
 												<reference key="NSSuperview" ref="555629799"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="790811147"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<string key="NSAntiCompressionPriority">{250, 750}</string>
@@ -352,7 +363,7 @@
 													<int key="NSCellFlags2">272760832</int>
 													<string key="NSContents">Please specify your iPhone Simulator directory. This directory is usually located in ~/Library/Application Support/iPhone Simulator/. Specifying your iPhone Simulator directory enables the project browser feature. The project browser automatically finds compatible SQLite stores and managed object models and let's you quickly create a Core Data Editor projects. You access the project browser from the "Window | Project Browser" menu item.</string>
 													<object class="NSFont" key="NSSupport" id="26">
-														<string key="NSName">LucidaGrande</string>
+														<bool key="IBIsSystemFont">YES</bool>
 														<double key="NSSize">11</double>
 														<int key="NSfFlags">3100</int>
 													</object>
@@ -369,13 +380,15 @@
 												</object>
 												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 												<bool key="NSControlAutosetMaxLayoutWidth">YES</bool>
+												<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 											</object>
 											<object class="NSButton" id="2943368">
 												<reference key="NSNextResponder" ref="555629799"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{558, 9}, {44, 25}}</string>
 												<reference key="NSSuperview" ref="555629799"/>
-												<reference key="NSNextKeyView"/>
+												<reference key="NSWindow"/>
+												<reference key="NSNextKeyView" ref="964859605"/>
 												<string key="NSReuseIdentifierKey">_NS:22</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="596263452">
@@ -399,6 +412,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{14, 9}, {67, 25}}</string>
 												<reference key="NSSuperview" ref="555629799"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="2943368"/>
 												<string key="NSReuseIdentifierKey">_NS:22</string>
 												<bool key="NSEnabled">YES</bool>
@@ -423,6 +437,7 @@
 												<int key="NSvFlags">12</int>
 												<string key="NSFrame">{{14, 235}, {588, 5}}</string>
 												<reference key="NSSuperview" ref="555629799"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="624401687"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<string key="NSOffsets">{0, 0}</string>
@@ -440,9 +455,11 @@
 															<bytes key="NSWhite">MQA</bytes>
 														</object>
 													</object>
-													<object class="NSColor" key="NSTextColor">
-														<int key="NSColorSpace">3</int>
-														<bytes key="NSWhite">MCAwLjgwMDAwMDAxMTkAA</bytes>
+													<object class="NSColor" key="NSTextColor" id="745682864">
+														<int key="NSColorSpace">6</int>
+														<string key="NSCatalogName">System</string>
+														<string key="NSColorName">labelColor</string>
+														<reference key="NSColor" ref="256165891"/>
 													</object>
 												</object>
 												<int key="NSBorderType">3</int>
@@ -463,6 +480,7 @@
 												</set>
 												<string key="NSFrame">{{69, 86}, {142, 110}}</string>
 												<reference key="NSSuperview" ref="555629799"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="474832938"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSImageCell" key="NSCell" id="188936513">
@@ -482,6 +500,8 @@
 											</object>
 										</array>
 										<string key="NSFrame">{{10, 7}, {616, 311}}</string>
+										<reference key="NSSuperview" ref="964859605"/>
+										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="463966436"/>
 										<string key="NSReuseIdentifierKey">_NS:28</string>
 									</object>
@@ -533,13 +553,18 @@
 													<int key="NSCellFlags">68157504</int>
 													<int key="NSCellFlags2">272630784</int>
 													<string key="NSContents">Setup the (Xcode) Derived Data Directory</string>
-													<reference key="NSSupport" ref="663915572"/>
+													<object class="NSFont" key="NSSupport">
+														<bool key="IBIsSystemFont">YES</bool>
+														<double key="NSSize">15</double>
+														<int key="NSfFlags">2072</int>
+													</object>
 													<string key="NSCellIdentifier">_NS:1535</string>
 													<reference key="NSControlView" ref="345328018"/>
 													<reference key="NSBackgroundColor" ref="975334018"/>
 													<reference key="NSTextColor" ref="985378486"/>
 												</object>
 												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+												<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 											</object>
 											<object class="NSTextField" id="1032371472">
 												<reference key="NSNextResponder" ref="593157065"/>
@@ -560,6 +585,7 @@
 													<reference key="NSTextColor" ref="985378486"/>
 												</object>
 												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+												<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 											</object>
 											<object class="NSPopUpButton" id="972765836">
 												<reference key="NSNextResponder" ref="593157065"/>
@@ -621,13 +647,13 @@
 												</object>
 												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 												<bool key="NSControlAutosetMaxLayoutWidth">YES</bool>
+												<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 											</object>
 											<object class="NSButton" id="700751712">
 												<reference key="NSNextResponder" ref="593157065"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{558, 9}, {44, 25}}</string>
 												<reference key="NSSuperview" ref="593157065"/>
-												<reference key="NSNextKeyView"/>
 												<string key="NSReuseIdentifierKey">_NS:22</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="724184755">
@@ -684,10 +710,7 @@
 													<string key="NSContents">Box</string>
 													<reference key="NSSupport" ref="53703502"/>
 													<reference key="NSBackgroundColor" ref="269716544"/>
-													<object class="NSColor" key="NSTextColor">
-														<int key="NSColorSpace">3</int>
-														<bytes key="NSWhite">MCAwLjgwMDAwMDAxMTkAA</bytes>
-													</object>
+													<reference key="NSTextColor" ref="745682864"/>
 												</object>
 												<int key="NSBorderType">3</int>
 												<int key="NSBoxType">2</int>
@@ -704,8 +727,8 @@
 								</object>
 								<object class="NSTabViewItem" id="1063139262">
 									<object class="NSView" key="NSView" id="980117219">
-										<reference key="NSNextResponder" ref="964859605"/>
-										<int key="NSvFlags">256</int>
+										<nil key="NSNextResponder"/>
+										<int key="NSvFlags">274</int>
 										<array class="NSMutableArray" key="NSSubviews">
 											<object class="NSImageView" id="999412746">
 												<reference key="NSNextResponder" ref="980117219"/>
@@ -720,7 +743,6 @@
 												</set>
 												<string key="NSFrame">{{244, 154}, {128, 128}}</string>
 												<reference key="NSSuperview" ref="980117219"/>
-												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="415141058"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSImageCell" key="NSCell" id="1009006102">
@@ -740,7 +762,6 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{128, 120}, {360, 28}}</string>
 												<reference key="NSSuperview" ref="980117219"/>
-												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="619605933"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -748,21 +769,24 @@
 													<int key="NSCellFlags">68157504</int>
 													<int key="NSCellFlags2">138413056</int>
 													<string key="NSContents">Core Data Editor is ready to go!</string>
-													<reference key="NSSupport" ref="317961289"/>
+													<object class="NSFont" key="NSSupport">
+														<bool key="IBIsSystemFont">YES</bool>
+														<double key="NSSize">23</double>
+														<int key="NSfFlags">1044</int>
+													</object>
 													<string key="NSCellIdentifier">_NS:1535</string>
 													<reference key="NSControlView" ref="415141058"/>
 													<reference key="NSBackgroundColor" ref="975334018"/>
 													<reference key="NSTextColor" ref="985378486"/>
 												</object>
 												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+												<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 											</object>
 											<object class="NSButton" id="74026577">
 												<reference key="NSNextResponder" ref="980117219"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{333, 55}, {132, 25}}</string>
 												<reference key="NSSuperview" ref="980117219"/>
-												<reference key="NSWindow"/>
-												<reference key="NSNextKeyView"/>
 												<string key="NSReuseIdentifierKey">_NS:22</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="764322331">
@@ -786,7 +810,6 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{131, 55}, {174, 25}}</string>
 												<reference key="NSSuperview" ref="980117219"/>
-												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="567173217"/>
 												<string key="NSReuseIdentifierKey">_NS:22</string>
 												<bool key="NSEnabled">YES</bool>
@@ -811,7 +834,6 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{310, 60}, {18, 17}}</string>
 												<reference key="NSSuperview" ref="980117219"/>
-												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="74026577"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -826,11 +848,10 @@
 													<reference key="NSTextColor" ref="985378486"/>
 												</object>
 												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+												<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 											</object>
 										</array>
 										<string key="NSFrame">{{10, 7}, {616, 311}}</string>
-										<reference key="NSSuperview" ref="964859605"/>
-										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="999412746"/>
 									</object>
 									<string key="NSLabel">Thanks</string>
@@ -838,13 +859,14 @@
 									<reference key="NSTabView" ref="964859605"/>
 								</object>
 							</array>
-							<reference key="NSSelectedTabViewItem" ref="1063139262"/>
+							<reference key="NSSelectedTabViewItem" ref="319520893"/>
 							<reference key="NSFont" ref="53703502"/>
 							<int key="NSTvFlags">4</int>
 							<bool key="NSAllowTruncatedLabels">YES</bool>
 							<bool key="NSDrawsBackground">YES</bool>
+							<reference key="NSDelegate"/>
 							<array class="NSMutableArray" key="NSSubviews">
-								<reference ref="980117219"/>
+								<reference ref="555629799"/>
 							</array>
 						</object>
 					</array>
@@ -859,7 +881,7 @@
 			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
-			<array class="NSMutableArray" key="connectionRecords">
+			<array key="connectionRecords">
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">window</string>
@@ -1492,6 +1514,7 @@
 				<string key="33.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="34.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="35.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<boolean value="YES" key="36.IBNSControlSetsMaxLayoutWidthAtFirstLayoutMetadataKey"/>
 				<string key="36.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="37.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="38.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1504,6 +1527,7 @@
 				<string key="50.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="51.CustomClassName">CDEPathPickerPopUpButton</string>
 				<string key="51.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<boolean value="YES" key="52.IBNSControlSetsMaxLayoutWidthAtFirstLayoutMetadataKey"/>
 				<string key="52.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="53.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="54.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1547,21 +1571,43 @@
 					<string key="superclassName">NSPopUpButton</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CDEPathPickerPopUpButton.h</string>
+						<string key="minorKey">Core Data Editor/Core Data Editor/CDEPathPickerPopUpButton.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">CDESetupWindowController</string>
 					<string key="superclassName">NSWindowController</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">Core Data Editor/Core Data Editor/CDESetupWindowController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">CDESetupWindowController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="beginSetupProcess:">id</string>
+						<string key="createNewProject:">id</string>
 						<string key="openProjectBrowser:">id</string>
+						<string key="showBuildProductsSetupTab:">id</string>
 						<string key="showDerivdedDataPicker:">id</string>
 						<string key="showSimulatorDirectoryPicker:">id</string>
 						<string key="showSummary:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="beginSetupProcess:">
+							<string key="name">beginSetupProcess:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="createNewProject:">
+							<string key="name">createNewProject:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="openProjectBrowser:">
 							<string key="name">openProjectBrowser:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="showBuildProductsSetupTab:">
+							<string key="name">showBuildProductsSetupTab:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="showDerivdedDataPicker:">
@@ -1598,13 +1644,207 @@
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CDESetupWindowController.h</string>
+						<string key="minorKey">Core Data Editor/Core Data Editor/CDESetupWindowController.m</string>
+					</object>
+				</object>
+			</array>
+			<array class="NSMutableArray" key="referencedPartialClassDescriptionsV3.2+">
+				<object class="IBPartialClassDescription">
+					<string key="className">NSActionCell</string>
+					<string key="superclassName">NSCell</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSActionCell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSApplication</string>
+					<string key="superclassName">NSResponder</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSApplication.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSBox</string>
+					<string key="superclassName">NSView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSBox.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSButton</string>
+					<string key="superclassName">NSControl</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSButton.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSButtonCell</string>
+					<string key="superclassName">NSActionCell</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSButtonCell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSCell</string>
+					<string key="superclassName">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSCell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSControl</string>
+					<string key="superclassName">NSView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSControl.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSFormatter</string>
+					<string key="superclassName">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">Foundation.framework/Headers/NSFormatter.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSImageCell</string>
+					<string key="superclassName">NSCell</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSImageCell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSImageView</string>
+					<string key="superclassName">NSControl</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSImageView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSMenu</string>
+					<string key="superclassName">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSMenu.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSMenuItemCell</string>
+					<string key="superclassName">NSButtonCell</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSMenuItemCell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSPopUpButton</string>
+					<string key="superclassName">NSButton</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSPopUpButton.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSPopUpButtonCell</string>
+					<string key="superclassName">NSMenuItemCell</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSPopUpButtonCell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSResponder</string>
+					<string key="superclassName">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSResponder.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSTabView</string>
+					<string key="superclassName">NSView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSTabView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSTabViewItem</string>
+					<string key="superclassName">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSTabViewItem.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSTextField</string>
+					<string key="superclassName">NSControl</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSTextField.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSTextFieldCell</string>
+					<string key="superclassName">NSActionCell</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSTextFieldCell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSView</string>
+					<string key="superclassName">NSResponder</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSWindow</string>
+					<string key="superclassName">NSResponder</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSWindow.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSWindowController</string>
+					<string key="superclassName">NSResponder</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">showWindow:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">showWindow:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">showWindow:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSWindowController.h</string>
 					</object>
 				</object>
 			</array>
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
+		<bool key="IBDocument.previouslyAttemptedUpgradeToXcode5">NO</bool>
+		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDevelopmentDependencies">
+			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.InterfaceBuilder3</string>
+			<integer value="4600" key="NS.object.0"/>
+		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">

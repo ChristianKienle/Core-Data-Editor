@@ -1,6 +1,5 @@
 #import "CDEProjectBrowserWindowController.h"
 #import "CDEProjectBrowserItem.h"
-#import "NSAlert-OAExtensions.h"
 #import "CDEDocument.h"
 #import "CDEConfiguration.h"
 #import "CDEApplicationDelegate.h"
@@ -187,14 +186,18 @@ typedef void(^ProjectBrowserReloadCompletionHandler)(NSArray *projectBrowserItem
     double delayInSeconds = 2.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        NSAlert *alert = [NSAlert alertWithMessageText:@"iPhone Simulator Directory not set" defaultButton:@"Open Preferences…" alternateButton:@"Close Project Browser" otherButton:nil informativeTextWithFormat:@"The Project Browser has to know where the iPhone Simulator directory is. Please go to the preferences and specify your iPhone Simulator directory in the Integration tab."];
-        alert.alertStyle = NSInformationalAlertStyle;
-        [alert beginSheetModalForWindow:self.window completionHandler_oa:^(NSAlert *alert, NSInteger returnCode) {
-            if(returnCode ==  NSAlertDefaultReturn) {
-                // show prefs.
-                [(CDEApplicationDelegate *)[NSApp delegate] showPreferences:self];
-            }
-            [self closeWindowSoon];
+      NSAlert *alert = [NSAlert new];
+      alert.messageText = @"iPhone Simulator Directory not set";
+      alert.informativeText = @"The Project Browser has to know where the iPhone Simulator directory is. Please go to the preferences and specify your iPhone Simulator directory in the Integration tab.";
+      [alert addButtonWithTitle:@"Open Preferences…"];
+      [alert addButtonWithTitle:@"Close Project Browser"];
+      alert.alertStyle = NSInformationalAlertStyle;
+        [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
+          if(returnCode ==  NSAlertFirstButtonReturn) {
+            // show prefs.
+            [(CDEApplicationDelegate *)[NSApp delegate] showPreferences:self];
+          }
+          [self closeWindowSoon];
         }];
     });
 }

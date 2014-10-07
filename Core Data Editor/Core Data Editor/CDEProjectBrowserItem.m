@@ -107,7 +107,7 @@
     NSTimeInterval delta = [date timeIntervalSinceDate:now] * -1.0;
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSUInteger units = (NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit);
+    NSUInteger units = (NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond);
     NSDateComponents *components = [calendar components:units fromDate:date toDate:now options:0];
     
     NSString *relativeString;

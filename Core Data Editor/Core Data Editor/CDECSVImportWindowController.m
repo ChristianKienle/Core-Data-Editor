@@ -273,7 +273,6 @@ NSString *const CDECSVImportWindowControllerMappingIndexOfSelectedColumn = @"ind
 
 - (IBAction)takeSelectedEntityFromSender:(id)sender {
     NSEntityDescription *selectedEntity = [[self.entitiesPopupButton selectedItem] representedObject];
-    NSLog(@"selected entity: %@", selectedEntity.name);
     self.destinationEntityDescription = selectedEntity;
     [self updateMappingsArrayController];
 }
@@ -287,15 +286,12 @@ NSString *const CDECSVImportWindowControllerMappingIndexOfSelectedColumn = @"ind
 
 #pragma mark - NSMenuDelegate
 - (void)menuWillOpen:(NSMenu *)menu {
-    NSLog(@"open: %@", menu.itemArray);
 }
 
 - (void)menuNeedsUpdate:(NSMenu *)menu {
-    NSLog(@"menuNeedsUpdate: %@", menu.itemArray);
 }
 
 - (void)menu:(NSMenu *)menu willHighlightItem:(NSMenuItem *)item {
-    NSLog(@"willHighlightItem: %@", menu.itemArray);
 }
 
 @end

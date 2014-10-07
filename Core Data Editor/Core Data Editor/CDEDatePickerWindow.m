@@ -25,7 +25,7 @@
       self.popover = [NSPopover new];
       [self.popover setContentViewController:self.datePickerViewController];
       [self.popover setBehavior:NSPopoverBehaviorSemitransient];
-      [self.popover setAppearance:NSPopoverAppearanceMinimal];
+      [self.popover setAppearance:[NSAppearance appearanceNamed:NSAppearanceNameVibrantLight]];
    }
    
 	return self;

@@ -316,8 +316,6 @@
     NSInteger column = [self.tableView columnForView_cde:sender];
     NSAssert(row != -1 && column != -1, @"Row or column invalid.");
 
-    NSLog(@"bool: %@ (r: %li - c: %li)", [sender objectValue], row, column);
-
     NSCellStateValue state = [sender state];
     id value = nil;
     switch (state) {
@@ -350,8 +348,6 @@
     NSInteger column = [self.tableView columnForView_cde:textField];
     NSAssert(row != -1 && column != -1, @"Row or column invalid.");
 
-    NSLog(@"editing: %@ (r: %li - c: %li)", [[notification object] objectValue], row, column);
-
     NSManagedObject *object = [self managedObjectAtIndex:row];
     NSTableColumn *tableColumn = [self.tableView tableColumns][column];
 
@@ -363,7 +359,6 @@
     NSInteger column = [self.tableView columnForView_cde:textField];
     NSAssert(row != -1 && column != -1, @"Row or column invalid.");
 
-    NSLog(@"new binard value: %lu (length) (r: %li - c: %li)", [binaryValue length], row, column);
     NSManagedObject *object = [self managedObjectAtIndex:row];
     NSTableColumn *tableColumn = [self.tableView tableColumns][column];
 
@@ -371,16 +366,6 @@
 }
 
 - (IBAction)relationshipBadgeButtonClicked:(id)sender {
-    NSInteger row = [self.tableView rowForView_cde:sender];
-    NSInteger column = [self.tableView columnForView_cde:sender];
-    NSAssert(row != -1 && column != -1, @"Row or column invalid.");
-
-    NSTableColumn *relationshipColumn = [self.tableView tableColumns][column];
-    NSLog(@"display relationship: %@ (r: %li - c: %li)", relationshipColumn.identifier, row, column);
-    NSManagedObject *object = [self managedObjectAtIndex:row];
-    NSPropertyDescription *property = [self propertyDescriptionForTableColumn:relationshipColumn];
-    CDEManagedObjectsRequest *request = [[CDEManagedObjectsRequest alloc] initWithManagedObject:object relationshipDescription:(NSRelationshipDescription *)property];
-    NSLog(@"%@", request);
 }
 
 #pragma mark - Special Shit

@@ -18,7 +18,7 @@
         self.popover = [NSPopover new];
         [self.popover setContentViewController:viewController];
         [self.popover setBehavior:NSPopoverBehaviorSemitransient];
-        [self.popover setAppearance:NSPopoverAppearanceMinimal];
+        [self.popover setAppearance:[NSAppearance appearanceNamed:NSAppearanceNameVibrantLight]];
         self.popover.delegate = self;
     }
     return self;

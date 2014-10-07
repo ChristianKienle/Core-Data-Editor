@@ -108,8 +108,8 @@
   [self unregisterAllNibs];
   [self updateAddAndRemoveButtons];
   
-  [[self.searchField cell] setControlSize:NSMiniControlSize];
-  [self.searchField setFont:[NSFont systemFontOfSize:[NSFont systemFontSizeForControlSize:NSMiniControlSize]]];
+//  [[self.searchField cell] setControlSize:NSMiniControlSize];
+//  [self.searchField setFont:[NSFont systemFontOfSize:[NSFont systemFontSizeForControlSize:NSMiniControlSize]]];
   NSRect searchFrame = [self.searchField frame];
   NSSize cellSize = [[self.searchField cell] cellSizeForBounds:searchFrame];
   searchFrame.size.height = cellSize.height;
@@ -362,7 +362,6 @@
 - (void)tableViewColumnDidMove:(NSNotification *)notification {
   if(self.request.entityDescription.name != nil) {
     CDEEntityAutosaveInformation *information = [self.dataCoordinator entityAutosaveInformation];
-    //NSLog(@"information: %@", information);
     [self.autosaveInformation setInformation:information forEntityNamed:self.request.entityDescription.name];
     if(self.delegate != nil && [self.delegate respondsToSelector:@selector(managedObjectsViewControllerDidChangeAutosaveInformation:)]) {
       [self.delegate managedObjectsViewControllerDidChangeAutosaveInformation:self];
@@ -373,7 +372,6 @@
 - (void)tableViewColumnDidResize:(NSNotification *)notification {
   if(self.request.entityDescription.name != nil) {
     CDEEntityAutosaveInformation *information = [self.dataCoordinator entityAutosaveInformation];
-    //NSLog(@"information: %@", information);
     [self.autosaveInformation setInformation:information forEntityNamed:self.request.entityDescription.name];
     if(self.delegate != nil && [self.delegate respondsToSelector:@selector(managedObjectsViewControllerDidChangeAutosaveInformation:)]) {
       [self.delegate managedObjectsViewControllerDidChangeAutosaveInformation:self];
@@ -387,7 +385,6 @@
 }
 
 - (void)controlTextDidBeginEditing:(NSNotification *)aNotification {
-  NSLog(@"begin");
 }
 
 - (void)controlTextDidEndEditing:(NSNotification *)notification {
@@ -459,7 +456,6 @@
 }
 
 - (void)showObjectsForRelationship:(id)sender {
-  NSLog(@"show for: %@", sender);
   // sender is a CDEMenuItem whose representedObject is a NSRelationshipDescription
   if(self.delegate == nil) {
     return;
@@ -475,22 +471,18 @@
 #pragma mark - BFViewController Implementation
 -(void)viewWillAppear: (BOOL)animated
 {
-  NSLog(@"%@ - viewWillAppear: %i", self.title, animated);
 }
 
 -(void)viewDidAppear: (BOOL)animated
 {
-  NSLog(@"%@ - viewDidAppear: %i", self.title, animated);
 }
 
 -(void)viewWillDisappear: (BOOL)animated
 {
-  NSLog(@"%@ - viewWillDisappear: %i", self.title, animated);
 }
 
 -(void)viewDidDisappear: (BOOL)animated
 {
-  NSLog(@"%@ - viewDidDisappear: %i", self.title, animated);
 }
 
 

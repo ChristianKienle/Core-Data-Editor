@@ -93,6 +93,7 @@
 - (void)loadView {
     [super loadView];
     self.tableView.floatsGroupRows = NO;
+  //self.view.allowsVibrancy = YES;
 }
 
 #pragma mark - Private

@@ -71,8 +71,8 @@
 		AB3B07CB1775FCF2000855B0 /* CDEBoolValueTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB3B07CA1775FCF2000855B0 /* CDEBoolValueTableCellView.xib */; };
 		AB3B07CE17760E23000855B0 /* NSTableCellView+JKNibLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B07CD17760E23000855B0 /* NSTableCellView+JKNibLoading.m */; };
 		AB531222179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB531221179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.m */; };
-		AB53127317999D2200529EF7 /* NSAlert-OAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB53127217999D2200529EF7 /* NSAlert-OAExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AB5583A5176751AE005C002C /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = AB5583A4176751AE005C002C /* icon.iconset */; };
+		AB7F20CE19DD7B4D00EBBF52 /* VibrantView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7F20CD19DD7B4D00EBBF52 /* VibrantView.m */; };
 		AB86F7CB1791922600FB0AEB /* CDEAttributeEditorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB86F7C91791922600FB0AEB /* CDEAttributeEditorWindowController.m */; };
 		AB86F7CC1791922600FB0AEB /* CDEAttributeEditorWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB86F7CA1791922600FB0AEB /* CDEAttributeEditorWindowController.xib */; };
 		AB8F8342177C524B000B4467 /* CDEUnorderedRelationshipRequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8F8341177C524B000B4467 /* CDEUnorderedRelationshipRequestDataCoordinator.m */; };
@@ -94,7 +94,6 @@
 		ABBB322A1798538100FE964E /* NSError+CDEValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBB32291798538100FE964E /* NSError+CDEValidation.m */; };
 		ABBB322E179855D500FE964E /* NSManagedObject+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBB322D179855D500FE964E /* NSManagedObject+CDEAdditions.m */; };
 		ABBB32321798564100FE964E /* NSManagedObjectContext+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBB32311798564100FE964E /* NSManagedObjectContext+CDEAdditions.m */; };
-		ABBEA7DA1765CB730024A9D2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBEA7D91765CB730024A9D2 /* Cocoa.framework */; };
 		ABBEA7E41765CB730024A9D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABBEA7E21765CB730024A9D2 /* InfoPlist.strings */; };
 		ABBEA7E61765CB730024A9D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA7E51765CB730024A9D2 /* main.m */; };
 		ABBEA7EA1765CB730024A9D2 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = ABBEA7E81765CB730024A9D2 /* Credits.rtf */; };
@@ -174,6 +173,7 @@
 		ABC83B4F17B1215200078580 /* CDEAboutWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABC83B4D17B1215200078580 /* CDEAboutWindowController.xib */; };
 		ABC83BDE17B24D9600078580 /* Document_Icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = ABC83BDD17B24D9600078580 /* Document_Icon.iconset */; };
 		ABCFAF031815826D0011D6FB /* NSPersistentStoreCoordinator+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCFAF021815826D0011D6FB /* NSPersistentStoreCoordinator+CDEAdditions.m */; };
+		ABD5AEDD19DD7EC2001CE405 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBEA7D91765CB730024A9D2 /* Cocoa.framework */; };
 		ABD5BC71177F343F0050025B /* CDEToOneRelationshipTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD5BC70177F343F0050025B /* CDEToOneRelationshipTableCellView.m */; };
 		ABD5BC73177F344A0050025B /* CDEToOneRelationshipTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABD5BC72177F344A0050025B /* CDEToOneRelationshipTableCellView.xib */; };
 		ABD5BCA41780378B0050025B /* CDERelationshipsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD5BCA21780378B0050025B /* CDERelationshipsViewController.m */; };
@@ -346,9 +346,9 @@
 		AB3B07CD17760E23000855B0 /* NSTableCellView+JKNibLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTableCellView+JKNibLoading.m"; sourceTree = "<group>"; };
 		AB531220179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTableColumn+CDERequestDataCoordinator.h"; sourceTree = "<group>"; };
 		AB531221179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTableColumn+CDERequestDataCoordinator.m"; sourceTree = "<group>"; };
-		AB53127117999D2200529EF7 /* NSAlert-OAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAlert-OAExtensions.h"; sourceTree = "<group>"; };
-		AB53127217999D2200529EF7 /* NSAlert-OAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAlert-OAExtensions.m"; sourceTree = "<group>"; };
 		AB5583A4176751AE005C002C /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = icon.iconset; sourceTree = "<group>"; };
+		AB7F20CC19DD7B4D00EBBF52 /* VibrantView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VibrantView.h; sourceTree = "<group>"; };
+		AB7F20CD19DD7B4D00EBBF52 /* VibrantView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VibrantView.m; sourceTree = "<group>"; };
 		AB86F7C81791922600FB0AEB /* CDEAttributeEditorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEAttributeEditorWindowController.h; sourceTree = "<group>"; };
 		AB86F7C91791922600FB0AEB /* CDEAttributeEditorWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEAttributeEditorWindowController.m; sourceTree = "<group>"; };
 		AB86F7CA1791922600FB0AEB /* CDEAttributeEditorWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDEAttributeEditorWindowController.xib; sourceTree = "<group>"; };
@@ -629,8 +629,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABD5AEDD19DD7EC2001CE405 /* Cocoa.framework in Frameworks */,
 				AB99B2F21998E1EE00101647 /* libsqlite3.dylib in Frameworks */,
-				ABBEA7DA1765CB730024A9D2 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,6 +764,8 @@
 				AB1466C6178727F600E3EEA3 /* CDEValidationErrorsViewController.m */,
 				AB1466C7178727F600E3EEA3 /* CDEValidationErrorsViewController.xib */,
 				AB1467061789A1BF00E3EEA3 /* Row View (not used) */,
+				AB7F20CC19DD7B4D00EBBF52 /* VibrantView.h */,
+				AB7F20CD19DD7B4D00EBBF52 /* VibrantView.m */,
 			);
 			name = "Validation Errors View Controller";
 			sourceTree = "<group>";
@@ -1479,8 +1481,6 @@
 			isa = PBXGroup;
 			children = (
 				ABEEA5C0178194BD0096DE4C /* Date Picker */,
-				AB53127117999D2200529EF7 /* NSAlert-OAExtensions.h */,
-				AB53127217999D2200529EF7 /* NSAlert-OAExtensions.m */,
 				ABEEA6201785C2F20096DE4C /* RSVerticallyCenteredTextFieldCell */,
 				ABC1E69D177732D80069D252 /* Transformer */,
 				ABEEA6211785C2F80096DE4C /* Drop Zone View */,
@@ -2406,10 +2406,10 @@
 				AB86F7CB1791922600FB0AEB /* CDEAttributeEditorWindowController.m in Sources */,
 				ABBB31E217984AC100FE964E /* CDENameToNameForDisplayValueTransformer.m in Sources */,
 				ABBB322A1798538100FE964E /* NSError+CDEValidation.m in Sources */,
+				AB7F20CE19DD7B4D00EBBF52 /* VibrantView.m in Sources */,
 				ABBB322E179855D500FE964E /* NSManagedObject+CDEAdditions.m in Sources */,
 				ABBB32321798564100FE964E /* NSManagedObjectContext+CDEAdditions.m in Sources */,
 				AB531222179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.m in Sources */,
-				AB53127317999D2200529EF7 /* NSAlert-OAExtensions.m in Sources */,
 				ABFBB3B1179C36E2003B5346 /* CDETwoColumnSplitViewController.m in Sources */,
 				AB0181171997C805000FE094 /* NSDirectoryEnumerator+ProjectBrowser.m in Sources */,
 				AB30FF66179C696D00E49E0B /* CDEPreferencesAutomaticProjectCreationViewController.m in Sources */,
@@ -2542,7 +2542,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -2570,7 +2570,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -2578,7 +2578,6 @@
 		ABBEA7FA1765CB730024A9D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2595,7 +2594,6 @@
 		ABBEA7FB1765CB730024A9D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

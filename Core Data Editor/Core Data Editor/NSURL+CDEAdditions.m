@@ -17,7 +17,7 @@
 - (NSData *)bookmarkDataAndGetError_cde:(NSError **)error {
     NSError *localError = nil;
     NSURL *pathOnlyURL = [NSURL fileURLWithPath:[self path]];
-    NSData *result = [pathOnlyURL bookmarkDataWithOptions:NSURLBookmarkCreationPreferFileIDResolution
+    NSData *result = [pathOnlyURL bookmarkDataWithOptions:NSURLBookmarkCreationSuitableForBookmarkFile
                            includingResourceValuesForKeys:nil
                                             relativeToURL:nil
                                                     error:&localError];
@@ -83,7 +83,6 @@
     NSError *error = nil;
     NSData *contents = [NSData dataWithContentsOfURL:self options:NSDataReadingMappedAlways error:&error];
     if(contents == nil) {
-        //NSLog(@"error reading file %@: %@.", self, error);
         return NO;
     }
     if(contents.length < 16) {
