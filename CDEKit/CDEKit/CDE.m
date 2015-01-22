@@ -54,13 +54,14 @@
   if(self.storyboard == nil) {
     self.storyboard = [UIStoryboard storyboardWithName:@"CDEEditor" bundle:[[self class] frameworkBundle]];
     self.navigationController = [self.storyboard instantiateInitialViewController];
+    
+    
+    self.managedObjectModel = self.managedObjectContext.persistentStoreCoordinator.managedObjectModel;
+    
+    [[[self applicationWindow] rootViewController] presentViewController:self.navigationController
+                                                                animated:YES
+                                                              completion:NULL];
   }
-  
-  self.managedObjectModel = self.managedObjectContext.persistentStoreCoordinator.managedObjectModel;
-  
-  [[[self applicationWindow] rootViewController] presentViewController:self.navigationController
-                                                              animated:YES
-                                                            completion:NULL];
 }
 
 - (UIWindow *)applicationWindow
