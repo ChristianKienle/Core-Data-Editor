@@ -23,6 +23,9 @@
 		AB15929517B52996008DA7E2 /* CDEDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB15929417B52996008DA7E2 /* CDEDetailViewController.m */; };
 		AB5C07A317B5427A0069F99D /* libCDEKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB5C079F17B5425F0069F99D /* libCDEKit.a */; };
 		AB924CCE17B52F9E00DA7ACB /* iOS_Example.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = AB924CCD17B52F9E00DA7ACB /* iOS_Example.xcdatamodel */; };
+		E3C6704719D0E27C000CB1C8 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6704619D0E27C000CB1C8 /* ActionViewController.swift */; };
+		E3C6704919D0E27C000CB1C8 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C6704819D0E27C000CB1C8 /* MainInterface.storyboard */; };
+		E3C6704C19D0E27C000CB1C8 /* Core Data Editor Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E3C6704219D0E27C000CB1C8 /* Core Data Editor Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +57,35 @@
 			remoteGlobalIDString = 664A269414E3265400C297E6;
 			remoteInfo = CDEKitResources;
 		};
+		E3C6704A19D0E27C000CB1C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB15926517B52996008DA7E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3C6704119D0E27B000CB1C8;
+			remoteInfo = "Core Data Editor Extension";
+		};
+		E3C6704D19D0E27C000CB1C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB15926517B52996008DA7E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3C6704119D0E27B000CB1C8;
+			remoteInfo = "Core Data Editor Extension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E3C6705319D0E27C000CB1C8 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E3C6704C19D0E27C000CB1C8 /* Core Data Editor Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AB15926D17B52996008DA7E2 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +109,10 @@
 		AB15929417B52996008DA7E2 /* CDEDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDEDetailViewController.m; sourceTree = "<group>"; };
 		AB5C079817B5425F0069F99D /* CDEKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CDEKit.xcodeproj; path = ../CDEKit/CDEKit.xcodeproj; sourceTree = "<group>"; };
 		AB924CCD17B52F9E00DA7ACB /* iOS_Example.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOS_Example.xcdatamodel; sourceTree = "<group>"; };
+		E3C6704219D0E27C000CB1C8 /* Core Data Editor Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Core Data Editor Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3C6704519D0E27C000CB1C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3C6704619D0E27C000CB1C8 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		E3C6704819D0E27C000CB1C8 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +128,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E3C6703F19D0E27B000CB1C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -101,6 +143,7 @@
 			children = (
 				AB5C079817B5425F0069F99D /* CDEKit.xcodeproj */,
 				AB15927817B52996008DA7E2 /* iOS Example */,
+				E3C6704319D0E27C000CB1C8 /* Core Data Editor Extension */,
 				AB15926F17B52996008DA7E2 /* Frameworks */,
 				AB15926E17B52996008DA7E2 /* Products */,
 			);
@@ -110,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				AB15926D17B52996008DA7E2 /* iOS Example.app */,
+				E3C6704219D0E27C000CB1C8 /* Core Data Editor Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,6 +208,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		E3C6704319D0E27C000CB1C8 /* Core Data Editor Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E3C6704619D0E27C000CB1C8 /* ActionViewController.swift */,
+				E3C6704819D0E27C000CB1C8 /* MainInterface.storyboard */,
+				E3C6704419D0E27C000CB1C8 /* Supporting Files */,
+			);
+			path = "Core Data Editor Extension";
+			sourceTree = "<group>";
+		};
+		E3C6704419D0E27C000CB1C8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E3C6704519D0E27C000CB1C8 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -174,17 +236,37 @@
 				AB15926917B52996008DA7E2 /* Sources */,
 				AB15926A17B52996008DA7E2 /* Frameworks */,
 				AB15926B17B52996008DA7E2 /* Resources */,
+				E3C6705319D0E27C000CB1C8 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				AB5C07A517B542A80069F99D /* PBXTargetDependency */,
 				AB5C07A717B542A80069F99D /* PBXTargetDependency */,
+				E3C6704B19D0E27C000CB1C8 /* PBXTargetDependency */,
+				E3C6704E19D0E27C000CB1C8 /* PBXTargetDependency */,
 			);
 			name = "iOS Example";
 			productName = "iOS Example";
 			productReference = AB15926D17B52996008DA7E2 /* iOS Example.app */;
 			productType = "com.apple.product-type.application";
+		};
+		E3C6704119D0E27B000CB1C8 /* Core Data Editor Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3C6705219D0E27C000CB1C8 /* Build configuration list for PBXNativeTarget "Core Data Editor Extension" */;
+			buildPhases = (
+				E3C6703E19D0E27B000CB1C8 /* Sources */,
+				E3C6703F19D0E27B000CB1C8 /* Frameworks */,
+				E3C6704019D0E27B000CB1C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Core Data Editor Extension";
+			productName = "Core Data Editor Extension";
+			productReference = E3C6704219D0E27C000CB1C8 /* Core Data Editor Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -197,6 +279,10 @@
 				ORGANIZATIONNAME = "Thermal Core";
 				TargetAttributes = {
 					AB15926C17B52996008DA7E2 = {
+						DevelopmentTeam = SWP5WTP5JJ;
+					};
+					E3C6704119D0E27B000CB1C8 = {
+						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = SWP5WTP5JJ;
 					};
 				};
@@ -220,6 +306,7 @@
 			projectRoot = "";
 			targets = (
 				AB15926C17B52996008DA7E2 /* iOS Example */,
+				E3C6704119D0E27B000CB1C8 /* Core Data Editor Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -255,6 +342,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E3C6704019D0E27B000CB1C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3C6704919D0E27C000CB1C8 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -270,6 +365,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E3C6703E19D0E27B000CB1C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3C6704719D0E27C000CB1C8 /* ActionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -282,6 +385,16 @@
 			isa = PBXTargetDependency;
 			name = CDEKitResources;
 			targetProxy = AB5C07A617B542A80069F99D /* PBXContainerItemProxy */;
+		};
+		E3C6704B19D0E27C000CB1C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3C6704119D0E27B000CB1C8 /* Core Data Editor Extension */;
+			targetProxy = E3C6704A19D0E27C000CB1C8 /* PBXContainerItemProxy */;
+		};
+		E3C6704E19D0E27C000CB1C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3C6704119D0E27B000CB1C8 /* Core Data Editor Extension */;
+			targetProxy = E3C6704D19D0E27C000CB1C8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -369,9 +482,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-                GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS Example/iOS Example-Prefix.pch";
 				INFOPLIST_FILE = "iOS Example/iOS Example-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -386,10 +500,63 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS Example/iOS Example-Prefix.pch";
 				INFOPLIST_FILE = "iOS Example/iOS Example-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E3C6704F19D0E27C000CB1C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Core Data Editor Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E3C6705019D0E27C000CB1C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Core Data Editor Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -410,6 +577,15 @@
 			buildConfigurations = (
 				AB15929917B52996008DA7E2 /* Debug */,
 				AB15929A17B52996008DA7E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3C6705219D0E27C000CB1C8 /* Build configuration list for PBXNativeTarget "Core Data Editor Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3C6704F19D0E27C000CB1C8 /* Debug */,
+				E3C6705019D0E27C000CB1C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Thermal Core. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface libcdeTests : SenTestCase
+@interface libcdeTests : XCTestCase
 
 @end

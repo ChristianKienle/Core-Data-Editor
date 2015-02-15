@@ -31,9 +31,9 @@
 
 + (void)handleTapGesture:(UITapGestureRecognizer *)gestureRecognizer {
     NSLog(@"tap tap");
-  NSBundle *b = [NSBundle mainBundle];
-  NSLog(@"b: %@", b);
-  [[self sharedCoreDataEditor] present];
+		NSBundle *b = [NSBundle mainBundle];
+		NSLog(@"b: %@", b);
+		[[self sharedCoreDataEditor] present];
 }
 
 #pragma mark - Working with the shared editor

@@ -3,6 +3,4 @@
 
 @interface CDEAttributeTableViewCell : CDEPropertyTableViewCell
 
-
-
 @end
