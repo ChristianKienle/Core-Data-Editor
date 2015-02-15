@@ -2544,7 +2544,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.10;
 			};
 			name = Debug;
 		};
@@ -2571,7 +2571,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.10;
 			};
 			name = Release;
 		};
@@ -2586,6 +2586,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx10.10;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2602,6 +2603,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx10.10;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
