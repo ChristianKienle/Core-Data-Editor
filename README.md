@@ -76,6 +76,7 @@ Core Data Editor has the following third party dependencies:
 * [danydev](https://github.com/danydev)
 * [Roberto Dries](https://github.com/robertodries92)
 * [Mitch Cohen](https://github.com/mitchcohen)
+
 # Contact
 [Christian Kienle (me@christian-kienle.de)](mailto:me@christian-kienle.de) 
 
