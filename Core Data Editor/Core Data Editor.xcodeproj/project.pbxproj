@@ -69,6 +69,7 @@
 		AB3B07CE17760E23000855B0 /* NSTableCellView+JKNibLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B07CD17760E23000855B0 /* NSTableCellView+JKNibLoading.m */; };
 		AB531222179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB531221179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.m */; };
 		AB5583A5176751AE005C002C /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = AB5583A4176751AE005C002C /* icon.iconset */; };
+		AB7EF6B11DB4028D0062DD0C /* CDETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7EF6B01DB4028D0062DD0C /* CDETests.swift */; };
 		AB7F20CE19DD7B4D00EBBF52 /* VibrantView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7F20CD19DD7B4D00EBBF52 /* VibrantView.m */; };
 		AB86F7CB1791922600FB0AEB /* CDEAttributeEditorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB86F7C91791922600FB0AEB /* CDEAttributeEditorWindowController.m */; };
 		AB86F7CC1791922600FB0AEB /* CDEAttributeEditorWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB86F7CA1791922600FB0AEB /* CDEAttributeEditorWindowController.xib */; };
@@ -223,6 +224,16 @@
 		ABFBB3B1179C36E2003B5346 /* CDETwoColumnSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFBB3B0179C36E2003B5346 /* CDETwoColumnSplitViewController.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		AB7EF6B31DB4028D0062DD0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABBEA7CE1765CB730024A9D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABBEA7D51765CB730024A9D2;
+			remoteInfo = "Core Data Editor";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		2E25BCB4198D645100BBA0C0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		AB0181151997C805000FE094 /* NSDirectoryEnumerator+ProjectBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDirectoryEnumerator+ProjectBrowser.h"; sourceTree = "<group>"; };
@@ -329,6 +340,9 @@
 		AB531220179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTableColumn+CDERequestDataCoordinator.h"; sourceTree = "<group>"; };
 		AB531221179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTableColumn+CDERequestDataCoordinator.m"; sourceTree = "<group>"; };
 		AB5583A4176751AE005C002C /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = icon.iconset; sourceTree = "<group>"; };
+		AB7EF6AE1DB4028C0062DD0C /* CDETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CDETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB7EF6B01DB4028D0062DD0C /* CDETests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDETests.swift; sourceTree = "<group>"; };
+		AB7EF6B21DB4028D0062DD0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB7F20CC19DD7B4D00EBBF52 /* VibrantView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VibrantView.h; sourceTree = "<group>"; };
 		AB7F20CD19DD7B4D00EBBF52 /* VibrantView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VibrantView.m; sourceTree = "<group>"; };
 		AB86F7C81791922600FB0AEB /* CDEAttributeEditorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEAttributeEditorWindowController.h; sourceTree = "<group>"; };
@@ -602,6 +616,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AB7EF6AB1DB4028C0062DD0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ABBEA7D31765CB730024A9D2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1008,6 +1029,15 @@
 			name = "NSTableColumn Additions";
 			sourceTree = "<group>";
 		};
+		AB7EF6AF1DB4028D0062DD0C /* CDETests */ = {
+			isa = PBXGroup;
+			children = (
+				AB7EF6B01DB4028D0062DD0C /* CDETests.swift */,
+				AB7EF6B21DB4028D0062DD0C /* Info.plist */,
+			);
+			path = CDETests;
+			sourceTree = "<group>";
+		};
 		AB86F7C71791920A00FB0AEB /* Window Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -1165,6 +1195,7 @@
 			isa = PBXGroup;
 			children = (
 				ABBEA7DF1765CB730024A9D2 /* Core Data Editor */,
+				AB7EF6AF1DB4028D0062DD0C /* CDETests */,
 				ABBEA7D81765CB730024A9D2 /* Frameworks */,
 				ABBEA7D71765CB730024A9D2 /* Products */,
 			);
@@ -1174,6 +1205,7 @@
 			isa = PBXGroup;
 			children = (
 				ABBEA7D61765CB730024A9D2 /* Core Data Editor.app */,
+				AB7EF6AE1DB4028C0062DD0C /* CDETests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2062,6 +2094,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AB7EF6AD1DB4028C0062DD0C /* CDETests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB7EF6B51DB4028D0062DD0C /* Build configuration list for PBXNativeTarget "CDETests" */;
+			buildPhases = (
+				AB7EF6AA1DB4028C0062DD0C /* Sources */,
+				AB7EF6AB1DB4028C0062DD0C /* Frameworks */,
+				AB7EF6AC1DB4028C0062DD0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB7EF6B41DB4028D0062DD0C /* PBXTargetDependency */,
+			);
+			name = CDETests;
+			productName = CDETests;
+			productReference = AB7EF6AE1DB4028C0062DD0C /* CDETests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		ABBEA7D51765CB730024A9D2 /* Core Data Editor */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ABBEA7F91765CB730024A9D2 /* Build configuration list for PBXNativeTarget "Core Data Editor" */;
@@ -2086,10 +2136,16 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CDE;
+				LastSwiftUpdateCheck = 0800;
 				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Christian Kienle";
 				TargetAttributes = {
+					AB7EF6AD1DB4028C0062DD0C = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = ABBEA7D51765CB730024A9D2;
+					};
 					ABBEA7D51765CB730024A9D2 = {
 						DevelopmentTeam = 6YJV6LM6Q4;
 						SystemCapabilities = {
@@ -2113,11 +2169,19 @@
 			projectRoot = "";
 			targets = (
 				ABBEA7D51765CB730024A9D2 /* Core Data Editor */,
+				AB7EF6AD1DB4028C0062DD0C /* CDETests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AB7EF6AC1DB4028C0062DD0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ABBEA7D41765CB730024A9D2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2198,6 +2262,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AB7EF6AA1DB4028C0062DD0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB7EF6B11DB4028D0062DD0C /* CDETests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ABBEA7D21765CB730024A9D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2349,6 +2421,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		AB7EF6B41DB4028D0062DD0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABBEA7D51765CB730024A9D2 /* Core Data Editor */;
+			targetProxy = AB7EF6B31DB4028D0062DD0C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		ABBEA7E21765CB730024A9D2 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -2393,6 +2473,78 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		AB7EF6B61DB4028D0062DD0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = CDETests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.christian-kienle.CDETests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Core Data Editor.app/Contents/MacOS/Core Data Editor";
+			};
+			name = Debug;
+		};
+		AB7EF6B71DB4028D0062DD0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = CDETests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.christian-kienle.CDETests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Core Data Editor.app/Contents/MacOS/Core Data Editor";
+			};
+			name = Release;
+		};
 		ABBEA7F71765CB730024A9D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2486,6 +2638,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AB7EF6B51DB4028D0062DD0C /* Build configuration list for PBXNativeTarget "CDETests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB7EF6B61DB4028D0062DD0C /* Debug */,
+				AB7EF6B71DB4028D0062DD0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		ABBEA7D11765CB730024A9D2 /* Build configuration list for PBXProject "Core Data Editor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
