@@ -1,6 +1,7 @@
 <a href="https://flattr.com/submit/auto?user_id=ChristianKienle&url=https%3A%2F%2Fgithub.com%2FChristianKienle%2FCore-Data-Editor" target="_blank"><img src="https://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>
 
 [![Build Status](https://travis-ci.org/ChristianKienle/Core-Data-Editor.svg?branch=master)](https://travis-ci.org/ChristianKienle/Core-Data-Editor)
+[![Build Status](https://travis-ci.org/ChristianKienle/Core-Data-Editor.svg?branch=develop)](https://travis-ci.org/ChristianKienle/Core-Data-Editor)
 
 Not building right now because Travis is not yet running Yosemite on their build machines. 
 
