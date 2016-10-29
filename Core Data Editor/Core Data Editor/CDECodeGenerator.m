@@ -56,7 +56,7 @@
         generator.generateARCCompatibleCode = self.accessoryViewController.generateARCCompatibleCode.boolValue;
         generator.generateFetchResultsControllerCode = self.accessoryViewController.generateFetchResultsControllerCode.boolValue;
         [generator generate];
-        [[NSWorkspace sharedWorkspace] selectFile:[generator.readmeURL path] inFileViewerRootedAtPath:nil];
+        [[NSWorkspace sharedWorkspace] selectFile:[generator.readmeURL path] inFileViewerRootedAtPath:@""];
         self.completionHandler ? self.completionHandler() : nil;
     }];
     

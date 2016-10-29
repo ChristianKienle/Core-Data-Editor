@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E25BCB5198D645100BBA0C0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E25BCB4198D645100BBA0C0 /* XCTest.framework */; };
 		AB0181171997C805000FE094 /* NSDirectoryEnumerator+ProjectBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0181161997C805000FE094 /* NSDirectoryEnumerator+ProjectBrowser.m */; };
 		AB06C0AF1854CB07002945CB /* CDEToOneRelationshipRequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06C0AE1854CB07002945CB /* CDEToOneRelationshipRequestDataCoordinator.m */; };
 		AB0927511768C6EC00FC59FB /* CDEEntitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB09274F1768C6EC00FC59FB /* CDEEntitiesViewController.m */; };
@@ -40,8 +39,6 @@
 		AB15E741177B690B00FA113E /* CDEEntityRequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB15E740177B690B00FA113E /* CDEEntityRequestDataCoordinator.m */; };
 		AB15E744177B6DBF00FA113E /* NSTableView+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB15E743177B6DBF00FA113E /* NSTableView+CDEAdditions.m */; };
 		AB15E748177B702600FA113E /* CDEOrderedRelationshipRequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB15E747177B702600FA113E /* CDEOrderedRelationshipRequestDataCoordinator.m */; };
-		AB22AC4817663A3B004890AC /* simple.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB22AC4617663A3B004890AC /* simple.xcdatamodeld */; settings = {COMPILER_FLAGS = "-w"; }; };
-		AB22AC4B17663C5C004890AC /* simple_no_inverse.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB22AC4917663C5C004890AC /* simple_no_inverse.xcdatamodeld */; settings = {COMPILER_FLAGS = "-w"; }; };
 		AB22AC7A17664480004890AC /* NSBundle+CDEModelFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = AB22AC7917664480004890AC /* NSBundle+CDEModelFinder.m */; };
 		AB23E43017A6AE08001C19A7 /* code-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB23E42C17A6AE08001C19A7 /* code-icon.png */; };
 		AB23E43117A6AE08001C19A7 /* code-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB23E42D17A6AE08001C19A7 /* code-icon@2x.png */; };
@@ -72,6 +69,7 @@
 		AB3B07CE17760E23000855B0 /* NSTableCellView+JKNibLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B07CD17760E23000855B0 /* NSTableCellView+JKNibLoading.m */; };
 		AB531222179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB531221179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.m */; };
 		AB5583A5176751AE005C002C /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = AB5583A4176751AE005C002C /* icon.iconset */; };
+		AB7EF6B11DB4028D0062DD0C /* CDETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7EF6B01DB4028D0062DD0C /* CDETests.swift */; };
 		AB7F20CE19DD7B4D00EBBF52 /* VibrantView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7F20CD19DD7B4D00EBBF52 /* VibrantView.m */; };
 		AB86F7CB1791922600FB0AEB /* CDEAttributeEditorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB86F7C91791922600FB0AEB /* CDEAttributeEditorWindowController.m */; };
 		AB86F7CC1791922600FB0AEB /* CDEAttributeEditorWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB86F7CA1791922600FB0AEB /* CDEAttributeEditorWindowController.xib */; };
@@ -125,9 +123,6 @@
 		ABBEA8B517660AB30024A9D2 /* _CDEConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8B217660AB30024A9D2 /* _CDEConfiguration.m */; };
 		ABBEA8B617660AB30024A9D2 /* CDEConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8B417660AB30024A9D2 /* CDEConfiguration.m */; };
 		ABBEA8BB1766153A0024A9D2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABBEA8B91766153A0024A9D2 /* Localizable.strings */; };
-		ABBEA8C4176620E10024A9D2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBEA7D91765CB730024A9D2 /* Cocoa.framework */; };
-		ABBEA8CA176620E20024A9D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABBEA8C8176620E20024A9D2 /* InfoPlist.strings */; };
-		ABBEA8CD176620E20024A9D2 /* Core_Data_Editor_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8CC176620E20024A9D2 /* Core_Data_Editor_Tests.m */; };
 		ABBEA8D41766212A0024A9D2 /* NSPasteboard-CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8D31766212A0024A9D2 /* NSPasteboard-CDEAdditions.m */; };
 		ABC18A1717809EDC00AF4F15 /* CDEFirstResponderWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC189F017809EDC00AF4F15 /* CDEFirstResponderWindow.m */; };
 		ABC18A1817809EDC00AF4F15 /* CDEAttributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC189F317809EDC00AF4F15 /* CDEAttributeViewController.m */; };
@@ -230,7 +225,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		ABBEA914176632BD0024A9D2 /* PBXContainerItemProxy */ = {
+		AB7EF6B31DB4028D0062DD0C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ABBEA7CE1765CB730024A9D2 /* Project object */;
 			proxyType = 1;
@@ -301,8 +296,6 @@
 		AB15E743177B6DBF00FA113E /* NSTableView+CDEAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTableView+CDEAdditions.m"; sourceTree = "<group>"; };
 		AB15E746177B702600FA113E /* CDEOrderedRelationshipRequestDataCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEOrderedRelationshipRequestDataCoordinator.h; sourceTree = "<group>"; };
 		AB15E747177B702600FA113E /* CDEOrderedRelationshipRequestDataCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEOrderedRelationshipRequestDataCoordinator.m; sourceTree = "<group>"; };
-		AB22AC4717663A3B004890AC /* simple.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = simple.xcdatamodel; sourceTree = "<group>"; };
-		AB22AC4A17663C5C004890AC /* simple_no_inverse.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = simple_no_inverse.xcdatamodel; sourceTree = "<group>"; };
 		AB22AC7817664480004890AC /* NSBundle+CDEModelFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+CDEModelFinder.h"; sourceTree = "<group>"; };
 		AB22AC7917664480004890AC /* NSBundle+CDEModelFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+CDEModelFinder.m"; sourceTree = "<group>"; };
 		AB23E42C17A6AE08001C19A7 /* code-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "code-icon.png"; sourceTree = "<group>"; };
@@ -347,6 +340,9 @@
 		AB531220179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTableColumn+CDERequestDataCoordinator.h"; sourceTree = "<group>"; };
 		AB531221179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTableColumn+CDERequestDataCoordinator.m"; sourceTree = "<group>"; };
 		AB5583A4176751AE005C002C /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = icon.iconset; sourceTree = "<group>"; };
+		AB7EF6AE1DB4028C0062DD0C /* CDETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CDETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB7EF6B01DB4028D0062DD0C /* CDETests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDETests.swift; sourceTree = "<group>"; };
+		AB7EF6B21DB4028D0062DD0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB7F20CC19DD7B4D00EBBF52 /* VibrantView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VibrantView.h; sourceTree = "<group>"; };
 		AB7F20CD19DD7B4D00EBBF52 /* VibrantView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VibrantView.m; sourceTree = "<group>"; };
 		AB86F7C81791922600FB0AEB /* CDEAttributeEditorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEAttributeEditorWindowController.h; sourceTree = "<group>"; };
@@ -447,11 +443,6 @@
 		ABBEA8B317660AB30024A9D2 /* CDEConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEConfiguration.h; sourceTree = "<group>"; };
 		ABBEA8B417660AB30024A9D2 /* CDEConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEConfiguration.m; sourceTree = "<group>"; };
 		ABBEA8BA1766153A0024A9D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		ABBEA8C1176620E10024A9D2 /* Core Data Editor Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core Data Editor Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABBEA8C7176620E20024A9D2 /* Core Data Editor Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Core Data Editor Tests-Info.plist"; sourceTree = "<group>"; };
-		ABBEA8C9176620E20024A9D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		ABBEA8CC176620E20024A9D2 /* Core_Data_Editor_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Core_Data_Editor_Tests.m; sourceTree = "<group>"; };
-		ABBEA8CE176620E20024A9D2 /* Core Data Editor Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Core Data Editor Tests-Prefix.pch"; sourceTree = "<group>"; };
 		ABBEA8D21766212A0024A9D2 /* NSPasteboard-CDEAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPasteboard-CDEAdditions.h"; sourceTree = "<group>"; };
 		ABBEA8D31766212A0024A9D2 /* NSPasteboard-CDEAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPasteboard-CDEAdditions.m"; sourceTree = "<group>"; };
 		ABC189EF17809EDC00AF4F15 /* CDEFirstResponderWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEFirstResponderWindow.h; sourceTree = "<group>"; };
@@ -625,21 +616,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AB7EF6AB1DB4028C0062DD0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ABBEA7D31765CB730024A9D2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				ABD5AEDD19DD7EC2001CE405 /* Cocoa.framework in Frameworks */,
 				AB99B2F21998E1EE00101647 /* libsqlite3.dylib in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ABBEA8BD176620E10024A9D2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2E25BCB5198D645100BBA0C0 /* XCTest.framework in Frameworks */,
-				ABBEA8C4176620E10024A9D2 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1040,6 +1029,15 @@
 			name = "NSTableColumn Additions";
 			sourceTree = "<group>";
 		};
+		AB7EF6AF1DB4028D0062DD0C /* CDETests */ = {
+			isa = PBXGroup;
+			children = (
+				AB7EF6B01DB4028D0062DD0C /* CDETests.swift */,
+				AB7EF6B21DB4028D0062DD0C /* Info.plist */,
+			);
+			path = CDETests;
+			sourceTree = "<group>";
+		};
 		AB86F7C71791920A00FB0AEB /* Window Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -1197,7 +1195,7 @@
 			isa = PBXGroup;
 			children = (
 				ABBEA7DF1765CB730024A9D2 /* Core Data Editor */,
-				ABBEA8C5176620E10024A9D2 /* Core Data Editor Tests */,
+				AB7EF6AF1DB4028D0062DD0C /* CDETests */,
 				ABBEA7D81765CB730024A9D2 /* Frameworks */,
 				ABBEA7D71765CB730024A9D2 /* Products */,
 			);
@@ -1207,7 +1205,7 @@
 			isa = PBXGroup;
 			children = (
 				ABBEA7D61765CB730024A9D2 /* Core Data Editor.app */,
-				ABBEA8C1176620E10024A9D2 /* Core Data Editor Tests.xctest */,
+				AB7EF6AE1DB4028C0062DD0C /* CDETests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1487,27 +1485,6 @@
 				AB1466C31787164800E3EEA3 /* Left Click Button */,
 			);
 			name = Shared;
-			sourceTree = "<group>";
-		};
-		ABBEA8C5176620E10024A9D2 /* Core Data Editor Tests */ = {
-			isa = PBXGroup;
-			children = (
-				ABBEA8CC176620E20024A9D2 /* Core_Data_Editor_Tests.m */,
-				ABBEA8C6176620E20024A9D2 /* Supporting Files */,
-			);
-			path = "Core Data Editor Tests";
-			sourceTree = "<group>";
-		};
-		ABBEA8C6176620E20024A9D2 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				ABBEA8C7176620E20024A9D2 /* Core Data Editor Tests-Info.plist */,
-				ABBEA8C8176620E20024A9D2 /* InfoPlist.strings */,
-				ABBEA8CE176620E20024A9D2 /* Core Data Editor Tests-Prefix.pch */,
-				AB22AC4617663A3B004890AC /* simple.xcdatamodeld */,
-				AB22AC4917663C5C004890AC /* simple_no_inverse.xcdatamodeld */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		ABC189ED17809D0800AF4F15 /* SplitView Müll */ = {
@@ -2117,6 +2094,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AB7EF6AD1DB4028C0062DD0C /* CDETests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB7EF6B51DB4028D0062DD0C /* Build configuration list for PBXNativeTarget "CDETests" */;
+			buildPhases = (
+				AB7EF6AA1DB4028C0062DD0C /* Sources */,
+				AB7EF6AB1DB4028C0062DD0C /* Frameworks */,
+				AB7EF6AC1DB4028C0062DD0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB7EF6B41DB4028D0062DD0C /* PBXTargetDependency */,
+			);
+			name = CDETests;
+			productName = CDETests;
+			productReference = AB7EF6AE1DB4028C0062DD0C /* CDETests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		ABBEA7D51765CB730024A9D2 /* Core Data Editor */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ABBEA7F91765CB730024A9D2 /* Build configuration list for PBXNativeTarget "Core Data Editor" */;
@@ -2134,25 +2129,6 @@
 			productReference = ABBEA7D61765CB730024A9D2 /* Core Data Editor.app */;
 			productType = "com.apple.product-type.application";
 		};
-		ABBEA8C0176620E10024A9D2 /* Core Data Editor Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ABBEA8CF176620E20024A9D2 /* Build configuration list for PBXNativeTarget "Core Data Editor Tests" */;
-			buildPhases = (
-				ABBEA8BC176620E10024A9D2 /* Sources */,
-				ABBEA8BD176620E10024A9D2 /* Frameworks */,
-				ABBEA8BE176620E10024A9D2 /* Resources */,
-				ABBEA8BF176620E10024A9D2 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				ABBEA915176632BD0024A9D2 /* PBXTargetDependency */,
-			);
-			name = "Core Data Editor Tests";
-			productName = "Core Data Editor Tests";
-			productReference = ABBEA8C1176620E10024A9D2 /* Core Data Editor Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -2160,10 +2136,16 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CDE;
+				LastSwiftUpdateCheck = 0800;
 				LastTestingUpgradeCheck = 0510;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Christian Kienle";
 				TargetAttributes = {
+					AB7EF6AD1DB4028C0062DD0C = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = ABBEA7D51765CB730024A9D2;
+					};
 					ABBEA7D51765CB730024A9D2 = {
 						DevelopmentTeam = 6YJV6LM6Q4;
 						SystemCapabilities = {
@@ -2187,12 +2169,19 @@
 			projectRoot = "";
 			targets = (
 				ABBEA7D51765CB730024A9D2 /* Core Data Editor */,
-				ABBEA8C0176620E10024A9D2 /* Core Data Editor Tests */,
+				AB7EF6AD1DB4028C0062DD0C /* CDETests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AB7EF6AC1DB4028C0062DD0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ABBEA7D41765CB730024A9D2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2270,33 +2259,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ABBEA8BE176620E10024A9D2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ABBEA8CA176620E20024A9D2 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		ABBEA8BF176620E10024A9D2 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
+/* Begin PBXSourcesBuildPhase section */
+		AB7EF6AA1DB4028C0062DD0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
+				AB7EF6B11DB4028D0062DD0C /* CDETests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
 		ABBEA7D21765CB730024A9D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2446,23 +2419,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ABBEA8BC176620E10024A9D2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ABBEA8CD176620E20024A9D2 /* Core_Data_Editor_Tests.m in Sources */,
-				AB22AC4817663A3B004890AC /* simple.xcdatamodeld in Sources */,
-				AB22AC4B17663C5C004890AC /* simple_no_inverse.xcdatamodeld in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		ABBEA915176632BD0024A9D2 /* PBXTargetDependency */ = {
+		AB7EF6B41DB4028D0062DD0C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = ABBEA7D51765CB730024A9D2 /* Core Data Editor */;
-			targetProxy = ABBEA914176632BD0024A9D2 /* PBXContainerItemProxy */;
+			targetProxy = AB7EF6B31DB4028D0062DD0C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2507,17 +2470,81 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		ABBEA8C8176620E20024A9D2 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ABBEA8C9176620E20024A9D2 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		AB7EF6B61DB4028D0062DD0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = CDETests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.christian-kienle.CDETests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Core Data Editor.app/Contents/MacOS/Core Data Editor";
+			};
+			name = Debug;
+		};
+		AB7EF6B71DB4028D0062DD0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = CDETests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.christian-kienle.CDETests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Core Data Editor.app/Contents/MacOS/Core Data Editor";
+			};
+			name = Release;
+		};
 		ABBEA7F71765CB730024A9D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2525,26 +2552,35 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.10;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -2555,23 +2591,32 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				SDKROOT = macosx10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -2583,7 +2628,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Core Data Editor/Core Data Editor-Prefix.pch";
 				INFOPLIST_FILE = "Core Data Editor/Core Data Editor-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.christian-kienle.coredataeditor5";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
@@ -2600,7 +2646,8 @@
 				GCC_PREFIX_HEADER = "Core Data Editor/Core Data Editor-Prefix.pch";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Core Data Editor/Core Data Editor-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.christian-kienle.coredataeditor5";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
@@ -2608,49 +2655,18 @@
 			};
 			name = Release;
 		};
-		ABBEA8D0176620E20024A9D2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Core Data Editor Tests/Core Data Editor Tests-Prefix.pch";
-				INFOPLIST_FILE = "Core Data Editor Tests/Core Data Editor Tests-Info.plist";
-				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = YES;
-				MOMC_NO_WARNINGS = YES;
-				MOMC_SUPPRESS_INVERSE_TRANSIENT_ERROR = YES;
-				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		ABBEA8D1176620E20024A9D2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Core Data Editor Tests/Core Data Editor Tests-Prefix.pch";
-				INFOPLIST_FILE = "Core Data Editor Tests/Core Data Editor Tests-Info.plist";
-				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = YES;
-				MOMC_NO_WARNINGS = YES;
-				MOMC_SUPPRESS_INVERSE_TRANSIENT_ERROR = YES;
-				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AB7EF6B51DB4028D0062DD0C /* Build configuration list for PBXNativeTarget "CDETests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB7EF6B61DB4028D0062DD0C /* Debug */,
+				AB7EF6B71DB4028D0062DD0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		ABBEA7D11765CB730024A9D2 /* Build configuration list for PBXProject "Core Data Editor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2669,40 +2685,9 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ABBEA8CF176620E20024A9D2 /* Build configuration list for PBXNativeTarget "Core Data Editor Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ABBEA8D0176620E20024A9D2 /* Debug */,
-				ABBEA8D1176620E20024A9D2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		AB22AC4617663A3B004890AC /* simple.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				AB22AC4717663A3B004890AC /* simple.xcdatamodel */,
-			);
-			currentVersion = AB22AC4717663A3B004890AC /* simple.xcdatamodel */;
-			name = simple.xcdatamodeld;
-			path = Models/simple.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		AB22AC4917663C5C004890AC /* simple_no_inverse.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				AB22AC4A17663C5C004890AC /* simple_no_inverse.xcdatamodel */,
-			);
-			currentVersion = AB22AC4A17663C5C004890AC /* simple_no_inverse.xcdatamodel */;
-			name = simple_no_inverse.xcdatamodeld;
-			path = Models/simple_no_inverse.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 		ABBEA7F41765CB730024A9D2 /* CDEDocument.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

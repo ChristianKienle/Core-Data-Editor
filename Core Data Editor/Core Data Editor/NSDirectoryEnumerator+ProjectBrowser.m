@@ -48,7 +48,8 @@
     @try {
         NSError *error;
         // +metadataForPersistentStoreOfType:URL:error: fails if we have a SQLite file but it is not a Core Data SQLite file...
-        metadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:nil URL:self error:&error];
+      
+      metadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:NSSQLiteStoreType URL:self options:nil error:&error];
         if(metadata == nil) {
             return nil;
         }

@@ -123,7 +123,7 @@
 - (BOOL)isCompatibleWithStoreAtURL:(NSURL *)URL error_cde:(NSError **)error {
     NSParameterAssert(URL);
     NSError *metadataError = nil;
-    NSDictionary *metadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:nil URL:URL error:&metadataError];
+  NSDictionary *metadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:NSSQLiteStoreType URL:URL options:nil error:&metadataError];
     if(metadata == nil) {
         if(error != NULL) {
             *error = metadataError;

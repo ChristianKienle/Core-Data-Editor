@@ -4,10 +4,11 @@
 
 #pragma mark - Getting the Type of a Store
 // Returns nil if no store type could be determined
-+ (NSString *)typeOfPersistentStoreAtURL_cde:(NSURL *)storeURL {
++ (NSString *)typeOfPersistentStoreAtURL_cde:(NSURL *)URL {
   NSError *error = nil;
   @try {
-    NSDictionary *metadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:nil URL:storeURL error:&error];
+    NSDictionary *metadata =   [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:NSSQLiteStoreType URL:URL options:nil error:&error];
+
     if(metadata == nil) {
       NSLog(@"Failed to determine store metadata: %@", error);
       return nil;
