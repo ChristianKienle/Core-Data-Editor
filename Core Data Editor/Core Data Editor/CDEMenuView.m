@@ -85,11 +85,6 @@
     return NSZeroSize;
   }
   return [self.itemPrototype.view frame].size;
-  NSView *lastItemView = [[self.itemViewControllers lastObject] view];
-  if(lastItemView == nil) {
-    return NSZeroSize;
-  }
-  return lastItemView.frame.size;
 }
 
 - (CGFloat)topAndBottomMargin {

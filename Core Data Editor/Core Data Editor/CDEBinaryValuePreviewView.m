@@ -51,7 +51,7 @@
             hasPreviewImage = YES;
             [NSGraphicsContext saveGraphicsState];
             [path addClip];
-            [image drawInRect:boxRect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0 respectFlipped:YES hints:nil];
+            [image drawInRect:boxRect fromRect:NSZeroRect operation:NSCompositingOperationSourceOver fraction:1.0 respectFlipped:YES hints:nil];
             [NSGraphicsContext restoreGraphicsState];
         }
     }
@@ -68,7 +68,7 @@
 
         [actionImage lockFocus];
         [[NSColor whiteColor] set];
-        NSRectFillUsingOperation(NSMakeRect(0, 0, actionSize.width, actionSize.height), NSCompositeSourceAtop);
+        NSRectFillUsingOperation(NSMakeRect(0, 0, actionSize.width, actionSize.height), NSCompositingOperationSourceAtop);
 
         [actionImage unlockFocus];
 
@@ -81,13 +81,12 @@
 //        [shadow setShadowColor:[NSColor whiteColor]];
 //        [shadow setShadowOffset:NSMakeSize(0.0, -1.5)];
 //        [shadow set];
-        [actionImage drawAtPoint:actionImageOrigin fromRect:NSZeroRect operation:NSCompositeSourceAtop fraction:1.0];
+        [actionImage drawAtPoint:actionImageOrigin fromRect:NSZeroRect operation:NSCompositingOperationSourceAtop fraction:1.0];
                 
         [NSGraphicsContext restoreGraphicsState];
 
     }
 
-//    NSColor *strokeColor = [NSColor colorWithCalibratedWhite:0.1 alpha:1.0];
     NSColor *strokeColor = [self.enclosingScrollView.documentView gridColor];
 
     if(self.backgroundStyle == NSBackgroundStyleDark && hasPreviewImage == NO) {
@@ -95,29 +94,11 @@
     }
     [strokeColor setStroke];
     [path stroke];
-
-//    [NSGraphicsContext saveGraphicsState];
-//    [[NSGraphicsContext currentContext] setShouldAntialias:NO];
-//    NSBezierPath *borderPath = [NSBezierPath bezierPath];
-//    [borderPath transformUsingAffineTransform:transform];
-//    [borderPath setLineWidth:1.0];
-//    
-//    [borderPath moveToPoint:NSMakePoint(NSMaxX(boxRect) - 1, NSMinY(boxRect))];
-//    [borderPath lineToPoint:NSMakePoint(NSMaxX(boxRect) - 1, NSMaxY(boxRect))];
-//    
-//    [strokeColor setStroke];
-//    [path stroke];
-//    [NSGraphicsContext restoreGraphicsState];
-
-
-//    [path setLineWidth:1.0];
-//    [path stroke];
 }
 
 - (NSMenu *)menuForEvent:(NSEvent *)theEvent {
     return self.menu;
 }
-//- (BOOL)popUpMenuPositioningItem:(NSMenuItem *)item atLocation:(NSPoint)location inView:(NSView *)view
 
 - (void)mouseDown:(NSEvent *)event {
     [self.menu popUpMenuPositioningItem:nil atLocation:NSZeroPoint inView:self];

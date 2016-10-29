@@ -151,8 +151,10 @@
         self.preferencesWindowController = [CDEPreferencesWindowController new];
     }
     if([filename.pathExtension isEqualToString:@"coredataeditor5"]) {
-        [[NSDocumentController sharedDocumentController] openDocumentWithContentsOfURL:[NSURL fileURLWithPath:filename] display:YES error:NULL];
-        return YES;
+      [[NSDocumentController sharedDocumentController] openDocumentWithContentsOfURL:[NSURL fileURLWithPath:filename] display:YES completionHandler:^(NSDocument * _Nullable document, BOOL documentWasAlreadyOpen, NSError * _Nullable error) {
+        
+      }];
+      return YES;
     }
     // Is this a store file?
     NSURL *storeURL = [NSURL fileURLWithPath:filename];

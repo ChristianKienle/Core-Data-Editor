@@ -29,22 +29,14 @@
     self.completionHandler = completionHandler;
     self.windowController = [[CDEAttributeEditorWindowController alloc] initWithManagedObject:managedObject attributeDescription:attributeDescription];
     [self.windowController window];
-    
-    [NSApp beginSheet:self.windowController.window
-       modalForWindow:positioningView.window
-        modalDelegate:self
-       didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:)
-          contextInfo:NULL];
-}
-
-- (void)sheetDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
-    [sheet orderOut:self];
+  
+  [positioningView.window beginSheet:self.windowController.window completionHandler:^(NSModalResponse returnCode) {
     self.viewController = nil;
     self.windowController = nil;
     self.completionHandler ? self.completionHandler() : nil;
     self.completionHandler = nil;
+  }];
 }
-
 #pragma mark - Closing the Editor
 - (BOOL)isShown {
     return (self.windowController != nil);

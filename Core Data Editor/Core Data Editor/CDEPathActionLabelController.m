@@ -15,7 +15,7 @@
 
 #pragma mark - Actions
 - (IBAction)revealPath:(id)sender {
-    [[NSWorkspace sharedWorkspace] selectFile:self.pathTextField.stringValue inFileViewerRootedAtPath:nil];
+    [[NSWorkspace sharedWorkspace] selectFile:self.pathTextField.stringValue inFileViewerRootedAtPath:@""];
 }
 
 #pragma mark NibAwaking

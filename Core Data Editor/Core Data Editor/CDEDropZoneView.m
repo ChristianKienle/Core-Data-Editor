@@ -55,7 +55,7 @@
    
    NSMutableParagraphStyle *titleParagraphStyle = [[NSMutableParagraphStyle alloc] init];
    [titleParagraphStyle setParagraphStyle:[NSParagraphStyle defaultParagraphStyle]];
-   titleParagraphStyle.alignment = NSCenterTextAlignment;
+   titleParagraphStyle.alignment = NSTextAlignmentCenter;
    
     NSShadow *shadow = [NSShadow new];
 	[shadow setShadowColor:[NSColor whiteColor]];
@@ -74,7 +74,7 @@
    
    NSMutableAttributedString *attributedTitleErrorMessage = [[self attributedStringToDisplayFrom:self.displayedError.localizedDescription] mutableCopy];
    
-   CGFloat titleFontSize = [NSFont systemFontSizeForControlSize:NSRegularControlSize];
+   CGFloat titleFontSize = [NSFont systemFontSizeForControlSize:NSControlSizeRegular];
    
    [attributedTitleErrorMessage addAttribute:NSFontAttributeName value:[NSFont boldSystemFontOfSize:titleFontSize] range:NSMakeRange(0, attributedTitleErrorMessage.mutableString.length)];
    
@@ -161,12 +161,12 @@
    NSImage *icon = [[NSWorkspace sharedWorkspace] iconForFile:self.URL.path];
    CGFloat inset = 0.25 * NSWidth(self.bounds);
    NSRect iconRect = NSInsetRect(self.bounds, inset, inset);
-   [icon drawInRect:iconRect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0];
+   [icon drawInRect:iconRect fromRect:NSZeroRect operation:NSCompositingOperationSourceOver fraction:1.0];
 }
 
 - (void)drawErrorMessage {
    NSImage *cautionImage = [NSImage imageNamed:NSImageNameCaution];
-   [cautionImage drawInRect:[self errorMessageIconRect] fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0 respectFlipped:YES hints:nil];
+   [cautionImage drawInRect:[self errorMessageIconRect] fromRect:NSZeroRect operation:NSCompositingOperationSourceOver fraction:1.0 respectFlipped:YES hints:nil];
    
    CGFloat borderSpacing = 5.0;
    NSAttributedString *attributedErrorMessage = [self attributedErrorMessage];

@@ -11,7 +11,8 @@
 {
     [super windowDidLoad];
     NSURL *aboutURL = [[NSBundle mainBundle] URLForResource:@"Credits" withExtension:@"rtf"];
-    NSAttributedString *aboutText = [[NSAttributedString alloc] initWithURL:aboutURL documentAttributes:NULL];
+  NSDictionary *options = @{ NSDocumentTypeDocumentOption : NSRTFTextDocumentType};
+  NSAttributedString *aboutText = [[NSAttributedString alloc] initWithURL:aboutURL options:options documentAttributes:nil error:NULL];
     [[self.textView textStorage] appendAttributedString:aboutText];
 }
 

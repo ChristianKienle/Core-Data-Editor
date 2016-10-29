@@ -75,7 +75,7 @@
         // add "IS SELECTED" column
         NSTableColumn *column = [[NSTableColumn alloc] initWithIdentifier:[NSTableColumn identifierOfIsSelectedTableColumn_cde]];
         [[column headerCell] setTitle:@"✓"];
-        [[column headerCell] setAlignment:NSCenterTextAlignment];
+        [[column headerCell] setAlignment:NSTextAlignmentCenter];
         [column setMinWidth:20.0];
         [column setMaxWidth:20.0];
         [column sizeToFit];
