@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E25BCB5198D645100BBA0C0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E25BCB4198D645100BBA0C0 /* XCTest.framework */; };
 		AB0181171997C805000FE094 /* NSDirectoryEnumerator+ProjectBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0181161997C805000FE094 /* NSDirectoryEnumerator+ProjectBrowser.m */; };
 		AB06C0AF1854CB07002945CB /* CDEToOneRelationshipRequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06C0AE1854CB07002945CB /* CDEToOneRelationshipRequestDataCoordinator.m */; };
 		AB0927511768C6EC00FC59FB /* CDEEntitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB09274F1768C6EC00FC59FB /* CDEEntitiesViewController.m */; };
@@ -40,8 +39,6 @@
 		AB15E741177B690B00FA113E /* CDEEntityRequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB15E740177B690B00FA113E /* CDEEntityRequestDataCoordinator.m */; };
 		AB15E744177B6DBF00FA113E /* NSTableView+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB15E743177B6DBF00FA113E /* NSTableView+CDEAdditions.m */; };
 		AB15E748177B702600FA113E /* CDEOrderedRelationshipRequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB15E747177B702600FA113E /* CDEOrderedRelationshipRequestDataCoordinator.m */; };
-		AB22AC4817663A3B004890AC /* simple.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB22AC4617663A3B004890AC /* simple.xcdatamodeld */; settings = {COMPILER_FLAGS = "-w"; }; };
-		AB22AC4B17663C5C004890AC /* simple_no_inverse.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB22AC4917663C5C004890AC /* simple_no_inverse.xcdatamodeld */; settings = {COMPILER_FLAGS = "-w"; }; };
 		AB22AC7A17664480004890AC /* NSBundle+CDEModelFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = AB22AC7917664480004890AC /* NSBundle+CDEModelFinder.m */; };
 		AB23E43017A6AE08001C19A7 /* code-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB23E42C17A6AE08001C19A7 /* code-icon.png */; };
 		AB23E43117A6AE08001C19A7 /* code-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB23E42D17A6AE08001C19A7 /* code-icon@2x.png */; };
@@ -127,9 +124,6 @@
 		ABBEA8B517660AB30024A9D2 /* _CDEConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8B217660AB30024A9D2 /* _CDEConfiguration.m */; };
 		ABBEA8B617660AB30024A9D2 /* CDEConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8B417660AB30024A9D2 /* CDEConfiguration.m */; };
 		ABBEA8BB1766153A0024A9D2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABBEA8B91766153A0024A9D2 /* Localizable.strings */; };
-		ABBEA8C4176620E10024A9D2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBEA7D91765CB730024A9D2 /* Cocoa.framework */; };
-		ABBEA8CA176620E20024A9D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABBEA8C8176620E20024A9D2 /* InfoPlist.strings */; };
-		ABBEA8CD176620E20024A9D2 /* Core_Data_Editor_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8CC176620E20024A9D2 /* Core_Data_Editor_Tests.m */; };
 		ABBEA8D41766212A0024A9D2 /* NSPasteboard-CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8D31766212A0024A9D2 /* NSPasteboard-CDEAdditions.m */; };
 		ABC18A1717809EDC00AF4F15 /* CDEFirstResponderWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC189F017809EDC00AF4F15 /* CDEFirstResponderWindow.m */; };
 		ABC18A1817809EDC00AF4F15 /* CDEAttributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC189F317809EDC00AF4F15 /* CDEAttributeViewController.m */; };
@@ -224,16 +218,6 @@
 		ABFFA4891DDF4784009BF96F /* PreferencesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFFA4881DDF4784009BF96F /* PreferencesVC.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		ABBEA914176632BD0024A9D2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ABBEA7CE1765CB730024A9D2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ABBEA7D51765CB730024A9D2;
-			remoteInfo = "Core Data Editor";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		2E25BCB4198D645100BBA0C0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		AB0181151997C805000FE094 /* NSDirectoryEnumerator+ProjectBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDirectoryEnumerator+ProjectBrowser.h"; sourceTree = "<group>"; };
@@ -296,8 +280,6 @@
 		AB15E743177B6DBF00FA113E /* NSTableView+CDEAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTableView+CDEAdditions.m"; sourceTree = "<group>"; };
 		AB15E746177B702600FA113E /* CDEOrderedRelationshipRequestDataCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEOrderedRelationshipRequestDataCoordinator.h; sourceTree = "<group>"; };
 		AB15E747177B702600FA113E /* CDEOrderedRelationshipRequestDataCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEOrderedRelationshipRequestDataCoordinator.m; sourceTree = "<group>"; };
-		AB22AC4717663A3B004890AC /* simple.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = simple.xcdatamodel; sourceTree = "<group>"; };
-		AB22AC4A17663C5C004890AC /* simple_no_inverse.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = simple_no_inverse.xcdatamodel; sourceTree = "<group>"; };
 		AB22AC7817664480004890AC /* NSBundle+CDEModelFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+CDEModelFinder.h"; sourceTree = "<group>"; };
 		AB22AC7917664480004890AC /* NSBundle+CDEModelFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+CDEModelFinder.m"; sourceTree = "<group>"; };
 		AB23E42C17A6AE08001C19A7 /* code-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "code-icon.png"; sourceTree = "<group>"; };
@@ -444,11 +426,6 @@
 		ABBEA8B317660AB30024A9D2 /* CDEConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEConfiguration.h; sourceTree = "<group>"; };
 		ABBEA8B417660AB30024A9D2 /* CDEConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEConfiguration.m; sourceTree = "<group>"; };
 		ABBEA8BA1766153A0024A9D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		ABBEA8C1176620E10024A9D2 /* Core Data Editor Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core Data Editor Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABBEA8C7176620E20024A9D2 /* Core Data Editor Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Core Data Editor Tests-Info.plist"; sourceTree = "<group>"; };
-		ABBEA8C9176620E20024A9D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		ABBEA8CC176620E20024A9D2 /* Core_Data_Editor_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Core_Data_Editor_Tests.m; sourceTree = "<group>"; };
-		ABBEA8CE176620E20024A9D2 /* Core Data Editor Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Core Data Editor Tests-Prefix.pch"; sourceTree = "<group>"; };
 		ABBEA8D21766212A0024A9D2 /* NSPasteboard-CDEAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPasteboard-CDEAdditions.h"; sourceTree = "<group>"; };
 		ABBEA8D31766212A0024A9D2 /* NSPasteboard-CDEAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPasteboard-CDEAdditions.m"; sourceTree = "<group>"; };
 		ABC189EF17809EDC00AF4F15 /* CDEFirstResponderWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEFirstResponderWindow.h; sourceTree = "<group>"; };
@@ -618,15 +595,6 @@
 			files = (
 				ABD5AEDD19DD7EC2001CE405 /* Cocoa.framework in Frameworks */,
 				AB99B2F21998E1EE00101647 /* libsqlite3.dylib in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ABBEA8BD176620E10024A9D2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2E25BCB5198D645100BBA0C0 /* XCTest.framework in Frameworks */,
-				ABBEA8C4176620E10024A9D2 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1207,7 +1175,6 @@
 			isa = PBXGroup;
 			children = (
 				ABBEA7DF1765CB730024A9D2 /* Core Data Editor */,
-				ABBEA8C5176620E10024A9D2 /* Core Data Editor Tests */,
 				ABBEA7D81765CB730024A9D2 /* Frameworks */,
 				ABBEA7D71765CB730024A9D2 /* Products */,
 			);
@@ -1217,7 +1184,6 @@
 			isa = PBXGroup;
 			children = (
 				ABBEA7D61765CB730024A9D2 /* Core Data Editor.app */,
-				ABBEA8C1176620E10024A9D2 /* Core Data Editor Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1497,27 +1463,6 @@
 				AB1466C31787164800E3EEA3 /* Left Click Button */,
 			);
 			name = Shared;
-			sourceTree = "<group>";
-		};
-		ABBEA8C5176620E10024A9D2 /* Core Data Editor Tests */ = {
-			isa = PBXGroup;
-			children = (
-				ABBEA8CC176620E20024A9D2 /* Core_Data_Editor_Tests.m */,
-				ABBEA8C6176620E20024A9D2 /* Supporting Files */,
-			);
-			path = "Core Data Editor Tests";
-			sourceTree = "<group>";
-		};
-		ABBEA8C6176620E20024A9D2 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				ABBEA8C7176620E20024A9D2 /* Core Data Editor Tests-Info.plist */,
-				ABBEA8C8176620E20024A9D2 /* InfoPlist.strings */,
-				ABBEA8CE176620E20024A9D2 /* Core Data Editor Tests-Prefix.pch */,
-				AB22AC4617663A3B004890AC /* simple.xcdatamodeld */,
-				AB22AC4917663C5C004890AC /* simple_no_inverse.xcdatamodeld */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		ABC189ED17809D0800AF4F15 /* SplitView Müll */ = {
@@ -2097,25 +2042,6 @@
 			productReference = ABBEA7D61765CB730024A9D2 /* Core Data Editor.app */;
 			productType = "com.apple.product-type.application";
 		};
-		ABBEA8C0176620E10024A9D2 /* Core Data Editor Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ABBEA8CF176620E20024A9D2 /* Build configuration list for PBXNativeTarget "Core Data Editor Tests" */;
-			buildPhases = (
-				ABBEA8BC176620E10024A9D2 /* Sources */,
-				ABBEA8BD176620E10024A9D2 /* Frameworks */,
-				ABBEA8BE176620E10024A9D2 /* Resources */,
-				ABBEA8BF176620E10024A9D2 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				ABBEA915176632BD0024A9D2 /* PBXTargetDependency */,
-			);
-			name = "Core Data Editor Tests";
-			productName = "Core Data Editor Tests";
-			productReference = ABBEA8C1176620E10024A9D2 /* Core Data Editor Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -2150,7 +2076,6 @@
 			projectRoot = "";
 			targets = (
 				ABBEA7D51765CB730024A9D2 /* Core Data Editor */,
-				ABBEA8C0176620E10024A9D2 /* Core Data Editor Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -2231,31 +2156,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ABBEA8BE176620E10024A9D2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ABBEA8CA176620E20024A9D2 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		ABBEA8BF176620E10024A9D2 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ABBEA7D21765CB730024A9D2 /* Sources */ = {
@@ -2404,25 +2305,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ABBEA8BC176620E10024A9D2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ABBEA8CD176620E20024A9D2 /* Core_Data_Editor_Tests.m in Sources */,
-				AB22AC4817663A3B004890AC /* simple.xcdatamodeld in Sources */,
-				AB22AC4B17663C5C004890AC /* simple_no_inverse.xcdatamodeld in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		ABBEA915176632BD0024A9D2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = ABBEA7D51765CB730024A9D2 /* Core Data Editor */;
-			targetProxy = ABBEA914176632BD0024A9D2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		ABBEA7E21765CB730024A9D2 /* InfoPlist.strings */ = {
@@ -2463,14 +2346,6 @@
 				ABBEA8BA1766153A0024A9D2 /* en */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		ABBEA8C8176620E20024A9D2 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ABBEA8C9176620E20024A9D2 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -2583,48 +2458,6 @@
 			};
 			name = Release;
 		};
-		ABBEA8D0176620E20024A9D2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Core Data Editor Tests/Core Data Editor Tests-Prefix.pch";
-				INFOPLIST_FILE = "Core Data Editor Tests/Core Data Editor Tests-Info.plist";
-				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = YES;
-				MOMC_NO_WARNINGS = YES;
-				MOMC_SUPPRESS_INVERSE_TRANSIENT_ERROR = YES;
-				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_BUNDLE_IDENTIFIER = "de.christian-kienle.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		ABBEA8D1176620E20024A9D2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Core Data Editor Tests/Core Data Editor Tests-Prefix.pch";
-				INFOPLIST_FILE = "Core Data Editor Tests/Core Data Editor Tests-Info.plist";
-				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = YES;
-				MOMC_NO_WARNINGS = YES;
-				MOMC_SUPPRESS_INVERSE_TRANSIENT_ERROR = YES;
-				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_BUNDLE_IDENTIFIER = "de.christian-kienle.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2646,40 +2479,9 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ABBEA8CF176620E20024A9D2 /* Build configuration list for PBXNativeTarget "Core Data Editor Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ABBEA8D0176620E20024A9D2 /* Debug */,
-				ABBEA8D1176620E20024A9D2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		AB22AC4617663A3B004890AC /* simple.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				AB22AC4717663A3B004890AC /* simple.xcdatamodel */,
-			);
-			currentVersion = AB22AC4717663A3B004890AC /* simple.xcdatamodel */;
-			name = simple.xcdatamodeld;
-			path = Models/simple.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		AB22AC4917663C5C004890AC /* simple_no_inverse.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				AB22AC4A17663C5C004890AC /* simple_no_inverse.xcdatamodel */,
-			);
-			currentVersion = AB22AC4A17663C5C004890AC /* simple_no_inverse.xcdatamodel */;
-			name = simple_no_inverse.xcdatamodeld;
-			path = Models/simple_no_inverse.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 		ABBEA7F41765CB730024A9D2 /* CDEDocument.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

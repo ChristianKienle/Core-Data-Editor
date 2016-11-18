@@ -28,16 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ABBEA8C0176620E10024A9D2"
-               BuildableName = "Core Data Editor Tests.xctest"
-               BlueprintName = "Core Data Editor Tests"
-               ReferencedContainer = "container:Core Data Editor/Core Data Editor.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
