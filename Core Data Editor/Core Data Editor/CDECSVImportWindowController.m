@@ -251,21 +251,28 @@ NSString *const CDECSVImportWindowControllerMappingIndexOfSelectedColumn = @"ind
     
     // Entities Popup Button: End
     [self updateMappingsArrayController];
-  
-  [parentWindow beginSheet:self.window completionHandler:^(NSModalResponse returnCode) {
+    [parentWindow beginSheet:self.window completionHandler:^(NSModalResponse returnCode) {
+//      [sheet orderOut:self];
+      self.completionHandler ? self.completionHandler([self resultForCurrentConfiguration]) : nil;
+      self.completionHandler = nil;
+
+    }];
+    [self showOpenCSVFilePanel:self];
+}
+     
+- (void)importWindowDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
+    [sheet orderOut:self];
     self.completionHandler ? self.completionHandler([self resultForCurrentConfiguration]) : nil;
     self.completionHandler = nil;
-  }];
-    [self showOpenCSVFilePanel:self];
 }
 
 - (IBAction)cancelImport:(id)sender {
     self.completionHandler = nil;
-    [NSApp endSheet:self.window];
+  [self.window.sheetParent endSheet:self.window returnCode:NSModalResponseOK];
 }
 
 - (IBAction)confirmImport:(id)sender {
-    [NSApp endSheet:self.window];
+  [self.window.sheetParent endSheet:self.window returnCode:NSModalResponseOK];
 }
 
 - (IBAction)takeSelectedEntityFromSender:(id)sender {

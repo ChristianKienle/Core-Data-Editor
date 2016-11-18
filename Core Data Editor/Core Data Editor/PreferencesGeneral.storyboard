@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="ZXf-T3-iiU">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Preferences GeneralVC-->
+        <scene sceneID="X9k-rA-3Rz">
+            <objects>
+                <viewController id="ZXf-T3-iiU" customClass="PreferencesGeneralVC" sceneMemberID="viewController">
+                    <view key="view" id="zav-v6-iFr">
+                        <rect key="frame" x="0.0" y="0.0" width="498" height="287"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Del-ic-dkO">
+                                <rect key="frame" x="0.0" y="0.0" width="498" height="287"/>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ipx-Cg-9j6">
+                                        <rect key="frame" x="72" y="250" width="120" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Object ID Column:" id="uRn-V8-Yo3">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ld2-sV-8JG">
+                                        <rect key="frame" x="195" y="249" width="157" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="check" title="Shows name of entity" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Gg7-l4-NIg">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <binding destination="rqP-BK-AEN" name="value" keyPath="values.CDEUserDefaultsShowsNameOfEntityInObjectIDColumn" id="yiN-Sv-Oq5"/>
+                                        </connections>
+                                    </button>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Hz-TL-4n3">
+                                        <rect key="frame" x="194" y="229" width="267" height="14"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Format: &lt;Entity&gt;/p&lt;Primary Key&gt;" id="iNl-eE-LVs">
+                                            <font key="font" metaFont="smallSystem"/>
+                                            <color key="textColor" red="0.49124053029999998" green="0.49124053029999998" blue="0.49124053029999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8IE-vu-cbt">
+                                        <rect key="frame" x="17" y="199" width="175" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Property and Entity Names:" id="k05-7F-Cw4">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S1k-dd-ih2">
+                                        <rect key="frame" x="195" y="198" width="95" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="check" title="Decamelize" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="TXv-Hv-Awx">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <binding destination="rqP-BK-AEN" name="value" keyPath="values.CDEUserDefaultsShowsNiceEntityAndPropertyNames" id="pjN-Vx-cq7"/>
+                                        </connections>
+                                    </button>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" preferredMaxLayoutWidth="263" translatesAutoresizingMaskIntoConstraints="NO" id="jBA-Pg-yK8">
+                                        <rect key="frame" x="194" y="156" width="267" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="Converts a camel case name into a human-readable name." id="M2Q-Cw-nWW">
+                                            <font key="font" metaFont="smallSystem"/>
+                                            <color key="textColor" red="0.49124053029999998" green="0.49124053029999998" blue="0.49124053029999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QJr-NQ-wIR">
+                                        <rect key="frame" x="78" y="134" width="114" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Validation Errors:" id="n7c-Mf-21b">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hzj-Cx-6U3">
+                                        <rect key="frame" x="195" y="132" width="265" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="check" title="Automatically resolve validation errors" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="kcC-5O-c8V">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <binding destination="rqP-BK-AEN" name="value" keyPath="values.CDEUserDefaultsAutomaticallyResolvesValidationErrors" id="7tB-kl-Zac"/>
+                                        </connections>
+                                    </button>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" preferredMaxLayoutWidth="263" translatesAutoresizingMaskIntoConstraints="NO" id="DHa-Fs-Rzx">
+                                        <rect key="frame" x="194" y="84" width="267" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="When creating an object Core Data Editor will try to resolve any validation erros for to-one and to-many relationships." id="d6G-Vj-wX2">
+                                            <font key="font" metaFont="smallSystem"/>
+                                            <color key="textColor" red="0.49124053029999998" green="0.49124053029999998" blue="0.49124053029999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" preferredMaxLayoutWidth="241" translatesAutoresizingMaskIntoConstraints="NO" id="0ij-Bn-c8t">
+                                        <rect key="frame" x="196" y="26" width="245" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="Open Project Browser when Core Data Editor starts." id="ilQ-TT-7g6">
+                                            <font key="font" metaFont="smallSystem"/>
+                                            <color key="textColor" red="0.49124053029999998" green="0.49124053029999998" blue="0.49124053029999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Vu-HT-TZR">
+                                        <rect key="frame" x="87" y="62" width="105" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Project Browser:" id="0I1-FV-xUy">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WrC-Yr-2Gr">
+                                        <rect key="frame" x="196" y="60" width="265" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="check" title="Automatically open on launch" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="aZM-Rr-2bK">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <binding destination="rqP-BK-AEN" name="value" keyPath="values.CDEUserDefaultsOpenProjectBrowserOnLaunch" id="Vxi-6c-Yu3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="287" id="T2T-j9-qQw"/>
+                                    <constraint firstAttribute="width" constant="498" id="leE-Tc-drB"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Del-ic-dkO" secondAttribute="trailing" id="Fzy-TL-lcc"/>
+                            <constraint firstAttribute="bottom" secondItem="Del-ic-dkO" secondAttribute="bottom" id="GnF-9e-GSG"/>
+                            <constraint firstItem="Del-ic-dkO" firstAttribute="top" secondItem="zav-v6-iFr" secondAttribute="top" id="Hts-CM-u2V"/>
+                            <constraint firstItem="Del-ic-dkO" firstAttribute="leading" secondItem="zav-v6-iFr" secondAttribute="leading" id="JFb-1a-7C5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="jNb-E8-ekb" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="rqP-BK-AEN"/>
+            </objects>
+            <point key="canvasLocation" x="58" y="108.5"/>
+        </scene>
+    </scenes>
+</document>

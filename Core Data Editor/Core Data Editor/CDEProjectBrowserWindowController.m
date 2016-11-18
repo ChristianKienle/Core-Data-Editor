@@ -191,7 +191,7 @@ typedef void(^ProjectBrowserReloadCompletionHandler)(NSArray *projectBrowserItem
       alert.informativeText = @"The Project Browser has to know where the iPhone Simulator directory is. Please go to the preferences and specify your iPhone Simulator directory in the Integration tab.";
       [alert addButtonWithTitle:@"Open Preferences…"];
       [alert addButtonWithTitle:@"Close Project Browser"];
-      alert.alertStyle = NSInformationalAlertStyle;
+      alert.alertStyle = NSAlertStyleInformational;
         [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
           if(returnCode ==  NSAlertFirstButtonReturn) {
             // show prefs.

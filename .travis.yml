@@ -1,6 +1,6 @@
+osx_image: xcode8.2
 language: objective-c
-osx_image: xcode8
 before_install:
     - brew update
     - if brew outdated | grep -qx xctool; then brew upgrade xctool; fi
-script: xcodebuild -workspace CDE-Workspace.xcworkspace -scheme CDETests test
+script: xctool -workspace CDE-Workspace.xcworkspace -scheme CDETests test

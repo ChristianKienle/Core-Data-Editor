@@ -33,7 +33,7 @@
                                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="3">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="450"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="kJF-AI-wpc">
+                                        <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="6LW-vM-IXi">
                                             <rect key="frame" x="0.0" y="0.0" width="250" height="450"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -140,7 +140,7 @@
                                     <box autoresizesSubviews="NO" boxType="custom" borderType="none" title="Box" titlePosition="noTitle" id="57">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="450"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <view key="contentView" id="d8w-Ul-yLJ">
+                                        <view key="contentView" id="owr-QC-3KY">
                                             <rect key="frame" x="0.0" y="0.0" width="250" height="450"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>

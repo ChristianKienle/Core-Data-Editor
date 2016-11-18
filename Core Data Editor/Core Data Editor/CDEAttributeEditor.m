@@ -31,19 +31,21 @@
     [self.windowController window];
   
   [positioningView.window beginSheet:self.windowController.window completionHandler:^(NSModalResponse returnCode) {
+//    [sheet orderOut:self];
     self.viewController = nil;
     self.windowController = nil;
     self.completionHandler ? self.completionHandler() : nil;
     self.completionHandler = nil;
   }];
 }
+
 #pragma mark - Closing the Editor
 - (BOOL)isShown {
     return (self.windowController != nil);
 }
 
 - (void)close {
-    [NSApp endSheet:self.windowController.window];
+  [self.windowController.window.sheetParent endSheet:self.windowController.window returnCode:NSModalResponseOK];
 }
 
 @end

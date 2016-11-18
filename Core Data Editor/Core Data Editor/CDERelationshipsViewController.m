@@ -134,8 +134,8 @@
     // '8' => code: 28 7
     // '9' => code: 25 8
     // '0' => code: 29 9
-    NSUInteger flags = [event modifierFlags] & NSDeviceIndependentModifierFlagsMask;
-    if( flags == NSCommandKeyMask ){
+    NSUInteger flags = [event modifierFlags] & NSEventModifierFlagDeviceIndependentFlagsMask;
+    if( flags == NSEventModifierFlagCommand ){
         unsigned short keyCode = [event keyCode];
         
         NSDictionary *itemIndexesByKeyCode = @{ @18 : @0,

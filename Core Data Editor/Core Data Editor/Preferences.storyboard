@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="oXe-lp-5jh">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="Afb-kf-Ae2">
+            <objects>
+                <windowController id="oXe-lp-5jh" customClass="PreferencesWC" sceneMemberID="viewController">
+                    <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="cde.preferenceswc" animationBehavior="default" id="cdp-ZF-jUE">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="163" y="199" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+                    </window>
+                    <connections>
+                        <segue destination="GXZ-WF-qfa" kind="relationship" relationship="window.shadowedContentViewController" id="IWj-MM-IJb"/>
+                    </connections>
+                </windowController>
+                <customObject id="S2u-mA-dxa" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-220" y="-165"/>
+        </scene>
+        <!--PreferencesVC-->
+        <scene sceneID="LF3-GS-xVO">
+            <objects>
+                <tabViewController tabStyle="toolbar" id="GXZ-WF-qfa" customClass="PreferencesVC" sceneMemberID="viewController">
+                    <tabViewItems>
+                        <tabViewItem label="General" image="NSPreferencesGeneral" id="OcV-9F-nbM"/>
+                        <tabViewItem label="Formatting" image="formatting-icon" id="VgA-jB-F45"/>
+                        <tabViewItem label="Integration" image="integration-icon" id="cMV-rm-8LZ"/>
+                    </tabViewItems>
+                    <tabView key="tabView" type="noTabsNoBorder" id="HK1-L0-Zo7">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="message"/>
+                        <tabViewItems>
+                            <tabViewItem label="Item 0" identifier="" id="oHA-Tq-mE0">
+                                <view key="view" id="TKj-Qd-sIb">
+                                    <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </tabViewItem>
+                        </tabViewItems>
+                    </tabView>
+                    <connections>
+                        <segue destination="YPB-vv-Hk0" kind="relationship" relationship="tabItems" id="T90-ua-GA6"/>
+                        <segue destination="UEY-wQ-jra" kind="relationship" relationship="tabItems" id="d7J-XP-ndb"/>
+                        <segue destination="Qae-YB-2Py" kind="relationship" relationship="tabItems" id="h8y-0c-eAy"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="gfY-Jo-P3m" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-202" y="303"/>
+        </scene>
+        <!--PreferencesGeneral-->
+        <scene sceneID="rjS-mK-dpX">
+            <objects>
+                <controllerPlaceholder storyboardName="PreferencesGeneral" id="YPB-vv-Hk0" sceneMemberID="viewController"/>
+                <customObject id="qGr-6S-f7O" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-384" y="660"/>
+        </scene>
+        <!--PreferencesFormatting-->
+        <scene sceneID="NOJ-Tg-sTG">
+            <objects>
+                <controllerPlaceholder storyboardName="PreferencesFormatting" id="UEY-wQ-jra" sceneMemberID="viewController"/>
+                <customObject id="vod-sg-gLK" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-121" y="641"/>
+        </scene>
+        <!--PreferencesIntegration-->
+        <scene sceneID="Ccc-HN-JhR">
+            <objects>
+                <controllerPlaceholder storyboardName="PreferencesIntegration" id="Qae-YB-2Py" sceneMemberID="viewController"/>
+                <customObject id="Nph-MH-oeR" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-43" y="674"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="NSPreferencesGeneral" width="32" height="32"/>
+        <image name="formatting-icon" width="32" height="32"/>
+        <image name="integration-icon" width="32" height="32"/>
+    </resources>
+</document>

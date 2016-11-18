@@ -1,10 +1,6 @@
 <a href="https://flattr.com/submit/auto?user_id=ChristianKienle&url=https%3A%2F%2Fgithub.com%2FChristianKienle%2FCore-Data-Editor" target="_blank"><img src="https://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>
 
-# Build Status
-| Branch        | Status           | 
-| ------------- |:-------------:|
-| Master      | [![Build Status](https://travis-ci.org/ChristianKienle/Core-Data-Editor.svg?branch=master)](https://travis-ci.org/ChristianKienle/Core-Data-Editor) |
-| Develop      | [![Build Status](https://travis-ci.org/ChristianKienle/Core-Data-Editor.svg?branch=develop)](https://travis-ci.org/ChristianKienle/Core-Data-Editor)      |
+[![Build Status](https://travis-ci.org/ChristianKienle/Core-Data-Editor.svg?branch=master)](https://travis-ci.org/ChristianKienle/Core-Data-Editor)
 
 # Core Data Editor
 <img src="http://thermal-core.com/img/cde/icon_256x256.png" alt="Core Data Editor Logo" title="Core Data Editor Logo" align="right" />
@@ -21,6 +17,9 @@ If you want to support Core Data Editor you can donate via PayPal to me@christia
 <a href="https://flattr.com/submit/auto?user_id=ChristianKienle&url=https%3A%2F%2Fgithub.com%2FChristianKienle%2FCore-Data-Editor" target="_blank"><img src="https://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>
 
 Thanks.
+
+# Why Open Source?
+I, the maintainer and original developer of Core Data Editor have become (seriously) sick. The disease I have will not go away soon. My ability to work and take care about Core Data Editor is severely limited. I don't want Core Data Editor to just die so I have decided to make it open source. To make it clear: If you send me a (good) pull request I will accept it. I will also try to answer questions and to contribute myself. The thing is I just can't keep up with bug fixing, feature requests (...) on my own anymore. I am too sick. In addition: Open Source rocks.
 
 # Building Core Data Editor
 Download the sources, open the workspace in Xcode and hit build and run. Done.
@@ -78,7 +77,6 @@ Core Data Editor has the following third party dependencies:
 * [danydev](https://github.com/danydev)
 * [Roberto Dries](https://github.com/robertodries92)
 * [Mitch Cohen](https://github.com/mitchcohen)
-
 # Contact
 [Christian Kienle (me@christian-kienle.de)](mailto:me@christian-kienle.de) 
 

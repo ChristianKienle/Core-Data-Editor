@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "0810"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AB7EF6AD1DB4028C0062DD0C"
-               BuildableName = "CDETests.xctest"
-               BlueprintName = "CDETests"
+               BlueprintIdentifier = "ABBEA8C0176620E10024A9D2"
+               BuildableName = "Core Data Editor Tests.xctest"
+               BlueprintName = "Core Data Editor Tests"
                ReferencedContainer = "container:Core Data Editor/Core Data Editor.xcodeproj">
             </BuildableReference>
          </TestableReference>
