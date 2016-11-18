@@ -3,7 +3,7 @@
 @implementation NSPasteboard (CDEAdditions)
 
 #pragma mark Getting URLs from the Pasteboard
-- (NSArray *)cde_URLs {
+- (NSArray<NSURL*> *)cde_URLs {
    NSArray *classes = @[[NSURL class]];
    NSDictionary *options = @{NSPasteboardURLReadingFileURLsOnlyKey: @YES};
    NSArray *fileURLs = [self readObjectsForClasses:classes options:options];

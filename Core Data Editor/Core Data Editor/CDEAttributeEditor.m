@@ -31,7 +31,6 @@
     [self.windowController window];
   
   [positioningView.window beginSheet:self.windowController.window completionHandler:^(NSModalResponse returnCode) {
-//    [sheet orderOut:self];
     self.viewController = nil;
     self.windowController = nil;
     self.completionHandler ? self.completionHandler() : nil;

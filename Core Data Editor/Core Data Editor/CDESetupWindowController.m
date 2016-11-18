@@ -15,14 +15,11 @@
 
 - (instancetype)init {
     self = [super initWithWindowNibName:@"CDESetupWindowController" owner:self];
-    if(self) {
-    
-    }
+    if(self) { }
     return self;
 }
 
-- (void)windowDidLoad
-{
+- (void)windowDidLoad {
     [super windowDidLoad];
     
     self.simulatorPathPopupButton.otherItemSelectedHandler = ^(CDEPathPickerPopUpButton *sender) {
@@ -32,7 +29,6 @@
         [self showDerivdedDataPicker:sender];
     };
 }
-
 
 - (IBAction)showSimulatorDirectoryPicker:(id)sender {
     NSOpenPanel *panel = [NSOpenPanel openPanel];
@@ -60,7 +56,6 @@
         }
     }];
 }
-
 
 #pragma mark - Actions
 - (IBAction)beginSetupProcess:(id)sender {

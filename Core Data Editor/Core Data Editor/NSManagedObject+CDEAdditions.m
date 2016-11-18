@@ -5,7 +5,7 @@
 
 @implementation NSManagedObject (CDEAdditions)
 
-- (NSArray *)validationErrors_cde {
+- (NSArray<NSError*> *)validationErrors_cde {
     BOOL isValid = YES;
     NSError *error = nil;
     if(self.isInserted) {
@@ -30,8 +30,8 @@
 }
 
 #pragma mark - CSV
-- (NSArray *)CSVValuesForAttributeNames_cde:(NSArray *)attributeNames {
-    NSMutableArray *result = [NSMutableArray new];
+- (NSArray<NSString*> *)CSVValuesForAttributeNames_cde:(NSArray<NSString*> *)attributeNames {
+    NSMutableArray<NSString*> *result = [NSMutableArray new];
     for(NSString *attributeName  in attributeNames) {
         id value = [self valueForKey:attributeName];
         if(value == nil) {

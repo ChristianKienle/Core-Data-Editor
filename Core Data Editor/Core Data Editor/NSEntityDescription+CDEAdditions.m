@@ -3,7 +3,7 @@
 @implementation NSEntityDescription (CDEAdditions)
 
 #pragma mark - Convenience
-- (NSArray *)supportedAttributes_cde {
+- (NSArray<NSAttributeDescription*> *)supportedAttributes_cde {
     NSMutableArray *result = [NSMutableArray new];
     for(NSAttributeDescription *attribute in [[self attributesByName] allValues]) {
         // Ignore transient properties
@@ -20,7 +20,7 @@
 }
 
 
-- (NSArray *)sortedToOneRelationships_cde {
+- (NSArray<NSRelationshipDescription*> *)sortedToOneRelationships_cde {
     NSMutableArray *result = [NSMutableArray new];
     [self.relationshipsByName enumerateKeysAndObjectsUsingBlock:^(id key, NSRelationshipDescription *relation, BOOL *stop) {
         if(relation.isToMany) {
@@ -33,7 +33,7 @@
     }];
 }
 
-- (NSArray *)sortedRelationships_cde {
+- (NSArray<NSRelationshipDescription*> *)sortedRelationships_cde {
     return [self.relationshipsByName.allValues sortedArrayWithOptions:NSSortStable usingComparator:^NSComparisonResult(NSRelationshipDescription *relationA, NSRelationshipDescription *relationB) {
         return [relationA.name localizedStandardCompare:relationB.name];
     }];
@@ -46,7 +46,7 @@
 #pragma mark - CSV
 
 // This method filters out any non supported property names and also respects the sorting of propertyNames
-- (NSArray *)CSVValuesForEachManagedObjectInArray:(NSArray *)objects forPropertyNames:(NSArray *)propertyNames includeHeaderValues_cde:(BOOL)includeHeaderValues {
+- (NSArray<NSArray<NSString*>*> *)CSVValuesForEachManagedObjectInArray:(NSArray *)objects forPropertyNames:(NSArray *)propertyNames includeHeaderValues_cde:(BOOL)includeHeaderValues {
     NSParameterAssert(objects);
     NSParameterAssert(propertyNames);
 
@@ -81,7 +81,7 @@
     return result;
 }
 
-- (NSArray *)supportedCSVAttributes_cde {
+- (NSArray<NSAttributeDescription*> *)supportedCSVAttributes_cde {
     NSMutableArray *result = [NSMutableArray new];
     for(NSAttributeDescription *attribute in self.supportedAttributes_cde) {
         if(attribute.isSupportedCSVAttribute_cde) {

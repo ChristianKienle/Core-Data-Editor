@@ -3,7 +3,7 @@
 
 @implementation NSURL (ProjectBrowser)
 
-- (NSManagedObjectModel *)transformedManagedObjectModel {
+- (nullable NSManagedObjectModel *)transformedManagedObjectModel {
   BOOL isModel = [self isCompiledManagedObjectModelFile_cde];
   if(isModel == NO) {
     return nil;
@@ -32,7 +32,7 @@
   return transformedModel;
 }
 
-- (NSDictionary *)persistentStoreMetadata {
+- (nullable NSDictionary<NSString *, id> *)persistentStoreMetadata {
   BOOL isData = [self isPublicDataFile_cde];
   if(isData == NO) {
     return nil;
@@ -67,7 +67,7 @@
 
 @implementation NSDirectoryEnumerator (ProjectBrowser)
 
-- (void)getMetadataByStorePath:(NSDictionary **)outMetadataByStorePath modelByModelPath:(NSDictionary **)outModelByModelPath {
+- (void)getMetadataByStorePath:(NSDictionary<NSString*, NSDictionary*> **)outMetadataByStorePath modelByModelPath:(NSDictionary<NSString*, NSManagedObjectModel*> **)outModelByModelPath {
   NSMutableDictionary *metadataByStorePath = [NSMutableDictionary new];
   NSMutableDictionary *modelByModelPath = [NSMutableDictionary new];
   

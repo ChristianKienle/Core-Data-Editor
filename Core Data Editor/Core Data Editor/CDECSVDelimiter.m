@@ -9,7 +9,7 @@ typedef enum {
 @interface CDECSVDelimiter ()
 
 #pragma mark Getting Delimiter Instances
-+ (NSDictionary *)delimiterStringValueForMenuItemTagMapping;
++ (NSDictionary<NSNumber*, NSString*> *)delimiterStringValueForMenuItemTagMapping;
 
 #pragma mark Creating
 - (id)initWithStringRepresentation:(NSString *)stringRepresentation_ menuItemTag:(NSInteger)menuItemTag_;
@@ -23,7 +23,7 @@ typedef enum {
 @implementation CDECSVDelimiter
 
 #pragma mark Getting Delimiter Instances
-+ (NSDictionary *)delimiterStringValueForMenuItemTagMapping {
++ (NSDictionary<NSNumber*, NSString*> *)delimiterStringValueForMenuItemTagMapping {
     NSMutableDictionary *result = [NSMutableDictionary dictionary];
     result[@(CDECSVDelimiterMenuItemTagComma)] = @",";
     result[@(CDECSVDelimiterMenuItemTagSemicolon)] = @";";
