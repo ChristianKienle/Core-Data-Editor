@@ -3,19 +3,19 @@
 #import "NSError+CDEValidation.h"
 
 @interface NSManagedObjectContext (CDEValidationErrorsViewController)
-@property (nonatomic, readonly) NSSet *changedObjects_cde;
+@property (nonatomic, readonly) NSSet<NSManagedObject*> *changedObjects_cde;
 @property (nonatomic, readonly) NSDictionary *validationErrorsByManagedObjectURI_cde;
 
 @end
 @implementation NSManagedObjectContext (CDEValidationErrorsViewController)
-- (NSSet *)changedObjects_cde {
+- (NSSet<NSManagedObject*> *)changedObjects_cde {
     NSMutableSet *result = [NSMutableSet new];
     [result unionSet:self.insertedObjects];
     [result unionSet:self.updatedObjects];
     [result unionSet:self.deletedObjects];
     return result;
 }
-- (NSDictionary *)validationErrorsByManagedObjectURI_cde {
+- (NSDictionary<NSURL*, NSArray<NSError*>*> *)validationErrorsByManagedObjectURI_cde {
     NSMutableDictionary *result = [NSMutableDictionary new];
     NSSet *changedObjects = self.changedObjects_cde;
     for(NSManagedObject *object in changedObjects) {
@@ -27,7 +27,7 @@
     }
     return result;
 }
-- (NSArray *)validationErrorsByManagedObjectURIInArray_cde {
+- (NSArray<NSDictionary*> *)validationErrorsByManagedObjectURIInArray_cde {
     NSMutableArray *result = [NSMutableArray new];
     
     NSDictionary *validationErrorsByManagedObjectURI = [self validationErrorsByManagedObjectURI_cde];
@@ -93,7 +93,6 @@
 - (void)loadView {
     [super loadView];
     self.tableView.floatsGroupRows = NO;
-  //self.view.allowsVibrancy = YES;
 }
 
 #pragma mark - Private

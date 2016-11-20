@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="mMt-1O-wkv">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Preferences IntegrationVC-->
+        <scene sceneID="rMZ-qZ-5vL">
+            <objects>
+                <viewController id="mMt-1O-wkv" customClass="PreferencesIntegrationVC" sceneMemberID="viewController">
+                    <view key="view" id="YyU-oa-U4q">
+                        <rect key="frame" x="0.0" y="0.0" width="505" height="402"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="i8m-uU-8CW">
+                                <rect key="frame" x="0.0" y="0.0" width="505" height="402"/>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" preferredMaxLayoutWidth="263" translatesAutoresizingMaskIntoConstraints="NO" id="AUu-cU-vZt">
+                                        <rect key="frame" x="217" y="240" width="267" height="112"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" controlSize="small" selectable="YES" sendsActionOnEndEditing="YES" id="4vf-jU-r4R">
+                                            <font key="font" metaFont="smallSystem"/>
+                                            <string key="title">If you tell Core Data Editor where your derived data directory is you can then drop store files on the dock icon and Core Data Editor will automatically try to find a matching model by looking at every model (recursively) in your derived data directory. The derived data directory is usually located at ~/Library/Developer/Xcode/DerivedData.</string>
+                                            <color key="textColor" red="0.49124053029999998" green="0.49124053029999998" blue="0.49124053029999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" preferredMaxLayoutWidth="263" translatesAutoresizingMaskIntoConstraints="NO" id="VCi-lm-P8P">
+                                        <rect key="frame" x="216" y="48" width="267" height="140"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" controlSize="small" selectable="YES" sendsActionOnEndEditing="YES" id="kx2-Tp-4mW">
+                                            <font key="font" metaFont="smallSystem"/>
+                                            <string key="title">Please specify your iPhone Simulator directory. This directory is usually located in ~/Library/Application Support/iPhone Simulator/. Specifying your iPhone Simulator directory enables the project browser feature. The project browser automatically finds compatible SQLite stores and managed object models and let's you quickly create a Core Data Editor projects. You access the project browser from the "Window | Project Browser" menu item.</string>
+                                            <color key="textColor" red="0.49124053029999998" green="0.49124053029999998" blue="0.49124053029999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H7K-Uv-OVw" customClass="CDEPathPickerPopUpButton">
+                                        <rect key="frame" x="217" y="358" width="266" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WfM-DB-feH">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" title="OtherViews" id="j4I-lV-rAt"/>
+                                        </popUpButtonCell>
+                                    </popUpButton>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v8m-pC-kOj">
+                                        <rect key="frame" x="18" y="198" width="194" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="iPhone Simulator Directory:" id="u2A-kF-0nR">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cf6-uq-08c" customClass="CDEPathPickerPopUpButton">
+                                        <rect key="frame" x="217" y="194" width="266" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Mvf-Ex-O1P">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" title="OtherViews" id="PT2-YM-cO0"/>
+                                        </popUpButtonCell>
+                                    </popUpButton>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uqr-SN-chS">
+                                        <rect key="frame" x="19" y="365" width="194" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Xcode Derived Data Directory:" id="eDK-BT-ejB">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="402" id="Wql-UJ-zXZ"/>
+                                    <constraint firstAttribute="width" constant="505" id="wMd-xx-F9f"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="i8m-uU-8CW" firstAttribute="top" secondItem="YyU-oa-U4q" secondAttribute="top" id="RLl-8g-6jv"/>
+                            <constraint firstAttribute="bottom" secondItem="i8m-uU-8CW" secondAttribute="bottom" id="iEf-0i-FsD"/>
+                            <constraint firstItem="i8m-uU-8CW" firstAttribute="leading" secondItem="YyU-oa-U4q" secondAttribute="leading" id="p0C-Qe-z3Q"/>
+                            <constraint firstAttribute="trailing" secondItem="i8m-uU-8CW" secondAttribute="trailing" id="pxb-Lw-aMN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buildDirectoryPopUpButton" destination="H7K-Uv-OVw" id="Oqs-jF-xVr"/>
+                        <outlet property="simulatorDirectoryPopUpButton" destination="Cf6-uq-08c" id="Bgd-I3-kE2"/>
+                    </connections>
+                </viewController>
+                <customObject id="vVS-hv-wR8" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="174.5" y="269"/>
+        </scene>
+    </scenes>
+</document>

@@ -7,7 +7,7 @@
 @property (nonatomic, readonly) NSAttributeDescription *invalidAttribute_cde;
 @property (nonatomic, readonly) NSManagedObject *invalidManagedObject_cde;
 @property (nonatomic, readonly) NSEntityDescription *entityDescription_cde;
-@property (nonatomic, readonly) NSArray *detailedErrors_cde;
+@property (nonatomic, readonly) NSArray<NSError*> *detailedErrors_cde;
 @property (nonatomic, readonly) BOOL containsDetailedErrors_cde;
 
 @end

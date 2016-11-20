@@ -1,7 +1,6 @@
 #import "NSError-CDEAdditions.h"
 
 @implementation NSError (CDEAdditions)
-//NSLocalizedRecoverySuggestionErrorKey = body, description = title
 #pragma mark Creating
 + (id)newErrorWithCode:(NSInteger)code localizedDescription:(NSString *)localizedDescription localizedRecoverySuggestion_cde:(NSString *)localizedRecoverySuggestion {
     NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];

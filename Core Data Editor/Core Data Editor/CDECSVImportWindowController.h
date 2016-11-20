@@ -10,6 +10,6 @@ typedef void(^CDECSVImportWindowControllerCompletionHandler)(CDECSVImportWindowC
 @property (nonatomic, copy, readonly) NSArray *entityDescriptions;
 
 #pragma mark Presenting the Window Controller
-- (void)beginSheetModalForWindow:(NSWindow *)window entityDescriptions:(NSArray *)entityDescriptions selectedEntityDescription:(NSEntityDescription *)selectedEntityDescription completionHandler:(CDECSVImportWindowControllerCompletionHandler)completionHandler;
+- (void)beginSheetModalForWindow:(NSWindow *)window entityDescriptions:(NSArray<NSEntityDescription*> *)entityDescriptions selectedEntityDescription:(NSEntityDescription *)selectedEntityDescription completionHandler:(CDECSVImportWindowControllerCompletionHandler)completionHandler;
 
 @end

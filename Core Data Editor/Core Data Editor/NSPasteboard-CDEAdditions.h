@@ -3,7 +3,7 @@
 @interface NSPasteboard (CDEAdditions)
 
 #pragma mark Getting URLs from the Pasteboard
-- (NSArray *)cde_URLs;
+- (NSArray<NSURL*> *)cde_URLs;
 - (NSURL *)cde_URL;
 
 @end

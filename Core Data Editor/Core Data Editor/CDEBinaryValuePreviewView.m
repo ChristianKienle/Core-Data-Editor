@@ -76,11 +76,6 @@
         actionImageOrigin.x = NSMidX(boxRect) - (0.5 * actionSize.width);
         actionImageOrigin.y = NSMidY(boxRect) - (0.5 * actionSize.height);
         [NSGraphicsContext saveGraphicsState];
-//        NSShadow *shadow = [NSShadow new];
-//        [shadow setShadowBlurRadius:0.0];
-//        [shadow setShadowColor:[NSColor whiteColor]];
-//        [shadow setShadowOffset:NSMakeSize(0.0, -1.5)];
-//        [shadow set];
         [actionImage drawAtPoint:actionImageOrigin fromRect:NSZeroRect operation:NSCompositingOperationSourceAtop fraction:1.0];
                 
         [NSGraphicsContext restoreGraphicsState];

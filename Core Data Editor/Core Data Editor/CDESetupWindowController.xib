@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9059"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="CDESetupWindowController">
@@ -30,7 +32,7 @@
                             <tabViewItem label="Welcome" identifier="1" id="18">
                                 <view key="view" id="19">
                                     <rect key="frame" x="10" y="7" width="616" height="311"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField verticalHuggingPriority="750" id="11">
                                             <rect key="frame" x="14" y="82" width="588" height="18"/>
@@ -120,7 +122,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" selectable="YES" sendsActionOnEndEditing="YES" id="37">
                                                 <font key="font" metaFont="smallSystem"/>
-                                                <string key="title">Please specify your iPhone Simulator directory. This directory is usually located in ~/Library/Developer/CoreSimulator/. Specifying your iPhone Simulator directory enables the project browser feature. The project browser automatically finds compatible SQLite stores and managed object models and let's you quickly create a Core Data Editor projects. You access the project browser from the "Window | Project Browser" menu item.</string>
+                                                <string key="title">Please specify your iPhone Simulator directory. This directory is usually located in ~/Library/Application Support/iPhone Simulator/. Specifying your iPhone Simulator directory enables the project browser feature. The project browser automatically finds compatible SQLite stores and managed object models and let's you quickly create a Core Data Editor projects. You access the project browser from the "Window | Project Browser" menu item.</string>
                                                 <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -147,12 +149,9 @@
                                                 <action selector="selectPreviousTabViewItem:" target="17" id="96"/>
                                             </connections>
                                         </button>
-                                        <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="87">
+                                        <box verticalHuggingPriority="750" boxType="separator" id="87">
                                             <rect key="frame" x="14" y="235" width="588" height="5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <font key="titleFont" metaFont="system"/>
                                         </box>
                                         <imageView id="92">
                                             <rect key="frame" x="69" y="86" width="142" height="110"/>
@@ -165,7 +164,7 @@
                             <tabViewItem label="Derived Data" identifier="" id="22">
                                 <view key="view" id="23">
                                     <rect key="frame" x="10" y="7" width="616" height="311"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView id="48">
                                             <rect key="frame" x="14" y="246" width="50" height="50"/>
@@ -231,12 +230,9 @@
                                                 <action selector="selectPreviousTabViewItem:" target="17" id="97"/>
                                             </connections>
                                         </button>
-                                        <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="88">
+                                        <box verticalHuggingPriority="750" boxType="separator" id="88">
                                             <rect key="frame" x="14" y="235" width="588" height="5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <font key="titleFont" metaFont="system"/>
                                         </box>
                                     </subviews>
                                 </view>

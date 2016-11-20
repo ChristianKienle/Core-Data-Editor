@@ -37,13 +37,14 @@
     self.completionHandler = nil;
   }];
 }
+
 #pragma mark - Closing the Editor
 - (BOOL)isShown {
     return (self.windowController != nil);
 }
 
 - (void)close {
-    [NSApp endSheet:self.windowController.window];
+  [self.windowController.window.sheetParent endSheet:self.windowController.window returnCode:NSModalResponseOK];
 }
 
 @end

@@ -62,7 +62,7 @@
 - (NSEntityDescription *)entityDescription_cde {
     return self.invalidManagedObject_cde.entity;
 }
-- (NSArray *)detailedErrors_cde {
+- (NSArray<NSError*> *)detailedErrors_cde {
     if(self.code != NSValidationMultipleErrorsError) {
         return @[];
     }

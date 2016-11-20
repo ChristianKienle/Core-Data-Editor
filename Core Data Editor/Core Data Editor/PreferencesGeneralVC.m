@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Christian Kienle. All rights reserved.
 //
 
-#import "CDEPreferencesMiscViewController.h"
+#import "PreferencesGeneralVC.h"
 
-@interface CDEPreferencesMiscViewController ()
+@interface PreferencesGeneralVC ()
 
 @end
 
-@implementation CDEPreferencesMiscViewController
+@implementation PreferencesGeneralVC
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

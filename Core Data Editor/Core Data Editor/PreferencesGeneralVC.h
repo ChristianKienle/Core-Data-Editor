@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface CDEPreferencesMiscViewController : NSViewController
+@interface PreferencesGeneralVC : NSViewController
 
 @end

@@ -1,8 +1,8 @@
-#import "CDEPreferencesAutomaticProjectCreationViewController.h"
+#import "PreferencesIntegrationVC.h"
 #import "NSURL+CDEAdditions.h"
 #import "CDEPathPickerPopUpButton.h"
 
-@interface CDEPreferencesAutomaticProjectCreationViewController ()
+@interface PreferencesIntegrationVC ()
 
 #pragma mark - Properties
 @property (nonatomic, weak) IBOutlet CDEPathPickerPopUpButton *buildDirectoryPopUpButton;
@@ -10,7 +10,7 @@
 
 @end
 
-@implementation CDEPreferencesAutomaticProjectCreationViewController
+@implementation PreferencesIntegrationVC
 
 - (void)loadView {
     [super loadView];
