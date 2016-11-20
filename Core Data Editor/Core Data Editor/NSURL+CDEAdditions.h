@@ -2,10 +2,6 @@
 
 @interface NSURL (CDEAdditions)
 
-#pragma mark - Bookmarks (Convenience)
-+ (NSURL *)URLByResolvingBookmarkData:(NSData *)data error_cde:(NSError **)error;
-- (NSData *)bookmarkDataAndGetError_cde:(NSError **)error;
-
 #pragma mark - UTI
 - (NSString *)typeOfFileURLAndGetError_cde:(NSError **)error;
 - (BOOL)isCompiledManagedObjectModelFile_cde;

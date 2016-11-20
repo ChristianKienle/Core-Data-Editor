@@ -3,33 +3,6 @@
 
 @implementation NSURL (CDEAdditions)
 
-#pragma mark - Bookmarks (Convenience)
-+ (NSURL *)URLByResolvingBookmarkData:(NSData *)data error_cde:(NSError **)error {
-    NSParameterAssert(data);
-    
-    return [NSURL URLByResolvingBookmarkData:data
-                                     options:NSURLBookmarkResolutionWithoutUI
-                               relativeToURL:nil
-                         bookmarkDataIsStale:NULL
-                                       error:error];
-}
-
-- (NSData *)bookmarkDataAndGetError_cde:(NSError **)error {
-    NSError *localError = nil;
-    NSURL *pathOnlyURL = [NSURL fileURLWithPath:[self path]];
-    NSData *result = [pathOnlyURL bookmarkDataWithOptions:NSURLBookmarkCreationSuitableForBookmarkFile
-                           includingResourceValuesForKeys:nil
-                                            relativeToURL:nil
-                                                    error:&localError];
-    if(result == nil) {
-        if(error != NULL) {
-            *error = localError;
-        }
-        return nil;
-    }
-    return result;
-}
-
 #pragma mark - UTI
 - (NSString *)typeOfFileURLAndGetError_cde:(NSError **)error {
     NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
