@@ -24,7 +24,12 @@ const struct CDEUserDefaultsNotifications CDEUserDefaultsNotifications = {
 
 #pragma mark - Register Defaults
 + (void)registerCoreDataEditorDefaults_cde {
-    NSDictionary *defaults = @{ CDEUserDefaultsKeys.showsNameOfEntityInObjectIDColumn : @NO,
+  
+  NSURL *buildProductsDirectory = [NSURL fileURLWithPath:[@"~/Library/Developer/Xcode/DerivedData/" stringByExpandingTildeInPath]];
+  NSURL *simulatorDirectory = [NSURL fileURLWithPath:[@"~/Library/Developer/CoreSimulator/" stringByExpandingTildeInPath]];
+  NSDictionary *defaults = @{   CDEUserDefaultsKeys.buildProductsDirectory : buildProductsDirectory,
+                                CDEUserDefaultsKeys.simulatorDirectory : simulatorDirectory,
+                                CDEUserDefaultsKeys.showsNameOfEntityInObjectIDColumn : @NO,
                                 CDEUserDefaultsKeys.numberOfDecimals : @2,
                                 CDEUserDefaultsKeys.dateFormatterDateStyle : @(NSDateFormatterShortStyle),
                                 CDEUserDefaultsKeys.dateFormatterTimeStyle : @(NSDateFormatterShortStyle),

@@ -51,7 +51,8 @@
   if(self.projectBrowserWindowController == nil) {
     self.projectBrowserWindowController = [CDEProjectBrowserWindowController new];
   }
-  [self.projectBrowserWindowController showWithProjectDirectoryURL:self.iPhoneSimulatorDirectory];
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  [self.projectBrowserWindowController showWithProjectDirectoryURL:defaults.simulatorDirectory_cde];
 }
 
 #pragma mark NSApplicationDelegate

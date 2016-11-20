@@ -14,71 +14,75 @@
 @implementation CDESetupWindowController
 
 - (instancetype)init {
-    self = [super initWithWindowNibName:@"CDESetupWindowController" owner:self];
-    if(self) { }
-    return self;
+  self = [super initWithWindowNibName:@"CDESetupWindowController" owner:self];
+  if(self) { }
+  return self;
 }
 
 - (void)windowDidLoad {
-    [super windowDidLoad];
-    
-    self.simulatorPathPopupButton.otherItemSelectedHandler = ^(CDEPathPickerPopUpButton *sender) {
-        [self showSimulatorDirectoryPicker:sender];
-    };
-    self.derivedDataPathPopupButton.otherItemSelectedHandler = ^(CDEPathPickerPopUpButton *sender) {
-        [self showDerivdedDataPicker:sender];
-    };
+  [super windowDidLoad];
+  
+  self.simulatorPathPopupButton.otherItemSelectedHandler = ^(CDEPathPickerPopUpButton *sender) {
+    [self showSimulatorDirectoryPicker:sender];
+  };
+  self.derivedDataPathPopupButton.otherItemSelectedHandler = ^(CDEPathPickerPopUpButton *sender) {
+    [self showDerivdedDataPicker:sender];
+  };
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  self.simulatorPathPopupButton.URL = defaults.simulatorDirectory_cde;
+  self.derivedDataPathPopupButton.URL = defaults.buildProductsDirectory_cde;
+  
 }
 
 - (IBAction)showSimulatorDirectoryPicker:(id)sender {
-    NSOpenPanel *panel = [NSOpenPanel openPanel];
-    [panel setCanChooseDirectories:YES];
-    [panel setCanChooseFiles:NO];
-    [panel setShowsHiddenFiles:YES];
-    [panel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
-        if(result == NSFileHandlingPanelOKButton) {
-            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-            defaults.simulatorDirectory_cde = panel.URL;
-            self.simulatorPathPopupButton.URL = defaults.simulatorDirectory_cde;
-        }
-    }];
+  NSOpenPanel *panel = [NSOpenPanel openPanel];
+  [panel setCanChooseDirectories:YES];
+  [panel setCanChooseFiles:NO];
+  [panel setShowsHiddenFiles:YES];
+  [panel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
+    if(result == NSFileHandlingPanelOKButton) {
+      NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+      defaults.simulatorDirectory_cde = panel.URL;
+      self.simulatorPathPopupButton.URL = defaults.simulatorDirectory_cde;
+    }
+  }];
 }
 
 - (IBAction)showDerivdedDataPicker:(id)sender {
-    NSOpenPanel *panel = [NSOpenPanel openPanel];
-    [panel setCanChooseDirectories:YES];
-    [panel setCanChooseFiles:NO];
-    [panel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
-        if(result == NSFileHandlingPanelOKButton) {
-            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-            defaults.buildProductsDirectory_cde = panel.URL;
-            self.derivedDataPathPopupButton.URL = defaults.buildProductsDirectory_cde;
-        }
-    }];
+  NSOpenPanel *panel = [NSOpenPanel openPanel];
+  [panel setCanChooseDirectories:YES];
+  [panel setCanChooseFiles:NO];
+  [panel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
+    if(result == NSFileHandlingPanelOKButton) {
+      NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+      defaults.buildProductsDirectory_cde = panel.URL;
+      self.derivedDataPathPopupButton.URL = defaults.buildProductsDirectory_cde;
+    }
+  }];
 }
 
 #pragma mark - Actions
 - (IBAction)beginSetupProcess:(id)sender {
-    [self.tabView selectNextTabViewItem:sender];
+  [self.tabView selectNextTabViewItem:sender];
 }
 
 - (IBAction)showBuildProductsSetupTab:(id)sender {
-    [self.tabView selectNextTabViewItem:sender];
+  [self.tabView selectNextTabViewItem:sender];
 }
 
 - (IBAction)showSummary:(id)sender {
-    [self.tabView selectNextTabViewItem:sender];
-    [[NSUserDefaults standardUserDefaults] setApplicationNeedsSetup_cde:NO];
+  [self.tabView selectNextTabViewItem:sender];
+  [[NSUserDefaults standardUserDefaults] setApplicationNeedsSetup_cde:NO];
 }
 
 - (IBAction)openProjectBrowser:(id)sender {
-    [self.window orderOut:self];
-    [(CDEApplicationDelegate *)[NSApp delegate] showProjectBrowser:sender];
+  [self.window orderOut:self];
+  [(CDEApplicationDelegate *)[NSApp delegate] showProjectBrowser:sender];
 }
 
 - (IBAction)createNewProject:(id)sender {
-    [self.window orderOut:self];
-    [[NSDocumentController sharedDocumentController] newDocument:self];
+  [self.window orderOut:self];
+  [[NSDocumentController sharedDocumentController] newDocument:self];
 }
 
 @end
