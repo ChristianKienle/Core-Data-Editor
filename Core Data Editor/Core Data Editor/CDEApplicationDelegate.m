@@ -57,7 +57,6 @@
 #pragma mark NSApplicationDelegate
 - (void)applicationWillFinishLaunching:(NSNotification *)notification {
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-  [defaults setObject:@"HELLO" forKey:@"AAAAAAAAAAAAAA"];
   [[NSNotificationCenter defaultCenter] addObserverForName:CDEUserDefaultsNotifications.didChangeSimulatorDirectory object:defaults queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
     self.iPhoneSimulatorDirectory = defaults.simulatorDirectory_cde;
     [self.projectBrowserWindowController updateProjectDirectoryURL:self.iPhoneSimulatorDirectory];
