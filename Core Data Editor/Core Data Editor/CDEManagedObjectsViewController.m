@@ -201,6 +201,7 @@
   [self updateAddAndRemoveButtons];
   [self managedObjectsViewControllerDidChangeContents];
   NSInteger row = [self.dataCoordinator indexOfManagedObject:addedObject];
+  [self.tableView reloadData];
   [self.tableView scrollRowToVisible:row];
 }
 
@@ -484,6 +485,5 @@
 -(void)viewDidDisappear: (BOOL)animated
 {
 }
-
 
 @end

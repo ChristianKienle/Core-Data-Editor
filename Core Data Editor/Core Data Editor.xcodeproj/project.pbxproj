@@ -64,6 +64,7 @@
 		AB3B07C91775FCE2000855B0 /* CDEBoolValueTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B07C81775FCE2000855B0 /* CDEBoolValueTableCellView.m */; };
 		AB3B07CB1775FCF2000855B0 /* CDEBoolValueTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB3B07CA1775FCF2000855B0 /* CDEBoolValueTableCellView.xib */; };
 		AB3B07CE17760E23000855B0 /* NSTableCellView+JKNibLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B07CD17760E23000855B0 /* NSTableCellView+JKNibLoading.m */; };
+		AB4068FA1DE1C5DE001F83E9 /* FilteringArray.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4068F91DE1C5DE001F83E9 /* FilteringArray.m */; };
 		AB531222179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB531221179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.m */; };
 		AB5583A5176751AE005C002C /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = AB5583A4176751AE005C002C /* icon.iconset */; };
 		AB59DA401DDF42AA00A19963 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB59DA3F1DDF42AA00A19963 /* Main.storyboard */; };
@@ -318,6 +319,8 @@
 		AB3B07CA1775FCF2000855B0 /* CDEBoolValueTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDEBoolValueTableCellView.xib; sourceTree = "<group>"; };
 		AB3B07CC17760E22000855B0 /* NSTableCellView+JKNibLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTableCellView+JKNibLoading.h"; sourceTree = "<group>"; };
 		AB3B07CD17760E23000855B0 /* NSTableCellView+JKNibLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTableCellView+JKNibLoading.m"; sourceTree = "<group>"; };
+		AB4068F81DE1C5DE001F83E9 /* FilteringArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilteringArray.h; sourceTree = "<group>"; };
+		AB4068F91DE1C5DE001F83E9 /* FilteringArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilteringArray.m; sourceTree = "<group>"; };
 		AB531220179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTableColumn+CDERequestDataCoordinator.h"; sourceTree = "<group>"; };
 		AB531221179953B300529EF7 /* NSTableColumn+CDERequestDataCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTableColumn+CDERequestDataCoordinator.m"; sourceTree = "<group>"; };
 		AB5583A4176751AE005C002C /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = icon.iconset; sourceTree = "<group>"; };
@@ -840,6 +843,8 @@
 			children = (
 				AB15E73F177B690B00FA113E /* CDEEntityRequestDataCoordinator.h */,
 				AB15E740177B690B00FA113E /* CDEEntityRequestDataCoordinator.m */,
+				AB4068F81DE1C5DE001F83E9 /* FilteringArray.h */,
+				AB4068F91DE1C5DE001F83E9 /* FilteringArray.m */,
 			);
 			name = "Entity Coordinator";
 			sourceTree = "<group>";
@@ -2301,6 +2306,7 @@
 				ABB225D717B92B230024FE4F /* CDEProjectBrowserWindowController.m in Sources */,
 				ABB225DC17B939E60024FE4F /* CDEProjectBrowserItem.m in Sources */,
 				ABB225DF17B940CE0024FE4F /* CDEProjectBrowserItemTableCellView.m in Sources */,
+				AB4068FA1DE1C5DE001F83E9 /* FilteringArray.m in Sources */,
 				AB36447E17BA47D4004ADAAC /* CDESetupWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
