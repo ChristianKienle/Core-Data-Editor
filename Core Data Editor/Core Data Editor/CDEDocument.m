@@ -69,6 +69,10 @@
                                              }];
 }
 
+- (IBAction)refresh:(id)sender {
+  [self.editorViewController setConfiguration:self.configuration modelURL:self.modelURL storeURL:self.storeURL needsReload:YES error:NULL];
+}
+
 
 #pragma mark - NSDocument
 - (instancetype)init {
