@@ -4,7 +4,7 @@
 @interface CDEDateAttributeViewController ()
 
 #pragma mark Properties
-@property (nonatomic, retain) CDEDatePickerWindow *datePickerWindow;
+@property (strong) CDEDatePickerWindow *datePickerWindow;
 
 @end
 
