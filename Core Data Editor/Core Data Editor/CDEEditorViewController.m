@@ -141,13 +141,15 @@
 }
 
 #pragma mark - Displaying a Configuration
-- (BOOL)setConfiguration:(CDEConfiguration *)configuration modelURL:(NSURL *)modelURL storeURL:(NSURL *)storeURL needsReload:(BOOL)needsReload error:(NSError **)error {
+- (BOOL)setConfiguration:(CDEConfiguration *)configuration
+                modelURL:(NSURL *)modelURL
+                storeURL:(NSURL *)storeURL
+             needsReload:(BOOL)needsReload
+                   error:(NSError **)error {
   BOOL performReload = ((_configuration == nil) ||
                         (configuration == nil) ||
                         ([_configuration isEqual:configuration] == NO) ||
                         (needsReload));
-  // Cleanup
-
   self.configuration = configuration;
   self.autosaveInformation = [[CDEAutosaveInformation alloc] initWithDictionaryRepresentation:self.configuration.autosaveInformationByEntityName];
 

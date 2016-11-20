@@ -2,10 +2,9 @@
 
 // see: file:///Users/cmk/Projects/Products/CoreDataEditor
 @class CDEConfiguration;
-@interface CDEDocument : NSPersistentDocument
+@interface CDEDocument : NSDocument
 
 #pragma mark - Should only be used by the App Delegate
 - (CDEConfiguration *)createConfiguration;
-- (BOOL)setupAndStartAccessingConfigurationRelatedURLsAndGetError:(NSError **)error;
 
 @end

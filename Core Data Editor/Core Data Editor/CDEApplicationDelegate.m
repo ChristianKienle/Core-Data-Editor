@@ -54,62 +54,16 @@
   [self.projectBrowserWindowController showWithProjectDirectoryURL:self.iPhoneSimulatorDirectory];
 }
 
-#pragma mark - Helper
-#pragma mark - Helper / Security Scoped Resources
-- (BOOL)startAccessingCoreDataEditorSecurityScopedResources {
-  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-  
-  BOOL iPhoneSimulatorSuccess = YES;
-  
-  if(defaults.simulatorDirectory_cde != nil) {
-    self.iPhoneSimulatorDirectory = defaults.simulatorDirectory_cde;
-    iPhoneSimulatorSuccess = [self.iPhoneSimulatorDirectory startAccessingSecurityScopedResource];
-  }
-  
-  BOOL buildProductsDirectorySuccess = YES;
-  
-  if(defaults.buildProductsDirectory_cde != nil) {
-    self.derivedDataDirectory = defaults.buildProductsDirectory_cde;
-    buildProductsDirectorySuccess = [self.derivedDataDirectory startAccessingSecurityScopedResource];
-    if(buildProductsDirectorySuccess == NO) {
-      // we have bookmark data but we cannot start accessing it!
-      NSAlert *alert = [NSAlert new];
-      alert.messageText = @"Failed to access Derived Data Directory";
-      [alert addButtonWithTitle:@"Set Directory…"];
-      [alert addButtonWithTitle:@"Cancel"];
-      alert.informativeText = @"You have set a Xcode derived data directory in the preferences but Core Data Editor failed to access the contents of the directory. If you want to continue to use this feature you should set a new directory now.";
-      NSUInteger returnCode = [alert runModal];
-      if(returnCode == NSAlertFirstButtonReturn) {
-        assert(false);
-//        [self.preferencesWindowController showAutomaticProjectCreationPreferencesWithCompletionHandler:nil];
-      }
-    }
-  }
-  
-  return (iPhoneSimulatorSuccess && buildProductsDirectorySuccess);
-}
-
 #pragma mark NSApplicationDelegate
 - (void)applicationWillFinishLaunching:(NSNotification *)notification {
-  
-  // Start accessing security scoped resources here because this delegate method is called
-  // before applicationDidFinishLaunching: and before application:openFile:
-  // Since we need access to the resources in both cases...
-  [self startAccessingCoreDataEditorSecurityScopedResources];
-  
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-  [defaults setObject:@"HELLO" forKey:@"AAAAAAAAAAAAAA"];
   [[NSNotificationCenter defaultCenter] addObserverForName:CDEUserDefaultsNotifications.didChangeSimulatorDirectory object:defaults queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
-    [self.iPhoneSimulatorDirectory stopAccessingSecurityScopedResource];
     self.iPhoneSimulatorDirectory = defaults.simulatorDirectory_cde;
-    [self.iPhoneSimulatorDirectory startAccessingSecurityScopedResource];
     [self.projectBrowserWindowController updateProjectDirectoryURL:self.iPhoneSimulatorDirectory];
   }];
   
   [[NSNotificationCenter defaultCenter] addObserverForName:CDEUserDefaultsNotifications.didChangeBuildProductsDirectory object:defaults queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
-    [self.derivedDataDirectory stopAccessingSecurityScopedResource];
     self.derivedDataDirectory = defaults.buildProductsDirectory_cde;
-    [self.derivedDataDirectory startAccessingSecurityScopedResource];
   }];
 }
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
@@ -125,10 +79,6 @@
   }
   
   self.aboutWindowController = [[CDEAboutWindowController alloc] initWithWindowNibName:@"CDEAboutWindowController"];
-  // Create prefs if needed
-//  if(self.preferencesWindowController == nil) {
-//    self.preferencesWindowController = [CDEPreferencesWindowController new];
-//  }
 }
 
 - (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag
@@ -146,10 +96,6 @@
 }
 
 - (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename {
-  // Need to create prefs?
-//  if(self.preferencesWindowController == nil) {
-//    self.preferencesWindowController = [CDEPreferencesWindowController new];
-//  }
   if([filename.pathExtension isEqualToString:@"coredataeditor5"]) {
     [[NSDocumentController sharedDocumentController] openDocumentWithContentsOfURL:[NSURL fileURLWithPath:filename] display:YES completionHandler:^(NSDocument * _Nullable document, BOOL documentWasAlreadyOpen, NSError * _Nullable error) {
       
@@ -169,8 +115,6 @@
   if(buildProductsDirectory == nil) {
     NSLog(@"no build products directory.");
     assert(false);
-#pragma mark warn bla
-//    [self.preferencesWindowController showAutomaticProjectCreationPreferencesAndDisplayInfoSheetWithCompletionHandler:nil];
     return YES;
   }
   
@@ -211,17 +155,9 @@
     // We have found something!
     NSLog(@"%@ is compatible with %@", storeURL.lastPathComponent, modelURL);
     CDEDocument *document = [[NSDocumentController sharedDocumentController] openUntitledDocumentAndDisplay:NO error:NULL];
-    CDEConfiguration *c = [document createConfiguration];
+    CDEConfiguration *configuration = [document createConfiguration];
+    [configuration setApplicationBundleURL:nil storeURL:storeURL modelURL:modelURL];
     error = nil;
-    BOOL set = [c setBookmarkDataWithApplicationBundleURL:nil storeURL:storeURL modelURL:modelURL error:&error];
-    if(!set) {
-      NSLog(@"error: %@", error);
-    }
-    error = nil;
-    BOOL setup = [document setupAndStartAccessingConfigurationRelatedURLsAndGetError:&error];
-    if(!setup) {
-      NSLog(@"error: %@", error);
-    }
     [document makeWindowControllers];
     [document showWindows];
     return YES;

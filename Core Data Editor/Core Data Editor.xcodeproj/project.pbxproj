@@ -100,7 +100,6 @@
 		ABBEA7ED1765CB730024A9D2 /* CDEDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA7EC1765CB730024A9D2 /* CDEDocument.m */; };
 		ABBEA7F01765CB730024A9D2 /* CDEDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABBEA7EE1765CB730024A9D2 /* CDEDocument.xib */; };
 		ABBEA7F31765CB730024A9D2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABBEA7F11765CB730024A9D2 /* MainMenu.xib */; };
-		ABBEA7F61765CB730024A9D2 /* CDEDocument.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA7F41765CB730024A9D2 /* CDEDocument.xcdatamodeld */; };
 		ABBEA8241765D5AC0024A9D2 /* CDEPathActionLabelController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA7FE1765D5AA0024A9D2 /* CDEPathActionLabelController.m */; };
 		ABBEA8251765D5AC0024A9D2 /* CDENewConfigurationSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8001765D5AA0024A9D2 /* CDENewConfigurationSummaryViewController.m */; };
 		ABBEA8261765D5AC0024A9D2 /* CDENewConfigurationSummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABBEA8011765D5AA0024A9D2 /* CDENewConfigurationSummaryViewController.xib */; };
@@ -122,7 +121,6 @@
 		ABBEA8951765F3320024A9D2 /* NSBundle+CDEApplicationAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8941765F3320024A9D2 /* NSBundle+CDEApplicationAnalyzer.m */; };
 		ABBEA8A01765FC230024A9D2 /* NSURL+CDEApplicationAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA89F1765FC230024A9D2 /* NSURL+CDEApplicationAnalyzer.m */; };
 		ABBEA8A4176602B60024A9D2 /* NSString+CDEPersistentStore.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8A3176602B60024A9D2 /* NSString+CDEPersistentStore.m */; };
-		ABBEA8B517660AB30024A9D2 /* _CDEConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8B217660AB30024A9D2 /* _CDEConfiguration.m */; };
 		ABBEA8B617660AB30024A9D2 /* CDEConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8B417660AB30024A9D2 /* CDEConfiguration.m */; };
 		ABBEA8BB1766153A0024A9D2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABBEA8B91766153A0024A9D2 /* Localizable.strings */; };
 		ABBEA8D41766212A0024A9D2 /* NSPasteboard-CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA8D31766212A0024A9D2 /* NSPasteboard-CDEAdditions.m */; };
@@ -381,7 +379,6 @@
 		ABBEA7EC1765CB730024A9D2 /* CDEDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDEDocument.m; sourceTree = "<group>"; };
 		ABBEA7EF1765CB730024A9D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CDEDocument.xib; sourceTree = "<group>"; };
 		ABBEA7F21765CB730024A9D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		ABBEA7F51765CB730024A9D2 /* CDEDocument.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CDEDocument.xcdatamodel; sourceTree = "<group>"; };
 		ABBEA7FD1765D5AA0024A9D2 /* CDEPathActionLabelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEPathActionLabelController.h; sourceTree = "<group>"; };
 		ABBEA7FE1765D5AA0024A9D2 /* CDEPathActionLabelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEPathActionLabelController.m; sourceTree = "<group>"; };
 		ABBEA7FF1765D5AA0024A9D2 /* CDENewConfigurationSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDENewConfigurationSummaryViewController.h; sourceTree = "<group>"; };
@@ -424,8 +421,6 @@
 		ABBEA89F1765FC230024A9D2 /* NSURL+CDEApplicationAnalyzer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+CDEApplicationAnalyzer.m"; sourceTree = "<group>"; };
 		ABBEA8A2176602B60024A9D2 /* NSString+CDEPersistentStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CDEPersistentStore.h"; sourceTree = "<group>"; };
 		ABBEA8A3176602B60024A9D2 /* NSString+CDEPersistentStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CDEPersistentStore.m"; sourceTree = "<group>"; };
-		ABBEA8B117660AB30024A9D2 /* _CDEConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CDEConfiguration.h; sourceTree = "<group>"; };
-		ABBEA8B217660AB30024A9D2 /* _CDEConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _CDEConfiguration.m; sourceTree = "<group>"; };
 		ABBEA8B317660AB30024A9D2 /* CDEConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEConfiguration.h; sourceTree = "<group>"; };
 		ABBEA8B417660AB30024A9D2 /* CDEConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEConfiguration.m; sourceTree = "<group>"; };
 		ABBEA8BA1766153A0024A9D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1228,7 +1223,6 @@
 				ABBEA7EE1765CB730024A9D2 /* CDEDocument.xib */,
 				ABBEA7F11765CB730024A9D2 /* MainMenu.xib */,
 				AB59DA3F1DDF42AA00A19963 /* Main.storyboard */,
-				ABBEA7F41765CB730024A9D2 /* CDEDocument.xcdatamodeld */,
 				ABBEA7E01765CB730024A9D2 /* Supporting Files */,
 			);
 			path = "Core Data Editor";
@@ -1444,18 +1438,8 @@
 				AB23E43C17A6C1F5001C19A7 /* Autosave Information */,
 				ABBEA8B317660AB30024A9D2 /* CDEConfiguration.h */,
 				ABBEA8B417660AB30024A9D2 /* CDEConfiguration.m */,
-				ABBEA8B717660FC00024A9D2 /* Machine */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		ABBEA8B717660FC00024A9D2 /* Machine */ = {
-			isa = PBXGroup;
-			children = (
-				ABBEA8B117660AB30024A9D2 /* _CDEConfiguration.h */,
-				ABBEA8B217660AB30024A9D2 /* _CDEConfiguration.m */,
-			);
-			name = Machine;
 			sourceTree = "<group>";
 		};
 		ABBEA8B817660FD40024A9D2 /* Shared */ = {
@@ -2171,7 +2155,6 @@
 				ABBEA7E61765CB730024A9D2 /* main.m in Sources */,
 				ABDA4235181BFF2C0054A226 /* CDEMenuWindowItemBadgeView.m in Sources */,
 				ABBEA7ED1765CB730024A9D2 /* CDEDocument.m in Sources */,
-				ABBEA7F61765CB730024A9D2 /* CDEDocument.xcdatamodeld in Sources */,
 				ABDA4282181C068F0054A226 /* CDEManagedObjectsTableViewController.m in Sources */,
 				ABBEA8241765D5AC0024A9D2 /* CDEPathActionLabelController.m in Sources */,
 				ABBEA8251765D5AC0024A9D2 /* CDENewConfigurationSummaryViewController.m in Sources */,
@@ -2192,7 +2175,6 @@
 				ABBEA8951765F3320024A9D2 /* NSBundle+CDEApplicationAnalyzer.m in Sources */,
 				ABBEA8A01765FC230024A9D2 /* NSURL+CDEApplicationAnalyzer.m in Sources */,
 				ABBEA8A4176602B60024A9D2 /* NSString+CDEPersistentStore.m in Sources */,
-				ABBEA8B517660AB30024A9D2 /* _CDEConfiguration.m in Sources */,
 				ABBEA8B617660AB30024A9D2 /* CDEConfiguration.m in Sources */,
 				ABBEA8D41766212A0024A9D2 /* NSPasteboard-CDEAdditions.m in Sources */,
 				AB22AC7A17664480004890AC /* NSBundle+CDEModelFinder.m in Sources */,
@@ -2486,19 +2468,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		ABBEA7F41765CB730024A9D2 /* CDEDocument.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				ABBEA7F51765CB730024A9D2 /* CDEDocument.xcdatamodel */,
-			);
-			currentVersion = ABBEA7F51765CB730024A9D2 /* CDEDocument.xcdatamodel */;
-			path = CDEDocument.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = ABBEA7CE1765CB730024A9D2 /* Project object */;
 }

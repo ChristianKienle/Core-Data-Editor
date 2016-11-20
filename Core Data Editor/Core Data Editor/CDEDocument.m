@@ -14,14 +14,14 @@
 @interface CDEDocument ()
 
 #pragma mark - Properties
-@property (nonatomic, strong) CDEConfiguration *configuration;
-@property (nonatomic, strong) CDEConfigurationWizzard *configurationWizzard;
-@property (nonatomic, strong) CDEEditorViewController *editorViewController;
-@property (nonatomic, weak) IBOutlet NSView *containerView;
+@property (strong) CDEConfiguration *configuration;
+@property (strong) CDEConfigurationWizzard *configurationWizzard;
+@property (strong) CDEEditorViewController *editorViewController;
+@property (weak) IBOutlet NSView *containerView;
 
-@property (nonatomic, copy) NSURL *storeURL;
-@property (nonatomic, copy) NSURL *modelURL;
-@property (nonatomic, copy) NSURL *applicationBundleURL;
+@property (readonly) NSURL *storeURL;
+@property (readonly) NSURL *modelURL;
+@property (readonly) NSURL *applicationBundleURL;
 
 #pragma mark - Actions
 - (IBAction)showConfiguration:(id)sender;
@@ -32,345 +32,246 @@
 
 #pragma mark - NSObject
 + (void)initialize {
-    if(self == [CDEDocument class]) {
-        [CDEManagedObjectIDToStringValueTransformer registerDefaultManagedObjectIDToStringValueTransformer];
-    }
+  if(self == [CDEDocument class]) {
+    [CDEManagedObjectIDToStringValueTransformer registerDefaultManagedObjectIDToStringValueTransformer];
+  }
 }
 
+- (NSURL *)storeURL { return self.configuration.storeURL; }
+
+- (NSURL *)modelURL { return self.configuration.modelURL; }
+- (NSURL *)applicationBundleURL { return self.configuration.applicationBundleURL; }
+
 - (NSWindow*)_documentWindow {
-    NSParameterAssert(self.windowControllers.count == 1);
-    
-    if([[self windowControllers] count] == 1) {
-        return [[self windowControllers][0] window];
-    }
-    return nil;
+  NSParameterAssert(self.windowControllers.count == 1);
+  
+  if([[self windowControllers] count] == 1) {
+    return [[self windowControllers][0] window];
+  }
+  return nil;
 }
 
 #pragma mark - Actions
 - (IBAction)showConfiguration:(id)sender {
-    [self.configurationWizzard window];
-    __typeof__(self) __weak weakSelf = self;
-    [self.configurationWizzard beginSheetModalForWindow:[self _documentWindow]
-                                   applicationBundleURL:self.applicationBundleURL
-                                               storeURL:self.storeURL
-                                               modelURL:self.modelURL completionHandler:^(BOOL success, NSURL *applicationBundleURL, NSURL *storeURL, NSURL *modelURL) {
-        if(success == NO) {
-            return;
-        }
-                                                   
-        NSError *error = nil;
-        BOOL bookmarkDataSet = [self.configuration setBookmarkDataWithApplicationBundleURL:applicationBundleURL storeURL:storeURL modelURL:modelURL error:&error];
-        if(bookmarkDataSet == NO) {
-            [NSApp presentError:error];
-            return;
-        }
-        
-        // Resolve
-        NSError *resolveError = nil;
-        BOOL resolved = [self setupAndStartAccessingConfigurationRelatedURLsAndGetError:&resolveError];
-        if(resolved == NO) {
-            [NSApp presentError:resolveError];
-            return;
-        }
-        
-        [weakSelf.editorViewController setConfiguration:self.configuration modelURL:self.modelURL storeURL:self.storeURL needsReload:YES error:NULL];
-    }];
+  [self.configurationWizzard window];
+  __typeof__(self) __weak weakSelf = self;
+  [self.configurationWizzard beginSheetModalForWindow:[self _documentWindow]
+                                 applicationBundleURL:self.applicationBundleURL
+                                             storeURL:self.storeURL
+                                             modelURL:self.modelURL completionHandler:^(BOOL success, NSURL *applicationBundleURL, NSURL *storeURL, NSURL *modelURL) {
+                                               if(success == NO) {
+                                                 return;
+                                               }
+                                               
+                                               [self.configuration setApplicationBundleURL:applicationBundleURL storeURL:storeURL modelURL:modelURL];
+                                               
+                                               [weakSelf.editorViewController setConfiguration:self.configuration modelURL:self.modelURL storeURL:self.storeURL needsReload:YES error:NULL];
+                                             }];
 }
 
 
 #pragma mark - NSDocument
 - (instancetype)init {
-    self = [super init];
-    if (self) {
-        self.configurationWizzard = [CDEConfigurationWizzard new];
-        self.editorViewController = [CDEEditorViewController new];
-    }
-    return self;
+  self = [super init];
+  if (self) {
+    self.configurationWizzard = [CDEConfigurationWizzard new];
+    self.editorViewController = [CDEEditorViewController new];
+  }
+  return self;
 }
 
 - (NSString *)windowNibName {
-    return @"CDEDocument";
+  return @"CDEDocument";
 }
 
 + (BOOL)preservesVersions {
-    return NO;
+  return NO;
 }
 
 - (void)dealloc {
-    self.editorViewController = nil;
+  self.editorViewController = nil;
 }
 
 - (BOOL)validateUserInterfaceItem:(id <NSValidatedUserInterfaceItem>)item {
-    // Validate the Entity menu
-    if([item action] == @selector(deleteSelectedObjcts:)) {
-        return self.editorViewController.canDeleteSelectedManagedObjects;
-    }
-    if([item action] == @selector(insertObject:)) {
-        return self.editorViewController.canInsertManagedObject;
-    }
-    if([item action] == @selector(copySelectedObjectsAsCSV:)) {
-        return self.editorViewController.canCreateCSVRepresentationWithSelectedObjects;
-    }
-    
-    // Let super do its work
-    return [super validateUserInterfaceItem:item];
+  // Validate the Entity menu
+  if([item action] == @selector(deleteSelectedObjcts:)) {
+    return self.editorViewController.canDeleteSelectedManagedObjects;
+  }
+  if([item action] == @selector(insertObject:)) {
+    return self.editorViewController.canInsertManagedObject;
+  }
+  if([item action] == @selector(copySelectedObjectsAsCSV:)) {
+    return self.editorViewController.canCreateCSVRepresentationWithSelectedObjects;
+  }
+  
+  // Let super do its work
+  return [super validateUserInterfaceItem:item];
 }
 
 - (BOOL)validateToolbarItem:(NSToolbarItem *)item {
-    if([item.itemIdentifier isEqualToString:@"CDECode"]) {
-        return (self.configuration.storeBookmarkData != nil && self.configuration.modelBookmarkData != nil);
-    }
-    if([item.itemIdentifier isEqualToString:@"CDECSV"]) {
-        return (self.configuration.storeBookmarkData != nil && self.configuration.modelBookmarkData != nil);
-    }
-    return YES;
+  if([item.itemIdentifier isEqualToString:@"CDECode"]) {
+    return (self.configuration.storePath != nil && self.configuration.modelPath != nil);
+  }
+  if([item.itemIdentifier isEqualToString:@"CDECSV"]) {
+    return (self.configuration.storePath != nil && self.configuration.modelPath != nil);
+  }
+  return YES;
 }
 
-- (BOOL)writeToURL:(NSURL *)absoluteURL ofType:(NSString *)typeName forSaveOperation:(NSSaveOperationType)saveOperation originalContentsURL:(NSURL *)absoluteOriginalContentsURL error:(NSError **)error {
-    NSError *saveError = nil;
-    [self.editorViewController save:&saveError];
-    BOOL result = [super writeToURL:absoluteURL ofType:typeName forSaveOperation:saveOperation originalContentsURL:absoluteOriginalContentsURL error:error];
-    if(saveError != nil) {
-        [NSApp presentError:saveError];
-    }
-    return result;
+-(BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError * _Nullable __autoreleasing *)outError {
+  CDEConfiguration *c = [[CDEConfiguration alloc] initWithData: data];
+  self.configuration = c;
+  return YES;
+}
+
+-(NSData *)dataOfType:(NSString *)typeName error:(NSError * _Nullable __autoreleasing *)outError {
+  NSError *saveError = nil;
+  [self.editorViewController save:&saveError];
+  if(saveError != nil) {
+    [NSApp presentError:saveError];
+  }
+  
+  return self.configuration.data;
 }
 
 - (CDEConfiguration *)createConfiguration {
-    [[[self managedObjectContext] undoManager] disableUndoRegistration];
-    CDEConfiguration *configuration = [CDEConfiguration insertInManagedObjectContext:self.managedObjectContext];
-    self.configuration =  configuration;
-    
-    [[[self managedObjectContext] undoManager] enableUndoRegistration];
-    [[self managedObjectContext] processPendingChanges];
-    [[[self managedObjectContext] undoManager] removeAllActions];
-    [self updateChangeCount:NSChangeCleared];
-    return configuration;
+  CDEConfiguration *configuration = [CDEConfiguration new];
+  self.configuration =  configuration;
+  
+  [self updateChangeCount:NSChangeCleared];
+  return configuration;
 }
 
 - (void)_createConfiguration {
-    [[[self managedObjectContext] undoManager] disableUndoRegistration];
-    CDEConfiguration *configuration = [CDEConfiguration insertInManagedObjectContext:self.managedObjectContext];
-    self.configuration =  configuration;
-    
-    [[[self managedObjectContext] undoManager] enableUndoRegistration];
-    [[self managedObjectContext] processPendingChanges];
-    [[[self managedObjectContext] undoManager] removeAllActions];
-    [self updateChangeCount:NSChangeCleared];
+  CDEConfiguration *configuration = [CDEConfiguration new];
+  self.configuration =  configuration;
+  
+  [self updateChangeCount:NSChangeCleared];
 }
 
 - (void)createConfigurationAndShowWizzard {
-    [self _createConfiguration];
-    __typeof__(self) __weak weakSelf = self;
-    [self.configurationWizzard beginSheetModalForWindow:[self _documentWindow] completionHandler:^(BOOL success, NSURL *applicationBundleURL, NSURL *storeURL, NSURL *modelURL) {
-        if(success == NO) {
-            return;
-        }
-        
-        NSError *error = nil;
-        BOOL bookmarkDataSet = [self.configuration setBookmarkDataWithApplicationBundleURL:applicationBundleURL storeURL:storeURL modelURL:modelURL error:&error];
-        if(bookmarkDataSet == NO) {
-            [NSApp presentError:error];
-            return;
-        }
-        
-        // Resolve
-        NSError *resolveError = nil;
-        BOOL resolved = [self setupAndStartAccessingConfigurationRelatedURLsAndGetError:&resolveError];
-        if(resolved == NO) {
-            [NSApp presentError:resolveError];
-            return;
-        }
-
-        [weakSelf.editorViewController setConfiguration:self.configuration modelURL:self.modelURL storeURL:self.storeURL needsReload:YES error:NULL];
-    }];
-
-}
-
-- (BOOL)setupAndStartAccessingConfigurationRelatedURLsAndGetError:(NSError **)error {
-    NSParameterAssert(self.configuration);
-    
-    NSError *resolveError = nil;
-    self.modelURL = [NSURL URLByResolvingBookmarkData:self.configuration.modelBookmarkData
-                                            error_cde:&resolveError];
-    
-    if(self.modelURL == nil) {
-        NSLog(@"Error resolving model URL: %@", resolveError);
-        if(error != NULL) {
-            *error = resolveError;
-        }
-        
-        return NO;
-    }
-    if([self.modelURL startAccessingSecurityScopedResource] == NO) {
-        NSLog(@"Error accessing model URL (%@).", self.modelURL);
-        
-        return NO;
+  [self _createConfiguration];
+  __typeof__(self) __weak weakSelf = self;
+  [self.configurationWizzard beginSheetModalForWindow:[self _documentWindow] completionHandler:^(BOOL success, NSURL *applicationBundleURL, NSURL *storeURL, NSURL *modelURL) {
+    if(success == NO) {
+      return;
     }
     
-    resolveError = nil;
-    self.storeURL = [NSURL URLByResolvingBookmarkData:self.configuration.storeBookmarkData
-                                            error_cde:&resolveError];
-    if(self.storeURL == nil) {
-        NSLog(@"Error resolving store URL: %@", resolveError);
-        if(error != NULL) {
-            *error = resolveError;
-        }
-        return NO;
-    }
-    
-    if([self.storeURL startAccessingSecurityScopedResource] == NO) {
-        NSLog(@"Error accessing store URL (%@).", self.storeURL);
-        return NO;
-    }
-    
-    return YES;
+    [self.configuration setApplicationBundleURL:applicationBundleURL storeURL:storeURL modelURL:modelURL];
+    [weakSelf.editorViewController setConfiguration:self.configuration modelURL:self.modelURL storeURL:self.storeURL needsReload:YES error:NULL];
+  }];
+  
 }
 
 - (void)windowControllerDidLoadNib:(NSWindowController *)windowController {
-    [super windowControllerDidLoadNib:windowController];
+  [super windowControllerDidLoadNib:windowController];
   
   [self _documentWindow].titleVisibility = NSWindowTitleHidden;
-    self.editorViewController.view.frame = self.containerView.bounds;
-    [self.containerView addSubview:self.editorViewController.view];
-    
-    self.configuration = [CDEConfiguration fetchedConfigurationInManagedObjectContext:self.managedObjectContext error:NULL];
-    
-    if(self.configuration == nil) {
-        [self createConfigurationAndShowWizzard];
+  self.editorViewController.view.frame = self.containerView.bounds;
+  [self.containerView addSubview:self.editorViewController.view];
+  
+  if(self.configuration == nil) {
+    [self createConfigurationAndShowWizzard];
+  }
+  else {
+    // - store and model incompatible
+    // - model invalid
+    NSMutableOrderedSet *errorMessages = [NSMutableOrderedSet orderedSet];
+    NSFileManager *fs = [NSFileManager defaultManager];
+    if([fs fileExistsAtPath:self.modelURL.path] == NO) {
+      [errorMessages addObject:@"• Model could not be found."];
+
     }
-    else {
-        // Resolve
-        // Possible errors:
-        // - modelURL:
-        //     A: could not be resolved: file does not exist (NSCocoaErrorDomain, Code: NSFileNoSuchFileError)
-        //     B: could not be resolved: other error
-        //     C: start accessing failed
-        // - storeURL could not be resolved:
-        //     A: could not be resolved: file does not exist (NSCocoaErrorDomain, Code: NSFileNoSuchFileError)
-        //     B: could not be resolved: other error
-        //     C: start accessing failed
-        // - store and model incompatible
-        // - model invalid
-        NSMutableOrderedSet *errorMessages = [NSMutableOrderedSet orderedSet];
-        NSError *resolveError = nil;
-        self.modelURL = [NSURL URLByResolvingBookmarkData:self.configuration.modelBookmarkData options:NSURLBookmarkResolutionWithoutUI relativeToURL:nil bookmarkDataIsStale:NULL error:&resolveError];
-        if(self.modelURL == nil) {
-            if([[resolveError domain] isEqualToString:NSCocoaErrorDomain] && resolveError.code == NSFileNoSuchFileError) {
-                [errorMessages addObject:@"• Model could not be found."];
-            } else {
-                [errorMessages addObject:[@"• " stringByAppendingString:resolveError.localizedDescription]];
-            }
-            NSLog(@"error: %@", resolveError);
-        } else {
-            if([self.modelURL startAccessingSecurityScopedResource] == NO) {
-                NSLog(@"failed to access model");
-                [errorMessages addObject:@"• Model could not be accessed."];
-            }
+    if([fs fileExistsAtPath:self.storeURL.path] == NO) {
+      [errorMessages addObject:@"• Store could not be found."];
+    }
+    
+    // If there aren't any error messages we can check for compatibility
+    NSManagedObjectModel *model = nil;
+    @try {
+      model = [[NSManagedObjectModel alloc] initWithContentsOfURL:self.modelURL];
+      if(model == nil) {
+        [errorMessages addObject:@"• Model could not be loaded."];
+      }
+    }
+    @catch (NSException *exception) {
+      [errorMessages addObject:@"• Model could not be loaded because an exception occured."];
+      NSString *exceptionMessage = [NSString stringWithFormat:@"%@\nReason: %@\nUser Info: %@", [exception name], [exception reason], [exception userInfo]];
+      NSLog(@"Exception raised:\n%@", exceptionMessage);
+      NSLog(@"Backtrace: %@", [exception callStackSymbols]);
+    }
+    if(model != nil) {
+      NSError *error = nil;
+      BOOL configurationSet = [self.editorViewController setConfiguration:self.configuration modelURL:self.modelURL storeURL:self.storeURL needsReload:YES error:&error];
+      if(configurationSet == NO) {
+        [errorMessages addObject:@"• Configuration is invalid."];
+      }
+    }
+    
+    BOOL configurationIsValid = (errorMessages.count == 0);
+    if(!configurationIsValid) {
+      NSString *message = nil;
+      if(errorMessages.count > 1) {
+        message = @"There were multiple problems with the current project configuration:\n\n";
+      } else {
+        message = @"There is one problem with the current project configuration:\n\n";
+      }
+      NSString *errorMessagesForDisplay = [errorMessages.array componentsJoinedByString:@"\n"];
+      message = [message stringByAppendingString:errorMessagesForDisplay];
+      message = [message stringByAppendingString:@"\n\nYou can configure the project now to resolve those problems. If you do so the project will be usable again."];
+      
+      NSAlert *alert = [NSAlert new];
+      alert.messageText = message;
+      alert.informativeText = @"Unable to open Project";
+      [alert addButtonWithTitle:@"Configure"];
+      [alert addButtonWithTitle:@"Cancel"];
+      [alert beginSheetModalForWindow:[self _documentWindow] completionHandler:^(NSModalResponse returnCode) {
+        if(returnCode == NSAlertFirstButtonReturn) { // "Configure" was clicked
+          [self.configurationWizzard setEditing:YES];
+          double delayInSeconds = 0.5;
+          dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+          dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self showConfiguration:self];
+          });
+        } else { // "Cancel" was clicked
+          [self close];
         }
         
-        resolveError = nil;
-        self.storeURL = [NSURL URLByResolvingBookmarkData:self.configuration.storeBookmarkData options:NSURLBookmarkResolutionWithoutUI relativeToURL:nil bookmarkDataIsStale:NULL error:&resolveError];
-        if(self.storeURL == nil) {
-            if([[resolveError domain] isEqualToString:NSCocoaErrorDomain] && resolveError.code == NSFileNoSuchFileError) {
-                [errorMessages addObject:@"• Store could not be found."];
-            } else {
-                [errorMessages addObject:[@"• " stringByAppendingString:resolveError.localizedDescription]];
-            }
-
-            NSLog(@"error: %@", resolveError);
-        } else {
-            if([self.storeURL startAccessingSecurityScopedResource] == NO) {
-                [errorMessages addObject:@"• Store could not be accessed."];
-                NSLog(@"failed to access store");
-            }
-        }
-        // If there aren't any error messages we can check for compatibility
-        NSManagedObjectModel *model = nil;
-        @try {
-            model = [[NSManagedObjectModel alloc] initWithContentsOfURL:self.modelURL];
-            if(model == nil) {
-                [errorMessages addObject:@"• Model could not be loaded."];
-            }
-        }
-        @catch (NSException *exception) {
-            [errorMessages addObject:@"• Model could not be loaded because an exception occured."];
-            NSString *exceptionMessage = [NSString stringWithFormat:@"%@\nReason: %@\nUser Info: %@", [exception name], [exception reason], [exception userInfo]];
-            NSLog(@"Exception raised:\n%@", exceptionMessage);
-            NSLog(@"Backtrace: %@", [exception callStackSymbols]);
-        }
-        if(model != nil) {
-          NSError *error = nil;
-          BOOL configurationSet = [self.editorViewController setConfiguration:self.configuration modelURL:self.modelURL storeURL:self.storeURL needsReload:YES error:&error];
-          if(configurationSet == NO) {
-            [errorMessages addObject:@"• Configuration is invalid."];
-          }
-        }
-      
-        BOOL configurationIsValid = (errorMessages.count == 0);
-        if(!configurationIsValid) {
-            NSString *message = nil;
-            if(errorMessages.count > 1) {
-                message = @"There were multiple problems with the current project configuration:\n\n";
-            } else {
-                message = @"There is one problem with the current project configuration:\n\n";
-            }
-            NSString *errorMessagesForDisplay = [errorMessages.array componentsJoinedByString:@"\n"];
-            message = [message stringByAppendingString:errorMessagesForDisplay];
-            message = [message stringByAppendingString:@"\n\nYou can configure the project now to resolve those problems. If you do so the project will be usable again."];
-          
-           NSAlert *alert = [NSAlert new];
-           alert.messageText = message;
-           alert.informativeText = @"Unable to open Project";
-          [alert addButtonWithTitle:@"Configure"];
-          [alert addButtonWithTitle:@"Cancel"];
-          [alert beginSheetModalForWindow:[self _documentWindow] completionHandler:^(NSModalResponse returnCode) {
-            if(returnCode == NSAlertFirstButtonReturn) { // "Configure" was clicked
-              [self.configurationWizzard setEditing:YES];
-              double delayInSeconds = 0.5;
-              dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-              dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                [self showConfiguration:self];
-              });
-            } else { // "Cancel" was clicked
-              [self close];
-            }
-
-          }];
-        }
+      }];
     }
+  }
 }
 
 - (void)close {
-    [self.editorViewController cleanup];
-    [super close];
+  [self.editorViewController cleanup];
+  [super close];
 }
 
 + (BOOL)autosavesInPlace {
-    return YES;
+  return YES;
 }
 
 #pragma mark - Query Control
 - (IBAction)takeQueryFromSender:(id)sender {
-    [self.editorViewController takeQueryFromSender:sender];
+  [self.editorViewController takeQueryFromSender:sender];
 }
 
 #pragma mark - Actions
 - (IBAction)deleteSelectedObjcts:(id)sender {
-    [self.editorViewController deleteSelectedObjcts:sender];
+  [self.editorViewController deleteSelectedObjcts:sender];
 }
 
 - (IBAction)insertObject:(id)sender {
-    [self.editorViewController insertObject:sender];
+  [self.editorViewController insertObject:sender];
 }
 
 - (IBAction)copySelectedObjectsAsCSV:(id)sender {
-    [self.editorViewController copySelectedObjectsAsCSV:sender];
+  [self.editorViewController copySelectedObjectsAsCSV:sender];
 }
 
 #pragma mark - Importing/Exporting
 - (IBAction)showImportCSVFileWindow:(id)sender {
-    [self.editorViewController showImportCSVFileWindow:sender];
+  [self.editorViewController showImportCSVFileWindow:sender];
 }
 
 @end

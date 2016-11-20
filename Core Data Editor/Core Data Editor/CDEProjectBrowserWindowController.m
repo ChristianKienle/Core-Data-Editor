@@ -83,20 +83,14 @@ typedef void(^ProjectBrowserReloadCompletionHandler)(NSArray *projectBrowserItem
     return;
   }
   CDEDocument *document = [[NSDocumentController sharedDocumentController] openUntitledDocumentAndDisplay:NO error:NULL];
-  CDEConfiguration *c = [document createConfiguration];
+  CDEConfiguration *configuration = [document createConfiguration];
   NSError *error = nil;
   NSURL *storeURL = [NSURL fileURLWithPath:item.storePath];
   NSURL *modelURL = [NSURL fileURLWithPath:item.modelPath];
   
-  BOOL set = [c setBookmarkDataWithApplicationBundleURL:nil storeURL:storeURL modelURL:modelURL error:&error];
-  if(!set) {
-    NSLog(@"error: %@", error);
-  }
+  [configuration setApplicationBundleURL:nil storeURL:storeURL modelURL:modelURL];
+  
   error = nil;
-  BOOL setup = [document setupAndStartAccessingConfigurationRelatedURLsAndGetError:&error];
-  if(!setup) {
-    NSLog(@"error: %@", error);
-  }
   [document makeWindowControllers];
   [document showWindows];
 }
