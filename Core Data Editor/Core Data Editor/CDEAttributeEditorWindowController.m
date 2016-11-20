@@ -45,7 +45,7 @@
 }
 
 - (IBAction)performClose:(id)sender {
-    [NSApp endSheet:self.window];
+  [self.window.sheetParent endSheet:self.window returnCode:NSModalResponseOK];
 }
 
 @end

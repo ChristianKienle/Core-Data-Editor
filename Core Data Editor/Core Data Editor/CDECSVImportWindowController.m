@@ -217,7 +217,7 @@ NSString *const CDECSVImportWindowControllerMappingIndexOfSelectedColumn = @"ind
 }
 
 #pragma mark Presenting the Window Controller
-- (void)beginSheetModalForWindow:(NSWindow *)parentWindow entityDescriptions:(NSArray *)entityDescriptions selectedEntityDescription:(NSEntityDescription *)selectedEntityDescription completionHandler:(CDECSVImportWindowControllerCompletionHandler)completionHandler {
+- (void)beginSheetModalForWindow:(NSWindow *)parentWindow entityDescriptions:(NSArray<NSEntityDescription*> *)entityDescriptions selectedEntityDescription:(NSEntityDescription *)selectedEntityDescription completionHandler:(CDECSVImportWindowControllerCompletionHandler)completionHandler {
     NSParameterAssert(entityDescriptions);
     NSParameterAssert(parentWindow);
     self.entityDescriptions = entityDescriptions;
@@ -229,7 +229,6 @@ NSString *const CDECSVImportWindowControllerMappingIndexOfSelectedColumn = @"ind
     self.completionHandler = completionHandler;
     [self window];
     // Entities Popup Button: Begin
-    
     [self.entitiesPopupButton removeAllItems];
     
     NSMenuItem *selectedItem = nil;
@@ -251,21 +250,27 @@ NSString *const CDECSVImportWindowControllerMappingIndexOfSelectedColumn = @"ind
     
     // Entities Popup Button: End
     [self updateMappingsArrayController];
-  
-  [parentWindow beginSheet:self.window completionHandler:^(NSModalResponse returnCode) {
+    [parentWindow beginSheet:self.window completionHandler:^(NSModalResponse returnCode) {
+      self.completionHandler ? self.completionHandler([self resultForCurrentConfiguration]) : nil;
+      self.completionHandler = nil;
+
+    }];
+    [self showOpenCSVFilePanel:self];
+}
+     
+- (void)importWindowDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
+    [sheet orderOut:self];
     self.completionHandler ? self.completionHandler([self resultForCurrentConfiguration]) : nil;
     self.completionHandler = nil;
-  }];
-    [self showOpenCSVFilePanel:self];
 }
 
 - (IBAction)cancelImport:(id)sender {
     self.completionHandler = nil;
-    [NSApp endSheet:self.window];
+  [self.window.sheetParent endSheet:self.window returnCode:NSModalResponseOK];
 }
 
 - (IBAction)confirmImport:(id)sender {
-    [NSApp endSheet:self.window];
+  [self.window.sheetParent endSheet:self.window returnCode:NSModalResponseOK];
 }
 
 - (IBAction)takeSelectedEntityFromSender:(id)sender {

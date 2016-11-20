@@ -187,7 +187,6 @@
   [self.summaryViewController view];
   [self showDropApplicationView];
   self.editing = NO;
-  
   [parentWindow beginSheet:self.window completionHandler:^(NSModalResponse returnCode) {
     
   }];
@@ -211,8 +210,7 @@
 
 #pragma mark Actions
 - (IBAction)dismiss:(id)sender {
-  [NSApp endSheet:self.window];
-  [self.window orderOut:sender];
+  [self.window.sheetParent endSheet:self.window returnCode:NSModalResponseOK];
   (self.beginSheetCompletionHandler)(NO, nil, nil, nil);
   self.beginSheetCompletionHandler = nil;
 }
@@ -245,8 +243,7 @@
   
   if([self displaysSummaryView]) {
     // Create
-    [NSApp endSheet:self.window];
-    [self.window orderOut:sender];
+    [self.window.sheetParent endSheet:self.window returnCode:NSModalResponseOK];
     NSURL *modelURL = self.dropApplicationViewController.modelURL;
     NSURL *applicationBundleURL = self.dropApplicationViewController.bundleURL;
     if(modelURL == nil && applicationBundleURL != nil) {

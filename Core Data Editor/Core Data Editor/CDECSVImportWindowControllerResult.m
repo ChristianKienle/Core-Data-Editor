@@ -3,7 +3,7 @@
 @interface CDECSVImportWindowControllerResult ()
 
 #pragma mark Properties
-@property (nonatomic, copy, readwrite) NSArray *items;
+@property (nonatomic, copy, readwrite) NSArray<CDECSVImportWindowControllerResultItem*> *items;
 @property (nonatomic, strong, readwrite) NSEntityDescription *destinationEntityDescription;
 
 @end
@@ -11,7 +11,7 @@
 @implementation CDECSVImportWindowControllerResult
 
 #pragma mark Creating
-- (id)initWithItems:(NSArray *)items destinationEntityDescription:(NSEntityDescription *)destinationEntityDescription {
+- (id)initWithItems:(NSArray<CDECSVImportWindowControllerResultItem*> *)items destinationEntityDescription:(NSEntityDescription *)destinationEntityDescription {
     self = [super init];
     if(self) {
         self.items = items;

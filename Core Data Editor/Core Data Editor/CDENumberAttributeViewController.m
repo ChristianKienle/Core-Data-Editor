@@ -32,7 +32,7 @@
   NSAlert *alert = [NSAlert new];
   alert.informativeText = [NSString stringWithFormat:@"Input '%@' does not match validation predicates:\n\n%@", [fieldEditor string], [predicate description]];
   alert.messageText = @"Validation Error";
-  alert.alertStyle = NSCriticalAlertStyle;
+  alert.alertStyle = NSAlertStyleCritical;
   [alert runModal];
   return NO;
 }

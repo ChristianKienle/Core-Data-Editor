@@ -112,9 +112,6 @@
 - (void)drawBackground {
    NSColor *topColor = [NSColor colorWithCalibratedWhite:1 alpha:0.7];
    NSColor *bottomColor = [NSColor colorWithCalibratedWhite:0.923 alpha:0.7];
-//   NSColor *topColor = [NSColor colorWithCalibratedWhite:0.923 alpha:1.000];
-//   NSColor *bottomColor = [NSColor colorWithCalibratedWhite:0.8 alpha:1.000];
-
    NSGradient *gradient = [[NSGradient alloc] initWithStartingColor:topColor endingColor:bottomColor];
    [gradient drawInRect:self.bounds angle:-90.0];
 }
@@ -146,9 +143,7 @@
    NSAttributedString *titleAttributedString = [self attributedStringToDisplayFrom:title];
    
    NSRect titleRect = dashedBorderRect;
-//   titleRect.origin.x += borderSpacing;
-//   titleRect.size.width -= 2.0 * borderSpacing;
-   
+  
    CGFloat titleHeight = NSHeight([titleAttributedString boundingRectWithSize:NSMakeSize(NSWidth(titleRect), CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin]);
    
     titleRect.origin.y = NSMidY(titleRect) - (0.5 * titleHeight);
@@ -244,15 +239,8 @@
       [self drawErrorMessage];
    }
    
-//   [NSGraphicsContext saveGraphicsState];
    [[NSColor grayColor] set];
    [[NSBezierPath bezierPathWithRect:NSInsetRect(self.bounds, 0.0, 0.0)] stroke];
-   
-//   NSRect focusRingFrame = self.bounds;
-//   focusRingFrame.size.height -= 2.0;
-//   NSSetFocusRingStyle(NSFocusRingOnly);
-//   [[NSBezierPath bezierPathWithRect: NSInsetRect(focusRingFrame,0,0)] fill];
-//   [NSGraphicsContext restoreGraphicsState];
 }
 
 
@@ -315,8 +303,7 @@
    return YES;
 }
 
-- (void)concludeDragOperation:(id <NSDraggingInfo>)sender {
-}
+- (void)concludeDragOperation:(id <NSDraggingInfo>)sender {}
 
 #pragma mark NSAnimationDelegate
 - (void)animation:(NSAnimation *)animation didReachProgressMark:(NSAnimationProgress)progress {

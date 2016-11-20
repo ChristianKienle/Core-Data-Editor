@@ -1,5 +1,3 @@
-<a href="https://flattr.com/submit/auto?user_id=ChristianKienle&url=https%3A%2F%2Fgithub.com%2FChristianKienle%2FCore-Data-Editor" target="_blank"><img src="https://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>
-
 # Build Status
 | Branch        | Status           | 
 | ------------- |:-------------:|
@@ -7,18 +5,17 @@
 | Develop      | [![Build Status](https://travis-ci.org/ChristianKienle/Core-Data-Editor.svg?branch=develop)](https://travis-ci.org/ChristianKienle/Core-Data-Editor)      |
 
 # Core Data Editor
-<img src="http://thermal-core.com/img/cde/icon_256x256.png" alt="Core Data Editor Logo" title="Core Data Editor Logo" align="right" />
+
+<img src="app-icon.png" alt="Core Data Editor Logo" title="Core Data Editor Logo" align="right" />
 
 Core Data Editor lets you easily view, edit and analyze applications‘ data. Core Data Editor is compatible with Mac and iOS applications and supports XML, SQLite and binary stores, visualizes all relationships and is able to edit the data and generate Objective-C code for the data model.
 
 Core Data Editor will guide you through a short setup process when you initially launch the app. This setup process is entirely optional. You can skip over each and every step if you know what you are doing. It is recommended that you take your time and go though the setup process. It only takes a few minutes. 
 
-![](http://thermal-core.com/img/cde/screenshot_main_cut.png)
+![](screenshot.png)
 
 # Donations
-If you want to support Core Data Editor you can donate via PayPal to me@christian-kienle.de. You can also flattr Core Data Editor:
-
-<a href="https://flattr.com/submit/auto?user_id=ChristianKienle&url=https%3A%2F%2Fgithub.com%2FChristianKienle%2FCore-Data-Editor" target="_blank"><img src="https://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>
+If you want to support Core Data Editor you can [donate via PayPal](https://www.paypal.me/christiankienle).
 
 Thanks.
 
@@ -59,8 +56,9 @@ A data coordinator is represented by an instance of  `CDERequestDataCoordinator`
 
 That being said there should be little reason to introduce a new coordinator subclass. 
 
+
 # Contributing
-Without you, Core Data Editor will probably die soon. If you want to contribute send me pull requests. Have a look at the issue tracker to find out what should be done next. 
+If you want to contribute send me pull requests. Have a look at the issue tracker to find out what should be done next. 
 
 # Credits
 Core Data Editor has the following third party dependencies:
@@ -78,9 +76,8 @@ Core Data Editor has the following third party dependencies:
 * [danydev](https://github.com/danydev)
 * [Roberto Dries](https://github.com/robertodries92)
 * [Mitch Cohen](https://github.com/mitchcohen)
-
 # Contact
-[Christian Kienle (me@christian-kienle.de)](mailto:me@christian-kienle.de) 
+[Christian Kienle (kienle.christian@icloud.com)](mailto:kienle.christian@icloud.com) 
 
 # License
 3-clause BSD (please don't sue me)

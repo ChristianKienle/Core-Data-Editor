@@ -10,7 +10,6 @@
 
 #import "CDEManagedObjectIDToStringValueTransformer.h"
 #import "CDEAutosaveInformation.h"
-#import "CDECodeGenerator.h"
 
 @interface CDEDocument ()
 
@@ -26,9 +25,6 @@
 
 #pragma mark - Actions
 - (IBAction)showConfiguration:(id)sender;
-
-#pragma mark - Code Generation
-@property (nonatomic, strong) CDECodeGenerator *codeGenerator;
 
 @end
 
@@ -234,6 +230,7 @@
 - (void)windowControllerDidLoadNib:(NSWindowController *)windowController {
     [super windowControllerDidLoadNib:windowController];
   
+  [self _documentWindow].titleVisibility = NSWindowTitleHidden;
     self.editorViewController.view.frame = self.containerView.bounds;
     [self.containerView addSubview:self.editorViewController.view];
     
@@ -287,9 +284,6 @@
                 [errorMessages addObject:@"• Store could not be accessed."];
                 NSLog(@"failed to access store");
             }
-			else {
-				self.fileURL = self.storeURL;
-			}
         }
         // If there aren't any error messages we can check for compatibility
         NSManagedObjectModel *model = nil;
@@ -378,18 +372,5 @@
 - (IBAction)showImportCSVFileWindow:(id)sender {
     [self.editorViewController showImportCSVFileWindow:sender];
 }
-
-- (IBAction)generateCode:(id)sender {
-    if(self.codeGenerator != nil) {
-        self.codeGenerator = nil;
-    }
-    
-    self.codeGenerator = [[CDECodeGenerator alloc] initWithManagedObjectModelURL:self.modelURL];
-    __typeof__(self) __weak weakSelf = self;
-    [self.codeGenerator presentCodeGeneratorUIModalForWindow:[self _documentWindow] completionHandler:^{
-        [weakSelf setCodeGenerator:nil];
-    }];
-}
-
 
 @end

@@ -2,7 +2,7 @@
 
 @interface NSDirectoryEnumerator (ProjectBrowser)
 
-- (void)getMetadataByStorePath:(NSDictionary **)metadataByStorePath modelByModelPath:(NSDictionary **)modelByModelPath;
+- (void)getMetadataByStorePath:(NSDictionary<NSString*, NSDictionary*> **)metadataByStorePath modelByModelPath:(NSDictionary<NSString*, NSManagedObjectModel*> **)modelByModelPath;
 
 @end
 
