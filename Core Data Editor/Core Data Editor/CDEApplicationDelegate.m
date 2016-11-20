@@ -211,17 +211,9 @@
     // We have found something!
     NSLog(@"%@ is compatible with %@", storeURL.lastPathComponent, modelURL);
     CDEDocument *document = [[NSDocumentController sharedDocumentController] openUntitledDocumentAndDisplay:NO error:NULL];
-    CDEConfiguration *c = [document createConfiguration];
+    CDEConfiguration *configuration = [document createConfiguration];
+    [configuration setApplicationBundleURL:nil storeURL:storeURL modelURL:modelURL];
     error = nil;
-    BOOL set = [c setBookmarkDataWithApplicationBundleURL:nil storeURL:storeURL modelURL:modelURL error:&error];
-    if(!set) {
-      NSLog(@"error: %@", error);
-    }
-    error = nil;
-    BOOL setup = [document setupAndStartAccessingConfigurationRelatedURLsAndGetError:&error];
-    if(!setup) {
-      NSLog(@"error: %@", error);
-    }
     [document makeWindowControllers];
     [document showWindows];
     return YES;

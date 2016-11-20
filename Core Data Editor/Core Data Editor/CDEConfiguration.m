@@ -6,86 +6,76 @@
 
 @implementation CDEConfiguration
 
+
+
+- ( NSData * _Nonnull)data {
+  NSMutableDictionary *dict = [NSMutableDictionary new];
+  if(self.applicationBundlePath != nil) {
+    dict[@"applicationBundlePath"] = self.applicationBundlePath;
+  }
+  if(self.autosaveInformationByEntityName != nil) {
+    dict[@"autosaveInformationByEntityName"] = self.autosaveInformationByEntityName;
+  }
+  if(self.isMacApplication != nil) {
+    dict[@"isMacApplication"] = self.isMacApplication;
+  }
+  if(self.modelPath != nil) {
+    dict[@"modelPath"] = self.modelPath;
+  }
+  if(self.storePath != nil) {
+    dict[@"storePath"] = self.storePath;
+  }
+  NSData *result = [NSKeyedArchiver archivedDataWithRootObject:dict];
+  return result;
+}
+
+- (instancetype)initWithData:(NSData *_Nullable)data {
+  self = [super init];
+  NSDictionary *dict = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+  self.applicationBundlePath = dict[@"applicationBundlePath"];
+  self.autosaveInformationByEntityName = dict[@"autosaveInformationByEntityName"];
+  self.isMacApplication = dict[@"isMacApplication"];
+  self.modelPath = dict[@"modelPath"];
+  self.storePath = dict[@"storePath"];
+  return self;
+}
 #pragma mark - Properties
+- (NSURL*)applicationBundleURL {
+  return [NSURL fileURLWithPath:self.applicationBundlePath];
+}
+
+- (NSURL*)storeURL {
+  return [NSURL fileURLWithPath:self.storePath];
+}
+- (void)setStoreURL:(NSURL *)storeURL {
+  self.storePath = storeURL.path;
+}
+- (NSURL *)modelURL {
+  return [NSURL fileURLWithPath:self.modelPath];
+}
+- (void)setModelURL:(NSURL *)modelURL {
+  self.modelPath = modelURL.path;
+}
 
 #pragma mark - Getting the only Configuration object
-+ (CDEConfiguration *)fetchedConfigurationInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error {
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:[self entityName]];
-    NSArray *fetchedConfigurations = [managedObjectContext executeFetchRequest:fetchRequest error:error];
-    CDEConfiguration *configuration = [fetchedConfigurations lastObject];
-    return configuration;
-}
-
-+ (BOOL)configurationExistsInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error {
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:[self entityName]];
-    NSUInteger count = [managedObjectContext countForFetchRequest:fetchRequest error:error];
-
-    if(count == NSNotFound) {
-        return NO;
-    }
-    
-    return (count == 1);
-}
-
 + (NSSet *)keyPathsForValuesAffectingIsValid {
-    return [NSSet setWithArray:@[CDEConfigurationAttributes.modelBookmarkData, CDEConfigurationAttributes.storeBookmarkData]];
+  return [NSSet setWithArray:@[@"modelPath", @"storePath"]];
 }
 
 - (BOOL)isValid {
-    if(self.modelBookmarkData == nil || self.storeBookmarkData == nil) {
-        return NO;
-    }
-    return YES;
+  if(self.modelPath == nil || self.storePath == nil) {
+    return NO;
+  }
+  return YES;
 }
 
 #pragma mark - Setting Bookmark Data in Batch
-- (BOOL)setBookmarkDataWithApplicationBundleURL:(NSURL *)applicationBundleURL storeURL:(NSURL *)storeURL modelURL:(NSURL *)modelURL error:(NSError **)error {
-    NSParameterAssert(storeURL);
-    NSParameterAssert(modelURL);
-    
-    // Application Bundle URL is optional
-    
-    NSError *bookmarkError = nil;
-    NSData *storeData = [storeURL bookmarkDataAndGetError_cde:&bookmarkError];
-    
-    if(storeData == nil) {
-        NSLog(@"Error: %@", bookmarkError);
-        if(error != NULL) {
-            *error = bookmarkError;
-        }
-        return NO;
-    }
-    
-    self.storeBookmarkData = storeData;
-    
-    bookmarkError = nil;
-    NSData *modelData = [modelURL bookmarkDataAndGetError_cde:&bookmarkError];
-    
-    if(modelData == nil) {
-        NSLog(@"Error: %@", bookmarkError);
-        if(error != NULL) {
-            *error = bookmarkError;
-        }
-        return NO;
-    }
-    
-    self.modelBookmarkData = modelData;
-    
-    if(applicationBundleURL != nil) {
-        bookmarkError = nil;
-        NSData *applicationData = [applicationBundleURL bookmarkDataAndGetError_cde:&bookmarkError];
-        
-        if(applicationData == nil) {
-            NSLog(@"Error: %@", bookmarkError);
-            if(error != NULL) {
-                *error = bookmarkError;
-            }
-            return NO;
-        }
-        self.applicationBundleBookmarkData = applicationData;
-    }
-
-    return YES;
+- (void)setApplicationBundleURL:(NSURL *)applicationBundleURL storeURL:(NSURL *)storeURL modelURL:(NSURL *)modelURL {
+  NSParameterAssert(storeURL);
+  NSParameterAssert(modelURL);
+  self.applicationBundlePath = applicationBundleURL.path;
+  self.storePath = storeURL.path;
+  self.modelPath = modelURL.path;
 }
 
 @end
