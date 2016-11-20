@@ -102,9 +102,10 @@
                                                 <action selector="saveDocumentAs:" target="Ady-hI-5gd" id="mDf-zr-I0C"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Revert to Saved" keyEquivalent="r" id="KaW-ft-85H">
+                                        <menuItem isSeparatorItem="YES" id="fEx-u2-2ur"/>
+                                        <menuItem title="Refresh" keyEquivalent="r" id="Yhp-E1-KkH">
                                             <connections>
-                                                <action selector="revertDocumentToSaved:" target="Ady-hI-5gd" id="iJ3-Pv-kwq"/>
+                                                <action selector="refresh:" target="Ady-hI-5gd" id="0lv-0g-tOW"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="aJh-i4-bef"/>
