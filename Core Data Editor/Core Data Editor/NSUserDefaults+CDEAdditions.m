@@ -8,8 +8,8 @@ const struct CDEUserDefaultsKeys CDEUserDefaultsKeys = {
     .dateFormatterDateStyle = @"CDEUserDefaultsDateFormatterDateStyle",
     .showsNiceEntityAndPropertyNames = @"CDEUserDefaultsShowsNiceEntityAndPropertyNames",
     .automaticallyResolvesValidationErrors = @"CDEUserDefaultsAutomaticallyResolvesValidationErrors",
-    .buildProductsDirectoryBookmarkData = @"CDEUserDefaultsBuildProductsDirectoryBookmarkData",
-    .simulatorDirectoryBookmarkData = @"CDEUserDefaultsSimulatorDirectoryBookmarkData",
+    .buildProductsDirectory = @"CDEUserDefaultsBuildProductsDirectory",
+    .simulatorDirectory = @"CDEUserDefaultsSimulatorDirectory",
     .applicationNeedsSetup = @"CDEUserDefaultsApplicationNeedsSetup",
     .firstLaunchDate = @"CDEUserDefaultsFirstLaunchDate",
     .openProjectBrowserOnLaunch = @"CDEUserDefaultsOpenProjectBrowserOnLaunch",
@@ -46,15 +46,14 @@ const struct CDEUserDefaultsNotifications CDEUserDefaultsNotifications = {
 - (void)setShowsNameOfEntityInObjectIDColumn_cde:(BOOL)showsNameOfEntityInObjectIDColumn {
     [self setBool:showsNameOfEntityInObjectIDColumn forKey:CDEUserDefaultsKeys.showsNameOfEntityInObjectIDColumn];
 }
-- (BOOL)opensProjectBrowserOnLaunch_cde
-{
+
+- (BOOL)opensProjectBrowserOnLaunch_cde {
     return [self boolForKey:CDEUserDefaultsKeys.openProjectBrowserOnLaunch];
 }
-- (void)setOpenProjectBrowserOnLaunch_cde:(BOOL)opensProjectBrowserOnLaunch
-{
+
+- (void)setOpenProjectBrowserOnLaunch_cde:(BOOL)opensProjectBrowserOnLaunch {
     [self setBool:opensProjectBrowserOnLaunch forKey:CDEUserDefaultsKeys.openProjectBrowserOnLaunch];
 }
-
 
 - (NSInteger)numberOfDecimals_cde {
     return [self integerForKey:CDEUserDefaultsKeys.numberOfDecimals];
@@ -83,11 +82,9 @@ const struct CDEUserDefaultsNotifications CDEUserDefaultsNotifications = {
 - (NSDateFormatter *)dateFormatter_cde {
     NSDateFormatterStyle timeStyle = [self dateFormatterTimeStyle_cde];
     NSDateFormatterStyle dateStyle = [self dateFormatterDateStyle_cde];
-    
     NSDateFormatter *formatter = [NSDateFormatter new];
     [formatter setDateStyle:dateStyle];
     [formatter setTimeStyle:timeStyle];
-
     return formatter;
 }
 
@@ -117,70 +114,22 @@ const struct CDEUserDefaultsNotifications CDEUserDefaultsNotifications = {
     [self setBool:automaticallyResolvesValidationErrors_cde forKey:CDEUserDefaultsKeys.automaticallyResolvesValidationErrors];
 }
 
-- (NSData *)buildProductsDirectoryBookmarkData_cde {
-    return [self dataForKey:CDEUserDefaultsKeys.buildProductsDirectoryBookmarkData];
-}
-
-- (void)setBuildProductsDirectoryBookmarkData_cde:(NSData *)buildProductsDirectoryBookmarkData {
-    [self setObject:buildProductsDirectoryBookmarkData forKey:CDEUserDefaultsKeys.buildProductsDirectoryBookmarkData];
-    [[NSNotificationCenter defaultCenter] postNotificationName:CDEUserDefaultsNotifications.didChangeBuildProductsDirectory object:self];
-}
-
 - (NSURL *)buildProductsDirectory_cde {
-    NSData *bookmarkData = self.buildProductsDirectoryBookmarkData_cde;
-    if(bookmarkData == nil) {
-        return nil;
-    }
-    NSError *error = nil;
-    NSURL *URL = [NSURL URLByResolvingBookmarkData:bookmarkData error_cde:&error];
-    if(URL == nil) {
-        NSLog(@"failed to resolve bookmark data for build directory: %@", error);
-        return nil;
-    }
-    return URL;
+  return [self URLForKey:CDEUserDefaultsKeys.buildProductsDirectory];
 }
 
 - (void)setBuildProductsDirectory_cde:(NSURL *)URL {
-    NSError *error = nil;
-    NSData *bookmarkData = [URL bookmarkDataAndGetError_cde:&error];
-    if(bookmarkData == nil) {
-        NSLog(@"Failed to create bookmark data for selected build products directory '%@': %@", URL, error);
-    }
-    self.buildProductsDirectoryBookmarkData_cde = bookmarkData;
-}
-
-
-- (NSData *)simulatorDirectoryBookmarkData_cde {
-    return [self dataForKey:CDEUserDefaultsKeys.simulatorDirectoryBookmarkData];
-}
-
-- (void)setSimulatorDirectoryBookmarkData_cde:(NSData *)simulatorDirectoryBookmarkData {
-    [self setObject:simulatorDirectoryBookmarkData forKey:CDEUserDefaultsKeys.simulatorDirectoryBookmarkData];
-    [[NSNotificationCenter defaultCenter] postNotificationName:CDEUserDefaultsNotifications.didChangeSimulatorDirectory object:self];
+  [self setURL:URL forKey:CDEUserDefaultsKeys.buildProductsDirectory];
+  [[NSNotificationCenter defaultCenter] postNotificationName:CDEUserDefaultsNotifications.didChangeBuildProductsDirectory object:self];
 }
 
 - (NSURL *)simulatorDirectory_cde {
-    NSData *bookmarkData = self.simulatorDirectoryBookmarkData_cde;
-    if(bookmarkData == nil) {
-        return nil;
-    }
-    NSError *error = nil;
-    NSURL *URL = [NSURL URLByResolvingBookmarkData:bookmarkData error_cde:&error];
-    
-    if(URL == nil) {
-        NSLog(@"failed to resolve bookmark data for build directory: %@", error);
-        return nil;
-    }
-    return URL;
+  return [self URLForKey:CDEUserDefaultsKeys.simulatorDirectory];
 }
 
 - (void)setSimulatorDirectory_cde:(NSURL *)URL {
-    NSError *error = nil;
-    NSData *bookmarkData = [URL bookmarkDataAndGetError_cde:&error];
-    if(bookmarkData == nil) {
-        NSLog(@"Failed to create bookmark data for selected build products directory '%@': %@", URL, error);
-    }
-    self.simulatorDirectoryBookmarkData_cde = bookmarkData;
+  [self setURL:URL forKey:CDEUserDefaultsKeys.simulatorDirectory];
+  [[NSNotificationCenter defaultCenter] postNotificationName:CDEUserDefaultsNotifications.didChangeSimulatorDirectory object:self];
 }
 
 - (void)setApplicationNeedsSetup_cde:(BOOL)applicationNeedsSetup {
