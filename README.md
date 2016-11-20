@@ -1,12 +1,10 @@
+# Build Status
+| Branch        | Status           | 
+| ------------- |:-------------:|
+| Master      | [![Build Status](https://travis-ci.org/ChristianKienle/Core-Data-Editor.svg?branch=master)](https://travis-ci.org/ChristianKienle/Core-Data-Editor) |
+| Develop      | [![Build Status](https://travis-ci.org/ChristianKienle/Core-Data-Editor.svg?branch=develop)](https://travis-ci.org/ChristianKienle/Core-Data-Editor)      |
+
 # Core Data Editor
-
--# Build Status
--| Branch        | Status           | 
--| ------------- |:-------------:|
--| Master      | [![Build Status](https://travis-ci.org/ChristianKienle/Core-Data-Editor.svg?branch=master)](https://travis-ci.org/ChristianKienle/Core-Data-Editor) |
--| Develop      | [![Build Status](https://travis-ci.org/ChristianKienle/Core-Data-Editor.svg?branch=develop)](https://travis-ci.org/ChristianKienle/Core-Data-Editor)      |
-+[![Build Status](https://travis-ci.org/ChristianKienle/Core-Data-Editor.svg?branch=master)](https://travis-ci.org/ChristianKienle/Core-Data-Editor)
-
 
 <img src="app-icon.png" alt="Core Data Editor Logo" title="Core Data Editor Logo" align="right" />
 
