@@ -56,11 +56,13 @@
     self.navigationController = [self.storyboard instantiateInitialViewController];
   }
   
-  self.managedObjectModel = self.managedObjectContext.persistentStoreCoordinator.managedObjectModel;
-  
-  [[[self applicationWindow] rootViewController] presentViewController:self.navigationController
-                                                              animated:YES
-                                                            completion:NULL];
+  if ([[self applicationWindow] rootViewController].presentedViewController == nil) {
+    self.managedObjectModel = self.managedObjectContext.persistentStoreCoordinator.managedObjectModel;
+    
+    [[[self applicationWindow] rootViewController] presentViewController:self.navigationController
+                                                                animated:YES
+                                                              completion:NULL];
+  }
 }
 
 - (UIWindow *)applicationWindow
