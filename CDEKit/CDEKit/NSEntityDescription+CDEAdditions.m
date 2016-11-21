@@ -31,7 +31,7 @@
   return result;
 }
 
-- (NSDictionary<NSString*, NSRelationshopDescription*> *)toManyRelationshipsByName_cde {
+- (NSDictionary<NSString*, NSRelationshipDescription*> *)toManyRelationshipsByName_cde {
   NSMutableDictionary *result = [NSMutableDictionary new];
   [self.relationshipsByName enumerateKeysAndObjectsUsingBlock:^(NSString *name, NSRelationshipDescription *relation, BOOL *stop) {
     if(relation.isToMany == NO) {
