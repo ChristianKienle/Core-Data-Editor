@@ -24,6 +24,7 @@
 		AB7F70901DE9B5A5007C3E41 /* FloatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F708F1DE9B5A5007C3E41 /* FloatCell.swift */; };
 		AB7F70921DE9B675007C3E41 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F70911DE9B675007C3E41 /* DateCell.swift */; };
 		AB7F70941DE9B7E0007C3E41 /* DatePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F70931DE9B7E0007C3E41 /* DatePickerVC.swift */; };
+		ABCD6BC61DE9FE69007BC822 /* ValidationIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCD6BC51DE9FE69007BC822 /* ValidationIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		AB7F708F1DE9B5A5007C3E41 /* FloatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatCell.swift; sourceTree = "<group>"; };
 		AB7F70911DE9B675007C3E41 /* DateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 		AB7F70931DE9B7E0007C3E41 /* DatePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerVC.swift; sourceTree = "<group>"; };
+		ABCD6BC51DE9FE69007BC822 /* ValidationIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				AB7F70871DE99992007C3E41 /* AttributeCell.swift */,
+				ABCD6BC51DE9FE69007BC822 /* ValidationIndicator.swift */,
 				AB7F70891DE99AE7007C3E41 /* StringCell.swift */,
 				AB7F708B1DE9B038007C3E41 /* IntegerCell.swift */,
 				AB7F708D1DE9B202007C3E41 /* BoolCell.swift */,
@@ -333,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABCD6BC61DE9FE69007BC822 /* ValidationIndicator.swift in Sources */,
 				AB7F708C1DE9B038007C3E41 /* IntegerCell.swift in Sources */,
 				AB7F70921DE9B675007C3E41 /* DateCell.swift in Sources */,
 				AB7F707D1DE98C10007C3E41 /* ObjectsVC.swift in Sources */,

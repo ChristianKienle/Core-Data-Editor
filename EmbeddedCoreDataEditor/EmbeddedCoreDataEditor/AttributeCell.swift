@@ -23,6 +23,7 @@ class AttributeCell: UITableViewCell {
   let attributeNameLabel = UILabel()
   let stackView = UIStackView()
   var attributeObjectPair: AttributeObjectPair?
+  private let validationIndicator = ValidationIndicator()
   weak var delegate: AttributeCellDelegate?
   // MARK: - Creating
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -54,6 +55,8 @@ class AttributeCell: UITableViewCell {
     stackView.addArrangedSubview(attributeNameLabel)
   }
   func configure(with attributeObjectPair: AttributeObjectPair) {
+    validationIndicator.sizeToFit()
+    accessoryView = validationIndicator
     self.attributeObjectPair = attributeObjectPair
     attributeNameLabel.text = attributeObjectPair.attribute.name
   }

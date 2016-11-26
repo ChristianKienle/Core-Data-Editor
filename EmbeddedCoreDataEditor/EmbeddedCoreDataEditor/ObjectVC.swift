@@ -49,6 +49,9 @@ final class ObjectVC: UITableViewController {
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return UITableViewAutomaticDimension
   }
+  override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    return false
+  }
   // MARK: - Private Helper
   private func attribute(for indexPath: IndexPath) -> NSAttributeDescription {
     return attributes[indexPath.row]
