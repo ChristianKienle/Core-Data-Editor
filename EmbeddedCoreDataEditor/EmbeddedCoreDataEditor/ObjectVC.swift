@@ -3,16 +3,12 @@ import UIKit
 import CoreData
 import CoreDataEditorKit
 
-protocol ObjectVCDelegate: class {
-  func objectVCDidSave(_ objectVC: ObjectVC)
-  func objectVCDidCancel(_ objectVC: ObjectVC)
-}
-
 final class ObjectVC: UITableViewController {
   // MARK: - Properties
   let context: NSManagedObjectContext
   let object: NSManagedObject
-  weak var delegate: ObjectVCDelegate?
+  var didSave: ((Void) -> (Void))?
+  var didCancel: ((Void) -> (Void))?
   private let attributes: [NSAttributeDescription]
   private let relationships: [NSRelationshipDescription]
   // MARK: - Creating
@@ -86,11 +82,32 @@ final class ObjectVC: UITableViewController {
         print("set \(relationship.name) of \(self.object.entity.name!) to object of type \(relatedObject.entity.name)")
         childObject.setValue(relatedObject, forKey: relationship.name)
         let objectVC = ObjectVC(context: childContext, object: relatedObject)
-        objectVC.delegate = self
+        objectVC.didSave = {
+          do {
+            try objectVC.object.managedObjectContext?.save()
+          } catch {
+            // TODO: Validation
+            print(error)
+          }
+          let _ = self.navigationController?.popToViewController(self, animated: true)
+          self.tableView.reloadData()
+        
+        }
+        objectVC.didCancel = {
+          let _ = self.navigationController?.popToViewController(self, animated: true)
+        }
         self.navigationController?.pushViewController(objectVC, animated: true)
       }))
       alert.addAction(UIAlertAction(title: "Pick existing Object", style: .default, handler: { _ in
-        
+        let relationship = self.relationship(for: indexPath)
+        let objectsVC = SingleObjectPickerVC(context: self.context, entity: relationship.destinationEntity!)
+        objectsVC.didSelectObject = { selectedObjectID in
+          print("selected")
+          let selectedObject = self.context.object(with: selectedObjectID)
+          self.object.setValue(selectedObject, forKey: relationship.name)
+          let _ = self.navigationController?.popToViewController(self, animated: true)
+        }
+        self.navigationController?.pushViewController(objectsVC, animated: true)
       }))
       present(alert, animated: true, completion: nil)
     default: fatalError()
@@ -136,10 +153,10 @@ final class ObjectVC: UITableViewController {
   }
   // MARK: - Actions
   func save(_ sender: Any?) {
-    delegate?.objectVCDidSave(self)
+    didSave?()
   }
   func cancel(_ sender: Any?) {
-    delegate?.objectVCDidCancel(self)
+    didCancel?()
   }
 }
 
@@ -158,22 +175,23 @@ extension ObjectVC: AttributeCellDelegate {
   }
   func presentingViewController(for attributeCell: AttributeCell) -> UIViewController { return self }
 }
-extension ObjectVC: ObjectVCDelegate {
-  func objectVCDidSave(_ objectVC: ObjectVC) {
-    do {
-      try objectVC.object.managedObjectContext?.save()
-    } catch {
-      // TODO: Validation
-      print(error)
-    }
-    let _ = navigationController?.popToViewController(self, animated: true)
-    self.tableView.reloadData()
-  }
-  func objectVCDidCancel(_ objectVC: ObjectVC) {
-    let _ = navigationController?.popToViewController(self, animated: true)
-    self.tableView.reloadData()
-  }
-}
+//extension ObjectVC: ObjectVCDelegate {
+//  func objectVCDidSave(_ objectVC: ObjectVC) {
+//    do {
+//      try objectVC.object.managedObjectContext?.save()
+//      try context.save()
+//    } catch {
+//      // TODO: Validation
+//      print(error)
+//    }
+//    let _ = navigationController?.popToViewController(self, animated: true)
+//    self.tableView.reloadData()
+//  }
+//  func objectVCDidCancel(_ objectVC: ObjectVC) {
+//    let _ = navigationController?.popToViewController(self, animated: true)
+//    self.tableView.reloadData()
+//  }
+//}
 
 enum AttributeClass {
   case string, integer, bool, float, date

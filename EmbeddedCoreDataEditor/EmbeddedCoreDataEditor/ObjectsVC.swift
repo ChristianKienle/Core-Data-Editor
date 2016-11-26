@@ -3,9 +3,12 @@ import UIKit
 import CoreData
 import CoreDataEditorKit
 
-final class ObjectsVC: UITableViewController {
+class ObjectsVC: UITableViewController {
+  enum Mode {
+    case browse, select, selectMultiple
+  }
   // MARK: - Properties
-  private let context: NSManagedObjectContext
+  fileprivate let context: NSManagedObjectContext
   private let entity: NSEntityDescription
   private var objectIDs = [NSManagedObjectID]()
   // MARK: - Creating
@@ -36,17 +39,46 @@ final class ObjectsVC: UITableViewController {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "ObjectIDCell", for: indexPath)
     let objectID = self.objectID(for: indexPath)
+    cell.shouldIndentWhileEditing = true
+    cell.selectionStyle = .default
+    cell.indentationLevel = 1
     cell.textLabel?.text = objectID.humanReadableRepresentation(hideEntityName: true)
     return cell
+  }
+  override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    
+  }
+  override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    return true
+  }
+  override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    return .none
   }
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let objectID = self.objectID(for: indexPath)
     guard let object = try? context.existingObject(with: objectID) else {
       return
     }
+    // Push an ObjectVC in order to edit an existing Object
     let objectVC = ObjectVC(context: context, object: object)
+    objectVC.didSave = {
+      let object = objectVC.object
+      do {
+        try object.managedObjectContext?.save()
+        try self.context.save()
+      } catch {
+        // TODO: Validation
+        print(error)
+      }
+      self.fetchObjectIDs()
+      let _ = self.navigationController?.popToViewController(self, animated: true)
+    }
+    objectVC.didCancel = {
+      let _ = self.navigationController?.popToViewController(self, animated: true)
+    }
     navigationController?.pushViewController(objectVC, animated: true)
   }
+  
   // MARK: - Private Helper
   fileprivate func fetchObjectIDs() {
     let request = NSFetchRequest<NSManagedObjectID>(entityName: entity.name!)
@@ -57,7 +89,7 @@ final class ObjectsVC: UITableViewController {
     }
     objectIDs = fetchedIDs
   }
-  private func objectID(for indexPath: IndexPath) -> NSManagedObjectID {
+  fileprivate func objectID(for indexPath: IndexPath) -> NSManagedObjectID {
     return objectIDs[indexPath.row]
   }
   private func setupNewObjectButton() {
@@ -67,27 +99,98 @@ final class ObjectsVC: UITableViewController {
     let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     childContext.parent = context
     let object = NSManagedObject(entity: entity, insertInto: childContext)
+    // Present an ObjectVC modally
     let objectVC = ObjectVC(context: childContext, object: object)
-    objectVC.delegate = self
+    objectVC.didSave = {
+      let object = objectVC.object
+      do {
+        try object.managedObjectContext?.save()
+        try self.context.save()
+      } catch {
+        // TODO: Validation
+        print(error)
+      }
+      self.dismiss(animated: true) {
+        self.fetchObjectIDs()
+      }
+    }
+    objectVC.didCancel = {
+      self.dismiss(animated: true)
+      
+    }
     let nc = UINavigationController(rootViewController: objectVC)
     present(nc, animated: true, completion: nil)
   }
 }
 
-extension ObjectsVC: ObjectVCDelegate {
-  func objectVCDidSave(_ objectVC: ObjectVC) {
-    let object = objectVC.object
-    do {
-      try object.managedObjectContext?.save()
-    } catch {
-      // TODO: Validation
-      print(error)
-    }
-    dismiss(animated: true) {
-      self.fetchObjectIDs()
-    }
+final class SingleObjectPickerVC: ObjectsVC {
+  // MARK: - Properties
+  var didSelectObject: ((NSManagedObjectID) -> (Void))?
+  // MARK: - Creating
+  override init(context: NSManagedObjectContext, entity: NSEntityDescription) {
+    super.init(context: context, entity: entity)
+    tableView.allowsSelectionDuringEditing = true
+    setEditing(true, animated: false)
+    tableView.setEditing(true, animated: false)
+    isEditing = true
   }
-  func objectVCDidCancel(_ objectVC: ObjectVC) {
-    dismiss(animated: true)
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  // MARK: - UITableView
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard tableView.isEditing == false else {
+      let objectID = self.objectID(for: indexPath)
+      didSelectObject?(objectID)
+      return
+    }
+    super.tableView(tableView, didSelectRowAt: indexPath)
+  }
+}
+
+// [Assign(n)] ---- TITLE ---- [Cancel]
+final class MultipleObjectsPickerVC: ObjectsVC {
+  // MARK: - Properties
+  var didSelectObjects: ((Set<NSManagedObjectID>) -> (Void))?
+  var didCancel: ((Void) -> (Void))?
+
+  // MARK: - Creating
+  override init(context: NSManagedObjectContext, entity: NSEntityDescription) {
+    super.init(context: context, entity: entity)
+    tableView.allowsMultipleSelectionDuringEditing = true
+    setEditing(true, animated: false)
+    tableView.setEditing(true, animated: false)
+    isEditing = true
+    setupButtons()
+    updateAssignButton()
+  }
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  // MARK: - UITableView
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard tableView.isEditing == false else {
+      updateAssignButton()
+      return
+    }
+    super.tableView(tableView, didSelectRowAt: indexPath)
+  }
+  // MARK: - Setup Buttons
+  private func setupButtons() {
+    navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Assign", style: .done, target: self, action: #selector(type(of: self).pickSelectedObjects(_:)))
+    navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(type(of: self).cancel(_:)))
+  }
+  private func updateAssignButton() {
+    let count = tableView.indexPathsForSelectedRows?.count ?? 0
+    navigationItem.leftBarButtonItem?.title = "Assign (\(count))"
+  }
+  func pickSelectedObjects(_ sender: Any?) {
+    let objectIDs = (tableView.indexPathsForSelectedRows ?? []).map { indexPath in
+      return self.objectID(for: indexPath)
+    }
+    didSelectObjects?(Set(objectIDs))
+  }
+  func cancel(_ sender: Any?) {
+    didCancel?()
   }
 }
