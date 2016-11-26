@@ -12,6 +12,10 @@
 		AB40699A1DE88F1C001F83E9 /* CoreDataEditorKit.h in Headers */ = {isa = PBXBuildFile; fileRef = AB40698C1DE88F1C001F83E9 /* CoreDataEditorKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB7F70811DE98F7C007C3E41 /* NSManagedObjectID+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F70801DE98F7C007C3E41 /* NSManagedObjectID+Additions.swift */; };
 		AB7F70851DE99738007C3E41 /* NSAttributeDescription+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F70841DE99738007C3E41 /* NSAttributeDescription+Additions.swift */; };
+		ABCD6BCD1DEA0439007BC822 /* NSError+CDEValidation.h in Headers */ = {isa = PBXBuildFile; fileRef = ABCD6BC91DEA0439007BC822 /* NSError+CDEValidation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ABCD6BCE1DEA0439007BC822 /* NSError+CDEValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD6BCA1DEA0439007BC822 /* NSError+CDEValidation.m */; };
+		ABCD6BCF1DEA0439007BC822 /* NSManagedObject+CDEAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = ABCD6BCB1DEA0439007BC822 /* NSManagedObject+CDEAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ABCD6BD01DEA0439007BC822 /* NSManagedObject+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD6BCC1DEA0439007BC822 /* NSManagedObject+CDEAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +37,10 @@
 		AB4069991DE88F1C001F83E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB7F70801DE98F7C007C3E41 /* NSManagedObjectID+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectID+Additions.swift"; sourceTree = "<group>"; };
 		AB7F70841DE99738007C3E41 /* NSAttributeDescription+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributeDescription+Additions.swift"; sourceTree = "<group>"; };
+		ABCD6BC91DEA0439007BC822 /* NSError+CDEValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+CDEValidation.h"; sourceTree = "<group>"; };
+		ABCD6BCA1DEA0439007BC822 /* NSError+CDEValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+CDEValidation.m"; sourceTree = "<group>"; };
+		ABCD6BCB1DEA0439007BC822 /* NSManagedObject+CDEAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+CDEAdditions.h"; sourceTree = "<group>"; };
+		ABCD6BCC1DEA0439007BC822 /* NSManagedObject+CDEAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+CDEAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,10 @@
 			children = (
 				AB40698C1DE88F1C001F83E9 /* CoreDataEditorKit.h */,
 				AB40698D1DE88F1C001F83E9 /* Info.plist */,
+				ABCD6BC91DEA0439007BC822 /* NSError+CDEValidation.h */,
+				ABCD6BCA1DEA0439007BC822 /* NSError+CDEValidation.m */,
+				ABCD6BCB1DEA0439007BC822 /* NSManagedObject+CDEAdditions.h */,
+				ABCD6BCC1DEA0439007BC822 /* NSManagedObject+CDEAdditions.m */,
 				AB7F70801DE98F7C007C3E41 /* NSManagedObjectID+Additions.swift */,
 				AB7F70841DE99738007C3E41 /* NSAttributeDescription+Additions.swift */,
 			);
@@ -99,7 +111,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABCD6BCD1DEA0439007BC822 /* NSError+CDEValidation.h in Headers */,
 				AB40699A1DE88F1C001F83E9 /* CoreDataEditorKit.h in Headers */,
+				ABCD6BCF1DEA0439007BC822 /* NSManagedObject+CDEAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,8 +217,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABCD6BD01DEA0439007BC822 /* NSManagedObject+CDEAdditions.m in Sources */,
 				AB7F70851DE99738007C3E41 /* NSAttributeDescription+Additions.swift in Sources */,
 				AB7F70811DE98F7C007C3E41 /* NSManagedObjectID+Additions.swift in Sources */,
+				ABCD6BCE1DEA0439007BC822 /* NSError+CDEValidation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

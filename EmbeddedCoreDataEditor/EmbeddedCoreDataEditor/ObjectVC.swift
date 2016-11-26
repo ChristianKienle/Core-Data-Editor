@@ -42,6 +42,7 @@ final class ObjectVC: UITableViewController {
       fatalError()
     }
     let pair = AttributeObjectPair(object: object, attribute: attribute)
+
     cell.configure(with: pair)
     cell.delegate = self
     return cell
@@ -63,6 +64,7 @@ extension ObjectVC: AttributeCellDelegate {
     guard let pair = cell.attributeObjectPair else {
       fatalError()
     }
+    
     object.setValue(value, forKey: pair.attribute.name)
     guard let indexPath = tableView.indexPath(for: cell) else {
       fatalError()
