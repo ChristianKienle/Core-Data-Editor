@@ -60,7 +60,6 @@ class AttributeCell: UITableViewCell {
     let invalidAttributes = attributeObjectPair.object.invalidAttributes() ?? []
     let isInvalid = invalidAttributes.contains(attributeObjectPair.attribute)
     validationIndicator.indicatesValidState = !isInvalid
-
     self.attributeObjectPair = attributeObjectPair
     attributeNameLabel.text = attributeObjectPair.attribute.name
   }
