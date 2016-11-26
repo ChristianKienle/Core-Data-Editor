@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:EmbeddedCoreDataEditor/EmbeddedCoreDataEditor.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:CoreDataEditorKit/CoreDataEditorKit.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:iOS Example/iOS Example.xcodeproj">
    </FileRef>
    <FileRef

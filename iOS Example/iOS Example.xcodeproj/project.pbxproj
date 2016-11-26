@@ -21,11 +21,34 @@
 		AB15928C17B52996008DA7E2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB15928A17B52996008DA7E2 /* MainStoryboard.storyboard */; };
 		AB15929217B52996008DA7E2 /* CDEMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB15929117B52996008DA7E2 /* CDEMasterViewController.m */; };
 		AB15929517B52996008DA7E2 /* CDEDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB15929417B52996008DA7E2 /* CDEDetailViewController.m */; };
+		AB4069F41DE89846001F83E9 /* EmbeddedCoreDataEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4069EE1DE897CA001F83E9 /* EmbeddedCoreDataEditor.framework */; };
+		AB4069F51DE89846001F83E9 /* EmbeddedCoreDataEditor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB4069EE1DE897CA001F83E9 /* EmbeddedCoreDataEditor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AB5C07A317B5427A0069F99D /* libCDEKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB5C079F17B5425F0069F99D /* libCDEKit.a */; };
 		AB924CCE17B52F9E00DA7ACB /* iOS_Example.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = AB924CCD17B52F9E00DA7ACB /* iOS_Example.xcdatamodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		AB4069ED1DE897CA001F83E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB4069E81DE897CA001F83E9 /* EmbeddedCoreDataEditor.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AB4069AD1DE88F50001F83E9;
+			remoteInfo = EmbeddedCoreDataEditor;
+		};
+		AB4069EF1DE897CA001F83E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB4069E81DE897CA001F83E9 /* EmbeddedCoreDataEditor.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AB4069B61DE88F50001F83E9;
+			remoteInfo = EmbeddedCoreDataEditorTests;
+		};
+		AB4069F61DE89846001F83E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB4069E81DE897CA001F83E9 /* EmbeddedCoreDataEditor.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AB4069AC1DE88F50001F83E9;
+			remoteInfo = EmbeddedCoreDataEditor;
+		};
 		AB5C079E17B5425F0069F99D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AB5C079817B5425F0069F99D /* CDEKit.xcodeproj */;
@@ -56,6 +79,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		AB4069F81DE89847001F83E9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AB4069F51DE89846001F83E9 /* EmbeddedCoreDataEditor.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		AB15926D17B52996008DA7E2 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB15927017B52996008DA7E2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -76,6 +113,10 @@
 		AB15929117B52996008DA7E2 /* CDEMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDEMasterViewController.m; sourceTree = "<group>"; };
 		AB15929317B52996008DA7E2 /* CDEDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDEDetailViewController.h; sourceTree = "<group>"; };
 		AB15929417B52996008DA7E2 /* CDEDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDEDetailViewController.m; sourceTree = "<group>"; };
+		AB4069CD1DE8901D001F83E9 /* EmbeddedCoreDataEditor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EmbeddedCoreDataEditor.framework; path = "../EmbeddedCoreDataEditor/build/Debug-iphoneos/EmbeddedCoreDataEditor.framework"; sourceTree = "<group>"; };
+		AB4069E11DE8975A001F83E9 /* EmbeddedCoreDataEditor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EmbeddedCoreDataEditor.framework; path = "../../Library/Developer/Xcode/DerivedData/CDE-Workspace-exdpleywycefswbjvfigzcgtjwkw/Build/Products/Debug-iphonesimulator/EmbeddedCoreDataEditor.framework"; sourceTree = "<group>"; };
+		AB4069E81DE897CA001F83E9 /* EmbeddedCoreDataEditor.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EmbeddedCoreDataEditor.xcodeproj; path = ../EmbeddedCoreDataEditor/EmbeddedCoreDataEditor.xcodeproj; sourceTree = "<group>"; };
+		AB4069F21DE897E1001F83E9 /* CoreDataEditorKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreDataEditorKit.framework; path = "../../Library/Developer/Xcode/DerivedData/CDE-Workspace-exdpleywycefswbjvfigzcgtjwkw/Build/Products/Debug-iphonesimulator/CoreDataEditorKit.framework"; sourceTree = "<group>"; };
 		AB5C079817B5425F0069F99D /* CDEKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CDEKit.xcodeproj; path = ../CDEKit/CDEKit.xcodeproj; sourceTree = "<group>"; };
 		AB924CCD17B52F9E00DA7ACB /* iOS_Example.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOS_Example.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB4069F41DE89846001F83E9 /* EmbeddedCoreDataEditor.framework in Frameworks */,
 				AB5C07A317B5427A0069F99D /* libCDEKit.a in Frameworks */,
 				AB15927117B52996008DA7E2 /* UIKit.framework in Frameworks */,
 				AB15927317B52996008DA7E2 /* Foundation.framework in Frameworks */,
@@ -99,6 +141,7 @@
 		AB15926417B52996008DA7E2 = {
 			isa = PBXGroup;
 			children = (
+				AB4069E81DE897CA001F83E9 /* EmbeddedCoreDataEditor.xcodeproj */,
 				AB5C079817B5425F0069F99D /* CDEKit.xcodeproj */,
 				AB15927817B52996008DA7E2 /* iOS Example */,
 				AB15926F17B52996008DA7E2 /* Frameworks */,
@@ -117,6 +160,9 @@
 		AB15926F17B52996008DA7E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AB4069F21DE897E1001F83E9 /* CoreDataEditorKit.framework */,
+				AB4069E11DE8975A001F83E9 /* EmbeddedCoreDataEditor.framework */,
+				AB4069CD1DE8901D001F83E9 /* EmbeddedCoreDataEditor.framework */,
 				AB15927017B52996008DA7E2 /* UIKit.framework */,
 				AB15927217B52996008DA7E2 /* Foundation.framework */,
 				AB15927417B52996008DA7E2 /* CoreGraphics.framework */,
@@ -155,6 +201,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		AB4069E91DE897CA001F83E9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB4069EE1DE897CA001F83E9 /* EmbeddedCoreDataEditor.framework */,
+				AB4069F01DE897CA001F83E9 /* EmbeddedCoreDataEditorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		AB5C079917B5425F0069F99D /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,12 +229,14 @@
 				AB15926917B52996008DA7E2 /* Sources */,
 				AB15926A17B52996008DA7E2 /* Frameworks */,
 				AB15926B17B52996008DA7E2 /* Resources */,
+				AB4069F81DE89847001F83E9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				AB5C07A517B542A80069F99D /* PBXTargetDependency */,
 				AB5C07A717B542A80069F99D /* PBXTargetDependency */,
+				AB4069F71DE89846001F83E9 /* PBXTargetDependency */,
 			);
 			name = "iOS Example";
 			productName = "iOS Example";
@@ -197,7 +254,7 @@
 				ORGANIZATIONNAME = "Thermal Core";
 				TargetAttributes = {
 					AB15926C17B52996008DA7E2 = {
-						DevelopmentTeam = SWP5WTP5JJ;
+						DevelopmentTeam = 6YJV6LM6Q4;
 					};
 				};
 			};
@@ -216,6 +273,10 @@
 					ProductGroup = AB5C079917B5425F0069F99D /* Products */;
 					ProjectRef = AB5C079817B5425F0069F99D /* CDEKit.xcodeproj */;
 				},
+				{
+					ProductGroup = AB4069E91DE897CA001F83E9 /* Products */;
+					ProjectRef = AB4069E81DE897CA001F83E9 /* EmbeddedCoreDataEditor.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -225,6 +286,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		AB4069EE1DE897CA001F83E9 /* EmbeddedCoreDataEditor.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EmbeddedCoreDataEditor.framework;
+			remoteRef = AB4069ED1DE897CA001F83E9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AB4069F01DE897CA001F83E9 /* EmbeddedCoreDataEditorTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = EmbeddedCoreDataEditorTests.xctest;
+			remoteRef = AB4069EF1DE897CA001F83E9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		AB5C079F17B5425F0069F99D /* libCDEKit.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -273,6 +348,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		AB4069F71DE89846001F83E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EmbeddedCoreDataEditor;
+			targetProxy = AB4069F61DE89846001F83E9 /* PBXContainerItemProxy */;
+		};
 		AB5C07A517B542A80069F99D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CDEKit;
@@ -341,7 +421,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -376,7 +456,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -387,10 +467,13 @@
 		AB15929917B52996008DA7E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6YJV6LM6Q4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS Example/iOS Example-Prefix.pch";
 				INFOPLIST_FILE = "iOS Example/iOS Example-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.cocoading.Sync-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -402,10 +485,13 @@
 		AB15929A17B52996008DA7E2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6YJV6LM6Q4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS Example/iOS Example-Prefix.pch";
 				INFOPLIST_FILE = "iOS Example/iOS Example-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.cocoading.Sync-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";

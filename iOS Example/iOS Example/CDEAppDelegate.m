@@ -3,7 +3,11 @@
 #import <CDEKit/CDE.h>
 
 #import "CDEMasterViewController.h"
+#import <EmbeddedCoreDataEditor/EmbeddedCoreDataEditor-Swift.h>
 
+@interface CDEAppDelegate ()
+@property (strong) Editor *editor;
+@end
 @implementation CDEAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -17,8 +21,9 @@
     CDEMasterViewController *controller = (CDEMasterViewController *)navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
     
-    [[CDE sharedCoreDataEditor] enableEmbeddedCoreDataEditorWithMainContext:self.managedObjectContext];
-    
+//    [[CDE sharedCoreDataEditor] enableEmbeddedCoreDataEditorWithMainContext:self.managedObjectContext];
+  self.editor = [[Editor alloc] initWithContext: self.managedObjectContext];
+  [self.editor enable];
     return YES;
 }
 
