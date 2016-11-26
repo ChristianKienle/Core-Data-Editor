@@ -9,42 +9,39 @@ struct RelationshipObjectPair {
   }
 }
 
-
-
-class RelationshipCell: UITableViewCell {
+final class RelationshipCell: UITableViewCell {
   // MARK: - Globals
   class var identifier: String {
     return "RelationshipCell"
   }
+  // MARK: - Creating
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: .subtitle, reuseIdentifier: type(of: self).identifier)
-    configureCell()
   }
   init() {
     super.init(style: .subtitle, reuseIdentifier: type(of: self).identifier)
-    configureCell()
   }
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  private func configureCell() {
-  
-  }
-  
+  // MARK: - Configures
   func configure(with pair: RelationshipObjectPair) {
-    textLabel?.text = pair.relationship.name
-    guard let relatedObject: NSManagedObject? = pair.value() else {
-      detailTextLabel?.text = "null"
-      return
+    let relationship = pair.relationship
+    textLabel?.text = relationship.name
+    let text: String
+    if relationship.isToMany {
+      if let relatedObjects: NSSet = pair.value() {
+        text = "\(relatedObjects.count) Object(s)"
+      } else {
+        text = "null"
+      }
+    } else {
+      if let relatedObject: NSManagedObject = pair.value() {
+        text = relatedObject.objectID.humanReadableRepresentation(hideEntityName: false)
+      } else {
+        text = "null"
+      }
     }
-    detailTextLabel?.text = relatedObject?.objectID.humanReadableRepresentation(hideEntityName: false)
+    detailTextLabel?.text = text
   }
-
-  
 }
-
-class ToOneRelationshipCell: UITableViewCell {
-  
-  
-}
-

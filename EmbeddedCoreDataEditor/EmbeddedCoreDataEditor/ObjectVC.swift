@@ -100,14 +100,25 @@ final class ObjectVC: UITableViewController {
       }))
       alert.addAction(UIAlertAction(title: "Pick existing Object", style: .default, handler: { _ in
         let relationship = self.relationship(for: indexPath)
-        let objectsVC = SingleObjectPickerVC(context: self.context, entity: relationship.destinationEntity!)
-        objectsVC.didSelectObject = { selectedObjectID in
-          print("selected")
-          let selectedObject = self.context.object(with: selectedObjectID)
-          self.object.setValue(selectedObject, forKey: relationship.name)
-          let _ = self.navigationController?.popToViewController(self, animated: true)
+        if relationship.isToMany == false {
+          let objectsVC = SingleObjectPickerVC(context: self.context, entity: relationship.destinationEntity!)
+          objectsVC.didSelectObject = { selectedObjectID in
+            let selectedObject = self.context.object(with: selectedObjectID)
+            self.object.setValue(selectedObject, forKey: relationship.name)
+            let _ = self.navigationController?.popToViewController(self, animated: true)
+          }
+          self.navigationController?.pushViewController(objectsVC, animated: true)
         }
-        self.navigationController?.pushViewController(objectsVC, animated: true)
+        if relationship.isToMany {
+          let objectsVC = MultipleObjectsPickerVC(context: self.context, entity: relationship.destinationEntity!)
+          objectsVC.didSelectObjects = { selectedObjectIDs in
+            let selectedObjects = (Set(selectedObjectIDs.map { self.context.object(with: $0) })) as NSSet
+            self.object.setValue(selectedObjects, forKey: relationship.name)
+            let _ = self.navigationController?.popToViewController(self, animated: true)
+          }
+          self.navigationController?.pushViewController(objectsVC, animated: true)
+
+        }
       }))
       present(alert, animated: true, completion: nil)
     default: fatalError()
@@ -175,23 +186,6 @@ extension ObjectVC: AttributeCellDelegate {
   }
   func presentingViewController(for attributeCell: AttributeCell) -> UIViewController { return self }
 }
-//extension ObjectVC: ObjectVCDelegate {
-//  func objectVCDidSave(_ objectVC: ObjectVC) {
-//    do {
-//      try objectVC.object.managedObjectContext?.save()
-//      try context.save()
-//    } catch {
-//      // TODO: Validation
-//      print(error)
-//    }
-//    let _ = navigationController?.popToViewController(self, animated: true)
-//    self.tableView.reloadData()
-//  }
-//  func objectVCDidCancel(_ objectVC: ObjectVC) {
-//    let _ = navigationController?.popToViewController(self, animated: true)
-//    self.tableView.reloadData()
-//  }
-//}
 
 enum AttributeClass {
   case string, integer, bool, float, date
