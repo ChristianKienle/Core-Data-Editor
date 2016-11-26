@@ -5,10 +5,12 @@ import CoreDataEditorKit
 
 final class ObjectVC: UITableViewController {
   // MARK: - Properties
-  private let object: NSManagedObject
+  let context: NSManagedObjectContext
+  let object: NSManagedObject
   private let attributes: [NSAttributeDescription]
   // MARK: - Creating
-  init(object: NSManagedObject) {
+  init(context: NSManagedObjectContext, object: NSManagedObject) {
+    self.context = context
     self.object = object
     self.attributes = Array(object.entity.attributesByName.values).filter { $0.isSupported }
     super.init(nibName: nil, bundle: nil)
