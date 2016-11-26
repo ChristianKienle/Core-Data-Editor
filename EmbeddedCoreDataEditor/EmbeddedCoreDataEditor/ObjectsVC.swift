@@ -69,8 +69,13 @@ final class ObjectsVC: UITableViewController {
     let object = NSManagedObject(entity: entity, insertInto: childContext)
     let objectVC = ObjectVC(context: childContext, object: object)
     objectVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveObject(_:)))
+    objectVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelObjectCreation(_:)))
+    
     let nc = UINavigationController(rootViewController: objectVC)
     present(nc, animated: true, completion: nil)
+  }
+  func cancelObjectCreation(_ sender: Any?) {
+    dismiss(animated: true)
   }
   func saveObject(_ sender: Any?) {
     guard let objectNC = presentedViewController as? UINavigationController else {
@@ -83,6 +88,7 @@ final class ObjectsVC: UITableViewController {
     do {
       try object.managedObjectContext?.save()
     } catch {
+      // TODO: Validation
       print(error)
     }
     dismiss(animated: true) {

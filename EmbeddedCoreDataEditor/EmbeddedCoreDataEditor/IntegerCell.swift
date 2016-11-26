@@ -7,8 +7,8 @@ final class IntegerCell: AttributeCell {
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: .default, reuseIdentifier: type(of: self).identifier)
     valueTextField.translatesAutoresizingMaskIntoConstraints = false
-    
     valueTextField.text = ""
+    valueTextField.placeholder = "null"
     valueTextField.delegate = self
     stackView.addArrangedSubview(valueTextField)
   }

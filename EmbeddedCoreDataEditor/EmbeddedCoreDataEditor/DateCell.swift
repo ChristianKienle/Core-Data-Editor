@@ -9,7 +9,7 @@ final class DateCell: AttributeCell {
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: .default, reuseIdentifier: type(of: self).identifier)
     valueTextField.translatesAutoresizingMaskIntoConstraints = false
-    
+    valueTextField.placeholder = "null"
     valueTextField.text = ""
     valueTextField.delegate = self
     stackView.addArrangedSubview(valueTextField)

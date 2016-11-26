@@ -23,12 +23,12 @@ final class ObjectVC: UITableViewController {
   }
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    title = object.objectID.humanReadableRepresentation(hideEntityName: false)
+    let entityName = object.entity.name ?? ""
+    title = "New \(entityName)"
     tableView.rowHeight = UITableViewAutomaticDimension
     tableView.estimatedRowHeight = 100.0
     tableView.reloadData()
   }
-  
   // MARK: - Table view data source
   override func numberOfSections(in tableView: UITableView) -> Int {
     return 1
@@ -41,7 +41,6 @@ final class ObjectVC: UITableViewController {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: attribute.cellIdentifier, for: indexPath) as? AttributeCell else {
       fatalError()
     }
-    
     let pair = AttributeObjectPair(object: object, attribute: attribute)
     cell.configure(with: pair)
     cell.delegate = self
@@ -50,13 +49,10 @@ final class ObjectVC: UITableViewController {
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return UITableViewAutomaticDimension
   }
-  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-  }
   // MARK: - Private Helper
   private func attribute(for indexPath: IndexPath) -> NSAttributeDescription {
     return attributes[indexPath.row]
   }
-  
 }
 
 extension ObjectVC: AttributeCellDelegate {
