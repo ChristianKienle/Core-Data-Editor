@@ -18,6 +18,11 @@
     </entity>
     <entity name="Event" syncable="YES">
         <attribute name="age" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="birthdate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="isMale" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="signature" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="timeStamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" defaultValueString="ich bin ein title" syncable="YES"/>
     </entity>
@@ -99,7 +104,7 @@
         <element name="ChildAOfAbstract" positionX="-146" positionY="-153" width="128" height="73"/>
         <element name="ChildBOfAbstract" positionX="72" positionY="-18" width="128" height="88"/>
         <element name="Committee" positionX="153" positionY="135" width="128" height="73"/>
-        <element name="Event" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="Event" positionX="160" positionY="192" width="128" height="165"/>
         <element name="House" positionX="205" positionY="438" width="128" height="75"/>
         <element name="Member" positionX="162" positionY="144" width="128" height="73"/>
         <element name="Person" positionX="304" positionY="153" width="128" height="135"/>

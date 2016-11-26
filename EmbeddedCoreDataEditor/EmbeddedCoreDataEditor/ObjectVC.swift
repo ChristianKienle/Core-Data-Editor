@@ -14,7 +14,9 @@ final class ObjectVC: UITableViewController {
     self.object = object
     self.attributes = Array(object.entity.attributesByName.values).filter { $0.isSupported }
     super.init(nibName: nil, bundle: nil)
-    self.tableView.register(StringCell.self, forCellReuseIdentifier: StringCell.identifier)
+    AttributeClass.all.forEach { attributeClass in
+      self.tableView.register(attributeClass.cellClass, forCellReuseIdentifier: attributeClass.cellIdentifier)
+    }
   }
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
@@ -26,7 +28,7 @@ final class ObjectVC: UITableViewController {
     tableView.estimatedRowHeight = 100.0
     tableView.reloadData()
   }
-
+  
   // MARK: - Table view data source
   override func numberOfSections(in tableView: UITableView) -> Int {
     return 1
@@ -36,17 +38,13 @@ final class ObjectVC: UITableViewController {
   }
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let attribute = self.attribute(for: indexPath)
-    let cell = tableView.dequeueReusableCell(withIdentifier: attribute.cellIdentifier, for: indexPath)
-
-    switch attribute.attributeClass {
-    case .string:
-      guard let cell = cell as? StringCell else {
-        fatalError()
-      }
-      let pair = AttributeObjectPair(object: object, attribute: attribute)
-      cell.configure(with: pair)
-      cell.delegate = self
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: attribute.cellIdentifier, for: indexPath) as? AttributeCell else {
+      fatalError()
     }
+    
+    let pair = AttributeObjectPair(object: object, attribute: attribute)
+    cell.configure(with: pair)
+    cell.delegate = self
     return cell
   }
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -58,7 +56,7 @@ final class ObjectVC: UITableViewController {
   private func attribute(for indexPath: IndexPath) -> NSAttributeDescription {
     return attributes[indexPath.row]
   }
-
+  
 }
 
 extension ObjectVC: AttributeCellDelegate {
@@ -68,23 +66,52 @@ extension ObjectVC: AttributeCellDelegate {
 }
 
 enum AttributeClass {
-  case string
+  case string, integer, bool
+  static let all: [AttributeClass] = [.string, .integer, .bool]
+  var cellClass: Swift.AnyClass {
+    switch self {
+    case .string: return StringCell.self
+    case .bool: return BoolCell.self
+    case .integer: return IntegerCell.self
+    }
+  }
+  var cellIdentifier: String {
+    switch self {
+    case .string: return StringCell.identifier
+    case .bool: return BoolCell.identifier
+    case .integer: return IntegerCell.identifier
+    }
+  }
 }
 
 fileprivate extension NSAttributeDescription {
   var isSupported: Bool {
     let type = attributeType
     if type == .stringAttributeType { return true }
+    if type == .booleanAttributeType { return true }
     if type.hasIntegerCharacteristics { return true }
-//    if type.hasFloatingPointCharacteristics || type.hasIntegerCharacteristics || type == .stringAttributeType {
-//      return true
-//    }
+    //    if type.hasFloatingPointCharacteristics || type.hasIntegerCharacteristics || type == .stringAttributeType {
+    //      return true
+    //    }
     return false
   }
   var cellIdentifier: String {
-    return StringCell.identifier
+    switch attributeClass {
+    case .string: return StringCell.identifier
+    case .bool: return BoolCell.identifier
+    case .integer: return IntegerCell.identifier
+    }
   }
   var attributeClass: AttributeClass {
+    if attributeType.hasIntegerCharacteristics {
+      return .integer
+    }
+    if attributeType == .booleanAttributeType {
+      return .bool
+    }
+    if attributeType == .stringAttributeType {
+      return .string
+    }
     return .string
   }
 }
