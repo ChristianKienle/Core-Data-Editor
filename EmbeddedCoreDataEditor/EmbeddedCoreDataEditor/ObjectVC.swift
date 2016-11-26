@@ -101,7 +101,8 @@ final class ObjectVC: UITableViewController {
       alert.addAction(UIAlertAction(title: "Pick existing Object", style: .default, handler: { _ in
         let relationship = self.relationship(for: indexPath)
         if relationship.isToMany == false {
-          let objectsVC = SingleObjectPickerVC(context: self.context, entity: relationship.destinationEntity!)
+          let preselectedObject = self.object.value(forKey: relationship.name) as? NSManagedObject
+          let objectsVC = SingleObjectPickerVC(context: self.context, entity: relationship.destinationEntity!, preselectedObject: preselectedObject)
           objectsVC.didSelectObject = { selectedObjectID in
             let selectedObject = self.context.object(with: selectedObjectID)
             self.object.setValue(selectedObject, forKey: relationship.name)
@@ -110,7 +111,8 @@ final class ObjectVC: UITableViewController {
           self.navigationController?.pushViewController(objectsVC, animated: true)
         }
         if relationship.isToMany {
-          let objectsVC = MultipleObjectsPickerVC(context: self.context, entity: relationship.destinationEntity!)
+          let preselectedObjects = self.object.value(forKey: relationship.name) as? Set<NSManagedObject>
+          let objectsVC = MultipleObjectsPickerVC(context: self.context, entity: relationship.destinationEntity!, preselectedObjects: preselectedObjects ?? Set())
           objectsVC.didSelectObjects = { selectedObjectIDs in
             let selectedObjects = (Set(selectedObjectIDs.map { self.context.object(with: $0) })) as NSSet
             self.object.setValue(selectedObjects, forKey: relationship.name)

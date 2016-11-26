@@ -10,7 +10,7 @@ class ObjectsVC: UITableViewController {
   // MARK: - Properties
   fileprivate let context: NSManagedObjectContext
   private let entity: NSEntityDescription
-  private var objectIDs = [NSManagedObjectID]()
+  fileprivate var objectIDs = [NSManagedObjectID]()
   // MARK: - Creating
   init(context: NSManagedObjectContext, entity: NSEntityDescription) {
     self.context = context
@@ -44,9 +44,6 @@ class ObjectsVC: UITableViewController {
     cell.indentationLevel = 1
     cell.textLabel?.text = objectID.humanReadableRepresentation(hideEntityName: true)
     return cell
-  }
-  override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-    
   }
   override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
     return true
@@ -116,7 +113,6 @@ class ObjectsVC: UITableViewController {
     }
     objectVC.didCancel = {
       self.dismiss(animated: true)
-      
     }
     let nc = UINavigationController(rootViewController: objectVC)
     present(nc, animated: true, completion: nil)
@@ -126,8 +122,10 @@ class ObjectsVC: UITableViewController {
 final class SingleObjectPickerVC: ObjectsVC {
   // MARK: - Properties
   var didSelectObject: ((NSManagedObjectID) -> (Void))?
+  private let preselectedObject: NSManagedObject?
   // MARK: - Creating
-  override init(context: NSManagedObjectContext, entity: NSEntityDescription) {
+  init(context: NSManagedObjectContext, entity: NSEntityDescription, preselectedObject: NSManagedObject?) {
+    self.preselectedObject = preselectedObject
     super.init(context: context, entity: entity)
     tableView.allowsSelectionDuringEditing = true
     setEditing(true, animated: false)
@@ -136,6 +134,12 @@ final class SingleObjectPickerVC: ObjectsVC {
   }
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
+  }
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    if let preselectedObject = preselectedObject, let index = objectIDs.index(of: preselectedObject.objectID) {
+      tableView.selectRow(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .middle)
+    }
   }
   // MARK: - UITableView
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -153,10 +157,12 @@ final class MultipleObjectsPickerVC: ObjectsVC {
   // MARK: - Properties
   var didSelectObjects: ((Set<NSManagedObjectID>) -> (Void))?
   var didCancel: ((Void) -> (Void))?
-
+  private let preselectedObjects: Set<NSManagedObject>
   // MARK: - Creating
-  override init(context: NSManagedObjectContext, entity: NSEntityDescription) {
+  init(context: NSManagedObjectContext, entity: NSEntityDescription, preselectedObjects: Set<NSManagedObject>) {
+    self.preselectedObjects = preselectedObjects
     super.init(context: context, entity: entity)
+    tableView.allowsSelectionDuringEditing = true
     tableView.allowsMultipleSelectionDuringEditing = true
     setEditing(true, animated: false)
     tableView.setEditing(true, animated: false)
@@ -167,6 +173,15 @@ final class MultipleObjectsPickerVC: ObjectsVC {
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    let rows = (preselectedObjects.flatMap { objectIDs.index(of: $0.objectID) })
+    let indexPaths = rows.map { IndexPath(row: $0, section: 0) }
+    indexPaths.forEach {
+      self.tableView.selectRow(at: $0, animated: false, scrollPosition: .middle)
+    }
+    updateAssignButton()
+  }
   // MARK: - UITableView
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     guard tableView.isEditing == false else {
@@ -174,6 +189,10 @@ final class MultipleObjectsPickerVC: ObjectsVC {
       return
     }
     super.tableView(tableView, didSelectRowAt: indexPath)
+  }
+  override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    super.tableView(tableView, didDeselectRowAt: indexPath)
+    updateAssignButton()
   }
   // MARK: - Setup Buttons
   private func setupButtons() {
