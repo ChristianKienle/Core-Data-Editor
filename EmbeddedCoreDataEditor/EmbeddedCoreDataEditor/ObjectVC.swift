@@ -14,16 +14,19 @@ final class ObjectVC: UITableViewController {
   let object: NSManagedObject
   weak var delegate: ObjectVCDelegate?
   private let attributes: [NSAttributeDescription]
+  private let relationships: [NSRelationshipDescription]
   // MARK: - Creating
   init(context: NSManagedObjectContext, object: NSManagedObject) {
     self.context = context
     self.object = object
     self.attributes = Array(object.entity.attributesByName.values).filter { $0.isSupported }
+    self.relationships = Array(object.entity.relationshipsByName.values)
     super.init(nibName: nil, bundle: nil)
     configureNavigationItem()
     AttributeClass.all.forEach { attributeClass in
       self.tableView.register(attributeClass.cellClass, forCellReuseIdentifier: attributeClass.cellIdentifier)
     }
+    tableView.register(RelationshipCell.self, forCellReuseIdentifier: RelationshipCell.identifier)
   }
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
@@ -39,12 +42,79 @@ final class ObjectVC: UITableViewController {
   }
   // MARK: - Table view data source
   override func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
+    return 2
+  }
+  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    switch section {
+    case 0: return "Attributes"
+    case 1: return "Relationships"
+    default: return nil
+    }
   }
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return attributes.count
+    switch section {
+    case 0: return attributes.count
+    case 1: return relationships.count
+    default: return 0
+    }
   }
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    switch indexPath.section {
+    case 0: return attributeCell(forRowAt: indexPath)
+    case 1: return relationshipCell(forRowAt: indexPath)
+    default: fatalError()
+    }
+  }
+  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return UITableViewAutomaticDimension
+  }
+  override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    return false
+  }
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    switch indexPath.section {
+    case 0: return
+    case 1:
+      let alert = UIAlertController(title: "Create or Pick Object?", message: nil, preferredStyle: .actionSheet)
+      alert.addAction(UIAlertAction(title: "Create new Object", style: .default, handler: { _ in
+        let relationship = self.relationship(for: indexPath)
+        let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        childContext.parent = self.context
+        let destinationEntity = relationship.destinationEntity!
+        let relatedObject = NSManagedObject(entity: destinationEntity, insertInto: childContext)
+        let childObject = childContext.object(with: self.object.objectID)
+        print("set \(relationship.name) of \(self.object.entity.name!) to object of type \(relatedObject.entity.name)")
+        childObject.setValue(relatedObject, forKey: relationship.name)
+        let objectVC = ObjectVC(context: childContext, object: relatedObject)
+        objectVC.delegate = self
+        self.navigationController?.pushViewController(objectVC, animated: true)
+      }))
+      alert.addAction(UIAlertAction(title: "Pick existing Object", style: .default, handler: { _ in
+        
+      }))
+      present(alert, animated: true, completion: nil)
+    default: fatalError()
+    }
+  }
+  
+  // MARK: - Private Helper
+  private func attribute(for indexPath: IndexPath) -> NSAttributeDescription {
+    precondition(indexPath.section == 0)
+    return attributes[indexPath.row]
+  }
+  private func relationship(for indexPath: IndexPath) -> NSRelationshipDescription {
+    precondition(indexPath.section == 1)
+    return relationships[indexPath.row]
+  }
+  private func configureNavigationItem() {
+    navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(type(of:self).save(_:)))
+    navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(type(of:self).cancel(_:)))
+  }
+  fileprivate func updateUI() {
+    navigationItem.rightBarButtonItem?.isEnabled = object.isValid
+  }
+  
+  private func attributeCell(forRowAt indexPath: IndexPath) -> AttributeCell {
     let attribute = self.attribute(for: indexPath)
     guard let cell = tableView.dequeueReusableCell(withIdentifier: attribute.cellIdentifier, for: indexPath) as? AttributeCell else {
       fatalError()
@@ -54,22 +124,15 @@ final class ObjectVC: UITableViewController {
     cell.delegate = self
     return cell
   }
-  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return UITableViewAutomaticDimension
-  }
-  override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-    return false
-  }
-  // MARK: - Private Helper
-  private func attribute(for indexPath: IndexPath) -> NSAttributeDescription {
-    return attributes[indexPath.row]
-  }
-  private func configureNavigationItem() {
-    navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(type(of:self).save(_:)))
-    navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(type(of:self).cancel(_:)))
-  }
-  fileprivate func updateUI() {
-    navigationItem.rightBarButtonItem?.isEnabled = object.isValid
+  private func relationshipCell(forRowAt indexPath: IndexPath) -> UITableViewCell {
+    let relationship = self.relationship(for: indexPath)
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: RelationshipCell.identifier, for: indexPath) as? RelationshipCell else {
+      fatalError()
+    }
+    let pair = RelationshipObjectPair(object: object, relationship: relationship)
+    cell.configure(with: pair)
+    cell.accessoryType = .disclosureIndicator
+    return cell
   }
   // MARK: - Actions
   func save(_ sender: Any?) {
@@ -94,6 +157,22 @@ extension ObjectVC: AttributeCellDelegate {
     updateUI()
   }
   func presentingViewController(for attributeCell: AttributeCell) -> UIViewController { return self }
+}
+extension ObjectVC: ObjectVCDelegate {
+  func objectVCDidSave(_ objectVC: ObjectVC) {
+    do {
+      try objectVC.object.managedObjectContext?.save()
+    } catch {
+      // TODO: Validation
+      print(error)
+    }
+    let _ = navigationController?.popToViewController(self, animated: true)
+    self.tableView.reloadData()
+  }
+  func objectVCDidCancel(_ objectVC: ObjectVC) {
+    let _ = navigationController?.popToViewController(self, animated: true)
+    self.tableView.reloadData()
+  }
 }
 
 enum AttributeClass {
