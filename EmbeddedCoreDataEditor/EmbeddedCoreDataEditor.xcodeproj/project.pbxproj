@@ -17,6 +17,8 @@
 		AB4069FA1DE989AD001F83E9 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB4069F91DE989AD001F83E9 /* Media.xcassets */; };
 		AB7F707D1DE98C10007C3E41 /* ObjectsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F707C1DE98C10007C3E41 /* ObjectsVC.swift */; };
 		AB7F70831DE994C3007C3E41 /* ObjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F70821DE994C3007C3E41 /* ObjectVC.swift */; };
+		AB7F70881DE99992007C3E41 /* AttributeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F70871DE99992007C3E41 /* AttributeCell.swift */; };
+		AB7F708A1DE99AE7007C3E41 /* StringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F70891DE99AE7007C3E41 /* StringCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		AB4069F91DE989AD001F83E9 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = EmbeddedCoreDataEditor/Media.xcassets; sourceTree = "<group>"; };
 		AB7F707C1DE98C10007C3E41 /* ObjectsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectsVC.swift; sourceTree = "<group>"; };
 		AB7F70821DE994C3007C3E41 /* ObjectVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectVC.swift; sourceTree = "<group>"; };
+		AB7F70871DE99992007C3E41 /* AttributeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeCell.swift; sourceTree = "<group>"; };
+		AB7F70891DE99AE7007C3E41 /* StringCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,7 @@
 		AB4069CA1DE88FAD001F83E9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AB7F70861DE99979007C3E41 /* Cells */,
 				AB4069CB1DE88FCC001F83E9 /* EntitiesVC.swift */,
 				AB7F707C1DE98C10007C3E41 /* ObjectsVC.swift */,
 				AB7F70821DE994C3007C3E41 /* ObjectVC.swift */,
@@ -158,6 +163,15 @@
 				AB4069DE1DE896E4001F83E9 /* CoreDataEditorKitTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		AB7F70861DE99979007C3E41 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AB7F70871DE99992007C3E41 /* AttributeCell.swift */,
+				AB7F70891DE99AE7007C3E41 /* StringCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,7 +312,9 @@
 			files = (
 				AB7F707D1DE98C10007C3E41 /* ObjectsVC.swift in Sources */,
 				AB7F70831DE994C3007C3E41 /* ObjectVC.swift in Sources */,
+				AB7F708A1DE99AE7007C3E41 /* StringCell.swift in Sources */,
 				AB4069D11DE8905C001F83E9 /* Editor.swift in Sources */,
+				AB7F70881DE99992007C3E41 /* AttributeCell.swift in Sources */,
 				AB4069CC1DE88FCC001F83E9 /* EntitiesVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,7 +12,7 @@ final class ObjectVC: UITableViewController {
     self.object = object
     self.attributes = Array(object.entity.attributesByName.values).filter { $0.isSupported }
     super.init(nibName: nil, bundle: nil)
-    self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "AttributeCell")
+    self.tableView.register(StringCell.self, forCellReuseIdentifier: StringCell.identifier)
   }
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
@@ -20,6 +20,8 @@ final class ObjectVC: UITableViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     title = object.objectID.humanReadableRepresentation(hideEntityName: false)
+    tableView.rowHeight = UITableViewAutomaticDimension
+    tableView.estimatedRowHeight = 100.0
     tableView.reloadData()
   }
 
@@ -31,10 +33,22 @@ final class ObjectVC: UITableViewController {
     return attributes.count
   }
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "AttributeCell", for: indexPath)
     let attribute = self.attribute(for: indexPath)
-    cell.textLabel?.text = attribute.name
+    let cell = tableView.dequeueReusableCell(withIdentifier: attribute.cellIdentifier, for: indexPath)
+
+    switch attribute.attributeClass {
+    case .string:
+      guard let cell = cell as? StringCell else {
+        fatalError()
+      }
+      let pair = AttributeObjectPair(object: object, attribute: attribute)
+      cell.configure(with: pair)
+      cell.delegate = self
+    }
     return cell
+  }
+  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return UITableViewAutomaticDimension
   }
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
   }
@@ -45,12 +59,29 @@ final class ObjectVC: UITableViewController {
 
 }
 
+extension ObjectVC: AttributeCellDelegate {
+  func attributeCell(_ cell: AttributeCell, didChangeValue value: Any?) {
+    
+  }
+}
+
+enum AttributeClass {
+  case string
+}
+
 fileprivate extension NSAttributeDescription {
   var isSupported: Bool {
     let type = attributeType
-    if type.hasFloatingPointCharacteristics || type.hasIntegerCharacteristics || type == .stringAttributeType {
-      return true
-    }
+    if type == .stringAttributeType { return true }
+//    if type.hasFloatingPointCharacteristics || type.hasIntegerCharacteristics || type == .stringAttributeType {
+//      return true
+//    }
     return false
+  }
+  var cellIdentifier: String {
+    return StringCell.identifier
+  }
+  var attributeClass: AttributeClass {
+    return .string
   }
 }
