@@ -21,6 +21,7 @@
 		AB7F708A1DE99AE7007C3E41 /* StringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F70891DE99AE7007C3E41 /* StringCell.swift */; };
 		AB7F708C1DE9B038007C3E41 /* IntegerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F708B1DE9B038007C3E41 /* IntegerCell.swift */; };
 		AB7F708E1DE9B202007C3E41 /* BoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F708D1DE9B202007C3E41 /* BoolCell.swift */; };
+		AB7F70901DE9B5A5007C3E41 /* FloatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F708F1DE9B5A5007C3E41 /* FloatCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		AB7F70891DE99AE7007C3E41 /* StringCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringCell.swift; sourceTree = "<group>"; };
 		AB7F708B1DE9B038007C3E41 /* IntegerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegerCell.swift; sourceTree = "<group>"; };
 		AB7F708D1DE9B202007C3E41 /* BoolCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolCell.swift; sourceTree = "<group>"; };
+		AB7F708F1DE9B5A5007C3E41 /* FloatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				AB7F70891DE99AE7007C3E41 /* StringCell.swift */,
 				AB7F708B1DE9B038007C3E41 /* IntegerCell.swift */,
 				AB7F708D1DE9B202007C3E41 /* BoolCell.swift */,
+				AB7F708F1DE9B5A5007C3E41 /* FloatCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				AB7F708E1DE9B202007C3E41 /* BoolCell.swift in Sources */,
 				AB7F70881DE99992007C3E41 /* AttributeCell.swift in Sources */,
 				AB4069CC1DE88FCC001F83E9 /* EntitiesVC.swift in Sources */,
+				AB7F70901DE9B5A5007C3E41 /* FloatCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

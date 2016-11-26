@@ -66,13 +66,14 @@ extension ObjectVC: AttributeCellDelegate {
 }
 
 enum AttributeClass {
-  case string, integer, bool
-  static let all: [AttributeClass] = [.string, .integer, .bool]
+  case string, integer, bool, float
+  static let all: [AttributeClass] = [.string, .integer, .bool, float]
   var cellClass: Swift.AnyClass {
     switch self {
     case .string: return StringCell.self
     case .bool: return BoolCell.self
     case .integer: return IntegerCell.self
+    case .float: return FloatCell.self
     }
   }
   var cellIdentifier: String {
@@ -80,6 +81,7 @@ enum AttributeClass {
     case .string: return StringCell.identifier
     case .bool: return BoolCell.identifier
     case .integer: return IntegerCell.identifier
+    case .float: return FloatCell.identifier
     }
   }
 }
@@ -90,17 +92,14 @@ fileprivate extension NSAttributeDescription {
     if type == .stringAttributeType { return true }
     if type == .booleanAttributeType { return true }
     if type.hasIntegerCharacteristics { return true }
+    if type.hasFloatingPointCharacteristics { return true }
     //    if type.hasFloatingPointCharacteristics || type.hasIntegerCharacteristics || type == .stringAttributeType {
     //      return true
     //    }
     return false
   }
   var cellIdentifier: String {
-    switch attributeClass {
-    case .string: return StringCell.identifier
-    case .bool: return BoolCell.identifier
-    case .integer: return IntegerCell.identifier
-    }
+    return attributeClass.cellIdentifier
   }
   var attributeClass: AttributeClass {
     if attributeType.hasIntegerCharacteristics {
@@ -111,6 +110,9 @@ fileprivate extension NSAttributeDescription {
     }
     if attributeType == .stringAttributeType {
       return .string
+    }
+    if attributeType.hasFloatingPointCharacteristics {
+      return .float
     }
     return .string
   }
