@@ -11,6 +11,7 @@
 		AB4069981DE88F1C001F83E9 /* CoreDataEditorKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4069971DE88F1C001F83E9 /* CoreDataEditorKitTests.swift */; };
 		AB40699A1DE88F1C001F83E9 /* CoreDataEditorKit.h in Headers */ = {isa = PBXBuildFile; fileRef = AB40698C1DE88F1C001F83E9 /* CoreDataEditorKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB7F70811DE98F7C007C3E41 /* NSManagedObjectID+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F70801DE98F7C007C3E41 /* NSManagedObjectID+Additions.swift */; };
+		AB7F70851DE99738007C3E41 /* NSAttributeDescription+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F70841DE99738007C3E41 /* NSAttributeDescription+Additions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		AB4069971DE88F1C001F83E9 /* CoreDataEditorKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataEditorKitTests.swift; sourceTree = "<group>"; };
 		AB4069991DE88F1C001F83E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB7F70801DE98F7C007C3E41 /* NSManagedObjectID+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectID+Additions.swift"; sourceTree = "<group>"; };
+		AB7F70841DE99738007C3E41 /* NSAttributeDescription+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributeDescription+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				AB40698C1DE88F1C001F83E9 /* CoreDataEditorKit.h */,
 				AB40698D1DE88F1C001F83E9 /* Info.plist */,
 				AB7F70801DE98F7C007C3E41 /* NSManagedObjectID+Additions.swift */,
+				AB7F70841DE99738007C3E41 /* NSAttributeDescription+Additions.swift */,
 			);
 			path = CoreDataEditorKit;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB7F70851DE99738007C3E41 /* NSAttributeDescription+Additions.swift in Sources */,
 				AB7F70811DE98F7C007C3E41 /* NSManagedObjectID+Additions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

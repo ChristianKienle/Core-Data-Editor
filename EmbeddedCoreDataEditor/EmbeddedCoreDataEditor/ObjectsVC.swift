@@ -13,7 +13,7 @@ final class ObjectsVC: UITableViewController {
     self.context = context
     self.entity = entity
     super.init(nibName: nil, bundle: nil)
-    self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ObjectCell")
+    self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ObjectIDCell")
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -39,13 +39,18 @@ final class ObjectsVC: UITableViewController {
     return objectIDs.count
   }
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "ObjectCell", for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: "ObjectIDCell", for: indexPath)
     let objectID = self.objectID(for: indexPath)
     cell.textLabel?.text = objectID.humanReadableRepresentation(hideEntityName: true)
     return cell
   }
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
+    let objectID = self.objectID(for: indexPath)
+    guard let object = try? context.existingObject(with: objectID) else {
+      return
+    }
+    let objectVC = ObjectVC(object: object)
+    navigationController?.pushViewController(objectVC, animated: true)
   }
   // MARK: - Private Helper
   private func objectID(for indexPath: IndexPath) -> NSManagedObjectID {
