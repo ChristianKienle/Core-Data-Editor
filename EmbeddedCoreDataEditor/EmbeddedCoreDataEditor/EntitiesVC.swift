@@ -35,6 +35,7 @@ final class EntitiesVC: UITableViewController {
     let cell = tableView.dequeueReusableCell(withIdentifier: "EntitiyCell", for: indexPath)
     let entity = self.entity(for: indexPath)
     cell.textLabel?.text = entity.name
+    cell.imageView?.image = UIImage(named: "Entity", in: Bundle.init(for: type(of:self)), compatibleWith: traitCollection)
     return cell
   }
   // MARK: - Private Helper
