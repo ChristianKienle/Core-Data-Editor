@@ -25,6 +25,8 @@
 		AB4069F51DE89846001F83E9 /* EmbeddedCoreDataEditor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB4069EE1DE897CA001F83E9 /* EmbeddedCoreDataEditor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AB5C07A317B5427A0069F99D /* libCDEKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB5C079F17B5425F0069F99D /* libCDEKit.a */; };
 		AB924CCE17B52F9E00DA7ACB /* iOS_Example.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = AB924CCD17B52F9E00DA7ACB /* iOS_Example.xcdatamodel */; };
+		ABCD6BD41DEA19AB007BC822 /* CoreDataEditorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABCD6BD31DEA19AB007BC822 /* CoreDataEditorKit.framework */; };
+		ABCD6BD71DEA19B4007BC822 /* CoreDataEditorKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ABCD6BD31DEA19AB007BC822 /* CoreDataEditorKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				ABCD6BD71DEA19B4007BC822 /* CoreDataEditorKit.framework in Embed Frameworks */,
 				AB4069F51DE89846001F83E9 /* EmbeddedCoreDataEditor.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -119,6 +122,7 @@
 		AB4069F21DE897E1001F83E9 /* CoreDataEditorKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreDataEditorKit.framework; path = "../../Library/Developer/Xcode/DerivedData/CDE-Workspace-exdpleywycefswbjvfigzcgtjwkw/Build/Products/Debug-iphonesimulator/CoreDataEditorKit.framework"; sourceTree = "<group>"; };
 		AB5C079817B5425F0069F99D /* CDEKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CDEKit.xcodeproj; path = ../CDEKit/CDEKit.xcodeproj; sourceTree = "<group>"; };
 		AB924CCD17B52F9E00DA7ACB /* iOS_Example.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOS_Example.xcdatamodel; sourceTree = "<group>"; };
+		ABCD6BD31DEA19AB007BC822 /* CoreDataEditorKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreDataEditorKit.framework; path = "../../Library/Developer/Xcode/DerivedData/CDE-Workspace-exdpleywycefswbjvfigzcgtjwkw/Build/Products/Debug-iphoneos/CoreDataEditorKit.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABCD6BD41DEA19AB007BC822 /* CoreDataEditorKit.framework in Frameworks */,
 				AB4069F41DE89846001F83E9 /* EmbeddedCoreDataEditor.framework in Frameworks */,
 				AB5C07A317B5427A0069F99D /* libCDEKit.a in Frameworks */,
 				AB15927117B52996008DA7E2 /* UIKit.framework in Frameworks */,
@@ -160,6 +165,7 @@
 		AB15926F17B52996008DA7E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ABCD6BD31DEA19AB007BC822 /* CoreDataEditorKit.framework */,
 				AB4069F21DE897E1001F83E9 /* CoreDataEditorKit.framework */,
 				AB4069E11DE8975A001F83E9 /* EmbeddedCoreDataEditor.framework */,
 				AB4069CD1DE8901D001F83E9 /* EmbeddedCoreDataEditor.framework */,
