@@ -4,9 +4,6 @@ import CoreData
 import CoreDataEditorKit
 
 class ObjectsVC: UITableViewController {
-  enum Mode {
-    case browse, select, selectMultiple
-  }
   // MARK: - Properties
   fileprivate let context: NSManagedObjectContext
   private let entity: NSEntityDescription
@@ -19,7 +16,6 @@ class ObjectsVC: UITableViewController {
     setupNewObjectButton()
     self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ObjectIDCell")
   }
-  
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
