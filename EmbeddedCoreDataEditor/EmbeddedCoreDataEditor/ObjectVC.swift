@@ -61,7 +61,14 @@ final class ObjectVC: UITableViewController {
 
 extension ObjectVC: AttributeCellDelegate {
   func attributeCell(_ cell: AttributeCell, didChangeValue value: Any?) {
-    
+    guard let pair = cell.attributeObjectPair else {
+      fatalError()
+    }
+    object.setValue(value, forKey: pair.attribute.name)
+    guard let indexPath = tableView.indexPath(for: cell) else {
+      fatalError()
+    }
+    tableView.reloadRows(at: [indexPath], with: .automatic)
   }
   func presentingViewController(for attributeCell: AttributeCell) -> UIViewController { return self }
 }
@@ -98,9 +105,6 @@ fileprivate extension NSAttributeDescription {
     if type == .dateAttributeType { return true }
     if type.hasIntegerCharacteristics { return true }
     if type.hasFloatingPointCharacteristics { return true }
-    //    if type.hasFloatingPointCharacteristics || type.hasIntegerCharacteristics || type == .stringAttributeType {
-    //      return true
-    //    }
     return false
   }
   var cellIdentifier: String {

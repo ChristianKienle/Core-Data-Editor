@@ -12,7 +12,6 @@ struct AttributeObjectPair {
 protocol AttributeCellDelegate: class {
   func attributeCell(_ cell: AttributeCell, didChangeValue value: Any?)
   func presentingViewController(for attributeCell: AttributeCell) -> UIViewController
-
 }
 
 class AttributeCell: UITableViewCell {
@@ -23,23 +22,19 @@ class AttributeCell: UITableViewCell {
   // MARK: - Properties
   let attributeNameLabel = UILabel()
   let stackView = UIStackView()
+  var attributeObjectPair: AttributeObjectPair?
   weak var delegate: AttributeCellDelegate?
-  
+  // MARK: - Creating
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: .default, reuseIdentifier: type(of: self).identifier)
     configureCell()
   }
-  // MARK: - Creating
   init() {
     super.init(style: .default, reuseIdentifier: type(of: self).identifier)
     configureCell()
   }
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
-  }
-  // MARK: - UITableViewCell
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
   }
   // MARK: - Configure
   private func configureCell() {
@@ -59,6 +54,7 @@ class AttributeCell: UITableViewCell {
     stackView.addArrangedSubview(attributeNameLabel)
   }
   func configure(with attributeObjectPair: AttributeObjectPair) {
+    self.attributeObjectPair = attributeObjectPair
     attributeNameLabel.text = attributeObjectPair.attribute.name
   }
 }
