@@ -4,6 +4,9 @@ import CoreData
 struct AttributeObjectPair {
   let object: NSManagedObject
   let attribute: NSAttributeDescription
+  func value<T>() -> T? {
+    return object.value(forKey: attribute.name) as? T
+  }
 }
 
 protocol AttributeCellDelegate: class {
@@ -49,6 +52,8 @@ class AttributeCell: UITableViewCell {
     stackView.topAnchor.constraint(equalTo: margins.topAnchor).isActive = true
     
     attributeNameLabel.translatesAutoresizingMaskIntoConstraints = false
+    attributeNameLabel.textColor = .lightGray
+    attributeNameLabel.font = UIFont.systemFont(ofSize: 10.0)
     stackView.addArrangedSubview(attributeNameLabel)
   }
   func configure(with attributeObjectPair: AttributeObjectPair) {
