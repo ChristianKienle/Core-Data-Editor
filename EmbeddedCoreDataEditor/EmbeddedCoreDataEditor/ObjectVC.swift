@@ -91,7 +91,7 @@ final class ObjectVC: UITableViewController {
           }
           let _ = self.navigationController?.popToViewController(self, animated: true)
           self.tableView.reloadData()
-        
+          
         }
         objectVC.didCancel = {
           let _ = self.navigationController?.popToViewController(self, animated: true)
@@ -117,8 +117,10 @@ final class ObjectVC: UITableViewController {
             let _ = self.navigationController?.popToViewController(self, animated: true)
           }
           self.navigationController?.pushViewController(objectsVC, animated: true)
-
         }
+      }))
+      alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { _ in
+        
       }))
       present(alert, animated: true, completion: nil)
     default: fatalError()
@@ -141,7 +143,6 @@ final class ObjectVC: UITableViewController {
   fileprivate func updateUI() {
     navigationItem.rightBarButtonItem?.isEnabled = object.isValid
   }
-  
   private func attributeCell(forRowAt indexPath: IndexPath) -> AttributeCell {
     let attribute = self.attribute(for: indexPath)
     guard let cell = tableView.dequeueReusableCell(withIdentifier: attribute.cellIdentifier, for: indexPath) as? AttributeCell else {

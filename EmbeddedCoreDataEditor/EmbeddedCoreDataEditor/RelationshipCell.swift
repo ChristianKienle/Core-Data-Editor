@@ -30,12 +30,14 @@ final class RelationshipCell: UITableViewCell {
     textLabel?.text = relationship.name
     let text: String
     if relationship.isToMany {
+      imageView?.image = UIImage(named: "toMany", in: Bundle(for: type(of:self)), compatibleWith: traitCollection)
       if let relatedObjects: NSSet = pair.value() {
         text = "\(relatedObjects.count) Object(s)"
       } else {
         text = "null"
       }
     } else {
+      imageView?.image = UIImage(named: "toOne", in: Bundle(for: type(of:self)), compatibleWith: traitCollection)
       if let relatedObject: NSManagedObject = pair.value() {
         text = relatedObject.objectID.humanReadableRepresentation(hideEntityName: false)
       } else {
