@@ -3,10 +3,16 @@ import UIKit
 import CoreData
 import CoreDataEditorKit
 
+protocol ObjectVCDelegate: class {
+  func objectVCDidSave(_ objectVC: ObjectVC)
+  func objectVCDidCancel(_ objectVC: ObjectVC)
+}
+
 final class ObjectVC: UITableViewController {
   // MARK: - Properties
   let context: NSManagedObjectContext
   let object: NSManagedObject
+  weak var delegate: ObjectVCDelegate?
   private let attributes: [NSAttributeDescription]
   // MARK: - Creating
   init(context: NSManagedObjectContext, object: NSManagedObject) {
@@ -14,6 +20,7 @@ final class ObjectVC: UITableViewController {
     self.object = object
     self.attributes = Array(object.entity.attributesByName.values).filter { $0.isSupported }
     super.init(nibName: nil, bundle: nil)
+    configureNavigationItem()
     AttributeClass.all.forEach { attributeClass in
       self.tableView.register(attributeClass.cellClass, forCellReuseIdentifier: attributeClass.cellIdentifier)
     }
@@ -28,6 +35,7 @@ final class ObjectVC: UITableViewController {
     tableView.rowHeight = UITableViewAutomaticDimension
     tableView.estimatedRowHeight = 100.0
     tableView.reloadData()
+    updateUI()
   }
   // MARK: - Table view data source
   override func numberOfSections(in tableView: UITableView) -> Int {
@@ -42,7 +50,6 @@ final class ObjectVC: UITableViewController {
       fatalError()
     }
     let pair = AttributeObjectPair(object: object, attribute: attribute)
-
     cell.configure(with: pair)
     cell.delegate = self
     return cell
@@ -57,6 +64,20 @@ final class ObjectVC: UITableViewController {
   private func attribute(for indexPath: IndexPath) -> NSAttributeDescription {
     return attributes[indexPath.row]
   }
+  private func configureNavigationItem() {
+    navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(type(of:self).save(_:)))
+    navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(type(of:self).cancel(_:)))
+  }
+  fileprivate func updateUI() {
+    navigationItem.rightBarButtonItem?.isEnabled = object.isValid
+  }
+  // MARK: - Actions
+  func save(_ sender: Any?) {
+    delegate?.objectVCDidSave(self)
+  }
+  func cancel(_ sender: Any?) {
+    delegate?.objectVCDidCancel(self)
+  }
 }
 
 extension ObjectVC: AttributeCellDelegate {
@@ -70,6 +91,7 @@ extension ObjectVC: AttributeCellDelegate {
       fatalError()
     }
     tableView.reloadRows(at: [indexPath], with: .automatic)
+    updateUI()
   }
   func presentingViewController(for attributeCell: AttributeCell) -> UIViewController { return self }
 }

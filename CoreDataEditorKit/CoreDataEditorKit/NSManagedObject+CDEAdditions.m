@@ -3,7 +3,7 @@
 
 @implementation NSManagedObject (CDEAdditions)
 
-- (nullable NSArray<NSError*> *)validationErrors_cde {
+- (nonnull NSArray<NSError*> *)validationErrors_cde {
     BOOL isValid = YES;
     NSError *error = nil;
     if(self.isInserted) {
@@ -16,10 +16,10 @@
         isValid = [self validateForDelete:&error];
     }
     if(isValid) {
-        return nil;
+        return @[];
     }
     if(error == nil) {
-        return nil;
+      return @[];
     }
     if(error.containsDetailedErrors_cde == NO) {
         return @[error];
@@ -27,7 +27,7 @@
     return error.detailedErrors_cde;
 }
 
-- (NSArray<NSAttributeDescription*>*)invalidAttributes {
+- (NSArray<NSAttributeDescription*>* _Nonnull)invalidAttributes {
   NSArray *errors = self.validationErrors_cde;
   if(errors == nil) {
     return @[];

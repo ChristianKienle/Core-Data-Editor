@@ -48,7 +48,7 @@ final class ObjectsVC: UITableViewController {
     navigationController?.pushViewController(objectVC, animated: true)
   }
   // MARK: - Private Helper
-  private func fetchObjectIDs() {
+  fileprivate func fetchObjectIDs() {
     let request = NSFetchRequest<NSManagedObjectID>(entityName: entity.name!)
     request.resultType = .managedObjectIDResultType
     request.entity = entity
@@ -68,22 +68,14 @@ final class ObjectsVC: UITableViewController {
     childContext.parent = context
     let object = NSManagedObject(entity: entity, insertInto: childContext)
     let objectVC = ObjectVC(context: childContext, object: object)
-    objectVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveObject(_:)))
-    objectVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelObjectCreation(_:)))
-    
+    objectVC.delegate = self
     let nc = UINavigationController(rootViewController: objectVC)
     present(nc, animated: true, completion: nil)
   }
-  func cancelObjectCreation(_ sender: Any?) {
-    dismiss(animated: true)
-  }
-  func saveObject(_ sender: Any?) {
-    guard let objectNC = presentedViewController as? UINavigationController else {
-      return
-    }
-    guard let objectVC = objectNC.topViewController as? ObjectVC else {
-      return
-    }
+}
+
+extension ObjectsVC: ObjectVCDelegate {
+  func objectVCDidSave(_ objectVC: ObjectVC) {
     let object = objectVC.object
     do {
       try object.managedObjectContext?.save()
@@ -94,5 +86,8 @@ final class ObjectsVC: UITableViewController {
     dismiss(animated: true) {
       self.fetchObjectIDs()
     }
+  }
+  func objectVCDidCancel(_ objectVC: ObjectVC) {
+    dismiss(animated: true)
   }
 }

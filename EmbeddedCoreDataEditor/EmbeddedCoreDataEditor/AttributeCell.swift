@@ -57,7 +57,7 @@ class AttributeCell: UITableViewCell {
   func configure(with attributeObjectPair: AttributeObjectPair) {
     validationIndicator.sizeToFit()
     accessoryView = validationIndicator
-    let invalidAttributes = attributeObjectPair.object.invalidAttributes() ?? []
+    let invalidAttributes = attributeObjectPair.object.invalidAttributes() 
     let isInvalid = invalidAttributes.contains(attributeObjectPair.attribute)
     validationIndicator.indicatesValidState = !isInvalid
     self.attributeObjectPair = attributeObjectPair

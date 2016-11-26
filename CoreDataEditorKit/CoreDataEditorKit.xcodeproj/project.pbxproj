@@ -16,6 +16,7 @@
 		ABCD6BCE1DEA0439007BC822 /* NSError+CDEValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD6BCA1DEA0439007BC822 /* NSError+CDEValidation.m */; };
 		ABCD6BCF1DEA0439007BC822 /* NSManagedObject+CDEAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = ABCD6BCB1DEA0439007BC822 /* NSManagedObject+CDEAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ABCD6BD01DEA0439007BC822 /* NSManagedObject+CDEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD6BCC1DEA0439007BC822 /* NSManagedObject+CDEAdditions.m */; };
+		ABCD6BD21DEA1678007BC822 /* NSManagedObject+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCD6BD11DEA1678007BC822 /* NSManagedObject+Additions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		ABCD6BCA1DEA0439007BC822 /* NSError+CDEValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+CDEValidation.m"; sourceTree = "<group>"; };
 		ABCD6BCB1DEA0439007BC822 /* NSManagedObject+CDEAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+CDEAdditions.h"; sourceTree = "<group>"; };
 		ABCD6BCC1DEA0439007BC822 /* NSManagedObject+CDEAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+CDEAdditions.m"; sourceTree = "<group>"; };
+		ABCD6BD11DEA1678007BC822 /* NSManagedObject+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				ABCD6BCA1DEA0439007BC822 /* NSError+CDEValidation.m */,
 				ABCD6BCB1DEA0439007BC822 /* NSManagedObject+CDEAdditions.h */,
 				ABCD6BCC1DEA0439007BC822 /* NSManagedObject+CDEAdditions.m */,
+				ABCD6BD11DEA1678007BC822 /* NSManagedObject+Additions.swift */,
 				AB7F70801DE98F7C007C3E41 /* NSManagedObjectID+Additions.swift */,
 				AB7F70841DE99738007C3E41 /* NSAttributeDescription+Additions.swift */,
 			);
@@ -219,6 +222,7 @@
 			files = (
 				ABCD6BD01DEA0439007BC822 /* NSManagedObject+CDEAdditions.m in Sources */,
 				AB7F70851DE99738007C3E41 /* NSAttributeDescription+Additions.swift in Sources */,
+				ABCD6BD21DEA1678007BC822 /* NSManagedObject+Additions.swift in Sources */,
 				AB7F70811DE98F7C007C3E41 /* NSManagedObjectID+Additions.swift in Sources */,
 				ABCD6BCE1DEA0439007BC822 /* NSError+CDEValidation.m in Sources */,
 			);

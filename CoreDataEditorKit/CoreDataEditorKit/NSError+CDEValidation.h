@@ -3,11 +3,11 @@
 @interface NSError (CDEValidation)
 
 #pragma mark - Properties
-@property (nonatomic, readonly) BOOL isSupportedValidationError_cde;
-@property (nullable, nonatomic, readonly) NSAttributeDescription *invalidAttribute_cde;
-@property (nonatomic, readonly) NSManagedObject *invalidManagedObject_cde;
-@property (nonatomic, readonly) NSEntityDescription *entityDescription_cde;
-@property (nonatomic, readonly) NSArray<NSError*> *detailedErrors_cde;
-@property (nonatomic, readonly) BOOL containsDetailedErrors_cde;
+@property (readonly) BOOL isSupportedValidationError_cde;
+@property (nullable, readonly) NSAttributeDescription *invalidAttribute_cde;
+@property (nullable, readonly) NSManagedObject *invalidManagedObject_cde;
+@property (nullable, readonly) NSEntityDescription *entityDescription_cde;
+@property (nullable, readonly) NSArray<NSError*> *detailedErrors_cde;
+@property (readonly) BOOL containsDetailedErrors_cde;
 
 @end

@@ -2,7 +2,7 @@
 
 @interface NSManagedObject (CDEAdditions)
 
-@property (nullable, nonatomic, readonly) NSArray<NSError*> *validationErrors_cde;
-- (NSArray<NSAttributeDescription*>*)invalidAttributes;
+@property (nonnull, nonatomic, readonly) NSArray<NSError*> *validationErrors_cde;
+- (NSArray<NSAttributeDescription*>* _Nonnull)invalidAttributes;
 @end
 
