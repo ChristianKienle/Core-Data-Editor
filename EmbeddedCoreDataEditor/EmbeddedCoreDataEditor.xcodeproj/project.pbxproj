@@ -19,6 +19,7 @@
 		AB7F70831DE994C3007C3E41 /* ObjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F70821DE994C3007C3E41 /* ObjectVC.swift */; };
 		AB7F70881DE99992007C3E41 /* AttributeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F70871DE99992007C3E41 /* AttributeCell.swift */; };
 		AB7F708A1DE99AE7007C3E41 /* StringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F70891DE99AE7007C3E41 /* StringCell.swift */; };
+		AB7F708C1DE9B038007C3E41 /* IntegerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F708B1DE9B038007C3E41 /* IntegerCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		AB7F70821DE994C3007C3E41 /* ObjectVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectVC.swift; sourceTree = "<group>"; };
 		AB7F70871DE99992007C3E41 /* AttributeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeCell.swift; sourceTree = "<group>"; };
 		AB7F70891DE99AE7007C3E41 /* StringCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringCell.swift; sourceTree = "<group>"; };
+		AB7F708B1DE9B038007C3E41 /* IntegerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegerCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			children = (
 				AB7F70871DE99992007C3E41 /* AttributeCell.swift */,
 				AB7F70891DE99AE7007C3E41 /* StringCell.swift */,
+				AB7F708B1DE9B038007C3E41 /* IntegerCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB7F708C1DE9B038007C3E41 /* IntegerCell.swift in Sources */,
 				AB7F707D1DE98C10007C3E41 /* ObjectsVC.swift in Sources */,
 				AB7F70831DE994C3007C3E41 /* ObjectVC.swift in Sources */,
 				AB7F708A1DE99AE7007C3E41 /* StringCell.swift in Sources */,

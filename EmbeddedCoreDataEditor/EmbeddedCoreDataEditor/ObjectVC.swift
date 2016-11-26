@@ -75,6 +75,7 @@ fileprivate extension NSAttributeDescription {
   var isSupported: Bool {
     let type = attributeType
     if type == .stringAttributeType { return true }
+    if type.hasIntegerCharacteristics { return true }
 //    if type.hasFloatingPointCharacteristics || type.hasIntegerCharacteristics || type == .stringAttributeType {
 //      return true
 //    }
