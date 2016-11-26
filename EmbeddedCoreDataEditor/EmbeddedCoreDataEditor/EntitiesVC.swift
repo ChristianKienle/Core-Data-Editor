@@ -16,14 +16,11 @@ final class EntitiesVC: UITableViewController {
     fatalError("init(coder:) has not been implemented")
   }
   // MARK: - ViewController Stuff
-  override func viewDidLoad() {
-    super.viewDidLoad()
-  }
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     tableView.reloadData()
+    title = "Entities"
   }
-  
   // MARK: - Table view data source
   override func numberOfSections(in tableView: UITableView) -> Int {
     return 1
@@ -38,54 +35,13 @@ final class EntitiesVC: UITableViewController {
     cell.imageView?.image = UIImage(named: "Entity", in: Bundle.init(for: type(of:self)), compatibleWith: traitCollection)
     return cell
   }
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let entity = self.entity(for: indexPath)
+    let objectsVC = ObjectsVC(context: context, entity: entity)
+    navigationController?.pushViewController(objectsVC, animated: true)
+  }
   // MARK: - Private Helper
   private func entity(for indexPath: IndexPath) -> NSEntityDescription {
     return entities[indexPath.row]
   }
-  
-  /*
-   // Override to support conditional editing of the table view.
-   override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-   // Return false if you do not want the specified item to be editable.
-   return true
-   }
-   */
-  
-  /*
-   // Override to support editing the table view.
-   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-   if editingStyle == .delete {
-   // Delete the row from the data source
-   tableView.deleteRows(at: [indexPath], with: .fade)
-   } else if editingStyle == .insert {
-   // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-   }
-   }
-   */
-  
-  /*
-   // Override to support rearranging the table view.
-   override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-   
-   }
-   */
-  
-  /*
-   // Override to support conditional rearranging of the table view.
-   override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-   // Return false if you do not want the item to be re-orderable.
-   return true
-   }
-   */
-  
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
 }

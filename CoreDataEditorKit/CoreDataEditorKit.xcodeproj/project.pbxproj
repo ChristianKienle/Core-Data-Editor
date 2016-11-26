@@ -10,6 +10,7 @@
 		AB4069931DE88F1C001F83E9 /* CoreDataEditorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4069891DE88F1C001F83E9 /* CoreDataEditorKit.framework */; };
 		AB4069981DE88F1C001F83E9 /* CoreDataEditorKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4069971DE88F1C001F83E9 /* CoreDataEditorKitTests.swift */; };
 		AB40699A1DE88F1C001F83E9 /* CoreDataEditorKit.h in Headers */ = {isa = PBXBuildFile; fileRef = AB40698C1DE88F1C001F83E9 /* CoreDataEditorKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AB7F70811DE98F7C007C3E41 /* NSManagedObjectID+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F70801DE98F7C007C3E41 /* NSManagedObjectID+Additions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		AB4069921DE88F1C001F83E9 /* CoreDataEditorKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataEditorKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB4069971DE88F1C001F83E9 /* CoreDataEditorKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataEditorKitTests.swift; sourceTree = "<group>"; };
 		AB4069991DE88F1C001F83E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB7F70801DE98F7C007C3E41 /* NSManagedObjectID+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectID+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				AB40698C1DE88F1C001F83E9 /* CoreDataEditorKit.h */,
 				AB40698D1DE88F1C001F83E9 /* Info.plist */,
+				AB7F70801DE98F7C007C3E41 /* NSManagedObjectID+Additions.swift */,
 			);
 			path = CoreDataEditorKit;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					AB4069881DE88F1C001F83E9 = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					AB4069911DE88F1C001F83E9 = {
@@ -196,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB7F70811DE98F7C007C3E41 /* NSManagedObjectID+Additions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +325,7 @@
 		AB40699E1DE88F1C001F83E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -331,6 +337,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "de.christian-kienle.CoreDataEditorKit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -338,6 +345,7 @@
 		AB40699F1DE88F1C001F83E9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -356,6 +364,7 @@
 		AB4069A11DE88F1C001F83E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = CoreDataEditorKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.christian-kienle.CoreDataEditorKitTests";
@@ -367,6 +376,7 @@
 		AB4069A21DE88F1C001F83E9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = CoreDataEditorKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.christian-kienle.CoreDataEditorKitTests";
@@ -394,6 +404,7 @@
 				AB40699F1DE88F1C001F83E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB4069A01DE88F1C001F83E9 /* Build configuration list for PBXNativeTarget "CoreDataEditorKitTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +413,7 @@
 				AB4069A21DE88F1C001F83E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
