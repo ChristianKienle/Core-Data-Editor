@@ -11,6 +11,8 @@ struct AttributeObjectPair {
 
 protocol AttributeCellDelegate: class {
   func attributeCell(_ cell: AttributeCell, didChangeValue value: Any?)
+  func presentingViewController(for attributeCell: AttributeCell) -> UIViewController
+
 }
 
 class AttributeCell: UITableViewCell {

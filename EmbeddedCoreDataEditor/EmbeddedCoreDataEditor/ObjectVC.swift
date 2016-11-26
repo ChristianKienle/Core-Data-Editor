@@ -63,17 +63,20 @@ extension ObjectVC: AttributeCellDelegate {
   func attributeCell(_ cell: AttributeCell, didChangeValue value: Any?) {
     
   }
+  func presentingViewController(for attributeCell: AttributeCell) -> UIViewController { return self }
 }
 
 enum AttributeClass {
-  case string, integer, bool, float
-  static let all: [AttributeClass] = [.string, .integer, .bool, float]
+  case string, integer, bool, float, date
+  static let all: [AttributeClass] = [.string, .integer, .bool, .float, .date]
   var cellClass: Swift.AnyClass {
     switch self {
     case .string: return StringCell.self
     case .bool: return BoolCell.self
     case .integer: return IntegerCell.self
     case .float: return FloatCell.self
+    case .date: return DateCell.self
+      
     }
   }
   var cellIdentifier: String {
@@ -82,6 +85,7 @@ enum AttributeClass {
     case .bool: return BoolCell.identifier
     case .integer: return IntegerCell.identifier
     case .float: return FloatCell.identifier
+    case .date: return DateCell.identifier
     }
   }
 }
@@ -91,6 +95,7 @@ fileprivate extension NSAttributeDescription {
     let type = attributeType
     if type == .stringAttributeType { return true }
     if type == .booleanAttributeType { return true }
+    if type == .dateAttributeType { return true }
     if type.hasIntegerCharacteristics { return true }
     if type.hasFloatingPointCharacteristics { return true }
     //    if type.hasFloatingPointCharacteristics || type.hasIntegerCharacteristics || type == .stringAttributeType {
@@ -110,6 +115,9 @@ fileprivate extension NSAttributeDescription {
     }
     if attributeType == .stringAttributeType {
       return .string
+    }
+    if attributeType == .dateAttributeType {
+      return .date
     }
     if attributeType.hasFloatingPointCharacteristics {
       return .float

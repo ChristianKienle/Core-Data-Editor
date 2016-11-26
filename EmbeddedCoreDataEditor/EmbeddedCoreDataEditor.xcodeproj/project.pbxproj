@@ -22,6 +22,8 @@
 		AB7F708C1DE9B038007C3E41 /* IntegerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F708B1DE9B038007C3E41 /* IntegerCell.swift */; };
 		AB7F708E1DE9B202007C3E41 /* BoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F708D1DE9B202007C3E41 /* BoolCell.swift */; };
 		AB7F70901DE9B5A5007C3E41 /* FloatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F708F1DE9B5A5007C3E41 /* FloatCell.swift */; };
+		AB7F70921DE9B675007C3E41 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F70911DE9B675007C3E41 /* DateCell.swift */; };
+		AB7F70941DE9B7E0007C3E41 /* DatePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F70931DE9B7E0007C3E41 /* DatePickerVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		AB7F708B1DE9B038007C3E41 /* IntegerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegerCell.swift; sourceTree = "<group>"; };
 		AB7F708D1DE9B202007C3E41 /* BoolCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolCell.swift; sourceTree = "<group>"; };
 		AB7F708F1DE9B5A5007C3E41 /* FloatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatCell.swift; sourceTree = "<group>"; };
+		AB7F70911DE9B675007C3E41 /* DateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		AB7F70931DE9B7E0007C3E41 /* DatePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +183,8 @@
 				AB7F708B1DE9B038007C3E41 /* IntegerCell.swift */,
 				AB7F708D1DE9B202007C3E41 /* BoolCell.swift */,
 				AB7F708F1DE9B5A5007C3E41 /* FloatCell.swift */,
+				AB7F70911DE9B675007C3E41 /* DateCell.swift */,
+				AB7F70931DE9B7E0007C3E41 /* DatePickerVC.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -320,10 +326,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB7F708C1DE9B038007C3E41 /* IntegerCell.swift in Sources */,
+				AB7F70921DE9B675007C3E41 /* DateCell.swift in Sources */,
 				AB7F707D1DE98C10007C3E41 /* ObjectsVC.swift in Sources */,
 				AB7F70831DE994C3007C3E41 /* ObjectVC.swift in Sources */,
 				AB7F708A1DE99AE7007C3E41 /* StringCell.swift in Sources */,
 				AB4069D11DE8905C001F83E9 /* Editor.swift in Sources */,
+				AB7F70941DE9B7E0007C3E41 /* DatePickerVC.swift in Sources */,
 				AB7F708E1DE9B202007C3E41 /* BoolCell.swift in Sources */,
 				AB7F70881DE99992007C3E41 /* AttributeCell.swift in Sources */,
 				AB4069CC1DE88FCC001F83E9 /* EntitiesVC.swift in Sources */,

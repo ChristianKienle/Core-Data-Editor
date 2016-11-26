@@ -13,7 +13,7 @@ import UIKit
   // Working with the Editor
   public func enable() {
     let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(Editor.show))
-    gestureRecognizer.numberOfTapsRequired = 4;
+    gestureRecognizer.numberOfTapsRequired = 3;
     applicationWindow?.addGestureRecognizer(gestureRecognizer)
   }
   // Private stuff
