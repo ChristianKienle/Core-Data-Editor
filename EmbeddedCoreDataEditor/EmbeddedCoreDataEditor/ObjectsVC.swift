@@ -187,8 +187,13 @@ final class MultipleObjectsPickerVC: ObjectsVC {
     super.tableView(tableView, didSelectRowAt: indexPath)
   }
   override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    defer {
+      updateAssignButton()
+    }
+    guard super.responds(to: #selector(ObjectsVC.tableView(_:didDeselectRowAt:))) else {
+      return
+    }
     super.tableView(tableView, didDeselectRowAt: indexPath)
-    updateAssignButton()
   }
   // MARK: - Setup Buttons
   private func setupButtons() {

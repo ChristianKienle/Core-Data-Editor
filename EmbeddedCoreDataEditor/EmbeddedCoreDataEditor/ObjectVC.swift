@@ -72,6 +72,7 @@ final class ObjectVC: UITableViewController {
     case 0: return
     case 1:
       let alert = UIAlertController(title: "Create or Pick Object?", message: nil, preferredStyle: .actionSheet)
+      
       alert.addAction(UIAlertAction(title: "Create new Object", style: .default, handler: { _ in
         let relationship = self.relationship(for: indexPath)
         let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
@@ -79,8 +80,15 @@ final class ObjectVC: UITableViewController {
         let destinationEntity = relationship.destinationEntity!
         let relatedObject = NSManagedObject(entity: destinationEntity, insertInto: childContext)
         let childObject = childContext.object(with: self.object.objectID)
-        print("set \(relationship.name) of \(self.object.entity.name!) to object of type \(relatedObject.entity.name)")
-        childObject.setValue(relatedObject, forKey: relationship.name)
+        if relationship.isToMany {
+          if relationship.isOrdered {
+            childObject.mutableOrderedSetValue(forKey: relationship.name).add(relatedObject)
+          } else {
+            childObject.mutableSetValue(forKey: relationship.name).add(relatedObject)
+          }
+        } else {
+          childObject.setValue(relatedObject, forKey: relationship.name)
+        }
         let objectVC = ObjectVC(context: childContext, object: relatedObject)
         objectVC.didSave = {
           do {
