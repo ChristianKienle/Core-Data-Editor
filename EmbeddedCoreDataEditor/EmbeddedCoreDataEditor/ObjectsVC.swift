@@ -90,6 +90,18 @@ class ObjectsVC: UITableViewController {
     title = entity.name
     fetchObjects()
     tableView.reloadData()
+    navigationController?.isToolbarHidden = false
+    let slider = UISlider()
+    slider.minimumValue = 0.0
+    slider.maximumValue = 1.0
+    slider.sizeToFit()
+    slider.addTarget(self, action: #selector(takeLevelOfDetailFromSender(_:)), for: .valueChanged)
+    let scaleItem = UIBarButtonItem(customView: slider)
+    
+    navigationController?.toolbarItems = [scaleItem]
+  }
+  func takeLevelOfDetailFromSender(_ sender: UISlider?) {
+  print("value changed: \(sender?.value)")
   }
   // MARK: - Table view data source
   override func numberOfSections(in tableView: UITableView) -> Int {
