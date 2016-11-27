@@ -13,6 +13,55 @@ fileprivate extension UIStackView {
   }
 }
 
+// rawValue: segmentIndex
+fileprivate enum SizeClass: Int {
+  case compact = 0
+  case regular = 1
+  init?(segmentIndex: Int) {
+    self.init(rawValue: segmentIndex)
+  }
+  var title: String {
+    switch self {
+    case .compact: return "Compact"
+    case .regular: return "Regular"
+    }
+  }
+  var segmentIndex: Int {
+    return rawValue
+  }
+  func insertAsSegment(in segmentedControl: UISegmentedControl) {
+    segmentedControl.insertSegment(withTitle: title, at: segmentIndex, animated: false)
+  }
+}
+
+
+fileprivate final class SizePicker: UISegmentedControl {
+  var sizeClassDidChange: ((SizeClass) -> (Void))?
+  init() {
+    super.init(frame: .zero)
+    SizeClass.compact.insertAsSegment(in: self)
+    SizeClass.regular.insertAsSegment(in: self)
+    selectedSegmentIndex = SizeClass.regular.segmentIndex
+    addTarget(self, action: #selector(takeSizeClassFromSender(_:)), for: .valueChanged)
+    sizeToFit()
+  }
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  func configure(with sizeClass: SizeClass) {
+    selectedSegmentIndex = sizeClass.segmentIndex
+  }
+  func takeSizeClassFromSender(_ sender: SizePicker?) {
+    guard let sizeClass = SizeClass(segmentIndex: selectedSegmentIndex) else {
+      fatalError()
+    }
+    sizeClassDidChange?(sizeClass)
+  }
+  var sizeClass: SizeClass {
+    return SizeClass(segmentIndex: selectedSegmentIndex)!
+  }
+}
+
 private final class ObjectCell: UITableViewCell {
   // MARK: - Globals
   class var identifier: String {
@@ -44,14 +93,23 @@ private final class ObjectCell: UITableViewCell {
     stackView.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true
     stackView.topAnchor.constraint(equalTo: margins.topAnchor).isActive = true
   }
-  func configure(with object: NSManagedObject) {
+  func configure(with object: NSManagedObject, sizeClass: SizeClass) {
     let entity = object.entity
     let attributes = Array(entity.attributesByName.values.sorted { (l, r) -> Bool in
       return l.name < r.name
     })
+    let sizedAttributes: [NSAttributeDescription]
+    switch sizeClass {
+    case .regular:
+      sizedAttributes = attributes
+    case .compact:
+        let reducedCount = min(max(1, Int(attributes.count / 3)), attributes.count)
+        sizedAttributes = Array(attributes.prefix(reducedCount))
+      }
+    
     stackView.removeAllArrangedSubviews()
     stackView.spacing = 9.0
-    attributes.forEach { attribute in
+    sizedAttributes.forEach { attribute in
       let stack = UIStackView()
       stack.axis = .vertical
       let nameLabel = UILabel()
@@ -71,6 +129,10 @@ class ObjectsVC: UITableViewController {
   // MARK: - Properties
   fileprivate let context: NSManagedObjectContext
   private let entity: NSEntityDescription
+  private let sizePicker = SizePicker()
+  private var sizeClass: SizeClass {
+    return sizePicker.sizeClass
+  }
   fileprivate var objects = [NSManagedObject]()
   // MARK: - Creating
   init(context: NSManagedObjectContext, entity: NSEntityDescription) {
@@ -90,18 +152,19 @@ class ObjectsVC: UITableViewController {
     title = entity.name
     fetchObjects()
     tableView.reloadData()
-    navigationController?.isToolbarHidden = false
-    let slider = UISlider()
-    slider.minimumValue = 0.0
-    slider.maximumValue = 1.0
-    slider.sizeToFit()
-    slider.addTarget(self, action: #selector(takeLevelOfDetailFromSender(_:)), for: .valueChanged)
-    let scaleItem = UIBarButtonItem(customView: slider)
-    
-    navigationController?.toolbarItems = [scaleItem]
   }
-  func takeLevelOfDetailFromSender(_ sender: UISlider?) {
-  print("value changed: \(sender?.value)")
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    sizePicker.sizeClassDidChange = { sizeClass in
+      self.tableView.reloadRows(at: self.tableView.indexPathsForVisibleRows ?? [], with: .automatic)
+    }
+    let sizePickerItem = UIBarButtonItem(customView: sizePicker)
+    
+    let leftSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+    let rightSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+    
+    toolbarItems = [leftSpace, sizePickerItem, rightSpace]
+    navigationController?.isToolbarHidden = false
   }
   // MARK: - Table view data source
   override func numberOfSections(in tableView: UITableView) -> Int {
@@ -116,7 +179,7 @@ class ObjectsVC: UITableViewController {
     cell.shouldIndentWhileEditing = true
     cell.selectionStyle = .default
     cell.indentationLevel = 1
-    cell.configure(with: object)
+    cell.configure(with: object, sizeClass: sizeClass)
     return cell
   }
   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
