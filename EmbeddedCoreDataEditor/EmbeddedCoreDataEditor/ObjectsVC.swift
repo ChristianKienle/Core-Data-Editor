@@ -96,6 +96,12 @@ private final class ObjectCell: UITableViewCell {
   func configure(with object: NSManagedObject, sizeClass: SizeClass) {
     let entity = object.entity
     let attributes = Array(entity.attributesByName.values.sorted { (l, r) -> Bool in
+      if l.attributeType == .stringAttributeType && r.attributeType != .stringAttributeType {
+        return true
+      }
+      if l.attributeType != .stringAttributeType && r.attributeType == .stringAttributeType {
+        return false
+      }
       return l.name < r.name
     })
     let sizedAttributes: [NSAttributeDescription]
@@ -103,7 +109,7 @@ private final class ObjectCell: UITableViewCell {
     case .regular:
       sizedAttributes = attributes
     case .compact:
-        let reducedCount = min(max(1, Int(attributes.count / 3)), attributes.count)
+        let reducedCount = min(max(1, Int(attributes.count / 5)), attributes.count)
         sizedAttributes = Array(attributes.prefix(reducedCount))
       }
     
@@ -143,6 +149,12 @@ class ObjectsVC: UITableViewController {
     self.tableView.rowHeight = UITableViewAutomaticDimension
     self.tableView.estimatedRowHeight = 150.0
     self.tableView.register(ObjectCell.self, forCellReuseIdentifier: ObjectCell.identifier)
+    let sizePickerItem = UIBarButtonItem(customView: sizePicker)
+    
+    let leftSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+    let rightSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+    
+    toolbarItems = [leftSpace, sizePickerItem, rightSpace]
   }
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
@@ -158,13 +170,7 @@ class ObjectsVC: UITableViewController {
     sizePicker.sizeClassDidChange = { sizeClass in
       self.tableView.reloadRows(at: self.tableView.indexPathsForVisibleRows ?? [], with: .automatic)
     }
-    let sizePickerItem = UIBarButtonItem(customView: sizePicker)
-    
-    let leftSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-    let rightSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-    
-    toolbarItems = [leftSpace, sizePickerItem, rightSpace]
-    navigationController?.isToolbarHidden = false
+    navigationController?.setToolbarHidden(false, animated: true)
   }
   // MARK: - Table view data source
   override func numberOfSections(in tableView: UITableView) -> Int {

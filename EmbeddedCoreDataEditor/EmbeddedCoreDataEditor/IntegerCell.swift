@@ -25,6 +25,7 @@ final class IntegerCell: AttributeCell {
       valueTextField.text = ""
       return
     }
+    valueTextField.keyboardType = .numberPad
     valueTextField.text = String(numberValue)
   }
 }

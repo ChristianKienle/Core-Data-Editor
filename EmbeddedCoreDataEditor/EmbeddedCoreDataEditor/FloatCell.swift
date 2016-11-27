@@ -10,6 +10,7 @@ final class FloatCell: AttributeCell {
     valueTextField.placeholder = "null"
     valueTextField.text = ""
     valueTextField.delegate = self
+    valueTextField.keyboardType = .decimalPad
     stackView.addArrangedSubview(valueTextField)
   }
   required init?(coder aDecoder: NSCoder) {

@@ -23,6 +23,7 @@ final class ObjectVC: UITableViewController {
       self.tableView.register(attributeClass.cellClass, forCellReuseIdentifier: attributeClass.cellIdentifier)
     }
     tableView.register(RelationshipCell.self, forCellReuseIdentifier: RelationshipCell.identifier)
+    hidesBottomBarWhenPushed = true
   }
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
