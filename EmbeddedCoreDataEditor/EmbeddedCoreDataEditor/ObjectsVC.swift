@@ -3,18 +3,84 @@ import UIKit
 import CoreData
 import CoreDataEditorKit
 
+fileprivate extension UIStackView {
+  func removeAllArrangedSubviews() {
+    let views = arrangedSubviews
+    views.forEach {
+      $0.removeFromSuperview()
+      //self.removeArrangedSubview($0)
+    }
+  }
+}
+
+private final class ObjectCell: UITableViewCell {
+  // MARK: - Globals
+  class var identifier: String {
+    return "ObjectCell"
+  }
+  // MARK: - Properties
+  let stackView = UIStackView()
+  // MARK: - Creating
+  override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    super.init(style: .default, reuseIdentifier: type(of: self).identifier)
+    configureCell()
+  }
+  init() {
+    super.init(style: .default, reuseIdentifier: type(of: self).identifier)
+    configureCell()
+  }
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  // MARK: - Configure
+  private func configureCell() {
+    stackView.axis = .vertical
+    stackView.translatesAutoresizingMaskIntoConstraints = false
+    contentView.addSubview(stackView)
+    let margins = contentView.layoutMarginsGuide
+    
+    stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
+    stackView.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
+    stackView.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true
+    stackView.topAnchor.constraint(equalTo: margins.topAnchor).isActive = true
+  }
+  func configure(with object: NSManagedObject) {
+    let entity = object.entity
+    let attributes = Array(entity.attributesByName.values.sorted { (l, r) -> Bool in
+      return l.name < r.name
+    })
+    stackView.removeAllArrangedSubviews()
+    stackView.spacing = 9.0
+    attributes.forEach { attribute in
+      let stack = UIStackView()
+      stack.axis = .vertical
+      let nameLabel = UILabel()
+      nameLabel.text = attribute.name
+      nameLabel.font = UIFont.systemFont(ofSize: 9.0)
+      nameLabel.textColor = .gray
+      let valueLabel = UILabel()
+      valueLabel.text = object.string(for: attribute.name) ?? "null"
+      stack.addArrangedSubview(nameLabel)
+      stack.addArrangedSubview(valueLabel)
+      self.stackView.addArrangedSubview(stack)
+    }
+  }
+}
+
 class ObjectsVC: UITableViewController {
   // MARK: - Properties
   fileprivate let context: NSManagedObjectContext
   private let entity: NSEntityDescription
-  fileprivate var objectIDs = [NSManagedObjectID]()
+  fileprivate var objects = [NSManagedObject]()
   // MARK: - Creating
   init(context: NSManagedObjectContext, entity: NSEntityDescription) {
     self.context = context
     self.entity = entity
     super.init(nibName: nil, bundle: nil)
     setupNewObjectButton()
-    self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ObjectIDCell")
+    self.tableView.rowHeight = UITableViewAutomaticDimension
+    self.tableView.estimatedRowHeight = 150.0
+    self.tableView.register(ObjectCell.self, forCellReuseIdentifier: ObjectCell.identifier)
   }
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
@@ -22,24 +88,28 @@ class ObjectsVC: UITableViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     title = entity.name
-    fetchObjectIDs()
+    fetchObjects()
     tableView.reloadData()
   }
   // MARK: - Table view data source
   override func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
+    return objects.count
   }
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return objectIDs.count
+    return objects.isEmpty ? 0 : 1
   }
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "ObjectIDCell", for: indexPath)
-    let objectID = self.objectID(for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: ObjectCell.identifier, for: indexPath) as! ObjectCell
+    let object = self.object(for: indexPath)
     cell.shouldIndentWhileEditing = true
     cell.selectionStyle = .default
     cell.indentationLevel = 1
-    cell.textLabel?.text = objectID.humanReadableRepresentation(hideEntityName: true)
+    cell.configure(with: object)
     return cell
+  }
+  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    let object = self.objects[section]
+    return object.objectID.humanReadableRepresentation(hideEntityName: false)
   }
   override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
     return true
@@ -47,11 +117,11 @@ class ObjectsVC: UITableViewController {
   override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
     return .none
   }
+  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return UITableViewAutomaticDimension
+  }
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let objectID = self.objectID(for: indexPath)
-    guard let object = try? context.existingObject(with: objectID) else {
-      return
-    }
+    let object = self.object(for: indexPath)
     // Push an ObjectVC in order to edit an existing Object
     let objectVC = ObjectVC(context: context, object: object)
     objectVC.didSave = {
@@ -63,7 +133,7 @@ class ObjectsVC: UITableViewController {
         // TODO: Validation
         print(error)
       }
-      self.fetchObjectIDs()
+      self.fetchObjects()
       let _ = self.navigationController?.popToViewController(self, animated: true)
     }
     objectVC.didCancel = {
@@ -73,17 +143,30 @@ class ObjectsVC: UITableViewController {
   }
   
   // MARK: - Private Helper
-  fileprivate func fetchObjectIDs() {
-    let request = NSFetchRequest<NSManagedObjectID>(entityName: entity.name!)
-    request.resultType = .managedObjectIDResultType
+  fileprivate func fetchObjects() {
+    let request = NSFetchRequest<NSManagedObject>(entityName: entity.name!)
+    request.resultType = .managedObjectResultType
     request.entity = entity
-    guard let fetchedIDs = try? context.fetch(request) else {
+    guard let objects = try? context.fetch(request) else {
       return
     }
-    objectIDs = fetchedIDs
+    self.objects = objects
   }
-  fileprivate func objectID(for indexPath: IndexPath) -> NSManagedObjectID {
-    return objectIDs[indexPath.row]
+  fileprivate func object(for indexPath: IndexPath) -> NSManagedObject {
+    return objects[indexPath.section]
+  }
+  fileprivate func object(forSection section: Int) -> NSManagedObject {
+    return objects[section]
+  }
+  fileprivate func indexPaths(forObjects objs: Set<NSManagedObject>) -> Set<IndexPath> {
+    let sections = (objs.flatMap { objects.index(of: $0) })
+    let indexPaths = Set(sections.map { IndexPath(row: 0, section: $0) })
+    return indexPaths
+  }
+  fileprivate func indexPath(forObject object: NSManagedObject) -> IndexPath {
+    let section = objects.index(of: object)!
+    let indexPath = IndexPath(row: 0, section: section)
+    return indexPath
   }
   private func setupNewObjectButton() {
     navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addObject(_:)))
@@ -104,7 +187,7 @@ class ObjectsVC: UITableViewController {
         print(error)
       }
       self.dismiss(animated: true) {
-        self.fetchObjectIDs()
+        self.fetchObjects()
       }
     }
     objectVC.didCancel = {
@@ -133,15 +216,16 @@ final class SingleObjectPickerVC: ObjectsVC {
   }
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    if let preselectedObject = preselectedObject, let index = objectIDs.index(of: preselectedObject.objectID) {
-      tableView.selectRow(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .middle)
+    if let preselectedObject = preselectedObject {
+      let index = self.indexPath(forObject: preselectedObject)
+      tableView.selectRow(at: index, animated: true, scrollPosition: .middle)
     }
   }
   // MARK: - UITableView
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     guard tableView.isEditing == false else {
-      let objectID = self.objectID(for: indexPath)
-      didSelectObject?(objectID)
+      let object = self.object(for: indexPath)
+      didSelectObject?(object.objectID)
       return
     }
     super.tableView(tableView, didSelectRowAt: indexPath)
@@ -171,8 +255,7 @@ final class MultipleObjectsPickerVC: ObjectsVC {
   }
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    let rows = (preselectedObjects.flatMap { objectIDs.index(of: $0.objectID) })
-    let indexPaths = rows.map { IndexPath(row: $0, section: 0) }
+    let indexPaths = self.indexPaths(forObjects: preselectedObjects)
     indexPaths.forEach {
       self.tableView.selectRow(at: $0, animated: false, scrollPosition: .middle)
     }
@@ -206,7 +289,7 @@ final class MultipleObjectsPickerVC: ObjectsVC {
   }
   func pickSelectedObjects(_ sender: Any?) {
     let objectIDs = (tableView.indexPathsForSelectedRows ?? []).map { indexPath in
-      return self.objectID(for: indexPath)
+      return self.object(for: indexPath).objectID
     }
     didSelectObjects?(Set(objectIDs))
   }
