@@ -104,6 +104,7 @@
   
   NSMutableDictionary *localizationDictionary = [NSMutableDictionary dictionary];
   for(NSEntityDescription *entityDescription in transformedModel) {
+    entityDescription.managedObjectClassName = NSStringFromClass([NSManagedObject class]);
     NSDictionary *propertiesByName = entityDescription.propertiesByName;
     [propertiesByName enumerateKeysAndObjectsUsingBlock:^(NSString *propertyName, NSPropertyDescription *propertyDescription, BOOL *stop) {
       NSString *name = propertyName;
