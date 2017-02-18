@@ -77,6 +77,9 @@
     NSDictionary *infoDictionary = bundle.infoDictionary;
     NSDictionary *icons = infoDictionary[@"CFBundleIcons"];
     NSDictionary *primaryIcon = icons[@"CFBundlePrimaryIcon"];
+    if([primaryIcon isKindOfClass:[NSDictionary class]] == NO) {
+        return [[NSWorkspace sharedWorkspace] iconForFileType:NSFileTypeForHFSTypeCode(kGenericApplicationIcon)];
+    }
     NSArray *iconFiles = primaryIcon[@"CFBundleIconFiles"];
     NSString *iconName = iconFiles.lastObject;
 
