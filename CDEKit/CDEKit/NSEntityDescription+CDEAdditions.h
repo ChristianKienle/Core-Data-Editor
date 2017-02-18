@@ -5,7 +5,7 @@
 #pragma mark - Convenience
 - (NSArray<NSAttributeDescription*> *)supportedAttributes_cde;
 - (NSArray<NSRelationshipDescription*> *)toManyRelationships_cde;
-- (NSDictionary<NSString*, NSRelationshopDescription*>*)toManyRelationshipsByName_cde;
+- (NSDictionary<NSString*, NSRelationshipDescription*>*)toManyRelationshipsByName_cde;
 - (NSArray<NSString*> *)sortedToManyRelationshipNames_cde;
 - (NSArray<NSRelationshipDescription*> *)sortedToManyRelationships_cde;
 - (NSArray<NSRelationshipDescription*> *)sortedToOneRelationships_cde;
