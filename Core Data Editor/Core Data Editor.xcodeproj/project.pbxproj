@@ -2021,6 +2021,7 @@
 				ABBEA7D21765CB730024A9D2 /* Sources */,
 				ABBEA7D31765CB730024A9D2 /* Frameworks */,
 				ABBEA7D41765CB730024A9D2 /* Resources */,
+				35BCCB3E1DE18F4E00214DB6 /* Copy Tool to Applications */,
 			);
 			buildRules = (
 			);
@@ -2146,6 +2147,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		35BCCB3E1DE18F4E00214DB6 /* Copy Tool to Applications */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Tool to Applications";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ". script/copy-tool";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ABBEA7D21765CB730024A9D2 /* Sources */ = {

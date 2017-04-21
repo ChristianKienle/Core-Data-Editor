@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+# Extracts the aarkay Mac tool from its application bundle to Project Directory. Meant to be run
+# as part of an Xcode Run Script build phase.
+
+cp -rf -v "${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}" "/Applications"
