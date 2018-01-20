@@ -28,6 +28,8 @@
 @property (nonatomic, strong, readwrite) CDEManagedObjectsRequest *request;
 @property (nonatomic, weak, readwrite) NSTableView *tableView;
 @property (nonatomic, weak, readwrite) NSSearchField *searchField;
+@property (nonatomic, strong, readwrite) NSTableColumn *sortingColumn;
+@property (nonatomic, assign, readwrite) BOOL sortingAscending;
 @property (nonatomic, weak, readwrite) CDEManagedObjectsViewController *managedObjectsViewController;
 @property (nonatomic, copy) NSString *filterByKeyPath;
 @property (nonatomic, strong) NSAttributeDescription *filterByAttributeDescription;
@@ -197,6 +199,10 @@
     @throw [NSException exceptionWithName:@"CDEAbstractNotImplemented" reason:nil userInfo:nil];
 }
 
+-(void)executeFetchRequest {
+    @throw [NSException exceptionWithName:@"CDEAbstractNotImplemented" reason:nil userInfo:nil];
+}
+
 - (void)invalidate {
     @throw [NSException exceptionWithName:@"CDEAbstractNotImplemented" reason:nil userInfo:nil];
 }
@@ -235,6 +241,26 @@
         [self.request.managedObjectContext deleteObject:object];
     }
     [self.tableView reloadData];
+}
+
+- (void)sortByTableColumn:(NSTableColumn *)tableColumn ascending:(BOOL)ascending
+{
+    NSPropertyDescription *property = [self propertyDescriptionForTableColumn:tableColumn];
+    NSString *identifier = tableColumn.identifier;
+    
+    self.sortingColumn = tableColumn;
+    self.sortingAscending = ascending;
+
+    // can only sort by attributes, not relationship
+    if(property.isAttributeDescription_cde || [identifier isEqualToString:@"objectID"]) {
+        //NSAttributeType type = [self attributeTypeForTableColumn:tableColumn]; // see if we sort differently by type later
+        
+        
+        [self.request setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:identifier ascending:ascending]]];
+        [self executeFetchRequest];
+        
+        [self.tableView reloadData];
+    }
 }
 
 - (NSView *)viewForTableColumn:(NSTableColumn *)tableColumn atIndex:(NSInteger)atIndex {

@@ -22,6 +22,8 @@
 #pragma mark - For Subclassers
 // The default implementation returns columns for supported attributes, relationships and a column for the objectID
 @property (nonatomic, copy, readonly) NSArray *tableColumns;
+@property (nonatomic, strong, readonly) NSTableColumn *sortingColumn;
+@property (nonatomic, assign, readonly) BOOL sortingAscending;
 
 - (NSInteger)numberOfObjects;
 
@@ -43,6 +45,7 @@
 - (void)removeSelectedManagedObjects;
 
 - (NSView *)viewForTableColumn:(NSTableColumn *)tableColumn atIndex:(NSInteger)atIndex;
+- (void)sortByTableColumn:(NSTableColumn *)tableColumn ascending:(BOOL)ascending;
 
 - (IBAction)takeBoolValueFromSender:(id)sender;
 - (void)controlTextDidEndEditing:(NSNotification *)notification;

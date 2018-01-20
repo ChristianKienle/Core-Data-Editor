@@ -46,6 +46,11 @@
   }
   return [self._filteredObjects objectAtIndex:index];
 }
+
+- (void)removeAllObjects {
+    [self._allObjects removeAllObjects];
+    [self applyFilter];
+}
 - (void)addObjectsFromArray:(NSArray *)otherArray {
   [self._allObjects addObjectsFromArray:otherArray];
   [self applyFilter];

@@ -380,6 +380,40 @@
   }
 }
 
+- (void)tableView:(NSTableView*)tableView didClickTableColumn:(NSTableColumn *)tableColumn
+{
+    //NSString* identifier = [tableColumn identifier];
+    
+    // non sortable columns
+//    if([identifier isEqualToString:...])
+//        return;
+    
+    [self.tableView.tableColumns enumerateObjectsUsingBlock:^(NSTableColumn * _Nonnull column, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self.tableView setIndicatorImage:nil inTableColumn:column]; // clean the sorting arrow in old highligthed column
+    }];
+    
+    //NSArray *selectedObjects = [datasource objectsAtIndexes:[self.tableView selectedRowIndexes]];
+    
+    // if you click on another column
+    if( ![self.dataCoordinator.sortingColumn isEqualTo:tableColumn] ) {
+        [self.tableView setHighlightedTableColumn:tableColumn];
+        [self.dataCoordinator sortByTableColumn:tableColumn ascending:YES];
+    }
+    // click on the same column
+    else {
+        [self.dataCoordinator sortByTableColumn:tableColumn ascending:!self.dataCoordinator.sortingAscending];
+    }
+    
+    if(self.dataCoordinator.sortingAscending == NSOrderedDescending)
+        [self.tableView setIndicatorImage:[NSImage imageNamed:@"NSDescendingSortIndicator"] inTableColumn:tableColumn];
+    else
+        [self.tableView setIndicatorImage:[NSImage imageNamed:@"NSAscendingSortIndicator"] inTableColumn:tableColumn];
+    
+//    NSIndexSet *indexesOfObjectsToReselect = [datasource indexesOfObjectsIdenticalTo:selectedObjects allowsNotFound:YES];
+//    [self.tableView selectRowIndexes:indexesOfObjectsToReselect byExtendingSelection:NO];
+//    if([indexesOfObjectsToReselect count] > 0)
+//        [self.tableView scrollRowToVisible:[indexesOfObjectsToReselect firstIndex]];
+}
 #pragma mark - Cells
 - (IBAction)takeBoolValueFromSender:(id)sender {
   [self.dataCoordinator takeBoolValueFromSender:sender];

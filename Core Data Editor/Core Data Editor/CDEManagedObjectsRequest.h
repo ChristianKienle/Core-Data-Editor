@@ -7,6 +7,8 @@
 - (instancetype)initWithManagedObject:(NSManagedObject *)managedObject relationshipDescription:(NSRelationshipDescription *)relationshipDescription;
 - (instancetype)initWithFetchRequest:(NSFetchRequest *)fetchRequest managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 
+@property (nonatomic, copy) NSArray<NSSortDescriptor*> *sortDescriptors;
+
 #pragma mark - Properties for a Entity Request
 @property (nonatomic, strong, readonly) NSEntityDescription *entityDescription;
 

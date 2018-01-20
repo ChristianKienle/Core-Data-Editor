@@ -38,9 +38,6 @@
     self.arrayController.entityName = entity.name;
     self.arrayController.managedObjectContext = self.request.managedObjectContext;
     
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entity.name];
-    fetchRequest.entity = entity;
-    
     // Person -- pets -->> Pet
     // Person <-- owner -- Pet
     // $person (pets)
@@ -51,6 +48,19 @@
         predicate = [NSPredicate predicateWithFormat:@"ANY %K == %@", self.request.relationshipDescription.inverseRelationship.name, self.request.managedObject];
     }
     self.arrayController.filterPredicate = predicate;
+
+    [self executeFetchRequest];
+    
+    [self.tableView bind:NSContentBinding toObject:self.arrayController withKeyPath:@"arrangedObjects" options:nil];
+    [self.tableView bind:NSSortDescriptorsBinding toObject:self.arrayController withKeyPath:@"sortDescriptors" options:nil];
+}
+
+-(void)executeFetchRequest
+{
+    NSEntityDescription *entity = self.request.relationshipDescription.destinationEntity;
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entity.name];
+    fetchRequest.entity = entity;
+    fetchRequest.sortDescriptors = self.request.sortDescriptors;
     
     NSError *error = nil;
     BOOL fetched = [self.arrayController fetchWithRequest:fetchRequest merge:NO error:&error];
@@ -58,9 +68,6 @@
         NSLog(@"Error: %@", error);
         return;
     }
-    
-    [self.tableView bind:NSContentBinding toObject:self.arrayController withKeyPath:@"arrangedObjects" options:nil];
-    [self.tableView bind:NSSortDescriptorsBinding toObject:self.arrayController withKeyPath:@"sortDescriptors" options:nil];
 }
 
 - (void)invalidate {

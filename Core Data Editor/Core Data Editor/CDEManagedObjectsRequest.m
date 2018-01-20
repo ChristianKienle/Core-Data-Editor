@@ -36,6 +36,7 @@
         self.relationshipDescription = relationshipDescription;
         
         self.fetchRequest = fetchRequest;
+        self.sortDescriptors = fetchRequest.sortDescriptors;
     }
     return self;
 }
