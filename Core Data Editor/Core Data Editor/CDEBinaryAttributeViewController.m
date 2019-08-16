@@ -55,7 +55,7 @@
     NSSavePanel *panel = [NSSavePanel savePanel];
     panel.canCreateDirectories = YES;
     [panel beginSheetModalForWindow:self.view.window completionHandler:^(NSInteger result) {
-        if(result != NSFileHandlingPanelOKButton) {
+        if(result != NSModalResponseOK) {
             return;
         }
         if([[self resultingValue] isKindOfClass:[NSData class]] == NO) {
@@ -75,7 +75,7 @@
     NSOpenPanel *panel = [NSOpenPanel openPanel];
     panel.canCreateDirectories = YES;
     [panel beginSheetModalForWindow:self.view.window completionHandler:^(NSInteger result) {
-        if(result != NSFileHandlingPanelOKButton) {
+        if(result != NSModalResponseOK) {
             return;
         }
 //        if([[self resultingValue] isKindOfClass:[NSData class]] == NO) {

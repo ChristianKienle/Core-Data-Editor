@@ -40,7 +40,7 @@
   [panel setCanChooseFiles:NO];
   [panel setShowsHiddenFiles:YES];
   [panel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
-    if(result == NSFileHandlingPanelOKButton) {
+      if(result == NSModalResponseOK) {
       NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
       defaults.simulatorDirectory_cde = panel.URL;
       self.simulatorPathPopupButton.URL = defaults.simulatorDirectory_cde;
@@ -53,7 +53,7 @@
   [panel setCanChooseDirectories:YES];
   [panel setCanChooseFiles:NO];
   [panel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
-    if(result == NSFileHandlingPanelOKButton) {
+      if(result == NSModalResponseOK) {
       NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
       defaults.buildProductsDirectory_cde = panel.URL;
       self.derivedDataPathPopupButton.URL = defaults.buildProductsDirectory_cde;
