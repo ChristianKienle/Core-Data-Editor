@@ -5,6 +5,7 @@
 #import "CDEBooleanAttributeViewController.h"
 #import "CDEDateAttributeViewController.h"
 #import "CDEBinaryAttributeViewController.h"
+#import "CDEUUIDAttributeViewController.h"
 
 const static NSString *CDEAttributeViewControllerResultingValueObservationContext = @"CDEAttributeViewControllerResultingValueObservationContext";
 
@@ -66,6 +67,9 @@ NSString* const CDEAttributeViewControllerResultingValueKey = @"resultingValue";
     }
     if([CDEManagedObjectsTableViewAttributeHelper attributeTypeIsNumber:[attributeDescription attributeType]]) {
         return [CDENumberAttributeViewController class];
+    }
+    if([attributeDescription attributeType] == NSUUIDAttributeType) {
+        return [CDEUUIDAttributeViewController class];
     }
     return nil;
 }
