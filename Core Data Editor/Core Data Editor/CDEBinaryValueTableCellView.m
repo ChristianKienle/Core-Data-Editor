@@ -40,7 +40,7 @@
     NSSavePanel *panel = [NSSavePanel savePanel];
     panel.canCreateDirectories = YES;
     [panel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
-        if(result != NSFileHandlingPanelOKButton) {
+        if(result != NSModalResponseOK) {
             return;
         }
         if([self.objectValue isKindOfClass:[NSData class]] == NO) {

@@ -74,7 +74,7 @@
 - (IBAction)createNewStore:(id)sender {
     NSSavePanel *panel = [NSSavePanel savePanel];
     [panel beginSheetModalForWindow:self.view.window completionHandler:^(NSInteger result) {
-        if(result != NSFileHandlingPanelOKButton) {
+        if(result != NSModalResponseOK) {
             return;
         }
         NSURL *URL = [panel URL];

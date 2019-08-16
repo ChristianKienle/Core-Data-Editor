@@ -151,7 +151,7 @@ NSString *const CDECSVImportWindowControllerMappingIndexOfSelectedColumn = @"ind
     panel.allowedFileTypes = @[@"csv"];
     panel.accessoryView = self.delimiterViewController.view;
     [panel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
-        BOOL userChoseOKButton = (NSFileHandlingPanelOKButton == result);
+        BOOL userChoseOKButton = (NSModalResponseOK == result);
         if(userChoseOKButton == NO) {
             return;
         }
