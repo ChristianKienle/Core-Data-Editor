@@ -256,7 +256,7 @@
         //NSAttributeType type = [self attributeTypeForTableColumn:tableColumn]; // see if we sort differently by type later
         
         
-        [self.request setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:identifier ascending:ascending]]];
+        [self.request setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:[identifier isEqualToString:@"objectID"] ? @"self" : identifier ascending:ascending]]]; // Core Data does not sort by "objectID" since it's not an attribute! sorting by key "self" sorts by objectID :)
         [self executeFetchRequest];
         
         [self.tableView reloadData];
