@@ -104,6 +104,10 @@
     return [[self.arrayController selectedObjects] count] > 0;
 }
 
+- (BOOL)canPerformNullify {
+    return [self canPerformDelete]; // same rule as canPerformDelete
+}
+
 - (void)didChangeFilterPredicate {
     self.arrayController.filterPredicate = self.filterPredicate;
     [self.tableView reloadData];

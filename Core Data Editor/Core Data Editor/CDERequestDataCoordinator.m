@@ -229,7 +229,8 @@
     return result;
 }
 
-- (void)removeSelectedManagedObjects {
+- (void)removeSelectedManagedObjects:(BOOL)andDeleteThem; // AH: passing YES removes AND deletes the objects. Passing NO only removes them.
+ {
     NSIndexSet *indexes = [self indexesOfSelectedManagedObjects];
     NSMutableOrderedSet *objects = [NSMutableOrderedSet new];
     [indexes enumerateIndexesUsingBlock:^(NSUInteger index, BOOL *stop) {
@@ -237,10 +238,23 @@
         NSAssert(object, @"object cannot be nil.");
         [objects addObject:object];
     }];
-    for(NSManagedObject *object in objects) {
-        [self.request.managedObjectContext deleteObject:object];
-    }
-    [self.tableView reloadData];
+     if(andDeleteThem) {
+         for(NSManagedObject *object in objects) {
+             [self.request.managedObjectContext deleteObject:object];
+         }
+     }
+     else if(self.request.isRelationshipRequest == YES) {
+         if(self.request.relationshipDescription.isOrdered) {
+             [[self.request.managedObject mutableOrderedSetValueForKey:self.request.relationshipDescription.name] removeObjectsInArray:[objects array]];
+         }
+         else {
+             [[self.request.managedObject mutableSetValueForKey:self.request.relationshipDescription.name] minusSet:[objects set]];
+         }
+     }
+     else {
+         NSAssert(0, @"Currently unimplemented.");
+     }
+     [self.tableView reloadData];
 }
 
 - (void)sortByTableColumn:(NSTableColumn *)tableColumn ascending:(BOOL)ascending
@@ -580,6 +594,10 @@
 }
 
 - (BOOL)canPerformDelete {
+    return NO;
+}
+
+- (BOOL)canPerformNullify {
     return NO;
 }
 

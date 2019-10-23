@@ -42,7 +42,7 @@
 - (void)removeManagedObjectAtIndex:(NSUInteger)index;
 - (NSIndexSet *)indexesOfSelectedManagedObjects;
 - (NSArray *)selectedManagedObjects;
-- (void)removeSelectedManagedObjects;
+- (void)removeSelectedManagedObjects:(BOOL)andDeleteThem; // AH: passing YES removes AND deletes the objects. Passing NO only removes them.
 
 - (NSView *)viewForTableColumn:(NSTableColumn *)tableColumn atIndex:(NSInteger)atIndex;
 - (void)sortByTableColumn:(NSTableColumn *)tableColumn ascending:(BOOL)ascending;
@@ -65,6 +65,7 @@
 #pragma mark - For Subclassers / Used to disable/enable the buttons
 - (BOOL)canPerformAdd;
 - (BOOL)canPerformDelete;
+- (BOOL)canPerformNullify;
 
 #pragma mark - Autosave
 - (CDEEntityAutosaveInformation *)entityAutosaveInformation;

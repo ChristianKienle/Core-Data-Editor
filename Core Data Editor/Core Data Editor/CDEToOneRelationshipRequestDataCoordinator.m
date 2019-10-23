@@ -91,6 +91,10 @@
   return self.request.relatedObject != nil;
 }
 
+- (BOOL)canPerformNullify {
+    return self.request.relatedObject != nil;
+}
+
 - (void)updateAutosaveInformation:(CDEAutosaveInformation *)autosaveInformation {
   // do nothing by default
 }

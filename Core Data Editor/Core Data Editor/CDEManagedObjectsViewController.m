@@ -41,6 +41,7 @@
 @property (nonatomic, weak) IBOutlet NSView *bottomBarView;
 @property (nonatomic, weak) IBOutlet NSButton *addButton;
 @property (nonatomic, weak) IBOutlet NSButton *removeButton;
+@property (nonatomic, weak) IBOutlet NSButton *nullifyButton; // AH: does not *delete* the relationship destination object. Set the relationship to nil (for to-one) or removes the object from the relationship (to-many).
 @property (nonatomic, weak) IBOutlet NSMenuItem *createManagedObjectMenuItem;
 @property (nonatomic, strong) NSMenu *addButtonMenu;
 @property (nonatomic, strong) IBOutlet NSView *bottomBarViewWithNoParent;
@@ -69,11 +70,14 @@
   if(self.dataCoordinator == nil) {
     [self.addButton setEnabled:NO];
     [self.removeButton setEnabled:NO];
+    [self.nullifyButton setEnabled:NO];
+
     [self.createManagedObjectMenuItem setEnabled:NO];
     return;
   }
   [self.addButton setEnabled:YES];
   [self.removeButton setEnabled:[self.dataCoordinator canPerformDelete]];
+  [self.nullifyButton setEnabled:[self.dataCoordinator canPerformNullify]];
   [self.createManagedObjectMenuItem setEnabled:[self.dataCoordinator canPerformAdd]];
   if(self.request.isEntityRequest) {
     self.addButton.menu = nil;
@@ -206,7 +210,13 @@
 }
 
 - (IBAction)remove:(id)sender {
-  [self.dataCoordinator removeSelectedManagedObjects];
+    [self.dataCoordinator removeSelectedManagedObjects:YES];
+  [self updateAddAndRemoveButtons];
+  [self managedObjectsViewControllerDidChangeContents];
+}
+
+- (IBAction)nullify:(id)sender {
+    [self.dataCoordinator removeSelectedManagedObjects:NO];
   [self updateAddAndRemoveButtons];
   [self managedObjectsViewControllerDidChangeContents];
 }

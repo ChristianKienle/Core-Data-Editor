@@ -4,20 +4,7 @@
 #import "CDERequestDataCoordinator_Subclass.h"
 #import "CDEOrderIndexTableCellView.h"
 #import "NSTableCellView+JKNibLoading.h"
-
-@interface NSTableColumn (OrderedRelationshipRequestDataCoordinator)
-
-- (BOOL)isOrderIndexColumn_cde;
-
-@end
-
-@implementation NSTableColumn (OrderedRelationshipRequestDataCoordinator)
-
-- (BOOL)isOrderIndexColumn_cde {
-    return [self.identifier isEqualToString:@"CDE_orderIndexColumn"];
-}
-
-@end
+#import "NSTableColumn+CDERequestDataCoordinator.h"
 
 @interface CDEOrderedRelationshipRequestDataCoordinator ()
 
@@ -175,6 +162,11 @@
     }
     return ([relatedObjects count] > 0);
 }
+
+- (BOOL)canPerformNullify {
+    return [self canPerformDelete]; // same rule as canPerformDelete
+}
+
 
 
 @end
