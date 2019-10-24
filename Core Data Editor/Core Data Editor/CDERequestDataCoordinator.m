@@ -391,7 +391,11 @@
     NSManagedObject *object = [self managedObjectAtIndex:row];
     NSTableColumn *tableColumn = [self.tableView tableColumns][column];
 
-    [object setValue:[[notification object] objectValue] forKey:tableColumn.identifier];
+    id value = [[notification object] objectValue];
+    if ([self attributeTypeForTableColumn:tableColumn] == NSUUIDAttributeType) {
+        value = [[NSUUID alloc] initWithUUIDString:value];
+    }
+    [object setValue:value forKey:tableColumn.identifier];
 }
 
 - (void)binaryValueTextField:(NSTextField *)textField didChangeBinaryValue:(NSData *)binaryValue {
@@ -461,7 +465,11 @@
 //    self.datePicker.representedObject = representedObject;
 
     [self.textEditorController showRelativeToRect:[sender bounds] ofView:sender preferredEdge:NSMinYEdge stringValue:stringValue completionHandler:^(NSString *editedStringValue) {
-        [object setValue:editedStringValue forKey:property.name];
+        id value = editedStringValue;
+        if ([self attributeTypeForTableColumn:tableColumn] == NSUUIDAttributeType) {
+            value = [[NSUUID alloc] initWithUUIDString:value];
+        }
+        [object setValue:value forKey:property.name];
         NSUInteger rowIndex = [self indexOfManagedObject:object];
         NSIndexSet *columIndexes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, self.tableColumns.count)];
         [self.tableView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:rowIndex] columnIndexes:columIndexes];
@@ -551,6 +559,9 @@
 + (id)transformedValueFromString:(NSString *)inputString attributeType:(NSAttributeType)attributeType {
     if(attributeType == NSStringAttributeType) {
         return inputString;
+    }
+    if(attributeType == NSUUIDAttributeType) {
+        return [[NSUUID alloc] initWithUUIDString:inputString];
     }
     if([NSAttributeDescription attributeTypeHasIntegerCharacteristics_cde:attributeType]) {
         NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];

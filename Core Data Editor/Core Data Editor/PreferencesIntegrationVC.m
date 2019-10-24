@@ -50,7 +50,7 @@
     [panel setCanChooseDirectories:YES];
     [panel setCanChooseFiles:NO];
     [panel beginSheetModalForWindow:self.view.window completionHandler:^(NSInteger result) {
-        if(result == NSFileHandlingPanelOKButton) {
+        if(result == NSModalResponseOK) {
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             defaults.simulatorDirectory_cde = panel.URL;
             self.simulatorDirectoryPopUpButton.URL = defaults.simulatorDirectory_cde;
@@ -63,7 +63,7 @@
     [panel setCanChooseDirectories:YES];
     [panel setCanChooseFiles:NO];
     [panel beginSheetModalForWindow:self.view.window completionHandler:^(NSInteger result) {
-        if(result == NSFileHandlingPanelOKButton) {
+        if(result == NSModalResponseOK) {
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             defaults.buildProductsDirectory_cde = panel.URL;
             self.buildDirectoryPopUpButton.URL = defaults.buildProductsDirectory_cde;

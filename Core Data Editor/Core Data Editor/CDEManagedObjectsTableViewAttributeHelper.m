@@ -29,7 +29,7 @@
 }
 
 + (BOOL)attributeTypeIsDisplayable:(NSAttributeType)attributeType {
-    return (attributeType == NSInteger16AttributeType || attributeType == NSInteger32AttributeType || attributeType == NSInteger64AttributeType || attributeType == NSDecimalAttributeType || attributeType == NSDoubleAttributeType || attributeType == NSFloatAttributeType || attributeType == NSBooleanAttributeType || attributeType == NSStringAttributeType || attributeType == NSBooleanAttributeType || attributeType == NSDateAttributeType || attributeType == NSBinaryDataAttributeType || attributeType == NSTransformableAttributeType);
+    return (attributeType == NSInteger16AttributeType || attributeType == NSInteger32AttributeType || attributeType == NSInteger64AttributeType || attributeType == NSDecimalAttributeType || attributeType == NSDoubleAttributeType || attributeType == NSFloatAttributeType || attributeType == NSBooleanAttributeType || attributeType == NSStringAttributeType || attributeType == NSUUIDAttributeType || attributeType == NSBooleanAttributeType || attributeType == NSDateAttributeType || attributeType == NSBinaryDataAttributeType || attributeType == NSTransformableAttributeType);
 }
 
 + (NSTableColumn *)tableColumnWithAttributeDescription:(NSAttributeDescription *)attributeDescription arrayController:(NSArrayController *)arrayController {

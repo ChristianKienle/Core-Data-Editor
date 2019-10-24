@@ -8,7 +8,8 @@
 
 #pragma mark - Working with Attribute Types
 BOOL CDEIsStringAttributeType(NSAttributeType type) {
-    return (type == NSStringAttributeType);
+    return (type == NSStringAttributeType ||
+            type == NSUUIDAttributeType);
 }
 
 BOOL CDEIsFloatingPointAttributeType(NSAttributeType type) {
@@ -40,6 +41,7 @@ BOOL CDEIsIntegerAttributeType(NSAttributeType type) {
             result = [CDEFloatingPointValueTableCellView class];
             break;
         case NSStringAttributeType:
+        case NSUUIDAttributeType:
             result = [CDEStringValueTableCellView class];
             break;
         case NSBooleanAttributeType:
