@@ -10,6 +10,7 @@ static NSString *managedObjectObservationContext;
 @interface CDEManagedObjectView()
 
 #pragma mark Properties
+@property (retain) NSTextField *objectIDTextField; // AH: to display the objectID of the to-one relationship.
 @property (retain) NSMutableArray *attributeViewControllers;
 @property (retain) NSDictionary *managedObjectBindingInfo;
 @property (retain) CDEGenerateThumbnailsController *generateThumbnailsController;
@@ -118,6 +119,9 @@ static NSString *managedObjectObservationContext;
 
 - (void)refresh {
     [[self subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    self.objectIDTextField = [NSTextField labelWithString:self.managedObject ? [NSString stringWithFormat:@"objectID: %@",[self.managedObject.objectID stringRepresentationForDisplay_cde]] : @"nil objectID"];
+    [self addSubview:self.objectIDTextField];
    
    for(CDEAttributeViewController *attributeViewController in self.attributeViewControllers) {
       attributeViewController.delegate = nil;
@@ -177,6 +181,12 @@ static NSString *managedObjectObservationContext;
    CGFloat height = 10.0f;
    CGFloat nameViewWidthScaleFactor = 0.35;
    CGFloat valueViewWidthScaleFactor = 1.0 - nameViewWidthScaleFactor;
+    
+    [self.objectIDTextField sizeToFit];
+    [self.objectIDTextField setFrameOrigin:NSMakePoint(nameViewWidthScaleFactor * NSWidth([self bounds]), height)];
+    height += NSHeight(self.objectIDTextField.frame);
+    
+    
    for(CDEAttributeViewController *attributeViewController in self.attributeViewControllers) {
       NSRect newValueFrame = NSMakeRect(nameViewWidthScaleFactor * NSWidth([self bounds]), height, valueViewWidthScaleFactor * NSWidth([self bounds]) - 10.0, NSHeight([[attributeViewController view] frame]));
         if([attributeViewController attributeNameView] != nil) {
