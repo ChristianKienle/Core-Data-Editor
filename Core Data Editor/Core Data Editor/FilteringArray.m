@@ -23,7 +23,7 @@
 }
 
 - (void)applyFilter {
-  self._filteredObjects = self._allObjects;
+  [self._filteredObjects setArray:self._allObjects];
   
   if(self._predicate == nil) {
     return;
