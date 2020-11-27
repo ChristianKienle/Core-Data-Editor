@@ -12,6 +12,7 @@
 @property (nonatomic, weak) IBOutlet NSTabView *tabView;
 @property (nonatomic, weak) IBOutlet NSButton *addButton;
 @property (nonatomic, weak) IBOutlet NSButton *removeButton;
+@property (nonatomic, weak) IBOutlet NSButton *nullifyButton; // AH: does not *delete* the relationship destination object. Set the relationship to nil (for to-one) or removes the object from the relationship (to-many).
 @property (nonatomic, weak) IBOutlet NSMenuItem *createManagedObjectMenuItem;
 @property (nonatomic, weak) IBOutlet CDEManagedObjectView *managedObjectView;
 @property (nonatomic, strong) CDEManagedObjectsPicker *managedObjectsPicker;
@@ -96,9 +97,18 @@
     [self managedObjectViewControllerDidAddOrRemoveManagedObject];
 }
 
+- (IBAction)nullify:(id)sender {
+    //NSManagedObject *object = self.request.relatedObject;
+    [self.request.managedObject setValue:nil forKey:self.request.relationshipDescription.name];
+    //[self.request.managedObjectContext deleteObject:object]; // AH: does not delete. just nullify relationship
+    [self _updateUIWithCurrentRequest];
+    [self managedObjectViewControllerDidAddOrRemoveManagedObject];
+}
+
 - (void)updateAddAndRemoveButtons {
     [self.createManagedObjectMenuItem setEnabled:[self request] != nil && [[self request] relatedObject] == nil];
     [self.removeButton setEnabled:[self request] != nil && [[self request] relatedObject] != nil];
+    [self.nullifyButton setEnabled:[self request] != nil && [[self request] relatedObject] != nil];
 }
 
 - (IBAction)showManagedObjectsPicker:(id)sender {

@@ -5,6 +5,6 @@
 @protocol CDEEntitiesViewControllerDelegate <NSObject>
 
 @required
-- (void)entitiesViewController:(CDEEntitiesViewController *)entitiesViewController didSelectEntitiyDescription:(NSEntityDescription *)entityDescription;
+- (void)entitiesViewController:(CDEEntitiesViewController *)entitiesViewController didSelectEntityDescription:(NSEntityDescription *)entityDescription;
 
 @end

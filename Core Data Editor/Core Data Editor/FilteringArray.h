@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 
 @interface FilteringArray<ObjectType>: NSObject
+- (void)removeAllObjects;
 - (void)setFilterPredicate:(NSPredicate *)predicate;
 - (void)addObject:(ObjectType)anObject;
 - (void)removeObjectAtIndex:(NSUInteger)index;

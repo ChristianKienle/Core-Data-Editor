@@ -282,7 +282,7 @@
 }
 
 #pragma mark - CDEEntitiesViewControllerDelegate
-- (void)entitiesViewController:(CDEEntitiesViewController *)entitiesViewController didSelectEntitiyDescription:(NSEntityDescription *)entityDescription {
+- (void)entitiesViewController:(CDEEntitiesViewController *)entitiesViewController didSelectEntityDescription:(NSEntityDescription *)entityDescription {
 
   // Before assiging check for equality
   CDEAutosaveInformation *persistentInformation = [[CDEAutosaveInformation alloc] initWithDictionaryRepresentation:self.configuration.autosaveInformationByEntityName];

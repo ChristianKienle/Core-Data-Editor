@@ -22,6 +22,8 @@
 #pragma mark - For Subclassers
 // The default implementation returns columns for supported attributes, relationships and a column for the objectID
 @property (nonatomic, copy, readonly) NSArray *tableColumns;
+@property (nonatomic, strong, readonly) NSTableColumn *sortingColumn;
+@property (nonatomic, assign, readonly) BOOL sortingAscending;
 
 - (NSInteger)numberOfObjects;
 
@@ -40,9 +42,10 @@
 - (void)removeManagedObjectAtIndex:(NSUInteger)index;
 - (NSIndexSet *)indexesOfSelectedManagedObjects;
 - (NSArray *)selectedManagedObjects;
-- (void)removeSelectedManagedObjects;
+- (void)removeSelectedManagedObjects:(BOOL)andDeleteThem; // AH: passing YES removes AND deletes the objects. Passing NO only removes them.
 
 - (NSView *)viewForTableColumn:(NSTableColumn *)tableColumn atIndex:(NSInteger)atIndex;
+- (void)sortByTableColumn:(NSTableColumn *)tableColumn ascending:(BOOL)ascending;
 
 - (IBAction)takeBoolValueFromSender:(id)sender;
 - (void)controlTextDidEndEditing:(NSNotification *)notification;
@@ -62,6 +65,7 @@
 #pragma mark - For Subclassers / Used to disable/enable the buttons
 - (BOOL)canPerformAdd;
 - (BOOL)canPerformDelete;
+- (BOOL)canPerformNullify;
 
 #pragma mark - Autosave
 - (CDEEntityAutosaveInformation *)entityAutosaveInformation;

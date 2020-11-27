@@ -23,7 +23,7 @@
 }
 
 - (void)applyFilter {
-  self._filteredObjects = self._allObjects;
+  [self._filteredObjects setArray:self._allObjects];
   
   if(self._predicate == nil) {
     return;
@@ -45,6 +45,11 @@
     return [self._allObjects objectAtIndex:index];
   }
   return [self._filteredObjects objectAtIndex:index];
+}
+
+- (void)removeAllObjects {
+    [self._allObjects removeAllObjects];
+    [self applyFilter];
 }
 - (void)addObjectsFromArray:(NSArray *)otherArray {
   [self._allObjects addObjectsFromArray:otherArray];

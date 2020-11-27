@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15504" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15504"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -10,6 +11,7 @@
                 <outlet property="addButton" destination="56" id="58"/>
                 <outlet property="bottomBarView" destination="54" id="55"/>
                 <outlet property="createManagedObjectMenuItem" destination="61" id="65"/>
+                <outlet property="nullifyButton" destination="iPr-ri-kss" id="bax-pT-KLb"/>
                 <outlet property="removeButton" destination="48" id="51"/>
                 <outlet property="searchField" destination="67" id="69"/>
                 <outlet property="tableView" destination="jHj-gq-ac8" id="rzr-r4-m80"/>
@@ -22,11 +24,11 @@
             <rect key="frame" x="0.0" y="0.0" width="469" height="310"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <customView id="54" userLabel="Bottom Bar" customClass="CDEBarView">
+                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="54" userLabel="Bottom Bar" customClass="CDEBarView">
                     <rect key="frame" x="0.0" y="0.0" width="469" height="22"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button id="48" userLabel="Remove Button">
+                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="48" userLabel="Remove Button">
                             <rect key="frame" x="20" y="1" width="19" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="49">
@@ -40,7 +42,7 @@ CA
                                 <action selector="remove:" target="-2" id="53"/>
                             </connections>
                         </button>
-                        <button id="56" userLabel="Add Button" customClass="CDELeftClickMenuButton">
+                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="56" userLabel="Add Button" customClass="CDELeftClickMenuButton">
                             <rect key="frame" x="0.0" y="1" width="19" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="57">
@@ -54,7 +56,19 @@ CA
                                 <outlet property="menu" destination="59" id="62"/>
                             </connections>
                         </button>
-                        <searchField wantsLayer="YES" focusRingType="none" verticalHuggingPriority="750" id="67">
+                        <button toolTip="Clear relationship without deleting the object" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iPr-ri-kss" userLabel="Nullify Button">
+                            <rect key="frame" x="40" y="1" width="19" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSStopProgressFreestandingTemplate" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="HsL-V3-aSY">
+                                <behavior key="behavior" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <accessibility description="Clear relationship without deleting the object"/>
+                            <connections>
+                                <action selector="nullify:" target="-2" id="oy4-qa-0Ja"/>
+                            </connections>
+                        </button>
+                        <searchField wantsLayer="YES" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="67">
                             <rect key="frame" x="292" y="1" width="169" height="19"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                             <searchFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" focusRingType="none" usesSingleLineMode="YES" bezelStyle="round" id="68">
@@ -65,10 +79,10 @@ CA
                         </searchField>
                     </subviews>
                 </customView>
-                <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="32" horizontalPageScroll="10" verticalLineScroll="32" verticalPageScroll="10" usesPredominantAxisScrolling="NO" scrollerKnobStyle="dark" id="LY9-hd-eQF">
+                <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="32" horizontalPageScroll="10" verticalLineScroll="32" verticalPageScroll="10" usesPredominantAxisScrolling="NO" scrollerKnobStyle="dark" translatesAutoresizingMaskIntoConstraints="NO" id="LY9-hd-eQF">
                     <rect key="frame" x="0.0" y="22" width="469" height="289"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <clipView key="contentView" id="Oij-IG-g0B">
+                    <clipView key="contentView" ambiguous="YES" id="Oij-IG-g0B">
                         <rect key="frame" x="0.0" y="0.0" width="469" height="289"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -97,7 +111,7 @@ CA
                                                 <rect key="frame" x="1" y="1" width="64" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="03p-Ce-6cu">
+                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="03p-Ce-6cu">
                                                         <rect key="frame" x="0.0" y="0.0" width="64" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Cell" id="Kvr-ZH-x8f">
@@ -121,11 +135,11 @@ CA
                             </tableView>
                         </subviews>
                     </clipView>
-                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Mbi-bR-RUR">
+                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Mbi-bR-RUR">
                         <rect key="frame" x="1" y="119" width="223" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="04y-qQ-jAl">
+                    <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="04y-qQ-jAl">
                         <rect key="frame" x="224" y="17" width="15" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
@@ -135,6 +149,7 @@ CA
                     </tableHeaderView>
                 </scrollView>
             </subviews>
+            <point key="canvasLocation" x="140" y="37"/>
         </customView>
         <menu autoenablesItems="NO" id="59">
             <items>
@@ -154,5 +169,6 @@ CA
     <resources>
         <image name="NSAddTemplate" width="11" height="11"/>
         <image name="NSRemoveTemplate" width="11" height="11"/>
+        <image name="NSStopProgressFreestandingTemplate" width="14" height="14"/>
     </resources>
 </document>

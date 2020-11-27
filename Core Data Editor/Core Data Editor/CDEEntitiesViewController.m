@@ -168,7 +168,7 @@
         return;
     }
     
-    if([self.delegate respondsToSelector:@selector(entitiesViewController:didSelectEntitiyDescription:)] == NO) {
+    if([self.delegate respondsToSelector:@selector(entitiesViewController:didSelectEntityDescription:)] == NO) {
         return;
     }
     
@@ -176,7 +176,7 @@
     if ([self.outlineView selectedRow] != -1) {
         selectedEntity = [self.outlineView itemAtRow:self.outlineView.selectedRow];
     }
-    [self.delegate entitiesViewController:self didSelectEntitiyDescription:selectedEntity];
+    [self.delegate entitiesViewController:self didSelectEntityDescription:selectedEntity];
 }
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item {

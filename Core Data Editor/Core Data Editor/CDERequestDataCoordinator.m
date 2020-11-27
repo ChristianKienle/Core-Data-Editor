@@ -28,6 +28,8 @@
 @property (nonatomic, strong, readwrite) CDEManagedObjectsRequest *request;
 @property (nonatomic, weak, readwrite) NSTableView *tableView;
 @property (nonatomic, weak, readwrite) NSSearchField *searchField;
+@property (nonatomic, strong, readwrite) NSTableColumn *sortingColumn;
+@property (nonatomic, assign, readwrite) BOOL sortingAscending;
 @property (nonatomic, weak, readwrite) CDEManagedObjectsViewController *managedObjectsViewController;
 @property (nonatomic, copy) NSString *filterByKeyPath;
 @property (nonatomic, strong) NSAttributeDescription *filterByAttributeDescription;
@@ -197,6 +199,10 @@
     @throw [NSException exceptionWithName:@"CDEAbstractNotImplemented" reason:nil userInfo:nil];
 }
 
+-(void)executeFetchRequest {
+    @throw [NSException exceptionWithName:@"CDEAbstractNotImplemented" reason:nil userInfo:nil];
+}
+
 - (void)invalidate {
     @throw [NSException exceptionWithName:@"CDEAbstractNotImplemented" reason:nil userInfo:nil];
 }
@@ -223,7 +229,8 @@
     return result;
 }
 
-- (void)removeSelectedManagedObjects {
+- (void)removeSelectedManagedObjects:(BOOL)andDeleteThem; // AH: passing YES removes AND deletes the objects. Passing NO only removes them.
+ {
     NSIndexSet *indexes = [self indexesOfSelectedManagedObjects];
     NSMutableOrderedSet *objects = [NSMutableOrderedSet new];
     [indexes enumerateIndexesUsingBlock:^(NSUInteger index, BOOL *stop) {
@@ -231,10 +238,43 @@
         NSAssert(object, @"object cannot be nil.");
         [objects addObject:object];
     }];
-    for(NSManagedObject *object in objects) {
-        [self.request.managedObjectContext deleteObject:object];
+     if(andDeleteThem) {
+         for(NSManagedObject *object in objects) {
+             [self.request.managedObjectContext deleteObject:object];
+         }
+     }
+     else if(self.request.isRelationshipRequest == YES) {
+         if(self.request.relationshipDescription.isOrdered) {
+             [[self.request.managedObject mutableOrderedSetValueForKey:self.request.relationshipDescription.name] removeObjectsInArray:[objects array]];
+         }
+         else {
+             [[self.request.managedObject mutableSetValueForKey:self.request.relationshipDescription.name] minusSet:[objects set]];
+         }
+     }
+     else {
+         NSAssert(0, @"Currently unimplemented.");
+     }
+     [self.tableView reloadData];
+}
+
+- (void)sortByTableColumn:(NSTableColumn *)tableColumn ascending:(BOOL)ascending
+{
+    NSPropertyDescription *property = [self propertyDescriptionForTableColumn:tableColumn];
+    NSString *identifier = tableColumn.identifier;
+    
+    self.sortingColumn = tableColumn;
+    self.sortingAscending = ascending;
+
+    // can only sort by attributes, not relationship
+    if(property.isAttributeDescription_cde || [identifier isEqualToString:@"objectID"]) {
+        //NSAttributeType type = [self attributeTypeForTableColumn:tableColumn]; // see if we sort differently by type later
+        
+        
+        [self.request setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:[identifier isEqualToString:@"objectID"] ? @"self" : identifier ascending:ascending]]]; // Core Data does not sort by "objectID" since it's not an attribute! sorting by key "self" sorts by objectID :)
+        [self executeFetchRequest];
+        
+        [self.tableView reloadData];
     }
-    [self.tableView reloadData];
 }
 
 - (NSView *)viewForTableColumn:(NSTableColumn *)tableColumn atIndex:(NSInteger)atIndex {
@@ -351,7 +391,11 @@
     NSManagedObject *object = [self managedObjectAtIndex:row];
     NSTableColumn *tableColumn = [self.tableView tableColumns][column];
 
-    [object setValue:[[notification object] objectValue] forKey:tableColumn.identifier];
+    id value = [[notification object] objectValue];
+    if ([self attributeTypeForTableColumn:tableColumn] == NSUUIDAttributeType) {
+        value = [[NSUUID alloc] initWithUUIDString:value];
+    }
+    [object setValue:value forKey:tableColumn.identifier];
 }
 
 - (void)binaryValueTextField:(NSTextField *)textField didChangeBinaryValue:(NSData *)binaryValue {
@@ -421,7 +465,11 @@
 //    self.datePicker.representedObject = representedObject;
 
     [self.textEditorController showRelativeToRect:[sender bounds] ofView:sender preferredEdge:NSMinYEdge stringValue:stringValue completionHandler:^(NSString *editedStringValue) {
-        [object setValue:editedStringValue forKey:property.name];
+        id value = editedStringValue;
+        if ([self attributeTypeForTableColumn:tableColumn] == NSUUIDAttributeType) {
+            value = [[NSUUID alloc] initWithUUIDString:value];
+        }
+        [object setValue:value forKey:property.name];
         NSUInteger rowIndex = [self indexOfManagedObject:object];
         NSIndexSet *columIndexes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, self.tableColumns.count)];
         [self.tableView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:rowIndex] columnIndexes:columIndexes];
@@ -512,6 +560,9 @@
     if(attributeType == NSStringAttributeType) {
         return inputString;
     }
+    if(attributeType == NSUUIDAttributeType) {
+        return [[NSUUID alloc] initWithUUIDString:inputString];
+    }
     if([NSAttributeDescription attributeTypeHasIntegerCharacteristics_cde:attributeType]) {
         NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
         return [numberFormatter numberFromString:inputString];
@@ -554,6 +605,10 @@
 }
 
 - (BOOL)canPerformDelete {
+    return NO;
+}
+
+- (BOOL)canPerformNullify {
     return NO;
 }
 

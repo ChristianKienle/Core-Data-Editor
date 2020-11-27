@@ -41,6 +41,7 @@
 @property (nonatomic, weak) IBOutlet NSView *bottomBarView;
 @property (nonatomic, weak) IBOutlet NSButton *addButton;
 @property (nonatomic, weak) IBOutlet NSButton *removeButton;
+@property (nonatomic, weak) IBOutlet NSButton *nullifyButton; // AH: does not *delete* the relationship destination object. Set the relationship to nil (for to-one) or removes the object from the relationship (to-many).
 @property (nonatomic, weak) IBOutlet NSMenuItem *createManagedObjectMenuItem;
 @property (nonatomic, strong) NSMenu *addButtonMenu;
 @property (nonatomic, strong) IBOutlet NSView *bottomBarViewWithNoParent;
@@ -69,11 +70,14 @@
   if(self.dataCoordinator == nil) {
     [self.addButton setEnabled:NO];
     [self.removeButton setEnabled:NO];
+    [self.nullifyButton setEnabled:NO];
+
     [self.createManagedObjectMenuItem setEnabled:NO];
     return;
   }
   [self.addButton setEnabled:YES];
   [self.removeButton setEnabled:[self.dataCoordinator canPerformDelete]];
+  [self.nullifyButton setEnabled:[self.dataCoordinator canPerformNullify]];
   [self.createManagedObjectMenuItem setEnabled:[self.dataCoordinator canPerformAdd]];
   if(self.request.isEntityRequest) {
     self.addButton.menu = nil;
@@ -206,7 +210,13 @@
 }
 
 - (IBAction)remove:(id)sender {
-  [self.dataCoordinator removeSelectedManagedObjects];
+    [self.dataCoordinator removeSelectedManagedObjects:YES];
+  [self updateAddAndRemoveButtons];
+  [self managedObjectsViewControllerDidChangeContents];
+}
+
+- (IBAction)nullify:(id)sender {
+    [self.dataCoordinator removeSelectedManagedObjects:NO];
   [self updateAddAndRemoveButtons];
   [self managedObjectsViewControllerDidChangeContents];
 }
@@ -380,6 +390,40 @@
   }
 }
 
+- (void)tableView:(NSTableView*)tableView didClickTableColumn:(NSTableColumn *)tableColumn
+{
+    //NSString* identifier = [tableColumn identifier];
+    
+    // non sortable columns
+//    if([identifier isEqualToString:...])
+//        return;
+    
+    [self.tableView.tableColumns enumerateObjectsUsingBlock:^(NSTableColumn * _Nonnull column, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self.tableView setIndicatorImage:nil inTableColumn:column]; // clean the sorting arrow in old highligthed column
+    }];
+    
+    //NSArray *selectedObjects = [datasource objectsAtIndexes:[self.tableView selectedRowIndexes]];
+    
+    // if you click on another column
+    if( ![self.dataCoordinator.sortingColumn isEqualTo:tableColumn] ) {
+        [self.tableView setHighlightedTableColumn:tableColumn];
+        [self.dataCoordinator sortByTableColumn:tableColumn ascending:YES];
+    }
+    // click on the same column
+    else {
+        [self.dataCoordinator sortByTableColumn:tableColumn ascending:!self.dataCoordinator.sortingAscending];
+    }
+    
+    if(self.dataCoordinator.sortingAscending == NSOrderedDescending)
+        [self.tableView setIndicatorImage:[NSImage imageNamed:@"NSDescendingSortIndicator"] inTableColumn:tableColumn];
+    else
+        [self.tableView setIndicatorImage:[NSImage imageNamed:@"NSAscendingSortIndicator"] inTableColumn:tableColumn];
+    
+//    NSIndexSet *indexesOfObjectsToReselect = [datasource indexesOfObjectsIdenticalTo:selectedObjects allowsNotFound:YES];
+//    [self.tableView selectRowIndexes:indexesOfObjectsToReselect byExtendingSelection:NO];
+//    if([indexesOfObjectsToReselect count] > 0)
+//        [self.tableView scrollRowToVisible:[indexesOfObjectsToReselect firstIndex]];
+}
 #pragma mark - Cells
 - (IBAction)takeBoolValueFromSender:(id)sender {
   [self.dataCoordinator takeBoolValueFromSender:sender];

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4018D7842306011600A59D01 /* CDEUUIDAttributeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4018D7832306011600A59D01 /* CDEUUIDAttributeView.xib */; };
+		4018D7872306401100A59D01 /* CDEUUIDAttributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4018D7862306401100A59D01 /* CDEUUIDAttributeViewController.m */; };
 		AB0181171997C805000FE094 /* NSDirectoryEnumerator+ProjectBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0181161997C805000FE094 /* NSDirectoryEnumerator+ProjectBrowser.m */; };
 		AB06C0AF1854CB07002945CB /* CDEToOneRelationshipRequestDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06C0AE1854CB07002945CB /* CDEToOneRelationshipRequestDataCoordinator.m */; };
 		AB0927511768C6EC00FC59FB /* CDEEntitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB09274F1768C6EC00FC59FB /* CDEEntitiesViewController.m */; };
@@ -219,6 +221,9 @@
 
 /* Begin PBXFileReference section */
 		2E25BCB4198D645100BBA0C0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4018D7832306011600A59D01 /* CDEUUIDAttributeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDEUUIDAttributeView.xib; sourceTree = "<group>"; };
+		4018D7852306401100A59D01 /* CDEUUIDAttributeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDEUUIDAttributeViewController.h; sourceTree = "<group>"; };
+		4018D7862306401100A59D01 /* CDEUUIDAttributeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDEUUIDAttributeViewController.m; sourceTree = "<group>"; };
 		AB0181151997C805000FE094 /* NSDirectoryEnumerator+ProjectBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDirectoryEnumerator+ProjectBrowser.h"; sourceTree = "<group>"; };
 		AB0181161997C805000FE094 /* NSDirectoryEnumerator+ProjectBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDirectoryEnumerator+ProjectBrowser.m"; sourceTree = "<group>"; };
 		AB06C0AD1854CB07002945CB /* CDEToOneRelationshipRequestDataCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEToOneRelationshipRequestDataCoordinator.h; sourceTree = "<group>"; };
@@ -599,6 +604,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4018D7882306401D00A59D01 /* UUID */ = {
+			isa = PBXGroup;
+			children = (
+				4018D7852306401100A59D01 /* CDEUUIDAttributeViewController.h */,
+				4018D7862306401100A59D01 /* CDEUUIDAttributeViewController.m */,
+				4018D7832306011600A59D01 /* CDEUUIDAttributeView.xib */,
+			);
+			name = UUID;
+			sourceTree = "<group>";
+		};
 		AB06C0AC1854CAD5002945CB /* To-One Relationship Request Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -1861,6 +1876,7 @@
 				ABEEA5BF178194B70096DE4C /* Date */,
 				ABEEA5C1178194C60096DE4C /* Number */,
 				ABEEA5C2178194CC0096DE4C /* Binary */,
+				4018D7882306401D00A59D01 /* UUID */,
 				ABC189F117809EDC00AF4F15 /* CDEAttributeViewControllerDelegate.h */,
 				ABC189F217809EDC00AF4F15 /* CDEAttributeViewController.h */,
 				ABC189F317809EDC00AF4F15 /* CDEAttributeViewController.m */,
@@ -2057,6 +2073,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = ABBEA7CD1765CB730024A9D2;
@@ -2103,6 +2120,7 @@
 				ABD5BCE317807B4F0050025B /* Relationship-ToMany.pdf in Resources */,
 				ABD5BCE417807B4F0050025B /* Relationship-ToOne.pdf in Resources */,
 				ABC18A1A17809EDC00AF4F15 /* CDEBooleanAttributeView.xib in Resources */,
+				4018D7842306011600A59D01 /* CDEUUIDAttributeView.xib in Resources */,
 				ABC18A1C17809EDC00AF4F15 /* CDEStringAttributeView.xib in Resources */,
 				ABC18A1F17809EDC00AF4F15 /* CDEDatePickerViewController.xib in Resources */,
 				ABC18A2117809EDC00AF4F15 /* CDEDateAttributeView.xib in Resources */,
@@ -2180,6 +2198,7 @@
 				AB22AC7A17664480004890AC /* NSBundle+CDEModelFinder.m in Sources */,
 				AB0927511768C6EC00FC59FB /* CDEEntitiesViewController.m in Sources */,
 				AB0927571768C81E00FC59FB /* CDEEditorViewController.m in Sources */,
+				4018D7872306401100A59D01 /* CDEUUIDAttributeViewController.m in Sources */,
 				AB0927631768E65200FC59FB /* NSURL+CDEAdditions.m in Sources */,
 				AB09276A1768F36100FC59FB /* CDEApplicationDelegate.m in Sources */,
 				AB09279B1768F73000FC59FB /* CDEManagedObjectsViewController.m in Sources */,

@@ -78,19 +78,30 @@
       }
     }
   }
-  
-  NSError *fetchError = nil;
-  NSString *entityName = self.request.entityDescription.name;
-  NSFetchRequest<NSManagedObject *> *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:entityName];
-  NSArray *objects = [self.request.managedObjectContext executeFetchRequest:fetchRequest error:&fetchError];
-  if(objects == nil) {
-    NSLog(@"error: %@", fetchError);
-    return;
-  }
-  self.filteringArray = [FilteringArray new];
-  [self.filteringArray addObjectsFromArray:objects];
-  [self.tableView reloadData];
+
+    [self executeFetchRequest];
+    [self.tableView reloadData];
 }
+
+-(void)executeFetchRequest {
+    if(self.filteringArray == nil) {
+        self.filteringArray = [FilteringArray new];
+    }
+    else {
+        [self.filteringArray removeAllObjects];
+    }
+    NSError *fetchError = nil;
+    NSString *entityName = self.request.entityDescription.name;
+    NSFetchRequest<NSManagedObject *> *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:entityName];
+    fetchRequest.sortDescriptors = self.request.sortDescriptors;
+    NSArray *objects = [self.request.managedObjectContext executeFetchRequest:fetchRequest error:&fetchError];
+    if(objects == nil) {
+        NSLog(@"error: %@", fetchError);
+        return;
+    }
+    [self.filteringArray addObjectsFromArray:objects];
+}
+
 
 - (void)invalidate {
 }
@@ -101,13 +112,16 @@
   return object;
 }
 
-- (void)removeSelectedManagedObjects {
+- (void)removeSelectedManagedObjects:(BOOL)andDeleteThem; // AH: passing YES removes AND deletes the objects. Passing NO only removes them.
+ {
   NSIndexSet *indexes = [self indexesOfSelectedManagedObjects];
   NSArray<NSManagedObject*>* objects = [self.filteringArray objectsAtIndexes:indexes];
   [self.filteringArray removeObjectsAtIndexes:indexes];
-  for(NSManagedObject *object in objects) {
-    [self.request.managedObjectContext deleteObject:object];
-  }
+     if(andDeleteThem) {
+         for(NSManagedObject *object in objects) {
+             [self.request.managedObjectContext deleteObject:object];
+         }
+     }
   [self.tableView reloadData];
 
 }
@@ -134,6 +148,10 @@
 - (BOOL)canPerformDelete {
   // Delete only possible if there is a selection
   return (self.tableView.selectedRow != -1);
+}
+
+- (BOOL)canPerformNullify {
+    return NO; // can't nullify an object. You can only delete it!
 }
 
 #pragma mark - Autosave
