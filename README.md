@@ -1,8 +1,19 @@
-# Build Status
-| Branch        | Status           | 
-| ------------- |:-------------:|
-| Master      | [![Build Status](https://travis-ci.org/ChristianKienle/Core-Data-Editor.svg?branch=master)](https://travis-ci.org/ChristianKienle/Core-Data-Editor) |
-| Develop      | [![Build Status](https://travis-ci.org/ChristianKienle/Core-Data-Editor.svg?branch=develop)](https://travis-ci.org/ChristianKienle/Core-Data-Editor)      |
+# Goals of this fork
+- Enhance usability and add some features:
+  - Make (most of) the columns sortable. NSUUID columns are not sortable at this moment.
+  - Allows to *remove* an object from a relationship (to many or to one) instead of *deleting* it. There is a new "clear" button to do that.
+  - Support NSUUID attribute types (from sjmadsen)
+  - Made ManagedObject picker Popover window much bigger by default. Also resizable
+  - Displays the objectID of to-one relationships in the relationship details view
+  - Fix annoyances such as filtering that did not reset the previous content when cleared
+  
+- Maintain the tool in the long term.
+
+
+# Major issues that are *by design*
+
+The biggest problem of this tool, since its beginning is that your NSManagedObject subclasses are not loaded in Core Data Editor. Any validation code that is not in the ManagedObjectModel, any triggered setter you may have implemented on save, on insert or whatever won't be called and may produce an invalid record in term of business logic. So beware: either don't use NSManagedObject subclasses (and thus limit your power with Core Data) or be cautious when you trigger changes in your NSManagedObject subclasses.
+
 
 # Core Data Editor
 
